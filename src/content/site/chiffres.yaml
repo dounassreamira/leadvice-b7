@@ -7,7 +7,3 @@ cabinet:
   - { valeur: "126", compteur: 126, prefixe: "", texte: campagnes lancées }
   - { valeur: "+23", compteur: 23, prefixe: "+", texte: clients accompagnés }
   - { valeur: "+300", compteur: 300, prefixe: "+", texte: posts et créatives publicitaires produits }
-kettani:
-  - { valeur: "≈ 41 000", texte: leads générés via Meta Ads }
-  - { valeur: "7", texte: programmes accompagnés }
-  - { valeur: "12 mois", texte: "d'accompagnement continu, Meta Ads et Google Ads" }

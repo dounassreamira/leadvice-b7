@@ -138,7 +138,7 @@ export async function init(): Promise<void> {
     const end = parseFloat(el.getAttribute('data-count') || '0'), pre = el.getAttribute('data-pre') || '', final = el.textContent ?? '';
     const o = { v: 0 };
     ST.create({ trigger: el, start: 'top 90%', once: true, onEnter() {
-      gsap.fromTo(o, { v: 0 }, { v: end, duration: 1.6, ease: 'power2.out', onUpdate() { el.textContent = pre + Math.round(o.v).toLocaleString('fr-FR').replace(/[  ]/g, ' '); }, onComplete() { el.textContent = final; } });
+      gsap.fromTo(o, { v: 0 }, { v: end, duration: 1.6, ease: 'power2.out', onUpdate() { el.textContent = pre + Math.round(o.v).toLocaleString('fr-FR').replace(/[\u00a0\u202f]/g, '\u00a0'); }, onComplete() { el.textContent = final; } });
     } });
   });
   /* méthode : le rail se remplit */

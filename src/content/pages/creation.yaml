@@ -1,0 +1,71 @@
+seo:
+  title: Création publicitaire et contenus qui convertissent | Leadvice
+  description: 'Concepts créatifs, accroches, publicités statiques et vidéo, contenus pour les réseaux sociaux : des créations pensées pour l''acquisition, en français et en arabe.'
+  og: creation
+fil: Création
+h1: Trouver le message qui mérite d'être vu.
+reponse: 'La création chez Leadvice sert l''acquisition : chaque publicité et chaque contenu doit arrêter la bonne personne et lui donner une raison d''agir. Nous travaillons l''angle avant le visuel, nous testons plusieurs accroches, et nous gardons ce que les chiffres valident, en français comme en arabe.'
+scene:
+  nom: angles
+  len: 300
+  aria: Une offre, trois angles
+  legende: Une offre, trois angles
+  etapes:
+  - texte: Même offre.
+    de: 0.03
+    a: 0.28
+  - texte: Trois angles. Trois accroches.
+    de: 0.28
+    a: 0.48
+  - texte: Chacune parle à quelqu'un d'autre.
+    de: 0.48
+    a: 0.72
+  - texte: Le problème n'est pas toujours l'offre. C'est parfois l'angle.
+    de: 0.72
+    a: 1.0
+faisons:
+  titre: Ce que nous faisons.
+  intro: Chaque mission est menée par les fondatrices, de l'analyse aux décisions.
+  items:
+  - titre: Concepts créatifs
+    texte: 'Nous cherchons les angles qui parlent à chaque audience : le prix, le confort, la sécurité, le statut, l''investissement. Un même produit peut se vendre de plusieurs façons ; nous trouvons celles qui fonctionnent pour vous.'
+  - titre: Accroches
+    texte: Les trois premières secondes d'une vidéo et la première ligne d'une publicité décident de tout. Nous écrivons et testons plusieurs accroches par campagne.
+  - titre: Publicités statiques et vidéo
+    texte: Formats pensés pour chaque placement, du fil d'actualité aux stories, avec une déclinaison par audience et par langue.
+  - titre: Contenus pour les réseaux sociaux
+    texte: 'Des contenus qui servent votre acquisition, pas seulement votre image : ils préparent la décision et rendent vos publicités plus efficaces.'
+  - titre: Français et arabe
+    texte: Nous adaptons le message à la langue de l'audience, pas seulement les mots. Ce qui convainc en français ne se dit pas toujours de la même façon en arabe.
+pour_vous:
+  titre: Est-ce pour vous ?
+  situations:
+  - « Vos publicités sont belles, mais elles ne génèrent pas de demandes. »
+  - « Vous diffusez les mêmes visuels depuis des mois et le coût de vos contacts augmente. »
+  - « Vous visez plusieurs publics, en français et en arabe, avec un seul message. »
+comment:
+  titre: Comment nous travaillons.
+  texte: Nous partons de votre offre et de ce que vos meilleurs clients disent de vous. Nous proposons plusieurs angles, produisons une première série de créations, puis nous laissons les chiffres trancher. Les créations gagnantes sont déclinées ; les autres sont remplacées.
+faq:
+  titre: Vos questions.
+  questions:
+  - q: Produisez-vous vous-mêmes les visuels et les vidéos ?
+    a:
+    - Oui, nous concevons et produisons les créations publicitaires. Pour les tournages plus ambitieux, nous dirigeons la création et travaillons avec des partenaires de production.
+  - q: Combien de créations faut-il pour une campagne ?
+    a:
+    - Assez pour tester plusieurs angles à la fois. Nous commençons toujours par une série qui compare des approches différentes, plutôt que plusieurs variantes d'une même idée.
+  - q: Pouvez-vous travailler à partir de notre charte graphique ?
+    a:
+    - Oui. Nous respectons votre identité visuelle et nous la déclinons pour la publicité, où les contraintes ne sont pas les mêmes que sur une plaquette.
+  - q: Créez-vous en arabe ?
+    a:
+    - Oui, en arabe et en français, en adaptant le message à chaque audience plutôt qu'en traduisant mot à mot.
+cloture:
+  titre: Parlons de votre croissance.
+  texte: 45 minutes, offert. Nous regardons vos campagnes, vos chiffres et votre offre. Vous repartez avec ce qui freine votre acquisition et par quoi commencer.
+suivante: acquisition
+service: Création publicitaire
+lire:
+- trouver-le-bon-angle
+- arabe-ou-francais-langue-publicites-maroc

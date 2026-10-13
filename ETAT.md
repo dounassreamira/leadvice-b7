@@ -18,8 +18,15 @@ Mis à jour à la fin de chaque phase. Reprendre d'ici si la session s'interromp
 - Mouvement réduit et sans JavaScript : chaque scène affiche son état final, sans épinglage ; défilement horizontal natif.
 - Lighthouse mobile accueil : 100 / 100 / 100 / 100, LCP 1,4 s, CLS 0, JS 71 Ko.
 
+## Phase 2 — Pages de contenu : faite
+- Expertises (rangées, trois façons de travailler en cartes empilées, scène de la boucle), cinq pages leviers sur un gabarit commun (`src/components/LevierPage.astro`, textes dans `src/content/pages/<levier>.yaml`), Acquisition avec les deux scènes B7, le simulateur et le plan de campagne.
+- Réalisations (mur de logos filtrable, chiffres, étude de cas), Kettani Immobilier (défilement horizontal des sept programmes, récit, exécution, enseignements, date et copier le lien).
+- Cabinet (manifeste qui se révèle au défilement, engagement, méthode en cartes empilées, fondatrices, FAQ de huit questions).
+- Insights : bibliothèque filtrable avec couvertures générées, six articles en Markdown (`src/content/insights/`), sommaire suivi, temps de lecture, dates, copier le lien, bloc diagnostic, expertise liée, « À lire aussi ».
+- Recherche Pagefind : 17 pages indexées.
+- Lighthouse mobile : 98 à 100 en performance, 100 en accessibilité, bonnes pratiques et SEO sur les 17 pages.
+
 ## Reste à faire
-- Phase 2 : Expertises et ses cinq pages, Réalisations, Kettani, Cabinet, Insights et six articles.
 - Phase 3 : Diagnostic, merci, landing pages, réservation, Pages Functions, e-mails, suivi.
 - Phase 4 : Ateliers (trois pages, deux ateliers).
 - Phase 5 : pages légales, 404, llms.txt, Pages CMS, README, audit complet.

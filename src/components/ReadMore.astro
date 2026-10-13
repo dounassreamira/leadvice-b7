@@ -1,0 +1,26 @@
+---
+/* Maillage interne d'une page levier : deux articles et l'étude de cas. */
+import { getEntry } from 'astro:content';
+import { site } from '../lib/content';
+interface Props { slugs: string[] }
+const { slugs } = Astro.props;
+const l = await site('leviers');
+const arts = (await Promise.all(slugs.map((s) => getEntry('insights', s)))).filter((a) => !!a);
+---
+<section class="wrap sec sec-top0 readmore">
+  <h2 class="legend rm-t">{l.commun.lire}</h2>
+  <ul>
+    {arts.map((a) => <li><a href={`/insights/${a.id}/`}><span class="rm-cat">{a.data.category}</span><b>{a.data.title}</b></a></li>)}
+    <li><a href="/realisations/kettani-immobilier/"><span class="rm-cat">Réalisations</span><b>{l.commun.cas}</b></a></li>
+  </ul>
+</section>
+<style>
+  .rm-t { font: 400 var(--fs-legend) var(--sans); letter-spacing: 0; margin-bottom: 16px; }
+  ul { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+  li { border-bottom: 1px solid var(--line); }
+  a { display: grid; grid-template-columns: minmax(120px, 2fr) minmax(0, 8fr); gap: 8px 32px; padding: 20px 0; text-decoration: none; align-items: baseline; }
+  b { font: 700 clamp(1.15rem, 1rem + .6vw, 1.5rem)/1.2 var(--display); letter-spacing: -.015em; transition: color var(--t-fast); }
+  a:hover b, a:focus-visible b { color: var(--signal); }
+  .rm-cat { font: 400 var(--fs-small) var(--sans); color: var(--ink-2); }
+  @media (max-width: 640px) { a { grid-template-columns: 1fr; } }
+</style>

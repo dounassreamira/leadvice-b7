@@ -282,6 +282,28 @@ $$<HTMLAnchorElement>('[data-replay]').forEach((a) => a.addEventListener('click'
   }
 }));
 
+/* ---------- filtres (Réalisations, Insights) : sans JavaScript, tout reste affiché ---------- */
+$$('[data-filters]').forEach((bar) => {
+  const scope = document.querySelector(bar.dataset.filters ?? '');
+  if (!scope) return;
+  bar.addEventListener('click', (e) => {
+    const b = (e.target as Element).closest<HTMLButtonElement>('button[data-f]');
+    if (!b) return;
+    $$('button[data-f]', bar).forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+    const f = b.dataset.f ?? 'all';
+    let n = 0;
+    $$('[data-cat]', scope).forEach((it) => { const show = f === 'all' || (it.dataset.cat ?? '').split(' ').includes(f); it.hidden = !show; if (show) n++; });
+    announce(n + (n > 1 ? ' éléments affichés' : ' élément affiché'));
+    document.dispatchEvent(new CustomEvent('lv:refresh'));
+  });
+});
+
+/* ---------- FAQ : une seule question ouverte à la fois sur mobile ---------- */
+$$<HTMLDetailsElement>('[data-faq] details').forEach((d) => d.addEventListener('toggle', () => {
+  if (!d.open || innerWidth >= 760) return;
+  d.parentElement?.querySelectorAll<HTMLDetailsElement>('details[open]').forEach((o) => { if (o !== d) o.open = false; });
+}));
+
 /* ---------- cookies, UTM ---------- */
 captureUtm();
 initConsent();

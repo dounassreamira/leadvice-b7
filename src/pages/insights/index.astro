@@ -1,0 +1,47 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHero from '../../components/PageHero.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import { page } from '../../lib/content';
+import { articles, readingTime } from '../../lib/insights';
+import { coverSVG } from '../../lib/cover';
+import '../../styles/pages/levier.css';
+
+const d = await page('insights');
+const list = await articles();
+const crumb = [{ name: 'Accueil', url: '/' }, { name: d.fil, url: '/insights/' }];
+const itemList = { '@type': 'ItemList', itemListElement: list.map((a, i) => ({ '@type': 'ListItem', position: i + 1, url: `https://leadvice.org/insights/${a.id}/`, name: a.data.title })) };
+---
+<Base title={d.seo.title} description={d.seo.description} og={d.seo.og} section="ins" crumb={crumb} jsonld={[itemList]}>
+  <PageHero crumb={crumb} h1={d.h1} lead={d.reponse} field="lines" />
+  <section class="wrap arts-sec">
+    <div class="fil" data-filters="#arts" role="group" aria-label={d.filtres.aria}>
+      <button type="button" data-f="all" aria-pressed="true">{d.filtres.tout}</button>
+      {(d.filtres.liste as string[]).map((c) => <button type="button" data-f={c} aria-pressed="false">{c}</button>)}
+    </div>
+    <div id="arts">
+      {list.map((a) => (
+        <a class="art" href={`/insights/${a.id}/`} data-cat={a.data.category}>
+          <h2>{a.data.title}</h2>
+          <div class="meta">
+            <Fragment set:html={coverSVG(a.id, a.data.category, d.article.couverture)} />
+            <span>{a.data.category}</span><span>{d.par} {a.data.author}</span><span>{readingTime(a)} {d.lecture}</span>
+          </div>
+          <p class="ex">{a.data.excerpt}</p>
+        </a>
+      ))}
+    </div>
+  </section>
+  <CtaBand titre={d.cloture.titre} texte={d.cloture.texte} />
+</Base>
+<style>
+  .arts-sec { padding-bottom: 120px; }
+  .art { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 3fr); gap: 16px 48px; padding: 36px 0; align-items: start; text-decoration: none; color: inherit; border-top: 1px solid var(--line); }
+  .art:last-child { border-bottom: 1px solid var(--line); }
+  .art h2 { font-size: clamp(1.7rem, 1.2rem + 1.8vw, 2.8rem); transition: color .3s; }
+  .art:hover h2, .art:focus-visible h2 { color: var(--signal); }
+  .meta { color: var(--ink-2); font-size: .9rem; display: flex; flex-direction: column; gap: 4px; grid-row: span 2; font-family: var(--sans); }
+  .meta :global(.cover) { display: block; width: 100%; max-width: 340px; height: auto; aspect-ratio: 16 / 9; border-radius: var(--r-sharp); margin-bottom: 14px; }
+  .ex { color: var(--ink-2); grid-column: 1; max-width: 60ch; }
+  @media (max-width: 820px) { .art { grid-template-columns: 1fr; } .meta { grid-row: auto; } }
+</style>

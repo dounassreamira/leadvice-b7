@@ -1,0 +1,17 @@
+---
+/* En-tête de page intérieure : fil d'Ariane, titre, réponse directe, action. */
+import Crumb from './Crumb.astro';
+import { site } from '../lib/content';
+interface Props { crumb: { name: string; url: string }[]; h1: string; lead?: string; cta?: boolean; field?: 'grid' | 'two' | 'lines'; class?: string; h1Class?: string }
+const { crumb, h1, lead, cta = false, field, class: cls, h1Class } = Astro.props;
+const s = await site();
+const l = await site('leviers');
+---
+<section class:list={['wrap phero', cls]}>
+  {field && <canvas class="pfield" data-pfield={field} aria-hidden="true"></canvas>}
+  <Crumb items={crumb} />
+  <h1 data-rise class={h1Class} set:html={h1} />
+  {lead && <p class="lead" set:html={lead} />}
+  <slot />
+  {cta && <div class="acts"><a class="btn btn-main" href="/diagnostic/">{s.cta.principal}</a><span class="small">{l.commun.cta_court}</span></div>}
+</section>

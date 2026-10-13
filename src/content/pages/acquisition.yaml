@@ -1,0 +1,170 @@
+seo:
+  title: Génération de leads, Meta Ads et Google Ads au Maroc | Leadvice
+  description: 'Campagnes Meta Ads et Google Ads, génération de leads qualifiés, formulaires qui trient avant de compter : moins de 1 $ par lead en moyenne sur Meta Ads chez nos clients.'
+  og: acquisition
+fil: Acquisition
+h1: Le bon message devant les bonnes personnes.
+reponse: Leadvice conçoit et gère vos campagnes d'acquisition sur Meta Ads et Google Ads, de la structure des campagnes au suivi des leads. Notre objectif n'est pas le volume de contacts, c'est le nombre de prospects avec qui vos commerciaux ont envie de parler.
+scene:
+  nom: target
+  len: 300
+  aria: Du public aux leads qualifiés
+  legende: Du public aux leads qualifiés
+  etapes:
+  - texte: Parler à tout le monde coûte cher.
+    de: 0.03
+    a: 0.3
+  - texte: Le ciblage garde ceux qui ont un projet.
+    de: 0.3
+    a: 0.58
+  - texte: Le formulaire trie avant de compter.
+    de: 0.58
+    a: 0.86
+  - texte: Moins de contacts. De meilleurs contacts.
+    de: 0.86
+    a: 1.0
+faisons:
+  titre: Ce que nous faisons.
+  intro: Chaque mission est menée par les fondatrices, de l'analyse aux décisions.
+  items:
+  - titre: Meta Ads (Facebook et Instagram)
+    texte: 'Nous structurons vos campagnes en entonnoir : faire connaître, faire considérer, faire agir. Chaque étape a ses audiences, ses messages et son budget.'
+  - titre: Google Ads
+    texte: Search pour capter ceux qui cherchent déjà une solution comme la vôtre, Display pour rester présent pendant leur réflexion.
+  - titre: Génération de leads
+    texte: 'Des formulaires conçus pour qualifier : objectif, rôle, budget, situation actuelle. Vos équipes reçoivent moins de contacts inutiles et savent qui rappeler en premier.'
+  - titre: Ciblage et segmentation
+    texte: Nous construisons des audiences précises, par intérêt, par comportement et à partir de vos propres données, et nous excluons celles qui coûtent sans convertir.
+  - titre: Media buying
+    texte: Répartition du budget entre canaux, campagnes et audiences, ajustée chaque semaine selon ce qui produit des clients, pas des clics.
+pour_vous:
+  titre: Est-ce pour vous ?
+  situations:
+  - « Vos campagnes génèrent des leads, mais vos commerciaux passent leurs journées à appeler des personnes qui n'achèteront pas. »
+  - « Votre coût par lead augmente et personne ne sait vraiment pourquoi. »
+  - « Vous voulez lancer l'acquisition en ligne sérieusement, avec une structure qui tienne quand le budget augmente. »
+comment:
+  titre: Comment nous travaillons.
+  texte: 'Nous commençons par la fin : ce qu''est un bon client pour vous. Nous construisons ensuite les campagnes, les formulaires et le suivi qui permettent de le trouver, puis nous lisons les chiffres chaque semaine avec vous pour déplacer le budget là où il rapporte.'
+faq:
+  titre: Vos questions.
+  questions:
+  - q: Quel budget publicitaire faut-il prévoir ?
+    a:
+    - Il dépend de votre marché, de votre panier moyen et du nombre de clients que vous visez. Nous le calculons avec vous à partir de vos objectifs, pas l'inverse. Le budget publicitaire est payé directement aux plateformes, séparément de nos honoraires.
+  - q: Comment faites-vous pour obtenir des leads de qualité ?
+    a:
+    - 'En triant avant de compter : des audiences précises, des messages qui attirent les bonnes personnes et repoussent les autres, et des formulaires qui posent les questions utiles. Nous suivons ensuite ce que deviennent les leads, pas seulement leur nombre.'
+  - q: Les comptes publicitaires nous appartiennent-ils ?
+    a:
+    - Oui. Les campagnes sont gérées dans vos comptes Meta et Google, ou dans des comptes créés à votre nom. Les données et l'historique restent chez vous.
+  - q: Pouvez-vous aussi créer nos pages de destination ?
+    a:
+    - Oui. Une campagne qui renvoie vers une page pensée pour elle convertit mieux qu'une page d'accueil générale. Nous concevons ces pages, ou un site complet, dans notre offre <a class="tlink" href="/expertises/sites-web/">Sites web</a>.
+  - q: En combien de temps arrivent les premiers leads ?
+    a:
+    - Souvent dans les jours qui suivent le lancement. Pour juger une campagne et l'optimiser sérieusement, il faut en revanche quelques semaines de données.
+cloture:
+  titre: Parlons de votre croissance.
+  texte: 45 minutes, offert. Nous regardons vos campagnes, vos chiffres et votre offre. Vous repartez avec ce qui freine votre acquisition et par quoi commencer.
+suivante: pilotage
+service: Génération de leads, Meta Ads et Google Ads
+lire:
+- plus-de-leads-ne-veut-pas-dire-plus-de-clients
+- meta-ads-ou-google-ads
+parcours:
+  titre: Du brief au client signé.
+  intro: Une campagne immobilière fictive, suivie de bout en bout. Chaque étape correspond à un de nos leviers.
+  etapes:
+    - { levier: Stratégie, titre: Le brief, texte: Un objectif, une cible, un message. }
+    - { levier: Création, titre: "L'annonce", texte: Un visuel et une phrase qui parlent à la cible. }
+    - { levier: Acquisition, titre: La diffusion, texte: Sortir du fil, devant les bonnes personnes. }
+    - { levier: Sites web, titre: Le formulaire, texte: Trois champs, pas neuf. }
+    - { levier: Pilotage, titre: Le lead, texte: Qualifié, transmis, suivi. }
+    - { levier: Résultat, titre: Le client, texte: Ce que vous vouliez au départ. }
+  brief:
+    etiquette: Brief de campagne
+    titre: Remplir les visites du samedi
+    lignes:
+      - { k: Cible, v: Primo-accédants, 28 à 40 ans, Casablanca et alentours }
+      - { k: Message, v: Un trois pièces accessible, à visiter ce week-end }
+      - { k: Indicateur, v: Visites confirmées, pas seulement des clics }
+  annonce:
+    etiquette: Sponsorisé
+    titre: Votre trois pièces, à 25 minutes du centre
+    texte: Visites ce samedi. Réservez votre créneau.
+    bouton: Réserver une visite
+  formulaire:
+    etiquette: Page de la résidence
+    titre: Réservez votre visite de samedi
+    champs:
+      - { k: Prénom, v: Salma }
+      - { k: Téléphone, v: "06 •• •• •• ••" }
+      - { k: Créneau, v: "Samedi, 11 h" }
+    bouton: Réserver ma visite
+  lead:
+    etiquette: Tableau de suivi
+    titre: Nouveau lead
+    statut: Qualifié
+    lignes:
+      - { k: Source, v: "Meta, campagne visites samedi" }
+      - { k: Projet, v: "Résidence principale, trois pièces" }
+      - { k: Suite, v: "Rappel par l'équipe commerciale" }
+  fin:
+    titre: Visite confirmée.
+    texte: "Samedi, 11 h. Le brief disait : des visites, pas des clics."
+
+simulateur:
+  titre: Simulez le chemin de votre budget.
+  intro: "Bougez les curseurs : le schéma montre ce que deviennent vos dirhams, du budget publicitaire jusqu'aux ventes."
+  onglets_aria: "Type d'activité"
+  modes:
+    lead:
+      onglet: Vous cherchez des prospects
+      etapes: [Budget investi, Publicité, Clients signés, "Chiffre d'affaires"]
+      champs:
+        - { id: budget, label: Budget publicitaire mensuel, min: 2000, max: 200000, pas: 1000, defaut: 10000, unite: " MAD" }
+        - { id: cpl, label: Coût par lead, min: 3, max: 60, pas: 1, defaut: 10, unite: " MAD" }
+        - { id: q, label: Leads qualifiés, min: 10, max: 95, pas: 1, defaut: 70, unite: " %" }
+        - { id: c, label: Leads qualifiés qui signent, min: 1, max: 50, pas: 1, defaut: 10, unite: " %" }
+        - { id: v, label: "Valeur d'un client", min: 500, max: 100000, pas: 500, defaut: 5000, unite: " MAD" }
+      resultats: ["leads reçus par mois", "par lead, soit environ {usd} $", nouveaux clients par mois, pour gagner un client, "de chiffre d'affaires généré", chaque dirham investi rapporte]
+      phrase: "Avec ces réglages, <b>{budget} MAD</b> de publicité deviennent <b>{n} clients</b> et <b>{ca} MAD</b> de chiffre d'affaires, soit <b>× {x}</b>."
+    ecom:
+      onglet: Vous vendez en ligne
+      etapes: [Budget investi, Publicité, Commandes livrées, "Chiffre d'affaires livré"]
+      champs:
+        - { id: budget, label: Budget publicitaire mensuel, min: 2000, max: 200000, pas: 1000, defaut: 10000, unite: " MAD" }
+        - { id: cpc, label: Coût par visite, min: 0.3, max: 5, pas: 0.1, defaut: 1.2, unite: " MAD" }
+        - { id: cr, label: Taux de conversion, min: 0.3, max: 8, pas: 0.1, defaut: 4, unite: " %" }
+        - { id: dl, label: "Commandes livrées (paiement à la livraison)", min: 40, max: 100, pas: 1, defaut: 92, unite: " %" }
+        - { id: pm, label: Panier moyen, min: 100, max: 3000, pas: 10, defaut: 450, unite: " MAD" }
+      resultats: [visites, commandes par mois, commandes livrées, par commande livrée, "de chiffre d'affaires livré", chaque dirham investi rapporte]
+      phrase: "Avec ces réglages, <b>{budget} MAD</b> de publicité deviennent <b>{n} commandes livrées</b> et <b>{ca} MAD</b> de chiffre d'affaires, soit <b>× {x}</b>."
+  cta_aide: "Diagnostic offert : nous refaisons ce calcul avec vos données réelles."
+  note: "Simulation indicative, réglée par défaut sur notre coût moyen par lead constaté sur Meta Ads (moins de 1 $, soit environ 10 MAD). Les taux réels dépendent de votre secteur, de votre offre et de vos campagnes : nous les estimons avec vous pendant le diagnostic."
+
+chiffres:
+  retenus: ["< 1 $", "1 à 2 $", "+1 000", "126"]
+  note: Le coût par lead varie selon le secteur et le prix de ce que vous vendez. Le chiffre qui compte vraiment est le coût par client.
+
+plan:
+  titre: Le plan que vous recevez.
+  document: Plan de campagne, acquisition
+  pour: "Préparé pour : votre entreprise"
+  exemple: "Exemple : lancement d'un programme immobilier"
+  blocs:
+    - { titre: Objectif, texte: "Des visites confirmées sur le programme, chaque semaine, pendant la commercialisation." }
+    - { titre: Cible, texte: "Primo-accédants et familles, Casablanca et sa périphérie." }
+    - { titre: Message, texte: "Le prix d'entrée, la distance au centre, la visite du samedi." }
+    - { titre: Canaux, taille: w3, liste: ["Meta : formulaires instantanés et vidéos courtes", "Google : recherches avec intention d'achat", "Page de la résidence, pensée pour la réservation"] }
+    - { titre: Indicateurs suivis, taille: w3, liste: ["Coût par lead, par canal", Part de leads qualifiés, Visites confirmées et ventes] }
+  calendrier:
+    titre: Calendrier
+    aria: "Création en semaines 1 et 2, lancement de la semaine 2 à la semaine 4, bilan en semaine 4"
+    semaines: [S1, S2, S3, S4]
+    lignes:
+      - { nom: Création, de: 1, a: 2 }
+      - { nom: Lancement, de: 2, a: 4 }
+      - { nom: Bilan, de: 4, a: 4, jaune: true }
+  tampon: Ce que vous recevez après le diagnostic

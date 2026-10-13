@@ -1,0 +1,41 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHero from '../../components/PageHero.astro';
+import LeverRows from '../../components/LeverRows.astro';
+import SceneSection from '../../components/SceneSection.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import { page, site, type Data } from '../../lib/content';
+import '../../styles/pages/levier.css';
+
+const d = await page('expertises');
+const s = await site();
+const l = await site('leviers');
+const crumb = [{ name: 'Accueil', url: '/' }, { name: d.fil, url: '/expertises/' }];
+const all = [...(l.liste as Data[]), ...(l.complement as Data[])];
+---
+<Base title={d.seo.title} description={d.seo.description} og={d.seo.og} section="exp" crumb={crumb}>
+  <PageHero crumb={crumb} h1={d.h1} lead={d.reponse} cta>
+    <nav class="jump" aria-label={d.acces_aria}>{all.map((x) => <a href={x.url}>{x.nom}</a>)}</nav>
+  </PageHero>
+
+  <section class="wrap sec sec-top0">
+    <LeverRows level="h2" />
+    <p class="legend comp">{d.complement}</p>
+    <LeverRows complement level="h2" />
+  </section>
+
+  <section class="wrap sec sec-top0">
+    <h2 data-rise class="h-gap-l">{d.formats.titre}</h2>
+    <div class="stack" data-stack>
+      {(d.formats.cartes as Data[]).map((c, i) => <div class="card" style={`top:${110 + i * 22}px`}><h3>{c.titre}</h3><p>{c.texte}</p></div>)}
+    </div>
+    <div class="mt-l"><a class="btn btn-main" href="/diagnostic/">{s.cta.principal}</a></div>
+  </section>
+
+  <SceneSection nom="loop" len={d.boucle.len} aria={d.boucle.aria} legende={d.boucle.legende} etapes={d.boucle.etapes} />
+
+  <CtaBand titre={d.cloture.titre} texte={d.cloture.texte} />
+</Base>
+<style>
+  .comp { margin: 56px 0 16px; }
+</style>

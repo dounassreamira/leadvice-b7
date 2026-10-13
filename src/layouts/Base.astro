@@ -23,10 +23,12 @@ interface Props {
   fab?: boolean;
   ogType?: 'website' | 'article';
   bodyClass?: string;
+  progress?: boolean;
+  search?: boolean;
 }
 const {
   title, description, og = 'accueil', section = '', page = '', noindex = false, jsonld = [], crumb,
-  minimal = false, thread = true, fab = true, ogType = 'website', bodyClass,
+  minimal = false, thread = true, fab = true, ogType = 'website', bodyClass, progress = false, search = !noindex,
 } = Astro.props;
 const s = await site();
 const path = Astro.url.pathname;
@@ -69,10 +71,10 @@ const ld = JSON.stringify({ '@context': 'https://schema.org', '@graph': graph })
   <script type="application/ld+json" set:html={ld} />
   <slot name="head" />
 </head>
-<body class={bodyClass} data-section={section || undefined}>
+<body class={bodyClass} data-section={section || undefined} data-progress={progress ? '' : undefined}>
   <a class="skip" href="#contenu">{s.entete.evitement}</a>
   <Header s={s} section={section} path={path} minimal={minimal} />
-  <main id="contenu" tabindex="-1" data-thread={thread ? '' : undefined}>
+  <main id="contenu" tabindex="-1" data-thread={thread ? '' : undefined} data-pagefind-body={search ? '' : undefined}>
     <slot />
   </main>
   <Footer s={s} minimal={minimal} />

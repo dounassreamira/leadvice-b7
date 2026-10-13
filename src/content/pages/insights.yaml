@@ -1,0 +1,31 @@
+seo:
+  title: Insights | Stratégie, acquisition et création marketing | Leadvice
+  description: Analyses et méthodes de Leadvice sur la stratégie marketing, la génération de leads, Meta Ads, Google Ads et la création publicitaire au Maroc.
+  og: insights
+fil: Insights
+h1: Ce que nous avons appris.
+reponse: Nos analyses sur la stratégie, l'acquisition et la création, tirées de ce que nous voyons chaque semaine dans les campagnes de nos clients.
+filtres:
+  aria: Filtrer par thème
+  tout: Tout
+  liste:
+  - Stratégie
+  - Acquisition
+  - Création
+  - Business
+par: Par
+lecture: min de lecture
+cloture:
+  titre: Vous voulez qu'on regarde vos propres chiffres ?
+  texte: 45 minutes, offert. Nous regardons vos campagnes, vos chiffres et votre offre. Vous repartez avec ce qui freine votre acquisition et par quoi commencer.
+article:
+  sommaire: Sommaire
+  publie: Publié le
+  maj: Mis à jour le
+  copier: Copier le lien
+  copie: Copié
+  fin_titre: Vous voulez qu'on regarde vos propres chiffres ?
+  fin_texte: 45 minutes, offert. Nous regardons vos campagnes, vos chiffres et votre offre.
+  aussi: À lire aussi.
+  expertise: Expertise liée
+  couverture: Illustration de l'article

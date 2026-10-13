@@ -1,0 +1,11 @@
+---
+/* Stratégie, Création, Pilotage, Sites web (Acquisition a sa propre page, avec ses scènes et son simulateur). */
+import LevierPage from '../../components/LevierPage.astro';
+import { page } from '../../lib/content';
+export function getStaticPaths() {
+  return ['strategie', 'creation', 'pilotage', 'sites-web'].map((levier) => ({ params: { levier } }));
+}
+const { levier } = Astro.params;
+const d = await page(levier as string);
+---
+<LevierPage d={d} path={`/expertises/${levier}/`} />

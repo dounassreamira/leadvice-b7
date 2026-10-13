@@ -1,0 +1,91 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import Faq from '../components/Faq.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { Picture } from 'astro:assets';
+import { page, site, type Data } from '../lib/content';
+import { portrait } from '../lib/images';
+import { faqPage } from '../lib/schema';
+import '../styles/pages/levier.css';
+
+const d = await page('cabinet');
+const f = (await site('fondatrices')).liste as Data[];
+const m = (await site('methode')).etapes as Data[];
+const crumb = [{ name: 'Accueil', url: '/' }, { name: d.fil, url: '/cabinet/' }];
+const speeds = ['-0.12', '0.00', '0.12'];
+const persons = f.map((x, i) => ({ '@type': 'Person', name: x.nom, jobTitle: x.role.replace(/\.$/, ''), worksFor: { '@id': 'https://leadvice.org/#org' }, sameAs: [x.linkedin], description: d.fondatrices.bios[i]?.texte }));
+---
+<Base title={d.seo.title} description={d.seo.description} og={d.seo.og} section="cab" crumb={crumb} jsonld={[...persons, faqPage(d.faq.questions)]}>
+  <PageHero crumb={crumb} h1={d.h1} lead={d.reponse} cta field="two" />
+
+  <section class="wrap man" id="manifeste">
+    <h2 data-rise class="h-gap-s">{d.manifeste.titre}</h2>
+    {(d.manifeste.lignes as Data[]).map((l) => <div class="man-row" data-man><p>{l.non}</p><p class="b">{l.oui}</p></div>)}
+  </section>
+
+  <section class="wrap sec sec-top0">
+    <div class="split"><div class="stick"><h2 data-rise>{d.difference.titre}</h2></div><p class="big-text c-big" data-light>{d.difference.texte}</p></div>
+  </section>
+
+  <section class="wrap sec sec-top0">
+    <h2 data-rise class="h-gap">{d.engagement.titre}</h2>
+    <div class="sits">
+      {(d.engagement.points as Data[]).map((x, i) => <div class="sit" data-speed={speeds[i]}><p>{x.titre}</p><p class="sit-sub">{x.texte}</p></div>)}
+    </div>
+  </section>
+
+  <section class="wrap sec sec-top0">
+    <h2 data-rise class="h-gap-l">{d.methode.titre}</h2>
+    <div class="stack" data-stack>
+      {m.map((e, i) => <div class="card num" style={`top:${110 + i * 18}px`}><span class="n">{i + 1}</span><h3>{e.nom}</h3><p>{d.methode.textes[i]}</p></div>)}
+    </div>
+  </section>
+
+  <section class="wrap sec sec-top0">
+    <h2 data-rise class="h-gap-l" style="max-width:18ch">{d.fondatrices.titre}</h2>
+    <div class="bios">
+      {f.map((x, i) => (
+        <div class="bio">
+          <div class="arch" data-speed="0.1"><Picture src={portrait(x.photo)} alt={x.alt} widths={[360, 540, 720]} sizes="(max-width: 1000px) 40vw, 18vw" formats={['avif', 'webp']} fallbackFormat="webp" loading="lazy" decoding="async" /></div>
+          <div>
+            <h3>{x.nom}</h3>
+            <p class="small bio-role">{x.role} {x.univers}</p>
+            <p>{d.fondatrices.bios[i].texte}</p>
+            <p class="mt-s"><a class="tlink" href={x.linkedin} rel="noopener" target="_blank">{d.fondatrices.bios[i].lien}<span class="sr-only"> (nouvel onglet)</span></a></p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <Faq titre={d.faq.titre} questions={d.faq.questions} />
+  <CtaBand titre={d.cloture.titre} texte={d.cloture.texte} />
+</Base>
+<style>
+  .man { padding-block: 0 clamp(96px, 12vw, 180px); }
+  .man-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px 48px; padding: 28px 0; border-top: 1px solid var(--line); align-items: baseline; }
+  .man-row p { font-family: var(--display); font-weight: 700; letter-spacing: var(--tracking-title); font-size: clamp(1.8rem, 1.2rem + 2.4vw, 3.4rem); line-height: 1.05; }
+  .man-row .b { color: var(--brand); clip-path: inset(0 100% 0 0); transition: clip-path .9s var(--ease) .35s; }
+  .man-row.on .b, :global(.no-js) .man-row .b, :global(.rm) .man-row .b { clip-path: inset(0 0 0 0); }
+  .man-row p:first-child { position: relative; width: fit-content; transition: color .6s var(--ease) .1s; }
+  .man-row p:first-child::after { content: ""; position: absolute; left: 0; right: 0; top: 54%; height: 2px; background: var(--ink-3); transform: scaleX(0); transform-origin: left; transition: transform .6s var(--ease); }
+  .man-row.on p:first-child, :global(.no-js) .man-row p:first-child, :global(.rm) .man-row p:first-child { color: var(--muted-text); }
+  .man-row.on p:first-child::after, :global(.no-js) .man-row p:first-child::after, :global(.rm) .man-row p:first-child::after { transform: scaleX(1); }
+  @media (max-width: 760px) { .man-row { grid-template-columns: 1fr; } }
+  .c-big { font-size: clamp(1.4rem, 1.1rem + 1.3vw, 2.3rem); }
+  .sit-sub { font-family: var(--read) !important; font-weight: 400 !important; letter-spacing: 0 !important; font-size: 1rem !important; color: var(--ink-2); margin-top: 14px; line-height: 1.6 !important; }
+  .bios { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px; align-items: start; }
+  .bio { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); gap: 28px; align-items: end; }
+  .bio h3 { font-size: var(--fs-h3); }
+  .bio p { color: var(--ink-2); }
+  .bio-role { margin: 6px 0 16px; }
+  @media (max-width: 1000px) { .bios { grid-template-columns: 1fr; } }
+  @media (max-width: 600px) { .bio { grid-template-columns: 1fr; } .bio .arch { max-width: 280px; } }
+</style>
+<script>
+  /* manifeste : la phrase de gauche se barre, la réponse violette apparaît au défilement */
+  const rows = Array.from(document.querySelectorAll<HTMLElement>('[data-man]'));
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) rows.forEach((r) => r.classList.add('on'));
+  else rows.forEach((r) => { const io = new IntersectionObserver((es) => { if (es[0]?.isIntersecting) { r.classList.add('on'); io.disconnect(); } }, { rootMargin: '0px 0px -35% 0px' }); io.observe(r); });
+</script>

@@ -1,0 +1,21 @@
+---
+/* Rangées de leviers : vignette animée, nom, phrase forte, lien vers la page. */
+import MiniScene from './MiniScene.astro';
+import Icon from './Icon.astro';
+import { site, type Data } from '../lib/content';
+interface Props { keys?: string[]; complement?: boolean; class?: string; level?: 'h2' | 'h3' }
+const { keys, complement = false, class: cls, level = 'h3' } = Astro.props;
+const H = level;
+const l = await site('leviers');
+const all = [...(l.liste as Data[]), ...(l.complement as Data[])];
+const rows = keys ? keys.map((k) => all.find((x) => x.cle === k)).filter(Boolean) as Data[] : (complement ? l.complement : l.liste) as Data[];
+---
+<div class:list={['rows', cls]}>
+  {rows.map((r) => (
+    <a class="row" href={r.url}>
+      <H><MiniScene name={r.scene} />{r.nom}</H>
+      <p><strong>{r.fort}</strong> {r.texte}</p>
+      <span class="go" aria-hidden="true"><Icon name="arrow" /></span>
+    </a>
+  ))}
+</div>

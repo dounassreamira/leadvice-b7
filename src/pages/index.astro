@@ -5,9 +5,8 @@ import CtaBand from '../components/CtaBand.astro';
 import Stats from '../components/Stats.astro';
 import MethodRail from '../components/MethodRail.astro';
 import Founders from '../components/Founders.astro';
-import MiniScene from '../components/MiniScene.astro';
+import LeverRows from '../components/LeverRows.astro';
 import AdVisual from '../components/AdVisual.astro';
-import Icon from '../components/Icon.astro';
 import { Image } from 'astro:assets';
 import { page, site, sceneLabels, type Data } from '../lib/content';
 import { logo } from '../lib/images';
@@ -107,15 +106,7 @@ const o = p.ouverture, a = p.angles, d = p.dirham;
       <h2 data-rise set:html={p.leviers.titre} />
       <a class="tlink" href={p.leviers.lien.url}>{p.leviers.lien.texte}</a>
     </div>
-    <div class="rows">
-      {(p.leviers.rangees as Data[]).map((r) => (
-        <a class="row" href={r.url}>
-          <h3><MiniScene name={r.scene} />{r.nom}</h3>
-          <p><strong>{r.fort}</strong> {r.texte}</p>
-          <span class="go" aria-hidden="true"><Icon name="arrow" /></span>
-        </a>
-      ))}
-    </div>
+    <LeverRows />
     <p class="site-hint" set:html={p.leviers.sites} />
   </section>
 

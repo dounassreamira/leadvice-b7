@@ -1,0 +1,70 @@
+seo:
+  title: Conseil en stratégie marketing à Casablanca | Leadvice
+  description: 'Audit marketing, positionnement, structuration de l''offre et plan d''action : Leadvice clarifie votre stratégie avant d''investir dans l''acquisition.'
+  og: strategie
+fil: Stratégie
+h1: Comprendre<br/>avant d'agir.
+reponse: 'Le conseil en stratégie marketing de Leadvice consiste à clarifier trois choses avant de dépenser en publicité : à qui vous vendez, ce qui vous distingue et par quoi commencer. Nous auditons l''existant, nous tranchons les priorités avec la direction, et nous remettons un plan d''action que vos équipes peuvent exécuter dès le lendemain.'
+scene:
+  nom: knot
+  len: 220
+  aria: Le nœud de décision
+  legende: Le nœud de décision
+  etapes:
+  - texte: Trop d'options. Trop d'avis. Trop de priorités.
+    de: 0.05
+    a: 0.45
+  - texte: Une piste reste. Les autres s'effacent.
+    de: 0.45
+    a: 0.8
+  - texte: Une direction claire.
+    de: 0.8
+    a: 1.0
+faisons:
+  titre: Ce que nous faisons.
+  intro: Chaque mission est menée par les fondatrices, de l'analyse aux décisions.
+  items:
+  - titre: Audit marketing et digital
+    texte: Nous analysons vos campagnes, vos contenus, votre site, votre parcours de conversion et vos chiffres. Nous cherchons ce qui coûte sans rapporter, ce qui marche sans être exploité, et ce qui manque.
+  - titre: Positionnement
+    texte: Nous formulons ce qui vous rend préférable à vos concurrents, dans des mots que vos clients comprennent. Un positionnement clair rend chaque campagne moins chère, parce que le message n'a plus à tout expliquer.
+  - titre: Structuration de l'offre
+    texte: 'Nous aidons à présenter l''offre sous une forme qui se vend : ce qui est mis en avant, ce qui est regroupé, ce qui est retiré.'
+  - titre: Stratégie d'acquisition
+    texte: Quels canaux, pour quelles audiences, avec quels messages et quel budget. Nous construisons l'entonnoir complet, de la première exposition à la signature.
+  - titre: Plan d'action
+    texte: 'Un plan simple, hiérarchisé, actionnable. Pas un document qui finit dans un dossier : une liste de décisions et de chantiers, avec un ordre et des responsables.'
+  - titre: Accompagnement de la direction
+    texte: Nous structurons votre vision, vos offres et votre organisation marketing, et nous restons présents pour les arbitrages.
+pour_vous:
+  titre: Est-ce pour vous ?
+  situations:
+  - « Vous investissez en publicité depuis des mois, les leads arrivent, mais les commerciaux disent qu'ils ne sont pas bons. »
+  - « Vous lancez un nouveau produit, un nouveau programme ou un nouveau marché, et l'équipe n'est pas d'accord sur le message. »
+  - « Plusieurs prestataires travaillent sur votre marketing et personne n'a la vue d'ensemble. »
+comment:
+  titre: Comment nous travaillons.
+  texte: 'Tout commence par un diagnostic : nous écoutons, puis nous analysons. Nous revenons avec un constat et des priorités, que nous discutons avec vous avant de les écrire. Le plan d''action est construit avec vos équipes, pour qu''il soit tenu.'
+faq:
+  titre: Vos questions.
+  questions:
+  - q: Quelle différence entre un audit et un diagnostic ?
+    a:
+    - 'Le diagnostic est un premier échange de 45 minutes, offert, pour identifier ce qui freine votre acquisition. L''audit est une mission complète : nous analysons en profondeur vos campagnes, vos contenus, vos chiffres et votre parcours client, et nous remettons un plan d''action.'
+  - q: Combien de temps dure une mission de stratégie ?
+    a:
+    - Cela dépend du périmètre. Un audit avec plan d'action se mène en quelques semaines. Un accompagnement de la direction sur le positionnement ou l'offre peut s'étendre sur plusieurs mois, avec des points réguliers. Nous fixons le calendrier ensemble dès le départ.
+  - q: Faut-il déjà avoir des campagnes en cours ?
+    a:
+    - Non. Si vous en avez, nous les analysons. Si vous n'en avez pas, nous partons de votre offre, de vos clients actuels et de votre marché pour construire la stratégie avant le premier lancement, ce qui évite de payer pour apprendre.
+  - q: Qui, chez vous, mène la mission ?
+    a:
+    - Les fondatrices, directement. Amira Dounassre intervient sur tout ce qui touche à l'acquisition ; Nada Moujibi pilote les missions de stratégie et d'audit.
+cloture:
+  titre: Parlons de votre croissance.
+  texte: 45 minutes, offert. Nous regardons vos campagnes, vos chiffres et votre offre. Vous repartez avec ce qui freine votre acquisition et par quoi commencer.
+suivante: creation
+service: Conseil en stratégie marketing
+lire:
+- audit-marketing-sept-signes
+- cpl-cpa-cout-par-opportunite

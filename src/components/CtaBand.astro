@@ -5,7 +5,7 @@ interface Props { titre: string; texte?: string; bouton?: string }
 const s = await site();
 const { titre, texte = s.cta.sous_cta, bouton = s.cta.principal } = Astro.props;
 ---
-<section class="violet wrap sec">
+<section class="violet wrap sec" data-pagefind-ignore>
   <div class="cta-band">
     <h2 data-rise set:html={titre} />
     {texte && <p class="lead">{texte}</p>}
