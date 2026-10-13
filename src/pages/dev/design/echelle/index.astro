@@ -1,0 +1,34 @@
+---
+import '../../../../styles/tokens.css';
+import '../../../../styles/base.css';
+/* Échelle typographique seule, affichée dans un cadre de largeur réglable sur /dev/design/. */
+const levels = [
+  ['--fs-display', 'Moins de bruit. Plus de clients.', 'display'],
+  ['--fs-h1', 'Comprendre avant d\'agir.', 'h1'],
+  ['--fs-h2', 'Notre méthode, en cinq temps.', 'h2'],
+  ['--fs-h3', 'Ce que nous faisons', 'h3'],
+  ['--fs-big', 'Le problème n\'est pas toujours l\'offre.', 'big'],
+  ['--fs-stat', '+10 893', 'stat'],
+  ['--fs-lead', 'Cabinet de conseil en stratégie marketing et en acquisition client, à Casablanca.', 'lead'],
+  ['--fs-body', 'Nous commençons par écouter. Puis nous analysons vos publicités, vos contenus et vos performances, pour trouver ce qui freine votre acquisition.', 'body'],
+  ['--fs-ui', 'Demander un diagnostic', 'ui'],
+  ['--fs-small', 'Exemple illustratif : la salle de sport et ses annonces sont fictives.', 'small'],
+  ['--fs-legal', 'Leadvice SARL au capital de 100 000 DH. RC 527921.', 'legal'],
+];
+---
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta name="robots" content="noindex" /><title>Échelle typographique | Leadvice</title>
+<style>
+  body { padding: 24px var(--gut); }
+  .lv { border-top: 1px solid var(--line); padding: 14px 0; display: grid; gap: 6px; }
+  .lv code { font: 500 .75rem var(--sans); color: var(--ink-2); }
+  .display, .h1, .h2, .h3, .big, .stat { font-family: var(--display); letter-spacing: var(--tracking-title); font-weight: 800; line-height: 1; }
+  .h3, .big { font-weight: 700; }
+  .stat { letter-spacing: var(--tracking-stat); font-variant-numeric: tabular-nums; }
+  .lead, .body { font-family: var(--read); line-height: 1.6; max-width: 66ch; }
+  .ui { font: 500 var(--fs-ui) var(--sans); }
+  .small, .legal { font-family: var(--sans); color: var(--ink-2); }
+</style></head>
+<body>
+  {levels.map(([v, t, c]) => <div class="lv"><code>{v}</code><div class={c} style={`font-size:var(${v})`}>{t}</div></div>)}
+</body></html>

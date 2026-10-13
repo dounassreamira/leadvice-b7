@@ -1,0 +1,58 @@
+/* Pages de contrôle (/dev/) : outils internes. */
+@layer pages {
+  .dv-hero { padding-bottom: 40px; }
+  .dv-sec { padding-bottom: 56px; }
+  .dv-h { font-size: var(--fs-h3); margin: 40px 0 14px; }
+  .dv-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: 32px 64px; }
+  .dv-range { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; font-family: var(--sans); margin-bottom: 14px; }
+  .dv-range input { width: min(480px, 100%); accent-color: var(--brand); }
+  .dv-frame { overflow-x: auto; border: 1px solid var(--line); background: var(--white); }
+  .dv-frame iframe { display: block; width: 1440px; max-width: none; height: 720px; border: 0; background: var(--paper); }
+  .dv-sp { display: flex; align-items: center; gap: 12px; margin: 6px 0; }
+  .dv-sp i { display: block; height: 12px; background: var(--signal); }
+  .dv-note { margin-top: 18px; max-width: 60ch; }
+  .dv-note code, .sw code { font-size: .8rem; }
+  .dv-motion { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+  .dv-track { position: relative; height: 24px; width: 100%; border-bottom: 1px dashed var(--line); margin: 6px 0 4px; }
+  .dv-track i { position: absolute; left: 0; top: 6px; width: 12px; height: 12px; border-radius: var(--r-round); background: var(--signal); box-shadow: var(--glow); }
+  .dv-shapes { display: flex; gap: 14px; flex-wrap: wrap; margin: 10px 0 18px; }
+  .dv-sh { display: grid; place-items: center; width: 96px; height: 72px; background: var(--white); border: 1px solid var(--line); font: 500 .85rem var(--sans); }
+  .dv-sh.arch-s { border-radius: var(--r-arch); height: 96px; }
+  .dv-cols { display: grid; grid-template-columns: 1fr 1fr; }
+  .dv-col { padding: 40px var(--gut) 64px; background: var(--paper); color: var(--ink); }
+  @media (max-width: 1000px) { .dv-cols { grid-template-columns: 1fr; } }
+  .sw { display: flex; gap: 14px; align-items: center; margin: 10px 0; }
+  .sw i { width: 44px; height: 44px; border: 1px solid var(--line); flex: none; }
+  .row-c { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 14px 0 20px; }
+  .grid-c { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; margin: 14px 0 20px; }
+  .dv-mt { margin-top: 16px; }
+  .dv-violet { background: var(--violet-bg); padding: 16px; }
+  .dv-hl { font: 800 var(--fs-h2)/1.05 var(--display); letter-spacing: var(--tracking-title); margin-top: 20px; }
+  .dv-rail { max-width: 520px; }
+  .dv-srch { padding: 0; max-width: 520px; background: var(--paper); border: 1px solid var(--line); }
+  .dv-static { position: static !important; transform: none !important; opacity: 1 !important; visibility: visible !important; pointer-events: auto !important; margin: 12px 0 20px; }
+  .fab.dv-static { display: inline-flex; }
+  .cf.dv-static { display: block; box-shadow: var(--shadow-1); }
+  .btn-main.is-hover { background: var(--btn-hover); }
+  .btn-ghost.is-hover { background: var(--ink); color: var(--paper); }
+  .btn.is-focus, .tlink.is-focus { outline: 3px solid var(--signal); outline-offset: 3px; }
+  .btn.is-active { transform: var(--press); }
+  .tlink.is-hover { background-size: 0 1px; }
+  .fld input.is-focus { outline: 2px solid var(--brand); outline-offset: 1px; border-color: var(--brand); }
+  .dv-grid { position: fixed; inset: 0; z-index: 150; pointer-events: none; display: grid; grid-template-columns: repeat(12, 1fr); gap: 24px; padding-inline: var(--gut); }
+  .dv-grid i { background: rgba(107, 78, 255, .08); border-inline: 1px solid rgba(107, 78, 255, .25); }
+  @media (max-width: 1023px) { .dv-grid { grid-template-columns: repeat(8, 1fr); gap: 20px; } .dv-grid i:nth-child(n+9) { display: none; } }
+  @media (max-width: 639px) { .dv-grid { grid-template-columns: repeat(4, 1fr); gap: 16px; } .dv-grid i:nth-child(n+5) { display: none; } }
+  .dv-anim { display: grid; gap: 1px; background: var(--line); border-block: 1px solid var(--line); }
+  .dv-anim > article { background: var(--paper); position: relative; }
+  .dv-anim-h { position: absolute; z-index: 2; left: var(--gut); top: 24px; right: var(--gut); display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; pointer-events: none; }
+  .dv-anim-h h2 { font-size: var(--fs-h3); }
+  .dv-anim-h p { max-width: 46ch; }
+  .dv-box { height: min(80vh, 680px); position: relative; }
+  .dv-box canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .dv-ctl { position: absolute; z-index: 2; left: var(--gut); right: var(--gut); bottom: 20px; display: flex; gap: 14px; align-items: center; font-family: var(--sans); }
+  .dv-ctl input { flex: 1; accent-color: var(--brand); }
+  .dv-minis { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; padding: 24px var(--gut) 40px; }
+  .dv-minis figure { margin: 0; display: flex; flex-direction: column; gap: 8px; align-items: center; }
+  .dv-minis canvas { width: 96px; height: 96px; }
+}

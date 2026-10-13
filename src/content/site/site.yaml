@@ -1,0 +1,126 @@
+# Éléments communs à toutes les pages (en-tête, menu, pied de page, bouton flottant).
+# Modifiable depuis Pages CMS : chaque enregistrement republie le site.
+nom: Leadvice
+url: https://leadvice.org
+description_courte: Cabinet de conseil en stratégie marketing et acquisition client à Casablanca.
+slogan_pied: Conseil stratégique & marketing
+email: contact@leadvice.org
+instagram:
+  libelle: Instagram
+  compte: "@theleadvice"
+  url: https://www.instagram.com/theleadvice/
+legal:
+  raison_sociale: LEADVICE SARL
+  capital: 100 000 DH
+  adresse: Hay Laayoune, angle rue Ait Yaflmane, Fida n° 341, 2ᵉ étage
+  ville: Casablanca
+  pays: Maroc
+  rc: "527921"
+  ice: "002978060000045"
+  if: "51669892"
+  patente: "33501510"
+  cnss: "4200083"
+  ligne_pied: "Leadvice SARL au capital de 100 000 DH. RC 527921, ICE 002978060000045, IF 51669892. Hay Laayoune, angle rue Ait Yaflmane, Fida n° 341, 2ᵉ étage, Casablanca. © 2026 Leadvice SARL."
+fondatrices:
+  - nom: Amira Dounassre
+    linkedin: https://www.linkedin.com/in/amiradounassre
+  - nom: Nada Moujibi
+    linkedin: https://www.linkedin.com/in/nada-moujibi
+
+cta:
+  principal: Demander un diagnostic
+  navigation: Demander un diagnostic
+  sous_cta: 45 minutes, offert. Réponse sous un jour ouvré.
+
+navigation:
+  - { url: /expertises/, libelle: Expertises, cle: exp }
+  - { url: /realisations/, libelle: Réalisations, cle: rea }
+  - { url: /cabinet/, libelle: Le cabinet, cle: cab }
+  - { url: /insights/, libelle: Insights, cle: ins }
+  - { url: /ateliers/, libelle: Ateliers, cle: ate }
+
+sous_menu_expertises:
+  bouton: Afficher les expertises
+  liens:
+    - { url: /expertises/, libelle: Vue d'ensemble, aide: Les leviers et comment ils travaillent ensemble }
+    - { url: /expertises/strategie/, libelle: Stratégie, aide: Comprendre avant d'agir }
+    - { url: /expertises/creation/, libelle: Création, aide: Le message qui fait agir }
+    - { url: /expertises/acquisition/, libelle: Acquisition, aide: "Meta Ads, Google Ads, leads qualifiés" }
+    - { url: /expertises/pilotage/, libelle: Pilotage, aide: Des chiffres qui deviennent des décisions }
+    - { url: /expertises/sites-web/, libelle: Sites web, aide: Des pages qui transforment les visites en demandes }
+
+menu_mobile:
+  ouvrir: Menu
+  fermer: Fermer
+  accueil: Accueil
+
+entete:
+  logo_aria: Leadvice, accueil
+  nav_aria: Navigation principale
+  recherche_aria: Rechercher sur le site
+  sombre: Passer en mode sombre
+  clair: Passer en mode clair
+  evitement: Aller au contenu
+
+pied:
+  titre: Le bon client est déjà quelque part. Allons le chercher.
+  colonnes:
+    - titre: Le cabinet
+      liens:
+        - { url: /expertises/, libelle: Expertises }
+        - { url: /realisations/, libelle: Réalisations }
+        - { url: /cabinet/, libelle: Le cabinet }
+        - { url: /insights/, libelle: Insights }
+        - { url: /ateliers/, libelle: Ateliers }
+    - titre: Expertises
+      liens:
+        - { url: /expertises/strategie/, libelle: Stratégie }
+        - { url: /expertises/creation/, libelle: Création }
+        - { url: /expertises/acquisition/, libelle: Acquisition }
+        - { url: /expertises/pilotage/, libelle: Pilotage }
+        - { url: /expertises/sites-web/, libelle: Sites web }
+    - titre: Parlons-en
+      contact: true
+      liens:
+        - { url: /diagnostic/, libelle: Demander un diagnostic }
+    - titre: Informations
+      liens:
+        - { url: /mentions-legales/, libelle: Mentions légales }
+        - { url: /confidentialite/, libelle: Confidentialité }
+        - { url: /cookies/, libelle: Cookies }
+  revoir_ouverture: Revoir l'ouverture
+  gerer_cookies: Gérer les cookies
+  copier: Copier
+  copie: Copié
+
+flottant:
+  titre: Demander un diagnostic
+  sous_titre: 45 minutes, offert
+
+retour_haut: Revenir en haut de la page
+
+cookies:
+  texte: Nous mesurons l'audience et l'efficacité de nos publicités seulement si vous l'acceptez.
+  lien: En savoir plus
+  refuser: Refuser
+  accepter: Accepter
+  personnaliser: Personnaliser
+  legende: Choisissez ce que vous acceptez
+  necessaires: "Nécessaires : vos choix et la protection du formulaire. Toujours actifs."
+  mesure: Mesure d'audience (Google Analytics).
+  publicite: Publicité (Meta, Google Ads, LinkedIn).
+  enregistrer: Enregistrer mes choix
+
+recherche:
+  titre: Recherche
+  fermer: Échap
+  vide: "Tapez un mot : par exemple « coût par lead », « angle » ou « site »."
+  aucun: Aucun résultat. Essayez un autre mot, ou parlons-en directement.
+  aucun_lien: Demander un diagnostic
+  chargement: Chargement de l'index
+
+confirmation_sortie:
+  titre: Vous avez commencé votre demande. Quitter quand même ?
+  texte: Vos réponses sont gardées sur cet appareil le temps de votre visite.
+  rester: Continuer ma demande
+  quitter: Quitter

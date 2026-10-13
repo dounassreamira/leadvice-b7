@@ -1,0 +1,118 @@
+---
+import '../styles/tokens.css';
+import '../styles/base.css';
+import '../styles/components.css';
+import '../styles/forms.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Icon from '../components/Icon.astro';
+import { site, type Data } from '../lib/content';
+import { organization, website, breadcrumb } from '../lib/schema';
+
+interface Props {
+  title: string;
+  description: string;
+  og?: string;
+  section?: string;
+  page?: string;
+  noindex?: boolean;
+  jsonld?: Data[];
+  crumb?: { name: string; url: string }[];
+  minimal?: boolean;
+  thread?: boolean;
+  fab?: boolean;
+  ogType?: 'website' | 'article';
+  bodyClass?: string;
+}
+const {
+  title, description, og = 'accueil', section = '', page = '', noindex = false, jsonld = [], crumb,
+  minimal = false, thread = true, fab = true, ogType = 'website', bodyClass,
+} = Astro.props;
+const s = await site();
+const path = Astro.url.pathname;
+const canonical = new URL(path, Astro.site).href;
+const ogImage = new URL(`/og/${og}.png`, Astro.site).href;
+const graph: Data[] = [organization(s), website(s)];
+if (crumb && crumb.length) graph.push(breadcrumb(crumb));
+graph.push(...jsonld);
+const ld = JSON.stringify({ '@context': 'https://schema.org', '@graph': graph }).replace(/</g, '\\u003c');
+---
+<!doctype html>
+<html lang="fr" class="no-js" data-page={page || undefined}>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+  {noindex && <meta name="robots" content="noindex, follow" />}
+  <script is:inline>(function(){var d=document.documentElement;d.classList.remove('no-js');d.classList.add('js');try{if(localStorage.getItem('lv-theme')==='dark')d.setAttribute('data-theme','dark')}catch(e){}if(matchMedia('(prefers-reduced-motion: reduce)').matches)d.classList.add('rm');if('scrollRestoration' in history){var n=performance.getEntriesByType&&performance.getEntriesByType('navigation')[0];if(!n||n.type!=='back_forward')history.scrollRestoration='manual'}})();</script>
+  <link rel="preload" href="/fonts/schibsted-grotesk.woff2" as="font" type="font/woff2" crossorigin />
+  <meta name="theme-color" content="#FBFAFD" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/favicon.ico" sizes="32x32" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="sitemap" href="/sitemap-index.xml" />
+  <meta property="og:type" content={ogType} />
+  <meta property="og:site_name" content="Leadvice" />
+  <meta property="og:locale" content="fr_MA" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImage} />
+  <script type="application/ld+json" set:html={ld} />
+  <slot name="head" />
+</head>
+<body class={bodyClass} data-section={section || undefined}>
+  <a class="skip" href="#contenu">{s.entete.evitement}</a>
+  <Header s={s} section={section} path={path} minimal={minimal} />
+  <main id="contenu" tabindex="-1" data-thread={thread ? '' : undefined}>
+    <slot />
+  </main>
+  <Footer s={s} minimal={minimal} />
+  {fab && (
+    <a class="fab" href="/diagnostic/" data-fab>
+      <span class="fab-ic" aria-hidden="true"><Icon name="cal" size={20} /></span>
+      <span class="fab-tx"><b>{s.flottant.titre}</b><small><i class="fab-dot"></i>{s.flottant.sous_titre}</small></span>
+    </a>
+  )}
+  <button class="btt" type="button" aria-label={s.retour_haut} data-btt><Icon name="up" size={18} /></button>
+  <dialog class="srch" aria-label={s.recherche.titre} data-search>
+    <div class="srch-in">
+      <div class="srch-top">
+        <Icon name="search" size={18} />
+        <input type="search" aria-label={s.entete.recherche_aria} autocomplete="off" />
+        <button type="button" data-search-close>{s.recherche.fermer}</button>
+      </div>
+      <div class="srch-res" role="list" aria-live="polite" data-empty={s.recherche.vide} data-none={s.recherche.aucun} data-none-link={s.recherche.aucun_lien} data-loading={s.recherche.chargement}></div>
+    </div>
+  </dialog>
+  <div class="sr-only" aria-live="polite" data-announce></div>
+  <template id="tpl-cookies">
+    <section class="ck" aria-label="Cookies">
+      <p>{s.cookies.texte} <a class="tlink" href="/cookies/">{s.cookies.lien}</a></p>
+      <div class="ck-acts" data-ck-simple>
+        <button type="button" data-ck="refuse">{s.cookies.refuser}</button>
+        <button type="button" data-ck="accept">{s.cookies.accepter}</button>
+        <button type="button" class="ck-more" data-ck="detail">{s.cookies.personnaliser}</button>
+      </div>
+      <fieldset data-ck-detail hidden>
+        <legend class="small" style="margin-bottom:6px">{s.cookies.legende}</legend>
+        <label><input type="checkbox" checked disabled />{s.cookies.necessaires}</label>
+        <label><input type="checkbox" data-ck-m />{s.cookies.mesure}</label>
+        <label><input type="checkbox" data-ck-p />{s.cookies.publicite}</label>
+      </fieldset>
+      <div class="ck-acts" data-ck-detail hidden><button type="button" data-ck="save">{s.cookies.enregistrer}</button></div>
+    </section>
+  </template>
+  <script>
+    import '../scripts/core';
+  </script>
+</body>
+</html>

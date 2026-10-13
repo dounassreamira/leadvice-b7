@@ -1,0 +1,62 @@
+---
+import Logo from './Logo.astro';
+import Icon from './Icon.astro';
+import type { Data } from '../lib/content';
+interface Props { s: Data; section?: string; path: string; minimal?: boolean }
+const { s, section = '', path, minimal = false } = Astro.props;
+const nav = s.navigation as Data[];
+const sub = s.sous_menu_expertises.liens as Data[];
+const cur = (u: string) => (u === path ? 'page' : undefined);
+---
+<header class="hdr" data-hdr>
+  <div class="hdr-in">
+    <Logo label={s.entete.logo_aria} current={path === '/'} />
+    {minimal ? (
+      <nav class="nav" aria-label={s.entete.nav_aria}>
+        <a class="btn btn-main" href="/diagnostic/" data-page-link>{s.cta.navigation}</a>
+      </nav>
+    ) : (
+      <nav class="nav" aria-label={s.entete.nav_aria}>
+        {nav.map((n) =>
+          n.cle === 'exp' ? (
+            <div class="dd" data-dd>
+              <a class="nl" href={n.url} aria-current={section === 'exp' ? (path === n.url ? 'page' : 'true') : undefined}>{n.libelle}</a>
+              <button class="dd-t" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="dd-exp" aria-label={s.sous_menu_expertises.bouton}><Icon name="chev" size={12} /></button>
+              <div class="dd-m" id="dd-exp" inert>
+                {sub.map((x) => <a href={x.url} aria-current={cur(x.url)}><b>{x.libelle}</b><span>{x.aide}</span></a>)}
+              </div>
+            </div>
+          ) : (
+            <a class="nl" href={n.url} aria-current={section === n.cle ? (path === n.url ? 'page' : 'true') : undefined}>{n.libelle}</a>
+          )
+        )}
+        <div class="ux-btns">
+          <button class="ux-btn" type="button" data-search-open aria-label={s.entete.recherche_aria} aria-keyshortcuts="Control+K Meta+K /"><Icon name="search" size={18} /></button>
+          <button class="ux-btn" type="button" data-theme-toggle aria-pressed="false" aria-label={s.entete.sombre} data-l-dark={s.entete.sombre} data-l-light={s.entete.clair}><Icon name="moon" size={18} class="i-moon" /><Icon name="sun" size={18} class="i-sun" /></button>
+        </div>
+        <a class="btn btn-main" href="/diagnostic/">{s.cta.navigation}</a>
+        <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mnav" data-menu-open>{s.menu_mobile.ouvrir}</button>
+      </nav>
+    )}
+  </div>
+  <div class="progress" aria-hidden="true"></div>
+</header>
+{!minimal && (
+  <div class="mnav" id="mnav" role="dialog" aria-modal="true" aria-label={s.menu_mobile.ouvrir} hidden>
+    <button class="menu-btn mnav-close" type="button" data-menu-close>{s.menu_mobile.fermer}</button>
+    <a href="/" aria-current={cur('/')}>{s.menu_mobile.accueil}</a>
+    {nav.map((n) =>
+      n.cle === 'exp' ? (
+        <Fragment>
+          <button class="m-exp" type="button" aria-expanded={section === 'exp' ? 'true' : 'false'} aria-controls="m-sub" data-m-exp>{n.libelle}<Icon name="chev" size={18} /></button>
+          <div class="m-sub" id="m-sub" hidden={section !== 'exp'}>
+            {sub.map((x) => <a href={x.url} aria-current={cur(x.url)}>{x.libelle}</a>)}
+          </div>
+        </Fragment>
+      ) : (
+        <a href={n.url} aria-current={cur(n.url)}>{n.libelle}</a>
+      )
+    )}
+    <a class="btn btn-main" href="/diagnostic/">{s.cta.principal}</a>
+  </div>
+)}

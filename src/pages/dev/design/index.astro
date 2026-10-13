@@ -1,0 +1,127 @@
+---
+import Base from '../../../layouts/Base.astro';
+import Icon from '../../../components/Icon.astro';
+import '../../../styles/dev.css';
+/* Page de contrôle du design : tous les jetons et composants, dans tous leurs états, en clair et en sombre.
+   Outil interne, exclu du référencement et du plan du site. */
+const roles = [
+  ['--paper', 'Fond', 'bg'], ['--paper-2', 'Surface douce', 'bg'], ['--white', 'Surface', 'bg'],
+  ['--ink', 'Texte principal', 'text'], ['--ink-2', 'Texte secondaire', 'text'], ['--ink-3', 'Décor, jamais du texte utile', 'deco'],
+  ['--line', 'Bordures', 'deco'], ['--line-strong', 'Bordure de champ (3:1 minimum)', 'ui'], ['--brand', 'Violet Leadvice : marque, liens forts', 'text'],
+  ['--signal', 'Action : liens, survol, focus', 'text'], ['--btn', 'Fond du bouton principal (texte blanc)', 'btn'], ['--yellow', 'Résultat uniquement (fond, jamais texte)', 'yellow'],
+  ['--success', 'Succès', 'text'], ['--error', 'Erreur', 'text'],
+];
+const themes = [['theme-light', 'Mode clair (par défaut)'], ['theme-dark', 'Mode sombre (au choix du visiteur)']];
+const spaces = [4, 8, 16, 24, 32, 48, 64, 96, 128, 192];
+---
+<Base title="Système de design | Leadvice" description="Page de contrôle du système de design Leadvice : jetons, typographie, composants et états, en clair et en sombre." noindex page="dev" thread={false} fab={false} crumb={[{ name: 'Accueil', url: '/' }, { name: 'Système de design', url: '/dev/design/' }]}>
+  <section class="wrap phero dv-hero">
+    <nav class="crumb" aria-label="Fil d'Ariane"><a href="/">Accueil</a><span aria-hidden="true">/</span><span aria-current="page">Système de design</span></nav>
+    <h1>Système de design.</h1>
+    <p class="lead">Tous les jetons et tous les composants du site, dans tous leurs états, en clair et en sombre. Les contrastes sont calculés en direct. Touche G : grille superposée.</p>
+  </section>
+
+  <section class="wrap dv-sec">
+    <h2 class="dv-h">Échelle typographique, de 320 à 1440 px</h2>
+    <div class="dv-range"><label for="dv-w">Largeur d'aperçu : <output id="dv-wo">1440</output> px</label><input id="dv-w" type="range" min="320" max="1440" step="10" value="1440" /></div>
+    <div class="dv-frame" tabindex="0" role="region" aria-label="Aperçu de l’échelle typographique"><iframe id="dv-if" src="/dev/design/echelle/" title="Échelle typographique" loading="lazy"></iframe></div>
+  </section>
+
+  <section class="wrap dv-sec dv-2">
+    <div>
+      <h2 class="dv-h">Espacements (base 8)</h2>
+      {spaces.map((s) => <div class="dv-sp"><i style={`width:${s}px`}></i><span class="small">{s} px</span></div>)}
+      <p class="small dv-note">Gouttière latérale <code>clamp(16px, 5vw, 96px)</code>, écart entre sections <code>clamp(88px, 11vw, 176px)</code>. Grille 12 / 8 / 4 colonnes (touche G).</p>
+    </div>
+    <div>
+      <h2 class="dv-h">Mouvement</h2>
+      <div class="dv-motion">
+        <button type="button" class="btn btn-ghost" data-play="fast">Rapide 160 ms</button>
+        <button type="button" class="btn btn-ghost" data-play="mid">Moyen 320 ms</button>
+        <button type="button" class="btn btn-ghost" data-play="slow">Lent 640 ms</button>
+        <div class="dv-track"><i data-dot></i></div>
+        <label class="consent"><input type="checkbox" id="dv-rm" />Afficher en mouvement réduit (état final directement)</label>
+      </div>
+      <p class="small dv-note">Courbes : entrée <code>cubic-bezier(.22,1,.36,1)</code>, transition <code>cubic-bezier(.65,0,.35,1)</code>, signal <code>cubic-bezier(.7,0,.2,1)</code>. Pression : <code>scale(.96)</code>. Déplacement maximal : 40 px.</p>
+      <h2 class="dv-h">Rayons et élévation</h2>
+      <div class="dv-shapes"><span class="dv-sh" style="border-radius:var(--r-sharp)">2 px</span><span class="dv-sh arch-s">Arche</span><span class="dv-sh" style="border-radius:var(--r-round)">Pastille</span></div>
+      <div class="dv-shapes"><span class="dv-sh" style="box-shadow:0 1px 0 var(--line)">Liseré</span><span class="dv-sh" style="box-shadow:var(--shadow-1)">Niveau 1</span><span class="dv-sh" style="box-shadow:var(--glow)">Signal</span></div>
+    </div>
+  </section>
+
+  <div class="dv-cols" id="composants">
+    {themes.map(([cls, name]) => (
+      <div class={`dv-col ${cls}`}>
+        <p class="legend">{name}</p>
+        <h2 class="dv-h">Couleurs par rôle</h2>
+        {roles.map(([v, label, kind]) => (
+          <div class="sw" data-role={v} data-kind={kind}><i style={`background:var(${v})`}></i><div><b>{v}</b> <code data-hex></code><br /><span class="small">{label}. <span data-ratio></span></span></div></div>
+        ))}
+
+        <h2 class="dv-h">Boutons</h2>
+        <div class="row-c">
+          <a class="btn btn-main" href="#composants">Demander un diagnostic</a>
+          <a class="btn btn-main is-hover" href="#composants">Survol</a>
+          <a class="btn btn-main is-focus" href="#composants">Focus clavier</a>
+          <a class="btn btn-main is-active" href="#composants">Actif</a>
+          <button class="btn btn-main" type="button" disabled>Désactivé</button>
+          <button class="btn btn-main is-loading" type="button" aria-busy="true"><span class="spin" aria-hidden="true"></span>Envoi en cours…</button>
+          <a class="btn btn-ghost" href="#composants">Retour</a>
+          <a class="btn btn-ghost is-hover" href="#composants">Retour, survol</a>
+        </div>
+        <div class="row-c dv-violet"><a class="btn btn-light" href="#composants">Sur la bande violette</a><a class="tlink" href="#composants">Lien sur violet</a></div>
+        <div class="row-c"><a class="tlink" href="#composants">Lien texte</a><a class="tlink is-hover" href="#composants">Lien, survol</a><a class="tlink is-focus" href="#composants">Lien, focus</a></div>
+
+        <h2 class="dv-h">Champs</h2>
+        <div class="grid-c">
+          <div class="fld"><label for={`f1-${cls}`}>E-mail professionnel</label><input id={`f1-${cls}`} value="nom@entreprise.ma" /></div>
+          <div class="fld"><label for={`f2-${cls}`}>Focus</label><input id={`f2-${cls}`} value="nom@entre" class="is-focus" /></div>
+          <div class="fld"><label for={`f3-${cls}`}>Erreur</label><input id={`f3-${cls}`} value="nom@" aria-invalid="true" /><span class="ferr">Indiquez une adresse e-mail professionnelle, par exemple nom@entreprise.ma</span></div>
+          <div class="fld is-ok"><label for={`f4-${cls}`}>Succès</label><input id={`f4-${cls}`} value="nom@entreprise.ma" /><span class="fok">Adresse valide.</span></div>
+          <div class="fld"><label for={`f5-${cls}`}>Désactivé</label><input id={`f5-${cls}`} value="Visio" disabled /></div>
+          <div class="fld"><label for={`f6-${cls}`}>Liste</label><select id={`f6-${cls}`}><option>Gérées en interne</option></select></div>
+        </div>
+        <label class="consent"><input type="checkbox" />J'accepte que Leadvice utilise ces informations pour me recontacter au sujet de ma demande.</label>
+
+        <h2 class="dv-h">Choix, créneaux</h2>
+        <div class="choices">
+          <label class="ch"><input type="radio" name={`c-${cls}`} /><span>Générer plus de leads qualifiés</span></label>
+          <label class="ch"><input type="radio" name={`c-${cls}`} checked /><span>Améliorer la conversion</span></label>
+        </div>
+        <div class="chips dv-mt"><label class="chip"><input type="radio" name={`k-${cls}`} /><span>Clarifier la stratégie</span></label><label class="chip"><input type="radio" name={`k-${cls}`} checked /><span>Renouveler la création</span></label></div>
+        <div class="bk-day"><p>Mardi 14 octobre</p><div class="per" role="tablist" aria-label="Moment de la journée"><button type="button" role="tab" aria-selected="true">Matin <small>4 créneaux</small></button><button type="button" role="tab" aria-selected="false">Après-midi <small>3 créneaux</small></button><button type="button" role="tab" aria-selected="false" disabled>Soir <small>complet</small></button></div></div>
+        <div class="slots"><button type="button">9 h 00</button><button type="button" class="sel">10 h 00</button><button type="button">11 h 00</button></div>
+
+        <h2 class="dv-h">FAQ</h2>
+        <div class="faq"><details open><summary>Combien de temps dure le diagnostic ?<span class="pm" aria-hidden="true">+</span></summary><div class="ans"><p>45 minutes, offert, en visio ou par téléphone.</p></div></details><details><summary>Les comptes publicitaires nous appartiennent-ils ?<span class="pm" aria-hidden="true">+</span></summary><div class="ans"><p>Oui.</p></div></details></div>
+
+        <h2 class="dv-h">Situation, chiffre, résultat, surligneur</h2>
+        <div class="grid-c">
+          <div class="sit"><p>Vos publicités sont belles, mais elles ne génèrent pas de demandes.</p></div>
+          <div class="stat"><b>&lt; 1 $</b><span>coût moyen par lead sur Meta Ads, constaté sur nos clients</span></div>
+        </div>
+        <p class="dv-mt">Environ <span class="res">41 000 leads</span> en douze mois.</p>
+        <p class="dv-hl">Allons le <span class="lv-hl on">chercher.</span></p>
+
+        <h2 class="dv-h">Méthode (rail)</h2>
+        <div class="rail dv-rail"><div class="rail-bar"><i style="transform:scaleY(.5)"></i></div><ol class="steps"><li class="step on"><span class="n">1</span><h3>Diagnostiquer</h3></li><li class="step"><span class="n">2</span><h3>Structurer</h3></li></ol></div>
+
+        <h2 class="dv-h">Navigation</h2>
+        <nav class="crumb" aria-label="Exemple de fil d'Ariane"><a href="#composants">Accueil</a><span aria-hidden="true">/</span><a href="#composants">Expertises</a><span aria-hidden="true">/</span><span aria-current="page">Stratégie</span></nav>
+        <div class="jump"><a href="#composants">Stratégie</a><a href="#composants">Création</a><a href="#composants">Acquisition</a></div>
+        <div class="row-c"><button type="button" class="copy"><Icon name="copy" size={16} class="ic" /><span>Copier le lien</span></button><button type="button" class="copy done"><Icon name="check" size={16} class="ok" /><span>Copié</span></button><button type="button" class="ux-btn" aria-label="Rechercher"><Icon name="search" size={18} /></button><button type="button" class="btt on dv-static" aria-label="Retour en haut"><Icon name="up" size={18} /></button></div>
+        <div class="srch-res dv-srch"><a href="#composants"><b>Meta Ads ou Google Ads</b><span>choisir selon l'<mark>intention</mark>, pas selon la mode</span></a></div>
+
+        <h2 class="dv-h">Bouton flottant, cookies, confirmation</h2>
+        <a class="fab on dv-static" href="#composants"><span class="fab-ic" aria-hidden="true"><Icon name="cal" size={20} /></span><span class="fab-tx"><b>Demander un diagnostic</b><small><i class="fab-dot"></i>45 minutes, offert</small></span></a>
+        <section class="ck dv-static" aria-label="Exemple de bandeau cookies"><p>Nous mesurons l'audience et l'efficacité de nos publicités seulement si vous l'acceptez.</p><div class="ck-acts"><button type="button">Refuser</button><button type="button">Accepter</button><button type="button" class="ck-more">Personnaliser</button></div></section>
+        <div class="cf dv-static"><h2>Effacer toutes vos réponses ?</h2><p>Les réponses déjà saisies seront perdues.</p><div class="acts"><button type="button" class="btn btn-ghost">Garder mes réponses</button><button type="button" class="btn btn-main">Tout effacer</button></div></div>
+      </div>
+    ))}
+  </div>
+  <div class="dv-grid" aria-hidden="true" hidden><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <script>
+    import { initDesignPage } from '../../../scripts/dev-design';
+    initDesignPage();
+  </script>
+</Base>
