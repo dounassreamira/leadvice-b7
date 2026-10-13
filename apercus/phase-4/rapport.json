@@ -1,0 +1,86 @@
+[
+  {
+    "page": "/ateliers/",
+    "w": 390,
+    "theme": "light",
+    "overflow": 0,
+    "errors": []
+  },
+  {
+    "page": "/ateliers/simulateur-campagne/",
+    "w": 390,
+    "theme": "light",
+    "overflow": 0,
+    "errors": []
+  },
+  {
+    "page": "/ateliers/page-qui-convertit/",
+    "w": 390,
+    "theme": "light",
+    "overflow": 0,
+    "errors": []
+  },
+  {
+    "page": "/ateliers/",
+    "w": 1440,
+    "theme": "light",
+    "overflow": 0,
+    "errors": []
+  },
+  {
+    "page": "/ateliers/simulateur-campagne/",
+    "w": 1440,
+    "theme": "light",
+    "overflow": 0,
+    "errors": []
+  },
+  {
+    "page": "/ateliers/page-qui-convertit/",
+    "w": 1440,
+    "theme": "light",
+    "overflow": 0,
+    "errors": []
+  },
+  {
+    "page": "/ateliers/",
+    "w": 390,
+    "theme": "dark",
+    "overflow": 0,
+    "errors": []
+  },
+  {
+    "page": "/ateliers/simulateur-campagne/",
+    "w": 390,
+    "theme": "dark",
+    "overflow": 0,
+    "errors": []
+  },
+  {
+    "page": "/ateliers/page-qui-convertit/",
+    "w": 390,
+    "theme": "dark",
+    "overflow": 0,
+    "errors": []
+  },
+  {
+    "page": "/ateliers/",
+    "w": 1440,
+    "theme": "dark",
+    "overflow": 0,
+    "errors": []
+  },
+  {
+    "page": "/ateliers/simulateur-campagne/",
+    "w": 1440,
+    "theme": "dark",
+    "overflow": 0,
+    "errors": []
+  },
+  {
+    "page": "/ateliers/page-qui-convertit/",
+    "w": 1440,
+    "theme": "dark",
+    "overflow": 0,
+    "errors": []
+  }
+]

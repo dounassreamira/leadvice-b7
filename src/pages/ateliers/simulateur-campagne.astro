@@ -1,0 +1,26 @@
+---
+/* Atelier « Pilotez une campagne ». Le script ne se charge que sur cette page. */
+import AtelierPage from '../../components/AtelierPage.astro';
+import { getEntry } from 'astro:content';
+import { page, type Data } from '../../lib/content';
+import { fill, fmt } from '../../scripts/ateliers/util';
+
+const d = await page('atelier-campagne');
+const data = (await getEntry('ateliers', 'campagne'))!.data;
+const U = data.ui as Data, clients = data.clients as Record<string, Data>;
+---
+<AtelierPage d={d} path="/ateliers/simulateur-campagne/" app="acq" data={data}>
+  {/* premier écran rendu au build (affichage immédiat) ; le script reprend la main à l'identique */}
+  <div class="at-screen">
+    <h2 class="at-h">{U.choisir_titre}</h2>
+    <p class="at-p">{U.choisir_texte}</p>
+    <div class="at-cards">{Object.entries(clients).map(([k, c]) => <button type="button" class="at-card" data-sc={k}><b>{c.name}</b><span>{c.pitch}</span><em>{fill(U.budget, { budget: fmt(c.budget) })}</em></button>)}</div>
+    <p class="at-note">{U.note}</p>
+  </div>
+</AtelierPage>
+<script>
+  import { initCampagne } from '../../scripts/ateliers/campagne';
+  const app = document.querySelector<HTMLElement>('[data-app="acq"]');
+  const raw = document.querySelector('[data-atelier-data]')?.textContent;
+  if (app && raw) initCampagne(app, JSON.parse(raw));
+</script>

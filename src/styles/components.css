@@ -302,6 +302,7 @@
   .ftr .legal-links { display: flex; gap: 8px 24px; flex-wrap: wrap; }
 
   /* ---------- fenêtres de confirmation ---------- */
+  .no-js .js-only { display: none !important; }
   .cf { border: 0; padding: 32px; width: min(520px, calc(100vw - 32px)); background: var(--paper); color: var(--ink); border-radius: var(--r-sharp); box-shadow: var(--shadow-pop); }
   .cf::backdrop { background: var(--backdrop); backdrop-filter: blur(4px); }
   .cf h2 { font-size: var(--fs-h3); line-height: 1.15; margin-bottom: 12px; }

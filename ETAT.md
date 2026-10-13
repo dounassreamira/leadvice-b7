@@ -34,6 +34,11 @@ Mis à jour à la fin de chaque phase. Reprendre d'ici si la session s'interromp
 - `/admin/` (Cloudflare Access) : horaires à plusieurs plages, règles, jours bloqués, créneaux exceptionnels, rendez-vous (déplacer, annuler, diagnostic tenu, client signé), export CSV, état des connexions.
 - Variables : `.env.example`. Lighthouse mobile : 99-100 / 100 / 100 / 100 sur `/diagnostic/` (les pages noindex ont un SEO plafonné par la directive noindex, voulue).
 
+## Phase 4 — Ateliers : faite
+- `/ateliers/` (présentation), `/ateliers/simulateur-campagne/` (« Pilotez une campagne » : trois clients fictifs, six décisions, huit semaines, imprévus, référence, bilan noté de A à D) et `/ateliers/page-qui-convertit/` (assembler avec jauges et aperçu de téléphone, auditer dix erreurs, alléger sous 2 s, bilan).
+- Logique portée du prototype en TypeScript (`src/scripts/ateliers/`), chargée seulement sur ces pages ; données et textes dans `src/content/ateliers/*.json`, textes des pages dans `src/content/pages/atelier-*.yaml`. Premier écran rendu au build. Progression en stockage local avec repli silencieux, rien n'est envoyé.
+- Guide indexable, glossaire et FAQ (JSON-LD FAQPage) sous chaque atelier ; recherche : 21 pages indexées.
+- Lighthouse mobile : 99-100 / 100 / 100 / 100 sur les trois pages.
+
 ## Reste à faire
-- Phase 4 : Ateliers (trois pages, deux ateliers).
 - Phase 5 : pages légales, 404, llms.txt, Pages CMS, README, audit complet.

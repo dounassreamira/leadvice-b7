@@ -1,45 +1,27 @@
 [
   {
-    "page": "/lp/generation-de-leads/",
+    "page": "/ateliers/simulateur-campagne/",
     "perf": 99,
-    "a11y": 97,
+    "a11y": 100,
     "bp": 100,
-    "seo": 69,
-    "lcp": 1663.3129,
-    "cls": 0,
-    "tbt": 30,
+    "seo": 100,
+    "lcp": 1664.0195,
+    "cls": 0.01437401543415386,
+    "tbt": 2,
     "js": 64,
-    "a11yNotes": [
-      "color-contrast"
-    ]
+    "a11yNotes": []
   },
   {
-    "page": "/lp/audit-marketing/",
-    "perf": 100,
-    "a11y": 97,
+    "page": "/ateliers/page-qui-convertit/",
+    "perf": 99,
+    "a11y": 100,
     "bp": 100,
-    "seo": 69,
-    "lcp": 1360.2245,
-    "cls": 0.014779970456341454,
-    "tbt": 41,
-    "js": 63,
-    "a11yNotes": [
-      "color-contrast"
-    ]
-  },
-  {
-    "page": "/lp/conseil-strategique/",
-    "perf": 100,
-    "a11y": 97,
-    "bp": 100,
-    "seo": 69,
-    "lcp": 1661.1414,
+    "seo": 100,
+    "lcp": 1657.8125,
     "cls": 0,
-    "tbt": 48,
+    "tbt": 0,
     "js": 63,
-    "a11yNotes": [
-      "color-contrast"
-    ]
+    "a11yNotes": []
   },
   {
     "page": "/diagnostic/",
@@ -47,22 +29,10 @@
     "a11y": 100,
     "bp": 100,
     "seo": 100,
-    "lcp": 1807.6999999999998,
+    "lcp": 1814.4195,
     "cls": 0,
-    "tbt": 0,
+    "tbt": 8,
     "js": 62,
-    "a11yNotes": []
-  },
-  {
-    "page": "/diagnostic/merci/",
-    "perf": 99,
-    "a11y": 100,
-    "bp": 100,
-    "seo": 66,
-    "lcp": 1656.0476,
-    "cls": 0.004794306034638885,
-    "tbt": 0,
-    "js": 58,
     "a11yNotes": []
   }
 ]

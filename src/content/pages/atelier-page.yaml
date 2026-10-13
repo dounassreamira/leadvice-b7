@@ -1,0 +1,32 @@
+seo:
+  title: "Atelier site web : construisez une page d'atterrissage qui convertit | Leadvice"
+  description: "Atelier gratuit en trois niveaux : assemblez une page d'atterrissage, trouvez les erreurs d'une page existante, tenez un budget de poids sur mobile."
+  og: atelier-page
+fil: Construire une page
+h1: Construisez une page qui convertit.
+reponse: "Trois niveaux : assembler une page d'atterrissage bloc par bloc, trouver les erreurs d'une page existante, puis l'alléger pour le mobile. Quatre jauges réagissent à chacun de vos choix."
+sans_js: "L'atelier a besoin de JavaScript. Le guide ci-dessous reprend ce qu'il enseigne."
+chargement: Chargement de l'atelier…
+guide:
+  titre: Ce que l'atelier vous apprend.
+  intro: "Ce qui se joue sur une page d'atterrissage, dans l'ordre où le visiteur le découvre."
+  points:
+    - { titre: Le titre dit ce que le client obtient., texte: "Le visiteur décide en quelques secondes s'il reste. « Bienvenue » ou un slogan l'obligent à deviner ; une offre précise, avec les mots qu'il tape dans Google, le retient et aide le référencement." }
+    - { titre: Le bouton dit ce qui se passe., texte: "« Envoyer » décrit un effort. « Réserver ma visite » décrit ce qu'on obtient. Le même libellé suit ensuite tout le parcours, jusqu'au message de confirmation." }
+    - { titre: Les preuves se vérifient., texte: "« N°1 au Maroc » sans source éveille la méfiance. Des avis signés, des logos de vrais clients et des chiffres vérifiables rassurent." }
+    - { titre: Le formulaire reste court., texte: "Prénom, téléphone, une précision. La qualification se fait au téléphone, pas dans onze champs, et jamais avec une question de budget au premier contact." }
+    - { titre: "Sur mobile, chaque kilo-octet se paie.", texte: "Google mesure le temps d'affichage du plus grand élément de la page (le LCP). Une vidéo de 8 Mo en haut de page le fait exploser ; une photo compressée en WebP s'affiche presque tout de suite. Ce qui n'est pas indispensable se charge au clic." }
+  glossaire_titre: Les mots du tableau de bord
+  glossaire:
+    - { mot: "Page d'atterrissage", def: "La page où arrive le visiteur après avoir cliqué sur une annonce." }
+    - { mot: Taux de conversion, def: Part des visiteurs qui remplissent le formulaire ou achètent. }
+    - { mot: LCP, def: "Temps d'affichage du plus grand élément visible ; Google recommande moins de 2,5 secondes." }
+    - { mot: WebP, def: "Format d'image léger, lu par tous les navigateurs récents." }
+    - { mot: Chargement au clic, def: "Un élément lourd (vidéo, carte) ne se charge que si le visiteur le demande." }
+faq:
+  titre: Vos questions.
+  questions:
+    - { q: "Les clients de l'atelier sont-ils réels ?", a: "Non, ils sont fictifs. Les règles appliquées sont celles que nous suivons sur les sites que nous construisons pour nos clients." }
+    - { q: "Combien de temps dure l'atelier ?", a: "Entre 10 et 15 minutes pour les trois niveaux. Votre progression est gardée sur cet appareil." }
+    - { q: "Pourquoi la vitesse compte-t-elle autant ?", a: "Parce qu'une page lente perd des visiteurs avant même qu'ils ne voient l'offre, surtout sur mobile, et parce que Google en tient compte dans le classement." }
+    - { q: "Pouvez-vous auditer mon site ?", a: "Oui. Pendant le diagnostic de 45 minutes, offert, nous regardons votre site avec vous et vous repartez avec les corrections prioritaires." }

@@ -30,7 +30,6 @@
   .st-acts { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
   .st-acts .copy { border: 0; background-color: transparent; cursor: pointer; }
   .ts:empty { display: none; }
-  .no-js .js-only { display: none !important; }
 
   /* merci */
   .mc { padding-top: clamp(140px, 15vw, 200px); padding-bottom: 96px; max-width: 980px; }

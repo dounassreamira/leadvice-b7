@@ -1,0 +1,29 @@
+---
+/* Ateliers : présentation des deux ateliers interactifs. */
+import Base from '../../layouts/Base.astro';
+import PageHero from '../../components/PageHero.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import { page, type Data } from '../../lib/content';
+import '../../styles/pages/ateliers.css';
+
+const d = await page('ateliers');
+const crumb = [{ name: 'Accueil', url: '/' }, { name: d.fil, url: '/ateliers/' }];
+const ld = { '@type': 'ItemList', itemListElement: (d.cartes as Data[]).map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.titre, url: `https://leadvice.org${c.url}` })) };
+---
+<Base title={d.seo.title} description={d.seo.description} og={d.seo.og} section="ate" crumb={crumb} jsonld={[ld]}>
+  <PageHero crumb={crumb} h1={d.h1} lead={d.reponse} />
+  <section class="wrap sec sec-top0">
+    <div class="at-hub">
+      {(d.cartes as Data[]).map((c) => (
+        <a class="at-hcard" href={c.url}><p class="meta">{c.meta}</p><h2>{c.titre}</h2><p>{c.texte}</p><span class="go">{c.lien}</span></a>
+      ))}
+    </div>
+  </section>
+  <section class="wrap sec sec-top0">
+    <div class="guide">
+      <div><h2 data-rise>{d.pourquoi.titre}</h2></div>
+      <div>{(d.pourquoi.paragraphes as string[]).map((p) => <p>{p}</p>)}</div>
+    </div>
+  </section>
+  <CtaBand titre={d.cloture.titre} texte={d.cloture.texte} />
+</Base>

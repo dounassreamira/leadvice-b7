@@ -33,6 +33,12 @@ const insights = defineCollection({
   }),
 });
 
+/* Ateliers : données et textes des deux ateliers interactifs (clients fictifs, options, textes d'interface). */
+const ateliers = defineCollection({
+  loader: glob({ pattern: '*.json', base: './src/content/ateliers' }),
+  schema: z.record(z.string(), z.any()),
+});
+
 /* Pages légales : Markdown avec dates de mise à jour. */
 const legal = defineCollection({
   loader: glob({ pattern: '*.md', base: './src/content/legal' }),
@@ -44,4 +50,4 @@ const legal = defineCollection({
   }),
 });
 
-export const collections = { site, pages, insights, legal };
+export const collections = { site, pages, insights, legal, ateliers };
