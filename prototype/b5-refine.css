@@ -1,0 +1,25 @@
+/* B5 revue selon le skill v5 (Impeccable, Taste, ECC) : meme identite, finitions et signes de site genere corriges */
+:root{--serif:"Newsreader", Georgia, "Times New Roman", serif;--fs-display:clamp(3rem,1.5rem + 6vw,6rem);--fs-h1:clamp(2.5rem,1.5rem + 4vw,5.4rem);--glow:0 2px 10px -2px rgba(123,97,255,.45)}
+h1,h2,h3,.big-text,.scene .cap p,.sit p,.faq summary,.stat b,.mnav a,.m-exp{font-optical-sizing:auto;letter-spacing:-.018em}
+h1,h2{font-weight:380}
+h1,h2,h3{text-wrap:balance}
+p,li,.lead{text-wrap:pretty}
+.a-body p,.legal-doc p{text-wrap:auto}
+/* surfaces du navigateur aux couleurs du site */
+::selection{background:var(--lav-2);color:var(--ink)}
+input,textarea{caret-color:var(--brand)}
+html{scrollbar-color:#BDB4D6 var(--paper);scrollbar-width:thin}
+a{text-underline-offset:.18em;text-decoration-thickness:1px}
+:focus-visible{outline:2px solid var(--brand);outline-offset:3px;border-radius:2px}
+[data-theme=dark] ::selection{background:#3B23A6;color:#fff}
+[data-theme=dark]{scrollbar-color:#3A3448 var(--paper)}
+/* signes de site genere retires */
+.cur{display:none!important}
+.thr-label{display:none}
+/* mur de logos : le logo seul, le nom reste lisible par les lecteurs d'ecran */
+.tile>div:last-child{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+/* ombres avec decalage, pas de halo centre */
+.btn:hover::after{animation:none;opacity:0}
+.fab{box-shadow:0 18px 36px -14px rgba(48,23,129,.5)}
+img{outline:1px solid rgba(20,18,26,.06);outline-offset:-1px}
+.tile img,.lg img,.orb img,.logo img{outline:0}

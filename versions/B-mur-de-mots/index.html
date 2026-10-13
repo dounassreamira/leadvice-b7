@@ -1,0 +1,400 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Leadvice</title>
+<meta name="description" content="Leadvice aide les entreprises à transformer leur marketing en clients : stratégie, création, Meta Ads, Google Ads et pilotage de la performance. Diagnostic offert.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap">
+<link rel="stylesheet" href="site.css">
+<style>
+.hero{padding-top:clamp(130px,18vh,200px);padding-bottom:clamp(56px,8vh,96px);min-height:min(88vh,820px);display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:32px 64px;align-items:end;position:relative;z-index:1}
+.hero h1{font-size:var(--fs-display);line-height:.92;max-width:11ch;grid-column:1/-1}
+.hero-side{grid-column:2;display:flex;flex-direction:column;gap:24px}
+.hero-side .lead{color:var(--ink)}
+.hero-side .acts{display:flex;flex-wrap:wrap;gap:16px 20px;align-items:center}
+.hero-next{grid-column:1;grid-row:2;align-self:end;display:inline-flex;gap:10px;align-items:center;font-size:.9rem;color:var(--ink-2);text-decoration:none}
+.hero-next svg{animation:nudge 1.8s var(--ease) infinite}
+@keyframes nudge{50%{transform:translateY(5px)}}
+@media (max-width:860px){.hero{grid-template-columns:1fr;min-height:0}.hero-side,.hero-next{grid-column:1;grid-row:auto}}
+.story>canvas{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+.story>*:not(canvas){position:relative;z-index:1}
+.story .story-head,.story .story-rail{pointer-events:none}
+.opening{position:absolute!important;left:var(--gut);right:var(--gut);top:clamp(84px,11vh,116px);display:flex;flex-direction:column;gap:clamp(18px,3vh,36px);z-index:2!important;pointer-events:none}
+.opening a{pointer-events:auto}
+.wall{font-family:var(--serif);font-size:clamp(1.65rem,.6rem + 4.6vw,5.6rem);line-height:1.02;letter-spacing:-.015em;margin:0;max-width:none;text-wrap:pretty}
+.wd{display:inline-block;color:var(--ink-3);opacity:0;transform:translateY(14px);position:relative;will-change:transform,opacity;transition:color .4s}
+.wd.k{color:var(--ink-2)}
+.wd::after{content:"";position:absolute;left:-3%;right:-3%;top:54%;height:3px;background:var(--signal);box-shadow:var(--glow);transform:scaleX(var(--s,0));transform-origin:left;border-radius:2px}
+.wd.k::after{display:none}
+.wall{pointer-events:auto}
+@media (hover:hover){.wd:not(.k)::after{transition:transform .35s cubic-bezier(.22,1,.36,1)}.wd:not(.k):hover::after{transform:scaleX(1)!important}.wd:not(.k):hover{color:var(--ink-2)}}
+.wd[data-k="4"]{color:var(--brand)}
+.wd[data-k="4"]::before{content:"";position:absolute;left:0;right:0;bottom:-.08em;height:.07em;background:var(--signal);box-shadow:var(--glow);transform:scaleX(var(--u,0));transform-origin:center}
+.opening .hero-core{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:16px 56px;align-items:end;max-width:none;text-align:left}
+.opening .hero-core h1{font-size:clamp(2.7rem,1.3rem + 5vw,6.2rem);line-height:.94;max-width:none}
+.opening .hero-core .lead{color:var(--ink);margin:0}
+.opening .hero-side{display:flex;flex-direction:column;gap:18px;padding-bottom:8px}
+.opening .acts{display:flex;flex-wrap:wrap;gap:12px 18px;align-items:center}
+.story-head{justify-items:center;text-align:center}
+.story .cap p{margin-inline:auto}
+.story-rail{max-width:620px;width:100%;margin-inline:auto!important}
+@media (max-width:860px){.opening .hero-core{grid-template-columns:1fr}.opening .hero-core .lead{font-size:1rem}}
+@media (max-width:700px){.vswitch span{display:none}.vswitch a{padding:6px 10px;min-height:32px}}
+@media (prefers-reduced-motion:reduce){.wd{opacity:1;transform:none}.opening{position:relative!important;left:auto;right:auto;top:auto}}
+.hero-layer{position:absolute!important;left:var(--gut);right:var(--gut);top:clamp(96px,14vh,150px);display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:20px 64px;align-items:end;z-index:2!important}
+.hero-layer h1{font-size:var(--fs-display);line-height:.92;max-width:11ch}
+.hero-layer .lead{color:var(--ink)}
+.hero-layer .hero-side{display:flex;flex-direction:column;gap:20px;padding-bottom:10px}
+.hero-layer .acts{display:flex;flex-wrap:wrap;gap:12px 18px;align-items:center}
+.hero-hint{position:absolute!important;left:50%;bottom:28px;transform:translateX(-50%);font-size:.85rem;color:var(--ink-2);white-space:nowrap}
+[data-hero-in]{opacity:0}
+@media (max-width:860px){.hero-layer{grid-template-columns:1fr;top:84px;gap:14px}.hero-layer .lead{font-size:1rem}.hero-hint{display:none}}
+@media (prefers-reduced-motion:reduce){[data-hero-in]{opacity:1}.hero-layer{position:relative!important;left:auto;right:auto;top:auto;margin-bottom:24px}}
+.story{display:grid;grid-template-rows:auto minmax(0,1fr) auto;gap:16px;padding:clamp(84px,11vh,120px) var(--gut) clamp(24px,5vh,48px);background:var(--paper)}
+.story-head{display:grid;grid-template-columns:minmax(0,1fr);gap:10px;min-height:clamp(120px,17vh,170px)}
+.story .cap{position:relative;left:auto;right:auto;bottom:auto;display:grid}
+.story .cap>*{grid-area:1/1}
+.story .cap p{font-family:var(--serif);font-size:clamp(1.9rem,1.2rem + 2.6vw,3.6rem);line-height:1.04;max-width:20ch;text-wrap:balance}
+.story-gap{min-height:0}
+.story-cv canvas{position:absolute;inset:0;width:100%;height:100%}
+.story-rail{display:grid!important;grid-template-columns:repeat(var(--steps,5),minmax(0,1fr));gap:6px;margin:0!important}
+.story-rail b{width:auto!important;height:auto!important;background:none!important;box-shadow:none!important;border-top:2px solid var(--line);padding-top:10px;font-weight:500;font-size:.8rem;color:var(--ink-3);transition:border-color .3s,color .3s}
+.story-rail b.on{border-top-color:var(--signal);color:var(--brand);box-shadow:none}
+@media (max-width:760px){.story{padding-bottom:92px}.story-rail b{font-size:.72rem}}
+@media (prefers-reduced-motion:reduce){.story{height:auto;min-height:0}.story-cv{height:420px}.story .cap{display:flex;flex-direction:column;gap:8px}}
+.hero-over{position:absolute;inset:0;padding:clamp(120px,16vh,180px) var(--gut) 0;display:flex;flex-direction:column;gap:28px;z-index:2;pointer-events:none}
+.hero-over>*{pointer-events:auto}
+.hero-over h1{font-size:var(--fs-display);line-height:.92;max-width:11ch}
+.hero-over .lead{margin-left:clamp(0px,30vw,520px);color:var(--ink)}
+.hero-over .acts{display:flex;flex-wrap:wrap;gap:20px;align-items:center;margin-left:clamp(0px,30vw,520px)}
+.trust{padding-block:clamp(88px,10vw,150px);position:relative;z-index:1;background:var(--paper)}
+.trust-head{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap;margin-bottom:56px}
+.trust-stat{display:flex;align-items:flex-end;gap:20px;max-width:440px}
+.trust-stat b{font-family:var(--serif);font-weight:400;font-size:clamp(3.6rem,2.4rem + 4vw,6rem);line-height:.85;color:var(--brand)}
+.trust-stat span{color:var(--ink-2);font-size:.98rem;padding-bottom:6px}
+.trust-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);position:relative;--mx:-999px;--my:-999px}
+.trust-grid::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(260px circle at var(--mx) var(--my),rgba(123,97,255,.14),transparent 70%)}
+.tc{margin:0;background:var(--white);aspect-ratio:5/4;display:flex;flex-direction:column;padding:22px;position:relative;overflow:hidden;animation:tclit 9.6s var(--ease) infinite;animation-delay:calc(var(--i) * 1.2s)}
+.tc-l{flex:1;display:grid;place-items:center}
+.tc img{max-height:64px;max-width:72%;width:auto;filter:grayscale(1);opacity:.55;transition:filter .5s,opacity .5s,transform .7s var(--ease);animation:tcimg 9.6s var(--ease) infinite;animation-delay:calc(var(--i) * 1.2s)}
+.tc figcaption{display:flex;justify-content:space-between;gap:10px;font-size:.82rem;align-items:baseline}
+.tc figcaption b{font-weight:500}.tc figcaption span{color:var(--ink-3)}
+.tc::before{content:"";position:absolute;left:0;bottom:0;height:2px;width:100%;background:var(--signal);box-shadow:var(--glow);transform:scaleX(0);transform-origin:left;animation:tcbar 9.6s var(--ease) infinite;animation-delay:calc(var(--i) * 1.2s)}
+.tc:hover img{filter:none;opacity:1;transform:scale(1.06);animation:none}
+@keyframes tcimg{0%,100%{filter:grayscale(1);opacity:.55;transform:none}5%,9%{filter:none;opacity:1;transform:scale(1.05)}14%{filter:grayscale(1);opacity:.55;transform:none}}
+@keyframes tcbar{0%{transform:scaleX(0);transform-origin:left}6%{transform:scaleX(1);transform-origin:left}9%{transform:scaleX(1);transform-origin:right}14%,100%{transform:scaleX(0);transform-origin:right}}
+@keyframes tclit{0%,100%{background:var(--white)}5%,9%{background:#FBFAFF}14%{background:var(--white)}}
+@media (max-width:820px){.trust-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.tc{aspect-ratio:1/1;padding:16px}.tc figcaption{flex-direction:column;gap:2px}}
+@media (prefers-reduced-motion:reduce){.tc,.tc img,.tc::before{animation:none}.tc img{filter:none;opacity:.9}}
+.cloud{position:relative;z-index:1;height:clamp(640px,92vh,860px);overflow:hidden;background:radial-gradient(ellipse at 50% 50%,#FFFFFF 0%,var(--paper) 62%)}
+.cloud-sky{position:absolute;inset:0;width:100%;height:100%}
+.cloud-mid{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);text-align:center;width:min(520px,80vw);display:flex;flex-direction:column;align-items:center;gap:6px;z-index:1}
+.cloud-mid h2{font-size:var(--fs-h3)}
+.cloud-n b{font-family:var(--serif);font-weight:400;font-size:clamp(5rem,3rem + 8vw,10rem);line-height:.9;color:var(--brand);letter-spacing:-.03em}
+.cloud-s{color:var(--ink-2);max-width:34ch}
+.orbs{position:absolute;inset:0;z-index:2}
+.orb{position:absolute;left:calc(var(--x) * 1%);top:calc(var(--y) * 1%);width:var(--s);height:var(--s);margin:calc(var(--s) / -2) 0 0 calc(var(--s) / -2);border-radius:999px;outline:none;will-change:transform}
+.orb-in{position:absolute;inset:0;border-radius:999px;display:grid;place-items:center;background:radial-gradient(circle at 34% 28%,#FFFFFF 0%,#FBFAFE 38%,#EEEAF7 72%,#E2DCF3 100%);box-shadow:inset -10px -14px 28px rgba(48,23,129,.10),inset 8px 10px 18px rgba(255,255,255,.9),0 24px 50px -22px rgba(48,23,129,.35);transition:transform .5s var(--ease),box-shadow .5s}
+.orb-in::before{content:"";position:absolute;inset:-6px;border-radius:999px;background:radial-gradient(circle,rgba(123,97,255,.0) 55%,rgba(123,97,255,.38) 70%,rgba(123,97,255,0) 78%);opacity:0;animation:twk 5s ease-in-out infinite;animation-delay:var(--d);pointer-events:none}
+.orb-in::after{content:"";position:absolute;width:18%;height:10%;left:24%;top:16%;border-radius:999px;background:rgba(255,255,255,.95);filter:blur(3px);transform:rotate(-28deg)}
+.orb img{width:58%;height:auto;max-height:44%;object-fit:contain;filter:saturate(.35);opacity:.9;transition:filter .4s,opacity .4s}
+.orb-l{position:absolute;left:50%;top:calc(100% + 12px);transform:translate(-50%,6px);white-space:nowrap;font-size:.8rem;color:var(--ink-2);text-align:center;opacity:0;transition:opacity .3s,transform .3s var(--ease);pointer-events:none}
+.orb-l b{display:block;color:var(--ink);font-weight:500;font-size:.88rem}
+.orb:hover .orb-in,.orb:focus-visible .orb-in{transform:scale(1.12);box-shadow:inset -10px -14px 28px rgba(48,23,129,.10),inset 8px 10px 18px rgba(255,255,255,.9),0 30px 60px -20px rgba(48,23,129,.45),0 0 0 1px rgba(123,97,255,.5),0 0 30px rgba(123,97,255,.35)}
+.orb:hover img,.orb:focus-visible img{filter:none;opacity:1}
+.orb:hover .orb-l,.orb:focus-visible .orb-l{opacity:1;transform:translate(-50%,0)}
+@keyframes twk{0%,70%,100%{opacity:0}80%{opacity:1}88%{opacity:.2}}
+@media (max-width:760px){.cloud{height:760px}.orb{left:calc(var(--xm) * 1%);top:calc(var(--ym) * 1%);width:calc(var(--s) * .62);height:calc(var(--s) * .62);margin:calc(var(--s) * -.31) 0 0 calc(var(--s) * -.31)}.orb-l{display:none}.cloud-mid{width:70vw}}
+@media (prefers-reduced-motion:reduce){.orb-in::before{animation:none}}
+.orb{cursor:grab;touch-action:pan-y}.orb.grab{cursor:grabbing}.orb.grab .orb-in{transform:scale(1.08)}
+.orb.hit .orb-in{box-shadow:inset -10px -14px 28px rgba(48,23,129,.10),inset 8px 10px 18px rgba(255,255,255,.9),0 0 0 2px rgba(123,97,255,.55),0 0 40px rgba(123,97,255,.5)}
+.h-touch{display:none}@media (hover:none){.h-fine{display:none}.h-touch{display:inline}}
+.cloud-hint{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);z-index:3;font-size:.8rem;color:var(--ink-3);white-space:nowrap}
+@media (min-width:761px){.flow .cap{top:clamp(96px,13vh,140px);bottom:auto!important;left:auto;right:var(--gut);width:min(480px,38vw)}.flow .cap p{text-align:right;margin-left:auto}}
+.flow{position:relative;height:100vh;height:100svh;min-height:600px;overflow:hidden;background:var(--paper)}
+.flow canvas{position:absolute;inset:0;width:100%;height:100%}
+.angles{display:flex;gap:clamp(24px,4vw,64px);align-items:stretch;height:100%;padding:120px var(--gut) 72px;width:max-content}
+.apanel{width:min(78vw,520px);flex:none;display:flex;flex-direction:column;justify-content:flex-end;gap:20px}
+.ad{background:var(--white);border-radius:2px;box-shadow:0 1px 0 var(--line),0 30px 60px -30px rgba(48,23,129,.25);padding:20px;display:flex;flex-direction:column;gap:16px}
+.ad-top{display:flex;align-items:center;gap:10px;font-size:.85rem;font-weight:500}
+.ad-top i{width:30px;height:30px;border-radius:999px;background:var(--brand);display:block}
+.ad-top small{display:block;color:var(--ink-2);font-weight:400;font-size:.75rem}
+.ad-vis{aspect-ratio:4/3;border-radius:2px;position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:22px}
+.ad-vis p{font-family:var(--serif);font-size:clamp(1.7rem,1.2rem + 1.6vw,2.6rem);line-height:1.05;color:#fff;position:relative;max-width:13ch}
+.ad-cta{display:flex;justify-content:space-between;align-items:center;font-size:.85rem;border-top:1px solid var(--line);padding-top:14px}
+.ad-cta b{background:var(--paper-2);padding:8px 14px;border-radius:2px;font-weight:500}
+.v1{background:linear-gradient(160deg,#2a1670,#7B61FF)}
+.v2{background:linear-gradient(160deg,#3f6f5a,#a7c4a0)}
+.v3{background:linear-gradient(160deg,#14121A,#5B5668)}
+.sys{position:relative;height:clamp(420px,60vh,620px)}
+.sys span{position:absolute;left:50%;top:50%;font-family:var(--serif);font-size:clamp(1.4rem,1rem + 1.4vw,2.4rem);white-space:nowrap;transform:translate(-50%,-50%)}
+.sys .core{font-size:clamp(2.2rem,1.4rem + 3vw,4.2rem);color:var(--brand)}
+.sys svg{position:absolute;inset:0;width:100%;height:100%}
+.founders{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;align-items:end}
+.founders figure{margin:0}
+.founders figure:nth-child(2){margin-bottom:72px}
+.mono{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--serif);font-size:clamp(4rem,3rem + 4vw,7rem);color:var(--brand)}
+@media (max-width:760px){.angles{flex-direction:column;width:auto;height:auto;padding-block:40px}.apanel{width:100%}}
+@media (prefers-reduced-motion:reduce){.scene .cap{display:flex;flex-direction:column;gap:12px}}
+</style>
+<script>document.documentElement.setAttribute("data-page","home");</script>
+
+<main id="main">
+
+<section class="scene story" id="top" data-scene="words" data-len="340" aria-label="Du bruit au client">
+  <canvas aria-hidden="true"></canvas>
+  <div class="opening">
+    <p class="wall" aria-hidden="true"><span class="wd">likes</span> <span class="wd">vues</span> <span class="wd">impressions</span> <span class="wd k" data-k="0">leads qualifiés</span> <span class="wd">portée</span> <span class="wd">abonnés</span> <span class="wd">CPM</span> <span class="wd">reach</span> <span class="wd k" data-k="1">rendez-vous</span> <span class="wd">engagement</span> <span class="wd">stories</span> <span class="wd">partages</span> <span class="wd">CTR</span> <span class="wd k" data-k="2">ventes</span> <span class="wd">followers</span> <span class="wd">viralité</span> <span class="wd">taux de clic</span> <span class="wd k" data-k="3">coût par client</span> <span class="wd">pages vues</span> <span class="wd">buzz</span> <span class="wd k" data-k="4">clients</span></p>
+    <div class="hero-core" data-hero-out>
+      <h1>Moins de bruit.<br>Plus de clients.</h1>
+      <div class="hero-side">
+        <p class="lead">Leadvice est un cabinet de conseil en stratégie marketing et en acquisition client, à Casablanca. Nous trouvons ce qui compte dans votre marketing, puis nous le mettons en mouvement : stratégie, création, Meta Ads, Google Ads, pilotage.</p>
+        <div class="acts"><a class="btn btn-main" href="diagnostic.html">Demander un diagnostic</a><span class="small">20 minutes, offert.</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="story-head">
+    <p class="legend" data-hero-in>Moins de bruit</p>
+    <div class="cap" aria-live="polite">
+      <p data-at="0.12-0.3">Votre marketing fait beaucoup de bruit.</p>
+      <p data-at="0.3-0.52">La plupart de ces chiffres ne paient pas vos factures.</p>
+      <p data-at="0.52-0.72">Nous gardons ceux qui comptent.</p>
+      <p data-at="0.72-1">Et nous les faisons grandir.</p>
+    </div>
+  </div>
+  <div class="story-gap" aria-hidden="true"></div>
+  <div class="scene-dots story-rail" data-hero-in aria-hidden="true" style="--steps:4"><b><span>Bruit</span></b><b><span>Tri</span></b><b><span>Essentiel</span></b><b><span>Croissance</span></b></div>
+</section>
+
+<section class="cloud" aria-labelledby="cloud-t">
+  <canvas class="cloud-sky" aria-hidden="true"></canvas>
+  <div class="cloud-mid">
+    <h2 id="cloud-t">Ils nous ont fait confiance.</h2>
+    <p class="cloud-n"><b class="num" data-count="23" data-pre="+">+23</b></p>
+    <p class="cloud-s">entreprises accompagnées depuis 2022, de la compagnie aérienne à la marque de parfums.</p>
+  </div>
+  <p class="cloud-hint" aria-hidden="true"><span class="h-fine">Attrapez une sphère et lancez-la</span><span class="h-touch">Touchez une sphère pour la lancer</span></p><div class="orbs" id="orbs"><div class="orb" tabindex="0" role="img" aria-label="Royal Air Maroc, Transport aérien" style="--xm:16;--ym:12;--x:12;--y:24;--s:150px;--z:0.9;--d:0.00s"><span class="orb-in"><img src="img/royal-air-maroc.webp" alt=""></span><span class="orb-l"><b>Royal Air Maroc</b>Transport aérien</span></div><div class="orb" tabindex="0" role="img" aria-label="Attijariwafa bank, Banque" style="--xm:44;--ym:8;--x:33;--y:12;--s:168px;--z:0.6;--d:1.37s"><span class="orb-in"><img src="img/attijariwafa-bank.webp" alt=""></span><span class="orb-l"><b>Attijariwafa bank</b>Banque</span></div><div class="orb" tabindex="0" role="img" aria-label="ITROAD Group, Services IT" style="--xm:72;--ym:13;--x:71;--y:13;--s:132px;--z:0.8;--d:2.74s"><span class="orb-in"><img src="img/itroad.webp" alt=""></span><span class="orb-l"><b>ITROAD Group</b>Services IT</span></div><div class="orb" tabindex="0" role="img" aria-label="Kettani Immobilier, Immobilier" style="--xm:84;--ym:26;--x:89;--y:30;--s:150px;--z:0.5;--d:4.11s"><span class="orb-in"><img src="img/kettani.webp" alt=""></span><span class="orb-l"><b>Kettani Immobilier</b>Immobilier</span></div><div class="orb" tabindex="0" role="img" aria-label="ZEYA, E-commerce, bijoux" style="--xm:16;--ym:76;--x:9;--y:70;--s:128px;--z:0.7;--d:0.48s"><span class="orb-in"><img src="img/zeya.webp" alt=""></span><span class="orb-l"><b>ZEYA</b>E-commerce, bijoux</span></div><div class="orb" tabindex="0" role="img" aria-label="Beadsbox, E-commerce" style="--xm:40;--ym:89;--x:30;--y:84;--s:118px;--z:1;--d:1.85s"><span class="orb-in"><img src="img/beadsbox.webp" alt=""></span><span class="orb-l"><b>Beadsbox</b>E-commerce</span></div><div class="orb" tabindex="0" role="img" aria-label="Milla, Marque" style="--xm:66;--ym:80;--x:70;--y:85;--s:126px;--z:0.65;--d:3.22s"><span class="orb-in"><img src="img/milla.webp" alt=""></span><span class="orb-l"><b>Milla</b>Marque</span></div><div class="orb" tabindex="0" role="img" aria-label="Frag'in, Aromatique" style="--xm:86;--ym:91;--x:91;--y:70;--s:138px;--z:0.85;--d:4.59s"><span class="orb-in"><img src="img/frayin.webp" alt=""></span><span class="orb-l"><b>Frag'in</b>Aromatique</span></div></div>
+</section>
+
+<section class="wrap sec">
+  <span data-t="0.94"></span>
+  <p class="big-text" data-light>La plupart des entreprises ne manquent pas de marketing. Elles en ont trop : des campagnes qui tournent, des contenus qui sortent, des tableaux de chiffres que personne ne lit. Notre travail commence là. Nous trions ce qui rapporte de ce qui fait du bruit, puis nous concentrons votre budget sur les personnes qui achèteront vraiment.</p>
+  <span data-t="0.06" style="display:block;height:1px;margin-top:120px"></span>
+</section>
+
+<section data-h aria-label="Même offre, trois histoires" style="overflow:hidden">
+  <div class="htrack angles">
+    <div class="apanel" style="justify-content:center;width:min(80vw,460px)">
+      <h2 data-rise>Même offre.<br>Trois histoires.</h2>
+      <p class="lead">Prenons une salle de sport. La même offre peut se vendre par le prix, par le temps gagné ou par l'encadrement. Chaque angle parle à une autre personne, et chacune réagit à sa propre accroche. Avant de changer d'offre ou de budget, nous changeons d'angle.</p>
+      <span class="legend">Faites défiler pour voir les trois angles</span>
+    </div>
+    <div class="apanel">
+      <span class="legend">Angle 1 sur 3, le prix</span>
+      <div class="ad"><div class="ad-top"><i></i><span>Club Atlas, Casablanca<small>Sponsorisé</small></span></div>
+        <div class="ad-vis v1"><p>Votre forme, pour le prix d'un café par jour.</p></div>
+        <div class="ad-cta"><span>Pour les étudiants et les jeunes actifs</span><b>Voir l'offre</b></div></div>
+    </div>
+    <div class="apanel">
+      <span class="legend">Angle 2 sur 3, le temps</span>
+      <div class="ad"><div class="ad-top"><i></i><span>Club Atlas, Casablanca<small>Sponsorisé</small></span></div>
+        <div class="ad-vis v2"><p>À deux rues de votre bureau. Une séance de 45 minutes.</p></div>
+        <div class="ad-cta"><span>Pour les cadres qui n'ont jamais le temps</span><b>Réserver une séance</b></div></div>
+    </div>
+    <div class="apanel">
+      <span class="legend">Angle 3 sur 3, l'encadrement</span>
+      <div class="ad"><div class="ad-top"><i></i><span>Club Atlas, Casablanca<small>Sponsorisé</small></span></div>
+        <div class="ad-vis v3"><p>Un coach vous attend à chaque séance.</p></div>
+        <div class="ad-cta"><span>Pour ceux qui ont déjà abandonné une salle</span><b>Essayer une semaine</b></div></div>
+    </div>
+    <div class="apanel" style="justify-content:center">
+      <p class="big-text">Le problème n'est pas toujours l'offre. C'est parfois l'angle.</p>
+      <a class="tlink" href="creation.html" style="align-self:flex-start">Comment nous trouvons les angles</a>
+    </div>
+  </div>
+</section>
+<p class="small wrap" style="margin-top:-40px">Exemple illustratif : la salle de sport et ses annonces sont fictives.</p>
+
+<section class="wrap sec">
+  <div class="split">
+    <div class="stick">
+      <span data-t="0.5"></span>
+      <h2 data-rise>Le marketing n'est pas une suite d'actions.<br>C'est un système.</h2>
+      <p class="lead" style="margin-top:28px">Une campagne qui fonctionne repose sur une offre claire, un message juste, une audience bien choisie et des chiffres lus chaque semaine. Quand un seul de ces éléments manque, le budget part ailleurs. Notre travail consiste à les faire tenir ensemble.</p>
+    </div>
+    <div class="sys" id="sys" aria-hidden="true">
+      <svg viewBox="0 0 100 100" preserveAspectRatio="none"><circle cx="50" cy="50" r="38" fill="none" stroke="#DCD6E6" stroke-width=".25" vector-effect="non-scaling-stroke"></circle></svg>
+      <span data-a="0">Business</span><span data-a="1">Data</span><span data-a="2">Audience</span><span data-a="3">Message</span><span data-a="4">Media</span><span data-a="5">Conversion</span>
+      <span class="core">Stratégie</span>
+    </div>
+  </div>
+</section>
+
+<section class="wrap sec" style="padding-top:40px">
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:56px">
+    <h2 data-rise>Quatre leviers.<br>Un seul objectif : des clients.</h2>
+    <a class="tlink" href="expertises.html">Toutes les expertises</a>
+  </div>
+  <div class="rows">
+    <a class="row" href="strategie.html"><h3><canvas data-scene="knot" data-mini data-auto aria-hidden="true"></canvas>Stratégie</h3><p><strong>Comprendre avant d'agir.</strong> Audit, positionnement, plan d'action : nous clarifions où aller avant de dépenser un dirham.</p><span class="go" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    <a class="row" href="creation.html"><h3><canvas data-scene="prism" data-mini data-auto aria-hidden="true"></canvas>Création</h3><p><strong>Trouver le message qui mérite d'être vu.</strong> Angles, accroches, publicités et contenus pensés pour faire agir, pas seulement pour plaire.</p><span class="go" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    <a class="row" href="acquisition.html"><h3><canvas data-scene="beacon" data-mini data-auto aria-hidden="true"></canvas>Acquisition</h3><p><strong>Mettre le bon message devant les bonnes personnes.</strong> Meta Ads, Google Ads et génération de leads, avec des formulaires qui qualifient avant de compter.</p><span class="go" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    <a class="row" href="pilotage.html"><h3><canvas data-scene="dial" data-mini data-auto aria-hidden="true"></canvas>Pilotage</h3><p><strong>Mesurer. Comprendre. Optimiser.</strong> Des chiffres suivis chaque semaine, des décisions prises avec vous, des campagnes qui progressent.</p><span class="go" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+  </div>
+  <span data-t="0.92" style="display:block;height:1px;margin-top:80px"></span>
+</section>
+
+<section class="scene flow" data-scene="money" data-len="320" data-cursor="Défiler" aria-label="Le chemin d'un dirham">
+  <canvas aria-hidden="true"></canvas>
+  <div class="tag" style="left:var(--gut);right:auto;text-align:left;top:clamp(90px,12vh,130px)"><h2 style="font-size:var(--fs-h2)">Le chemin d'un dirham.</h2><div class="scene-dots" aria-hidden="true" style="justify-content:flex-start"><b></b><b></b><b></b><b></b></div></div>
+  <div class="cap" aria-live="polite" style="bottom:clamp(28px,6vh,64px)">
+    <p data-at="0-0.3" style="font-size:clamp(1.6rem,1.1rem + 2vw,2.8rem);max-width:22ch">Vos dirhams partent en publicité.</p>
+    <p data-at="0.3-0.55" style="font-size:clamp(1.6rem,1.1rem + 2vw,2.8rem);max-width:22ch">Il devient des prospects. Les bons restent, les autres tombent.</p>
+    <p data-at="0.55-0.78" style="font-size:clamp(1.6rem,1.1rem + 2vw,2.8rem);max-width:22ch">Les bons deviennent des clients. Et les clients paient.</p>
+    <p data-at="0.78-1" style="font-size:clamp(1.6rem,1.1rem + 2vw,2.8rem);max-width:24ch">Et l'argent revient. Notre travail : qu'il revienne plus gros qu'il n'est parti. <a class="tlink" href="acquisition.html#simulateur" style="font-family:var(--sans);font-size:1rem">Simuler votre propre flux</a></p>
+  </div>
+</section>
+<section class="wrap sec" style="padding-top:0">
+  <h2 data-rise>Des résultats qui se comptent.</h2>
+  <svg aria-hidden="true" viewBox="0 0 1200 170" style="width:100%;height:auto;display:block;margin:28px 0 56px;overflow:visible">
+    <path id="curve" d="M0 130 C 240 20, 480 160, 720 70 S 1080 40, 1200 100" fill="none" stroke="#DCD6E6" stroke-width="1"></path>
+    <text style="font-family:'Instrument Serif',serif;font-size:30px;fill:#301781"><textPath id="tp" href="#curve" startOffset="0%">Chaque chiffre a commencé par une question simple : à qui parle-t-on vraiment ?</textPath></text>
+  </svg>
+  <p class="small" style="position:absolute;left:-9999px">Chaque chiffre a commencé par une question simple : à qui parle-t-on vraiment ?</p>
+  <div class="stats">
+    <div class="stat"><b class="num" data-count="1000" data-pre="+">+1 000</b><span>leads générés chaque mois pour nos clients</span></div>
+    <div class="stat"><b class="num" data-count="10893" data-pre="+">+10 893</b><span>prospects générés</span></div>
+    <div class="stat"><b class="sig">&lt; 1 $</b><span>coût moyen par lead sur Meta Ads, constaté sur nos clients</span></div>
+    <div class="stat"><b>1 à 2 $</b><span>coût moyen par lead sur Google Ads, constaté sur nos clients</span></div>
+    <div class="stat"><b class="num" data-count="126">126</b><span>campagnes lancées</span></div>
+    <div class="stat"><b class="num" data-count="23" data-pre="+">+23</b><span>clients accompagnés</span></div>
+    <div class="stat"><b class="num" data-count="300" data-pre="+">+300</b><span>posts et créatives publicitaires produits</span></div>
+  </div>
+  <p class="small" style="margin-top:40px">Chiffres cumulés depuis la création du cabinet. Le coût par lead varie selon le secteur : il est plus élevé pour un bien immobilier à plusieurs millions de dirhams que pour un produit du quotidien.</p>
+  <div style="margin-top:32px"><a class="tlink" href="realisations.html">Voir les réalisations</a></div>
+</section>
+
+<section class="wrap sec" style="padding-top:0">
+  <span data-t="0.08"></span>
+  <h2 data-rise style="margin-bottom:56px">Notre méthode, en cinq temps.</h2>
+  <div class="rail">
+    <div class="rail-bar"><i></i></div>
+    <ol class="steps">
+      <li class="step"><span class="n">1</span><h3>Diagnostiquer</h3><p>Nous commençons par écouter. Puis nous analysons vos publicités, vos contenus et vos performances, pour trouver ce qui freine votre acquisition.</p></li>
+      <li class="step"><span class="n">2</span><h3>Structurer</h3><p>Un plan simple, hiérarchisé, actionnable. Publicité, contenu, stratégie, organisation : tout est aligné sur vos objectifs.</p></li>
+      <li class="step"><span class="n">3</span><h3>Exécuter</h3><p>Nous mettons en place les actions et pilotons les campagnes, avec vos équipes ou à leur place.</p></li>
+      <li class="step"><span class="n">4</span><h3>Mesurer</h3><p>Nous suivons les chiffres chaque semaine. Vous recevez des bilans qui servent à décider.</p></li>
+      <li class="step"><span class="n">5</span><h3>Optimiser</h3><p>Nous ajustons ce qui doit l'être. Chaque semaine, le système apprend un peu plus.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="wrap sec" style="padding-top:0">
+  <div class="split" style="align-items:end">
+    <div>
+      <span data-t="0.55"></span>
+      <h2 data-rise>Derrière les données, il y a toujours une décision humaine.</h2>
+      <p class="lead" style="margin-top:28px">Leadvice, ce sont deux ingénieures qui ont choisi le conseil. L'une vient de la technologie et de l'acquisition, l'autre de l'audit et de la stratégie. Vous travaillez directement avec elles, du diagnostic aux décisions.</p>
+      <div style="margin-top:28px"><a class="tlink" href="cabinet.html">Découvrir le cabinet</a></div>
+    </div>
+    <div class="founders">
+      <figure data-speed="0.15"><div class="arch"><span class="mono" aria-hidden="true">A</span></div><figcaption style="margin-top:16px"><h3>Amira Dounassre</h3><span class="small">Cofondatrice. Acquisition, digital, transformation.</span></figcaption></figure>
+      <figure data-speed="-0.1"><div class="arch"><span class="mono" aria-hidden="true">N</span></div><figcaption style="margin-top:16px"><h3>Nada Moujibi</h3><span class="small">Cofondatrice, responsable stratégie. Stratégie, audit, business.</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="wrap sec faq" style="padding-top:0">
+  <span data-t="0.94"></span>
+  <h2 data-rise style="margin-bottom:48px;max-width:16ch">Les questions qu'on nous pose avant de commencer.</h2>
+  <details><summary>Que fait exactement Leadvice ?<span class="pm" aria-hidden="true">+</span></summary><p>Nous sommes un cabinet de conseil en stratégie marketing et en acquisition client, basé à Casablanca. Nous clarifions votre stratégie, créons les messages et les publicités, lançons et pilotons vos campagnes Meta Ads et Google Ads, et lisons les chiffres avec vous jusqu'aux ventes.</p></details>
+  <details><summary>Combien coûte un lead avec Leadvice ?<span class="pm" aria-hidden="true">+</span></summary><p>Sur l'ensemble de nos clients, le coût moyen par lead constaté est inférieur à 1 $ sur Meta Ads et se situe entre 1 et 2 $ sur Google Ads. Il varie selon le secteur et le prix de ce que vous vendez. Le chiffre qui compte vraiment est le coût par client.</p></details>
+  <details><summary>À qui s'adresse votre accompagnement ?<span class="pm" aria-hidden="true">+</span></summary><p>À des entreprises qui investissent déjà dans leur marketing et veulent que cet investissement produise des clients : promoteurs immobiliers, banques et services financiers, transport, services B2B, marques. Le plus souvent, nous travaillons avec la direction générale ou la direction marketing.</p></details>
+  <details><summary>Que se passe-t-il pendant le diagnostic offert ?<span class="pm" aria-hidden="true">+</span></summary><p>Un échange de 20 minutes, en visio ou par téléphone. Nous regardons vos campagnes, vos chiffres et votre offre. Vous repartez avec ce qui freine votre acquisition et par quoi commencer, que vous travailliez avec nous ensuite ou non.</p></details>
+  <details><summary>Les comptes publicitaires nous appartiennent-ils ?<span class="pm" aria-hidden="true">+</span></summary><p>Oui. Les comptes Meta et Google sont à votre nom, et le budget publicitaire est payé directement aux plateformes, séparément de nos honoraires.</p></details>
+</section>
+
+<section class="violet wrap sec">
+  <div class="cta-band">
+    <h2 data-rise>Et si nous trouvions votre signal ?</h2>
+    <p class="lead">20 minutes, offert. Nous regardons vos campagnes, vos chiffres et votre offre. Vous repartez avec ce qui freine votre acquisition et par quoi commencer.</p>
+    <a class="btn btn-light" href="diagnostic.html">Demander un diagnostic</a>
+  </div>
+</section>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="site.js"></script>
+<script>
+(function(){
+  var sys=document.getElementById("sys"); if(!sys) return;
+  var words=sys.querySelectorAll("span[data-a]"), RM=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var start=[[-160,-210],[230,-150],[-250,40],[190,170],[-90,220],[260,40]];
+  function place(k){
+    var w=sys.clientWidth,h=sys.clientHeight,R=Math.min(w,h)*.38;
+    words.forEach(function(el,i){
+      var a=-Math.PI/2+i*Math.PI/3, tx=Math.cos(a)*R, ty=Math.sin(a)*R*.95;
+      var sx=start[i][0]*(w/600), sy=start[i][1]*(h/600);
+      var x=sx+(tx-sx)*k, y=sy+(ty-sy)*k;
+      el.style.transform="translate(-50%,-50%) translate("+x+"px,"+y+"px) rotate("+((1-k)*(i%2?8:-8))+"deg)";
+      el.style.color=k>.95?"var(--ink)":"var(--ink-3)";
+    });
+    sys.querySelector(".core").style.opacity=.25+.75*k;
+  }
+  place(RM?1:0);
+  if(!RM&&window.ScrollTrigger){ScrollTrigger.create({trigger:sys,start:"top 85%",end:"center 45%",scrub:1,onUpdate:function(s){place(s.progress)}});}
+  var stEl=document.getElementById("top");
+  if(stEl){stEl._mouse=null;stEl.addEventListener("pointermove",function(e){var b=stEl.getBoundingClientRect();stEl._mouse={x:e.clientX-b.left,y:e.clientY-b.top};});stEl.addEventListener("pointerleave",function(){stEl._mouse=null;});}
+  var ob=document.getElementById("orbs");
+  if(ob){
+    var cl=ob.parentNode,R=matchMedia("(prefers-reduced-motion: reduce)").matches,FINE=matchMedia("(hover:hover) and (pointer:fine)").matches,vis=false;
+    var os=[].slice.call(ob.querySelectorAll(".orb")),B=[],W=0,H=0,mouse={x:-9999,y:-9999,vx:0,vy:0,t:0},drag=null,lastSY=scrollY;
+    var sky=cl.querySelector(".cloud-sky"),stars=[];for(var i=0;i<130;i++)stars.push({x:Math.random(),y:Math.random(),r:.5+Math.random()*1.7,o:Math.random()*6.28,v:i%8===0});
+    function setup(){W=cl.clientWidth;H=cl.clientHeight;var m=W<760;
+      B=os.map(function(o,i){var cs=getComputedStyle(o),sz=parseFloat(cs.getPropertyValue("--s"))*(m?.62:1),
+        px=parseFloat(cs.getPropertyValue(m?"--xm":"--x"))/100,py=parseFloat(cs.getPropertyValue(m?"--ym":"--y"))/100,old=B[i];
+        o.style.left="0";o.style.top="0";o.style.margin="0";o.style.width=sz+"px";o.style.height=sz+"px";
+        return {el:o,r:sz/2,x:old?Math.min(W-sz/2,old.x):px*W,y:old?Math.min(H-sz/2,old.y):py*H,vx:(Math.random()-.5)*40,vy:(Math.random()-.5)*40,ph:Math.random()*6.28,hx:px*W,hy:py*H};});}
+    setup();addEventListener("resize",setup);
+    new IntersectionObserver(function(e){vis=e[0].isIntersecting}).observe(cl);
+    function local(e){var b=cl.getBoundingClientRect();return{x:e.clientX-b.left,y:e.clientY-b.top};}
+    cl.addEventListener("pointermove",function(e){var p=local(e),now=performance.now(),dt=Math.max(16,now-mouse.t);mouse.vx=(p.x-mouse.x)/dt*1000;mouse.vy=(p.y-mouse.y)/dt*1000;mouse.x=p.x;mouse.y=p.y;mouse.t=now;
+      if(drag){drag.b.x=p.x-drag.dx;drag.b.y=p.y-drag.dy;}});
+    cl.addEventListener("pointerleave",function(){mouse.x=mouse.y=-9999;});
+    B.forEach(function(){});
+    os.forEach(function(o,i){
+      o.addEventListener("pointerdown",function(e){var b=B[i],p=local(e);
+        if(FINE){drag={b:b,dx:p.x-b.x,dy:p.y-b.y};o.setPointerCapture(e.pointerId);o.classList.add("grab");}
+        else{var a=Math.random()*6.28;b.vx+=Math.cos(a)*420;b.vy+=Math.sin(a)*420;}});
+      o.addEventListener("pointerup",function(){if(drag&&drag.b===B[i]){B[i].vx=Math.max(-1400,Math.min(1400,mouse.vx));B[i].vy=Math.max(-1400,Math.min(1400,mouse.vy));drag=null;o.classList.remove("grab");}});
+    });
+    addEventListener("scroll",function(){var d=scrollY-lastSY;lastSY=scrollY;if(!vis||R)return;B.forEach(function(b,i){b.vy-=d*(1.2+(i%3)*.6);});},{passive:true});
+    var last=0;
+    (function loop(now){var dt=Math.min(.033,(now-last)/1000||.016);last=now;
+      if(vis){
+        if(!R){var cx=W/2,cy=H/2,rx=Math.min(300,W*.36),ry=Math.min(170,H*.22),t=now/1000;
+          B.forEach(function(b,i){if(drag&&drag.b===b){b.vx=0;b.vy=0;return;}
+            b.vx+=Math.sin(t*.6+b.ph)*26*dt*10;b.vy+=Math.cos(t*.5+b.ph*1.3)*26*dt*10;
+            b.vx+=(b.hx-b.x)*.12*dt;b.vy+=(b.hy-b.y)*.12*dt;
+            var dx=(b.x-cx)/(rx+b.r),dy=(b.y-cy)/(ry+b.r),dd=dx*dx+dy*dy;if(dd<1){var k=(1-dd)*2600*dt;var n=Math.sqrt(dd)||1;b.vx+=dx/n*k;b.vy+=dy/n*k;}
+            var mx=b.x-mouse.x,my=b.y-mouse.y,md=Math.sqrt(mx*mx+my*my);if(md<b.r+110&&md>0){var f=(b.r+110-md)*16*dt*10;b.vx+=mx/md*f;b.vy+=my/md*f;}
+            b.vx*=.985;b.vy*=.985;var sp=Math.sqrt(b.vx*b.vx+b.vy*b.vy);if(sp>1600){b.vx*=1600/sp;b.vy*=1600/sp;}
+            b.x+=b.vx*dt;b.y+=b.vy*dt;
+            if(b.x<b.r){b.x=b.r;b.vx=Math.abs(b.vx)*.7;}if(b.x>W-b.r){b.x=W-b.r;b.vx=-Math.abs(b.vx)*.7;}
+            if(b.y<b.r){b.y=b.r;b.vy=Math.abs(b.vy)*.7;}if(b.y>H-b.r){b.y=H-b.r;b.vy=-Math.abs(b.vy)*.7;}});
+          for(var i=0;i<B.length;i++)for(var j=i+1;j<B.length;j++){var a=B[i],c=B[j],ex=c.x-a.x,ey=c.y-a.y,d=Math.sqrt(ex*ex+ey*ey),m=a.r+c.r+6;
+            if(d<m&&d>0){var nx=ex/d,ny=ey/d,ov=(m-d)/2;a.x-=nx*ov;a.y-=ny*ov;c.x+=nx*ov;c.y+=ny*ov;
+              var rv=(c.vx-a.vx)*nx+(c.vy-a.vy)*ny;if(rv<0){var imp=-rv*.9;a.vx-=imp*nx;a.vy-=imp*ny;c.vx+=imp*nx;c.vy+=imp*ny;if(-rv>220){a.el.classList.add("hit");c.el.classList.add("hit");setTimeout(function(x,y){x.classList.remove("hit");y.classList.remove("hit");},260,a.el,c.el);}}}}}
+        B.forEach(function(b,i){var s=R?1:1+Math.sin(now/1000*1.2+b.ph)*.025;b.el.style.transform="translate("+(b.x-b.r).toFixed(1)+"px,"+(b.y-b.r).toFixed(1)+"px) scale("+s.toFixed(3)+")";});
+        var d=Math.min(devicePixelRatio||1,2),w=sky.clientWidth,h=sky.clientHeight;if(sky.width!==Math.round(w*d)){sky.width=Math.round(w*d);sky.height=Math.round(h*d);}var c2=sky.getContext("2d");c2.setTransform(d,0,0,d,0,0);c2.clearRect(0,0,w,h);var tt=R?0:now/1000;
+        stars.forEach(function(s){var a=.12+.55*(.5+.5*Math.sin(tt*1.4+s.o));c2.globalAlpha=a;c2.fillStyle=s.v?"#7B61FF":"#9C97A8";c2.beginPath();c2.arc(s.x*w,s.y*h,s.r,0,6.283);c2.fill();});
+        if(!R)B.forEach(function(b){var g=c2.createRadialGradient(b.x,b.y,b.r*.8,b.x,b.y,b.r*1.9);g.addColorStop(0,"rgba(123,97,255,.10)");g.addColorStop(1,"rgba(123,97,255,0)");c2.globalAlpha=1;c2.fillStyle=g;c2.beginPath();c2.arc(b.x,b.y,b.r*1.9,0,6.283);c2.fill();});
+        c2.globalAlpha=1;}
+      requestAnimationFrame(loop);})(0);
+  }
+  var tg=document.getElementById("tgrid");if(tg){tg.addEventListener("pointermove",function(e){var r=tg.getBoundingClientRect();tg.style.setProperty("--mx",(e.clientX-r.left)+"px");tg.style.setProperty("--my",(e.clientY-r.top)+"px");});tg.addEventListener("pointerleave",function(){tg.style.setProperty("--mx","-999px");});}
+  var tp=document.getElementById("tp");
+  if(tp&&!RM&&window.gsap){gsap.fromTo(tp,{attr:{startOffset:"18%"}},{attr:{startOffset:"0%"},ease:"none",scrollTrigger:{trigger:tp.closest("svg"),start:"top bottom",end:"bottom top",scrub:true}});}
+})();
+</script>

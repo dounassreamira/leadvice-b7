@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%274%27 fill=%27%23301781%27/%3E%3Cpath d=%27M11 8v16h10%27 stroke=%27white%27 stroke-width=%273%27 fill=%27none%27/%3E%3C/svg%3E">
+<meta name="theme-color" content="#FBFAFD"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Demander un diagnostic offert | Leadvice</title>
+<meta name="description" content="45 minutes, offert : nous regardons vos campagnes, vos chiffres et votre offre, et vous repartez avec ce qui freine votre acquisition. Réponse sous un jour ouvré.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400..900&family=Literata:ital,opsz,wght@0,7..72,400..600;1,7..72,400&display=swap">
+<link rel="stylesheet" href="site.css"><link rel="stylesheet" href="extras.css"><link rel="stylesheet" href="b5-refine.css"><link rel="stylesheet" href="lv-brand.css"><script src="version.js"></script>
+<style>
+.dg{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:48px clamp(32px,6vw,120px);align-items:start;padding-top:clamp(130px,14vw,190px);padding-bottom:120px}
+.dg aside{position:sticky;top:120px;display:flex;flex-direction:column;gap:28px}
+.box{background:var(--white);padding:28px;box-shadow:0 1px 0 var(--line)}
+.box p{color:var(--ink-2)}
+.track{display:flex;gap:6px}
+.track b{flex:1;height:3px;background:var(--line);transition:background .4s}
+.track b.on{background:var(--signal);box-shadow:var(--glow)}
+fieldset{border:0;margin:0;padding:0;display:flex;flex-direction:column;gap:14px}
+legend{font-family:var(--serif);font-size:var(--fs-h2);line-height:1.05;margin-bottom:24px;padding:0}
+.choices{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:12px}
+.ch{position:relative}
+.ch input{position:absolute;opacity:0;inset:0;cursor:pointer}
+.ch span{display:block;padding:20px;border:1px solid var(--line);background:var(--white);border-radius:2px;font-weight:500;transition:border-color .2s,background .2s,box-shadow .3s;min-height:64px}
+.ch:hover span{border-color:var(--ink-2)}
+.ch input:checked+span{border-color:var(--brand);background:var(--paper-2);box-shadow:inset 0 0 0 1px var(--brand),var(--glow)}
+.ch input:focus-visible+span{outline:2px solid var(--brand);outline-offset:3px}
+.fld{display:flex;flex-direction:column;gap:8px}
+.fld label{font-weight:500;font-size:.95rem}
+.fld input,.fld select,.fld textarea{font:inherit;font-size:1rem;color:var(--ink);background:var(--white);border:1px solid #8A8499;border-radius:2px;min-height:52px;padding:12px 16px}
+.fld textarea{min-height:120px;resize:vertical}
+.fld input:focus,.fld select:focus,.fld textarea:focus{outline:2px solid var(--brand);outline-offset:1px;border-color:var(--brand)}
+.fld .help{font-size:.85rem;color:var(--ink-2)}
+.err{color:#B42318;font-size:.875rem}
+.bad{border-color:#B42318!important}
+.nav-f{display:flex;gap:16px;align-items:center;justify-content:space-between;margin-top:36px;flex-wrap:wrap}
+.consent{display:flex;gap:12px;align-items:flex-start;font-size:.92rem;color:var(--ink-2)}
+.consent input{width:20px;height:20px;margin-top:2px;accent-color:var(--brand);flex:none}
+.done h1{font-size:var(--fs-h1)}
+.done svg{width:100%;height:auto;margin:32px 0}
+.next{list-style:none;padding:0;margin:24px 0 0;display:flex;flex-direction:column}
+.next li{display:grid;grid-template-columns:40px minmax(0,1fr);gap:4px 16px;padding:22px 0;border-top:1px solid var(--line)}
+.next li span{color:var(--brand);font-variant-numeric:tabular-nums}
+.next li p{grid-column:2;color:var(--ink-2)}
+@media (max-width:900px){.dg{grid-template-columns:1fr}.dg aside{position:static}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": ["Organization", "ProfessionalService"], "@id": "https://leadvice.org/#org", "name": "Leadvice", "url": "https://leadvice.org/", "email": "contact@leadvice.org", "description": "Cabinet de conseil en stratégie marketing et acquisition client à Casablanca.", "address": {"@type": "PostalAddress", "streetAddress": "Hay Laayoune, angle rue Ait Yaflmane, Fida n° 341, 2e étage", "addressLocality": "Casablanca", "addressCountry": "MA"}, "areaServed": "MA", "founder": [{"@type": "Person", "name": "Amira Dounassre"}, {"@type": "Person", "name": "Nada Moujibi"}], "sameAs": ["https://www.instagram.com/theleadvice/"]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://leadvice.org/"}, {"@type": "ListItem", "position": 2, "name": "Diagnostic"}]}]}</script></head>
+<body data-page="diag">
+<main id="main" class="wrap">
+<div class="dg">
+  <aside>
+    <nav class="crumb" aria-label="Fil d'Ariane"><a href="index.html">Accueil</a> <span aria-hidden="true">/</span> <span aria-current="page">Diagnostic</span></nav>
+    <h1 style="font-size:var(--fs-h1)">Parlons de votre croissance.</h1>
+    <p class="lead">Six questions rapides pour préparer un premier échange utile. Réponse sous un jour ouvré.</p>
+    <div class="box"><p><strong style="color:var(--ink);font-weight:500">Le diagnostic, c'est quoi ?</strong> Un échange de 45 minutes, offert, en visio ou par téléphone. Nous regardons vos campagnes, vos chiffres et votre offre. Vous repartez avec ce qui freine votre acquisition et par quoi commencer. Si nous pouvons vous aider, nous vous faisons ensuite une proposition. Sinon, nous vous le disons.</p></div>
+  </aside>
+
+  <div>
+    <form id="f" novalidate>
+      <div class="track" aria-hidden="true"><b class="on"></b><b></b><b></b><b></b><b></b><b></b></div>
+      <p class="legend" id="stepl" style="margin:14px 0 32px" aria-live="polite">Étape 1 sur 6</p>
+      <div class="err" id="sum" role="alert" hidden></div>
+
+      <fieldset data-s="1"><legend>Quel est votre enjeu principal ?</legend><div class="choices">
+        <label class="ch"><input type="radio" name="enjeu" id="e1" value="leads"><span>Générer plus de leads qualifiés</span></label>
+        <label class="ch"><input type="radio" name="enjeu" id="e2" value="conv"><span>Améliorer la conversion</span></label>
+        <label class="ch"><input type="radio" name="enjeu" id="e3" value="strat"><span>Clarifier la stratégie</span></label>
+        <label class="ch"><input type="radio" name="enjeu" id="e4" value="crea"><span>Renouveler la création</span></label>
+        <label class="ch"><input type="radio" name="enjeu" id="e5" value="pilot"><span>Mieux piloter la performance</span></label>
+        <label class="ch"><input type="radio" name="enjeu" id="e6" value="autre"><span>Autre</span></label>
+      </div><div class="fld" id="autreW" hidden><label for="autre">Précisez en quelques mots</label><input id="autre" name="autre"></div></fieldset>
+
+      <fieldset data-s="2" hidden><legend>Votre entreprise</legend>
+        <div class="fld"><label for="ent">Nom de l'entreprise</label><input id="ent" name="ent" autocomplete="organization" data-req></div>
+        <div class="fld"><label for="sec">Secteur</label><select id="sec" name="sec" data-req><option value="">Choisissez un secteur</option><option>Immobilier</option><option>Banque et assurance</option><option>Éducation</option><option>Santé</option><option>Distribution</option><option>E-commerce</option><option>Industrie</option><option>Services B2B</option><option>Tourisme et transport</option><option>Autre</option></select></div>
+        <div class="fld"><label for="taille">Taille</label><select id="taille" name="taille" data-req><option value="">Choisissez une taille</option><option>Moins de 10 salariés</option><option>10 à 49</option><option>50 à 249</option><option>250 et plus</option></select></div>
+      </fieldset>
+
+      <fieldset data-s="3" hidden><legend>Votre rôle</legend><div class="choices">
+        <label class="ch"><input type="radio" name="role" id="r1" value="Dirigeant(e)"><span>Dirigeant(e)</span></label>
+        <label class="ch"><input type="radio" name="role" id="r2" value="Direction marketing"><span>Direction marketing</span></label>
+        <label class="ch"><input type="radio" name="role" id="r3" value="Direction commerciale"><span>Direction commerciale</span></label>
+        <label class="ch"><input type="radio" name="role" id="r4" value="Autre"><span>Autre</span></label></div></fieldset>
+
+      <fieldset data-s="4" hidden><legend>Quand aimeriez-vous démarrer ?</legend><div class="choices">
+        <label class="ch"><input type="radio" name="quand" id="q1" value="1"><span>Dès que possible</span></label>
+        <label class="ch"><input type="radio" name="quand" id="q2" value="2"><span>Dans les trois prochains mois</span></label>
+        <label class="ch"><input type="radio" name="quand" id="q3" value="3"><span>Je me renseigne pour l'instant</span></label></div></fieldset>
+
+      <fieldset data-s="5" hidden><legend>Vos campagnes aujourd'hui</legend><div class="choices">
+        <label class="ch"><input type="radio" name="camp" id="c1" value="1"><span>Aucune pour le moment</span></label>
+        <label class="ch"><input type="radio" name="camp" id="c2" value="2"><span>Gérées en interne</span></label>
+        <label class="ch"><input type="radio" name="camp" id="c3" value="3"><span>Gérées par une agence</span></label>
+        <label class="ch"><input type="radio" name="camp" id="c4" value="4"><span>Un peu des deux</span></label></div></fieldset>
+
+      <fieldset data-s="6" hidden><legend>Vos coordonnées</legend>
+        <div class="fld"><label for="nom">Nom et prénom</label><input id="nom" name="nom" autocomplete="name" data-req></div>
+        <div class="fld"><label for="mail">E-mail professionnel</label><input id="mail" name="mail" type="email" autocomplete="email" data-req data-mail></div>
+        <div class="fld"><label for="tel">Téléphone</label><input id="tel" name="tel" type="tel" autocomplete="tel" data-tel><span class="help">Pour vous rappeler si c'est plus simple.</span></div>
+        <div class="fld"><label for="msg">Votre message (facultatif)</label><textarea id="msg" name="msg" placeholder="Ce que vous aimeriez qu'on regarde en priorité."></textarea></div>
+        <label class="consent"><input type="checkbox" id="ok" name="ok"><span>J'accepte que Leadvice utilise ces informations pour me recontacter au sujet de ma demande, conformément à la politique de confidentialité.</span></label>
+        <p class="small">Vos données ne servent qu'à répondre à votre demande. Elles ne sont jamais revendues.</p>
+      </fieldset>
+
+      <div class="nav-f"><button type="button" class="btn btn-ghost" id="back" hidden>Retour</button><span></span><button type="submit" class="btn btn-main" id="go">Continuer</button></div>
+      <p class="small" style="margin-top:20px">Prototype : la demande n'est pas réellement envoyée.</p>
+    </form>
+
+    <div class="done" id="done" hidden tabindex="-1">
+      <h2 class="h1like">Merci. Votre demande est bien partie.</h2>
+      <svg viewBox="0 0 600 120" aria-hidden="true"><path id="dpath" d="M10 90 C 120 90, 140 30, 250 40 S 420 100, 590 30" fill="none" stroke="#7B61FF" stroke-width="2" style="filter:drop-shadow(0 0 6px rgba(123,97,255,.8))"/><circle cx="590" cy="30" r="7" fill="#7B61FF"/></svg>
+      <p class="big-text" id="enjeuTxt" style="color:var(--brand)"></p>
+      <h2 style="margin-top:56px;font-size:var(--fs-h3)">La suite.</h2>
+      <ol class="next">
+        <li><span>1</span><strong style="font-weight:500">Nous lisons votre demande.</strong><p>Nous regardons votre secteur, votre situation et l'enjeu que vous avez indiqué.</p></li>
+        <li><span>2</span><strong style="font-weight:500">Nous vous répondons sous un jour ouvré.</strong><p>Par e-mail, pour fixer le créneau de votre diagnostic.</p></li>
+        <li><span>3</span><strong style="font-weight:500">Nous faisons le point ensemble.</strong><p>45 minutes, en visio ou par téléphone. Vous repartez avec ce qui freine votre acquisition et par quoi commencer.</p></li>
+      </ol>
+      <p class="small" style="margin-top:32px">Une question d'ici là ? <span style="user-select:all;color:var(--ink)">contact@leadvice.org</span> <button type="button" class="tlink" id="copy" style="border:0;background:none;cursor:pointer;font:inherit">Copier l'adresse</button></p>
+      <p style="margin-top:24px"><a class="tlink" href="insights.html">En attendant, à lire</a></p>
+    </div>
+  </div>
+</div>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="site.js"></script><script src="search-index.js"></script><script src="extras.js"></script><script src="lv-hl.js" defer></script>
+<script>
+(function(){
+  var f=document.getElementById("f"),sets=[].slice.call(f.querySelectorAll("fieldset")),step=1,go=document.getElementById("go"),back=document.getElementById("back"),sum=document.getElementById("sum"),bars=f.querySelectorAll(".track b");
+  var TXT={leads:"Votre enjeu : générer plus de leads qualifiés.",conv:"Votre enjeu : transformer plus de contacts en clients.",strat:"Votre enjeu : savoir où aller, et par quoi commencer.",crea:"Votre enjeu : trouver le message qui fait agir.",pilot:"Votre enjeu : transformer vos chiffres en décisions.",autre:"Votre enjeu est noté. Nous le regardons de près."};
+  var RADIO={1:"enjeu",3:"role",4:"quand",5:"camp"};
+  f.addEventListener("change",function(e){if(e.target.name==="enjeu")document.getElementById("autreW").hidden=e.target.value!=="autre";});
+  function clear(){sum.hidden=true;f.querySelectorAll(".err.fe").forEach(function(x){x.remove()});f.querySelectorAll(".bad").forEach(function(x){x.classList.remove("bad");x.removeAttribute("aria-invalid")});}
+  function bad(el,msg){el.classList.add("bad");el.setAttribute("aria-invalid","true");var p=document.createElement("p");p.className="err fe";p.id=el.id+"-e";p.textContent=msg;el.insertAdjacentElement("afterend",p);el.setAttribute("aria-describedby",p.id);}
+  function check(){clear();var fs=sets[step-1],n=0,first=null;
+    if(RADIO[step]&&!f.querySelector('input[name="'+RADIO[step]+'"]:checked')){n++;sum.textContent="Choisissez une réponse pour continuer.";sum.hidden=false;first=fs.querySelector("input");}
+    fs.querySelectorAll("[data-req]").forEach(function(el){if(!el.value.trim()){n++;bad(el,"Ce champ est nécessaire pour vous répondre.");first=first||el;}});
+    var m=fs.querySelector("[data-mail]");if(m&&m.value.trim()&&!/^[^@\s]+@[^@\s]+\.[a-z]{2,}$/i.test(m.value.trim())){n++;bad(m,"Indiquez une adresse e-mail professionnelle, par exemple nom@entreprise.ma");first=first||m;}
+    var t=fs.querySelector("[data-tel]");if(t&&t.value.trim()&&t.value.replace(/\D/g,"").length<9){n++;bad(t,"Indiquez un numéro joignable, par exemple +212 6 00 00 00 00");first=first||t;}
+    if(step===6&&!document.getElementById("ok").checked){n++;var c=document.getElementById("ok");var p=document.createElement("p");p.className="err fe";p.textContent="Nous avons besoin de votre accord pour vous recontacter.";c.closest("label").insertAdjacentElement("afterend",p);first=first||c;}
+    if(n>1&&!RADIO[step]){sum.textContent="Il reste "+n+" points à corriger.";sum.hidden=false;}
+    if(first)first.focus();return n===0;}
+  function show(){sets.forEach(function(s,i){s.hidden=i!==step-1});bars.forEach(function(b,i){b.classList.toggle("on",i<step)});
+    document.getElementById("stepl").textContent="Étape "+step+" sur 6";back.hidden=step===1;go.textContent=step===6?"Envoyer ma demande":"Continuer";
+    var l=sets[step-1].querySelector("legend");if(l){l.setAttribute("tabindex","-1");l.focus({preventScroll:true});}}
+  back.addEventListener("click",function(){clear();step--;show();});
+  f.addEventListener("submit",function(e){e.preventDefault();if(!check())return;
+    if(step<6){step++;show();return;}
+    go.disabled=true;go.textContent="Envoi en cours…";
+    setTimeout(function(){f.hidden=true;var d=document.getElementById("done");d.hidden=false;
+      var v=(f.querySelector('input[name="enjeu"]:checked')||{}).value||"autre";document.getElementById("enjeuTxt").textContent=TXT[v];
+      var p=document.getElementById("dpath"),L=p.getTotalLength();p.style.strokeDasharray=L;p.style.strokeDashoffset=L;
+      if(window.gsap&&!matchMedia("(prefers-reduced-motion: reduce)").matches){gsap.to(p,{strokeDashoffset:0,duration:1.6,ease:"power2.inOut"});}else{p.style.strokeDashoffset=0;}
+      d.focus();window.scrollTo(0,0);},900);});
+  document.getElementById("copy").addEventListener("click",function(){var b=this;function done(){b.textContent="Copié";}
+    if(navigator.clipboard){navigator.clipboard.writeText("contact@leadvice.org").then(done,function(){});}});
+})();
+</script>
+</body>
+</html>
