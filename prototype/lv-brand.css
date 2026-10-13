@@ -1,0 +1,77 @@
+/* Identite Leadvice elargie (B6, B7) : le violet garde la marque, une encre violette remplace le noir,
+   un violet d'action pour les liens, un jaune signal reserve aux resultats.
+   Titres et interface en Schibsted Grotesk, lecture en Literata. */
+:root{
+  --paper:#FBFAFD; --paper-2:#F1EEFB; --white:#FFFFFF;
+  --ink:#1E0F52; --ink-2:#5B5770; --ink-3:#9C97B5; --line:#E2DDF2;
+  --brand:#301781; --brand-2:#1E0F52; --signal:#6B4EFF; --lav:#B4A6FF; --lav-2:#E4DEFF;
+  --yellow:#FFC93C;
+  --serif:"Schibsted Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --sans:"Schibsted Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --read:Literata, Georgia, "Times New Roman", serif;
+  --fs-display:clamp(2.9rem,1.5rem + 5.6vw,5.8rem);
+  --fs-h1:clamp(2.4rem,1.5rem + 3.8vw,5rem);
+  --fs-h2:clamp(2rem,1.4rem + 2.6vw,3.9rem);
+  --fs-h3:clamp(1.35rem,1.15rem + .9vw,1.9rem);
+  --glow:0 2px 10px -2px rgba(107,78,255,.45);
+}
+[data-theme=light]{--paper:#FBFAFD;--paper-2:#F1EEFB;--white:#FFFFFF;--ink:#1E0F52;--ink-2:#5B5770;--ink-3:#9C97B5;--line:#E2DDF2;--brand:#301781;--brand-2:#1E0F52;--lav-2:#E4DEFF}
+[data-theme=dark]{--paper:#0F0A24;--paper-2:#1A1338;--white:#1A1338;--ink:#EEEAF8;--ink-2:#B7B0D4;--ink-3:#8A83A8;--line:#2C2452;--brand:#B4A6FF;--brand-2:#CFC6FF;--signal:#9C87FF;--lav-2:#2C2452}
+
+/* titres : grotesque grasse, approche serree */
+h1,h2,h3,.big-text,.scene .cap p,.sit p,.faq summary,.stat b,.mnav a,.m-exp{font-family:var(--serif);font-weight:700;letter-spacing:-.028em}
+h1,h2{font-weight:800}
+.phero h1{line-height:.96;max-width:14ch}
+h2{line-height:1.02}
+.scene .cap p{font-weight:700}
+.faq summary,.sit p{font-weight:600;letter-spacing:-.015em}
+.stat b{font-weight:800;letter-spacing:-.04em}
+
+/* lecture en Literata : paragraphes, listes, textes d'ouverture */
+main p,main li,main dd,main blockquote,.lead,.a-body,.legal-doc{font-family:var(--read)}
+main p.small,main p.legend,main .btn,main label,main .chip,main .tag,main .crumb,main button{font-family:var(--sans)}
+.lead{line-height:1.6}
+body{font-size:1.0625rem}
+
+/* le jaune ne marque qu'un resultat */
+.stat b.sig,.stat b{color:var(--ink)}
+.stat b{background:linear-gradient(transparent 64%,var(--yellow) 64%,var(--yellow) 90%,transparent 90%) no-repeat 0 0/100% 100%;display:inline-block;padding:0 .06em}
+[data-theme=dark] .stat b{color:#1E0F52;background:var(--yellow);padding:.08em .14em;border-radius:2px}
+.res{background:linear-gradient(transparent 60%,var(--yellow) 60%,var(--yellow) 92%,transparent 92%);padding:0 .08em;color:var(--ink)}
+[data-theme=dark] .res{background:var(--yellow);color:#1E0F52;border-radius:2px}
+
+/* le surligneur : un trait jaune passe derriere les derniers mots des titres (lv-hl.js) */
+.phero h1::after,.violet h2::after,.ftr h2::after{content:none}
+.lv-hl{background:linear-gradient(var(--yellow),var(--yellow)) 0 92%/0% .36em no-repeat;-webkit-box-decoration-break:clone;box-decoration-break:clone;padding:0 .04em;transition:background-size .9s cubic-bezier(.22,1,.36,1)}
+.lv-hl.on{background-size:100% .36em}
+.violet .lv-hl,.ftr .lv-hl,[data-theme=dark] .lv-hl{background-position:0 55%;background-size:0% 92%;padding:0 .1em;transition:background-size .9s cubic-bezier(.22,1,.36,1),color .3s .3s}
+.violet .lv-hl.on,.ftr .lv-hl.on,[data-theme=dark] .lv-hl.on{background-size:100% 92%;color:#1E0F52}
+/* portraits des fondatrices */
+.arch img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%;display:block}
+
+/* liens et actions */
+.tlink{color:var(--signal)}
+a:hover{text-decoration-color:var(--signal)}
+.btn-main{background:var(--brand)}
+.btn-main:hover{background:var(--signal)}
+.btn::after{display:none}
+:focus-visible{outline:3px solid var(--signal);outline-offset:3px;border-radius:2px}
+::selection{background:#E4DEFF;color:#1E0F52}
+.violet{background:var(--brand);color:#F6F4FB}
+.ftr{background:#1E0F52}
+[data-theme=dark] .ftr{background:#0A0618}
+[data-theme=dark] .btn-main,[data-theme=dark] .violet,[data-theme=dark] .fab,[data-theme=dark] .logo i{background:#4A2DC9;color:#fff}
+[data-theme=dark] .btn-main:hover{background:#5B3FE0}
+.logo i{background:var(--brand)}
+html{scrollbar-color:#C9C0E8 var(--paper)}
+[data-theme=dark]{scrollbar-color:#2C2452 var(--paper)}
+.hdr.solid{background:rgba(251,250,253,.9)}
+[data-theme=dark] .hdr.solid,[data-theme=dark] .cbar{background:rgba(15,10,36,.9)}
+img{outline-color:rgba(30,15,82,.06)}
+.fab{box-shadow:0 18px 36px -14px rgba(30,15,82,.45)}
+/* les deux portraits a la meme hauteur, Amira puis Nada */
+.founders{align-items:start!important}
+.founders figure:nth-child(2){margin-bottom:0!important}
+.bio{align-items:start!important}
+/* chiffres cles : toujours sur une seule ligne (+1 000, +10 893, 1 a 2 $) */
+.stat b{white-space:nowrap;font-size:clamp(2.4rem,1.2rem + 3.2vw,4.4rem)}

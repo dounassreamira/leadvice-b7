@@ -1,0 +1,38 @@
+seo:
+  title: Réalisations et clients | Leadvice
+  description: 'Immobilier, banque, transport aérien, services IT, e-commerce : les entreprises qui ont confié leur stratégie et leur acquisition à Leadvice.'
+  og: realisations
+fil: Réalisations
+h1: Le marketing est plein de promesses. Nous préférons montrer.
+reponse: 'Des entreprises de secteurs très différents nous ont confié leur stratégie, leurs créations ou leur acquisition : une compagnie aérienne, une banque, un groupe de services informatiques, un promoteur immobilier, des marques et des boutiques en ligne. Voici une partie d''entre elles.'
+filtres:
+  aria: Filtrer par secteur
+  liste:
+  - cle: all
+    nom: Tous
+  - cle: immobilier
+    nom: Immobilier
+  - cle: banque
+    nom: Banque
+  - cle: transport
+    nom: Transport aérien
+  - cle: it
+    nom: Services IT
+  - cle: ecommerce
+    nom: E-commerce
+  - cle: marques
+    nom: Marques
+  - cle: aromatique
+    nom: Aromatique
+chiffres:
+  titre: Ce que ces missions ont produit.
+  note: Chiffres cumulés depuis la création du cabinet, tous clients confondus.
+cas:
+  etiquette: Une étude de cas détaillée
+  titre: Piloter l'acquisition de sept programmes immobiliers en parallèle.
+  sous: Immobilier haut de gamme, Meta Ads et Google Ads, douze mois.
+  texte: Comment nous avons construit une lecture par programme, des créations en arabe et en français et des audits réguliers pour un promoteur qui commercialisait sept résidences à la fois.
+  lien: Lire l'étude de cas
+cloture:
+  titre: Votre entreprise pourrait être la prochaine.
+  texte: 45 minutes, offert. Nous regardons vos campagnes, vos chiffres et votre offre. Vous repartez avec ce qui freine votre acquisition et par quoi commencer.

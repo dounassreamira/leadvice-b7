@@ -1,0 +1,67 @@
+# Landing page Ads (noindex). Textes : CONTENU-SITE-LEADVICE.md, section 14.
+seo:
+  title: Des leads qualifiés, pas seulement des leads | Leadvice
+  description: Nous concevons et pilotons vos campagnes Meta Ads et Google Ads pour attirer des prospects qualifiés, à un coût maîtrisé. Diagnostic offert de 45 minutes.
+  og: lp-leads
+enjeu: leads
+h1: Des leads que vos commerciaux ont envie de rappeler.
+sous_titre: Nous concevons et pilotons vos campagnes Meta Ads et Google Ads pour attirer des prospects qualifiés, à un coût maîtrisé.
+scene:
+  nom: target
+  len: 260
+  aria: Du public aux leads qualifiés
+  etapes:
+  - texte: Beaucoup de contacts. Peu de clients.
+    de: 0.03
+    a: 0.3
+  - texte: Diffuser, cibler, qualifier, transmettre.
+    de: 0.3
+    a: 0.6
+  - texte: Nous trouvons les bons prospects.
+    de: 0.6
+    a: 0.82
+  - texte: '+10 893 prospects générés. Moins de 1 $ : coût moyen par lead constaté sur nos clients (Meta Ads).'
+    de: 0.82
+    a: 1.01
+benefices:
+- titre: Des leads qui ont un projet.
+  texte: 'Des formulaires qui qualifient avant de compter : objectif, rôle, budget.'
+- titre: Un coût par lead maîtrisé.
+  texte: Moins de 1 $ sur Meta Ads et 1 à 2 $ sur Google Ads en moyenne chez nos clients.
+- titre: Un budget qui va où ça rapporte.
+  texte: Les chiffres sont relus chaque semaine et le budget suit les campagnes qui produisent des clients.
+formulaire_titre: Parlons de vos leads.
+faq:
+- q: Quel budget publicitaire faut-il prévoir ?
+  a:
+  - Il dépend de votre marché, de votre panier moyen et du nombre de clients que vous visez. Nous le calculons avec vous à partir de vos objectifs, pas l'inverse. Le budget publicitaire est payé directement aux plateformes, séparément de nos honoraires.
+- q: Comment faites-vous pour obtenir des leads de qualité ?
+  a:
+  - 'En triant avant de compter : des audiences précises, des messages qui attirent les bonnes personnes et repoussent les autres, et des formulaires qui posent les questions utiles. Nous suivons ensuite ce que deviennent les leads, pas seulement leur nombre.'
+- q: Pouvez-vous aussi créer nos pages de destination ?
+  a:
+  - Oui. Une campagne qui renvoie vers une page pensée pour elle convertit mieux qu'une page d'accueil générale. Nous concevons ces pages, ou un site complet, dans notre offre <a class="tlink" href="/expertises/sites-web/">Sites web</a>.
+- q: Combien coûte un accompagnement ?
+  a: 'Nos honoraires dépendent du périmètre : nombre de canaux, de campagnes et de créations. Nous vous faisons une proposition chiffrée après le diagnostic, une fois vos objectifs connus. Le budget publicitaire est payé directement aux plateformes.'
+benefices_titre: Ce que vous y gagnez.
+chiffres_titre: Des résultats qui se comptent.
+chiffres_note: 'Chiffres cumulés depuis la création du cabinet. Le coût par lead varie selon le secteur : il est plus élevé pour un bien immobilier à plusieurs millions de dirhams que pour un produit du quotidien.'
+logos_titre: Ils nous ont fait confiance.
+methode_titre: Notre méthode, en cinq temps.
+faq_titre: Vos questions.
+formulaire:
+  aide: Quatre informations suffisent. Réponse sous un jour ouvré.
+  enjeu: Votre enjeu principal
+  entreprise: Nom de l'entreprise
+  campagnes: Vos campagnes aujourd'hui
+  campagnes_choix: Choisissez une réponse
+merci:
+  titre: Merci. Votre demande est bien partie.
+  suite_titre: La suite.
+  suite:
+  - titre: Nous lisons votre demande.
+    texte: Nous regardons votre secteur, votre situation et l'enjeu que vous avez indiqué.
+  - titre: Nous vous répondons sous un jour ouvré.
+    texte: Par e-mail, pour fixer le créneau de votre diagnostic.
+  - titre: Nous faisons le point ensemble.
+    texte: 45 minutes, en visio ou par téléphone. Vous repartez avec ce qui freine votre acquisition et par quoi commencer.

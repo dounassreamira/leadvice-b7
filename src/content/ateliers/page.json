@@ -1,0 +1,564 @@
+{
+ "clients": {
+  "immo": {
+   "name": "Un promoteur immobilier",
+   "t": [
+    "Bienvenue sur notre site",
+    "L'art de vivre réinventé",
+    "Appartements de 3 pièces à 25 minutes du centre, visites ce samedi"
+   ],
+   "cta": "Réserver ma visite",
+   "s": "Dès 690 000 DH. Visites le samedi, de 10 h à 17 h."
+  },
+  "ecom": {
+   "name": "Une marque de bijoux en ligne",
+   "t": [
+    "Bienvenue sur notre boutique",
+    "Révélez votre éclat intérieur",
+    "Bracelets en pierre naturelle, livrés en 48 h, payés à la livraison"
+   ],
+   "cta": "Commander",
+   "s": "Livraison partout au Maroc, retour gratuit sous 7 jours."
+  },
+  "form": {
+   "name": "Une école de formation",
+   "t": [
+    "Bienvenue à l'école",
+    "L'excellence au service de votre avenir",
+    "Un diplôme reconnu, en cours du soir, sans quitter votre poste"
+   ],
+   "cta": "Réserver une séance d'information",
+   "s": "Cours de 18 h 30 à 21 h, rentrée en octobre."
+  }
+ },
+ "blocs": [
+  {
+   "id": "t",
+   "q": "Le titre",
+   "opts": [
+    {
+     "k": 0,
+     "g": {
+      "cl": -25,
+      "cv": -10
+     },
+     "why": "« Bienvenue » ne dit ni ce que vous vendez ni à qui. Le visiteur décide en quelques secondes s'il reste."
+    },
+    {
+     "k": 1,
+     "g": {
+      "cl": -10
+     },
+     "why": "Un slogan peut être joli, mais il oblige le visiteur à deviner l'offre. La poésie va dans les images, pas dans le titre."
+    },
+    {
+     "k": 2,
+     "g": {
+      "cl": 30,
+      "cv": 10
+     },
+     "why": "Le titre dit ce que le client obtient, avec des mots qu'il tape dans Google. Bon pour la conversion et pour le référencement."
+    }
+   ]
+  },
+  {
+   "id": "s",
+   "q": "Le sous-titre",
+   "opts": [
+    {
+     "t": "« Leader depuis 2010, nous mettons notre savoir-faire à votre service. »",
+     "g": {
+      "cl": -5,
+      "cf": -5
+     },
+     "why": "Parler de soi avant de parler du client. Et « leader » sans preuve affaiblit la confiance."
+    },
+    {
+     "t": "Une phrase qui répond à la question suivante du visiteur : prix, lieu, délai.",
+     "g": {
+      "cl": 15,
+      "cv": 5
+     },
+     "why": "Le sous-titre lève la première objection. Le visiteur n'a pas à chercher."
+    },
+    {
+     "t": "Pas de sous-titre",
+     "g": {
+      "cl": -5
+     },
+     "why": "Sans sous-titre, le titre porte tout seul la promesse et les détails. C'est rarement assez."
+    }
+   ]
+  },
+  {
+   "id": "v",
+   "q": "Le visuel principal",
+   "opts": [
+    {
+     "t": "Vidéo en lecture automatique (8 Mo)",
+     "g": {
+      "sp": -35
+     },
+     "kb": 8000,
+     "why": "Une vidéo de 8 Mo en haut de page retarde tout le reste, surtout en 4G. Si vidéo il y a, elle se charge au clic."
+    },
+    {
+     "t": "Photo réelle, compressée en WebP (120 Ko)",
+     "g": {
+      "sp": 10,
+      "cf": 5
+     },
+     "kb": 120,
+     "why": "Une vraie photo, bien compressée : l'image s'affiche vite et rassure."
+    },
+    {
+     "t": "Carrousel de six photos (3,5 Mo)",
+     "g": {
+      "sp": -20,
+      "cl": -10
+     },
+     "kb": 3500,
+     "why": "Les visiteurs regardent rarement au-delà de la première image d'un carrousel, qui pèse pourtant six fois plus."
+    }
+   ]
+  },
+  {
+   "id": "b",
+   "q": "Le bouton principal",
+   "opts": [
+    {
+     "t": "Envoyer",
+     "g": {
+      "cv": -10
+     },
+     "why": "« Envoyer » décrit l'effort, pas ce qu'on reçoit."
+    },
+    {
+     "t": "En savoir plus",
+     "g": {
+      "cv": -5,
+      "cl": -5
+     },
+     "why": "« En savoir plus » repousse la décision. Le visiteur ne sait pas ce qui l'attend."
+    },
+    {
+     "k": "cta",
+     "g": {
+      "cv": 20,
+      "cl": 5
+     },
+     "why": "Le bouton dit exactement ce qui se passe au clic. On clique plus volontiers quand on sait."
+    }
+   ]
+  },
+  {
+   "id": "p",
+   "q": "La preuve",
+   "opts": [
+    {
+     "t": "« N°1 au Maroc »",
+     "g": {
+      "cf": -20
+     },
+     "why": "Une affirmation qu'on ne peut pas vérifier fait l'effet inverse : elle éveille la méfiance."
+    },
+    {
+     "t": "Avis vérifiables et logos de vrais clients",
+     "g": {
+      "cf": 25,
+      "cv": 10
+     },
+     "why": "Des preuves que le visiteur peut vérifier. Rien ne rassure plus."
+    },
+    {
+     "t": "Pas de preuve",
+     "g": {
+      "cf": -5
+     },
+     "why": "Sans preuve, le visiteur prend tout le risque. Il hésite, et repart comparer."
+    }
+   ]
+  },
+  {
+   "id": "f",
+   "q": "Le formulaire",
+   "opts": [
+    {
+     "t": "Trois champs : prénom, téléphone, une précision",
+     "g": {
+      "cv": 20
+     },
+     "why": "Trois champs se remplissent en moins d'une minute sur mobile."
+    },
+    {
+     "t": "Cinq champs, dont une question pour qualifier",
+     "g": {
+      "cv": 10,
+      "cf": 5
+     },
+     "why": "Une question de qualification bien choisie trie sans décourager. Bon compromis quand l'équipe commerciale est petite."
+    },
+    {
+     "t": "Onze champs, dont le budget obligatoire",
+     "g": {
+      "cv": -30,
+      "cf": -5
+     },
+     "why": "Onze champs et une question de budget dès le premier contact : la plupart abandonnent. On qualifie au téléphone."
+    }
+   ]
+  },
+  {
+   "id": "ty",
+   "q": "La typographie",
+   "opts": [
+    {
+     "t": "Une famille, deux graisses",
+     "g": {
+      "sp": 5,
+      "cl": 5
+     },
+     "kb": 60,
+     "why": "Une seule famille bien choisie suffit à donner du caractère, et pèse peu."
+    },
+    {
+     "t": "Quatre polices décoratives",
+     "g": {
+      "sp": -15,
+      "cl": -10
+     },
+     "kb": 400,
+     "why": "Quatre polices, c'est 400 Ko de plus et une page qui parle avec quatre voix."
+    },
+    {
+     "t": "Police du système, rien à charger",
+     "g": {
+      "sp": 10,
+      "cf": -5
+     },
+     "kb": 0,
+     "why": "Rapide, mais la page ressemble à toutes les autres. La marque y perd un peu."
+    }
+   ]
+  },
+  {
+   "id": "c",
+   "q": "Le contact sur mobile",
+   "opts": [
+    {
+     "t": "Boutons d'appel et WhatsApp toujours visibles",
+     "g": {
+      "cv": 15
+     },
+     "kb": 6,
+     "why": "Sur mobile, beaucoup préfèrent appeler ou écrire. Un pouce suffit."
+    },
+    {
+     "t": "Numéro en image dans le pied de page",
+     "g": {
+      "cv": -10,
+      "cf": -5
+     },
+     "kb": 30,
+     "why": "Un numéro en image ne se touche pas pour appeler, et ne se lit pas par les moteurs ni les lecteurs d'écran."
+    },
+    {
+     "t": "Fenêtre de discussion qui s'ouvre toute seule",
+     "g": {
+      "sp": -15,
+      "cv": -5
+     },
+     "kb": 450,
+     "why": "Elle couvre le contenu, pèse lourd et interrompt la lecture. Un bouton discret fait mieux."
+    }
+   ]
+  }
+ ],
+ "audit": [
+  {
+   "id": "menu",
+   "bad": true,
+   "why": "Neuf entrées de menu : le visiteur ne sait pas où aller. Cinq au plus, l'action principale à part."
+  },
+  {
+   "id": "logo",
+   "bad": false
+  },
+  {
+   "id": "pop",
+   "bad": true,
+   "why": "Une fenêtre d'inscription qui s'ouvre dès l'arrivée, avant même d'avoir lu. Sur mobile, Google pénalise ce genre d'interruption."
+  },
+  {
+   "id": "h1",
+   "bad": true,
+   "why": "« Bienvenue » en titre : aucune promesse, aucun mot-clé. Le titre doit dire ce que le client obtient."
+  },
+  {
+   "id": "low",
+   "bad": true,
+   "why": "Texte gris clair sur fond blanc : contraste insuffisant, illisible au soleil et pour beaucoup de visiteurs."
+  },
+  {
+   "id": "img",
+   "bad": true,
+   "why": "« banniere-finale-v3.png », 3,2 Mo : l'image n'est pas compressée et son nom ne dit rien aux moteurs."
+  },
+  {
+   "id": "team",
+   "bad": false
+  },
+  {
+   "id": "more",
+   "bad": true,
+   "why": "Cinq liens « En savoir plus » identiques : ni le visiteur ni Google ne savent où ils mènent."
+  },
+  {
+   "id": "quote",
+   "bad": true,
+   "why": "« Super service ! », signé « Client satisfait » : un avis anonyme ne prouve rien. Nom, entreprise, résultat."
+  },
+  {
+   "id": "hours",
+   "bad": false
+  },
+  {
+   "id": "form",
+   "bad": true,
+   "why": "Onze champs, dont le budget obligatoire : le formulaire fait fuir avant le premier échange."
+  },
+  {
+   "id": "btn",
+   "bad": true,
+   "why": "Le bouton dit « Cliquez ici » : il ne dit pas ce qu'on obtient."
+  },
+  {
+   "id": "tel",
+   "bad": true,
+   "why": "Le numéro est une image : impossible de le toucher pour appeler depuis un téléphone."
+  },
+  {
+   "id": "addr",
+   "bad": false
+  },
+  {
+   "id": "legal",
+   "bad": false
+  }
+ ],
+ "elements": [
+  {
+   "id": "hero",
+   "t": "Photo principale en WebP",
+   "kb": 120,
+   "v": 20
+  },
+  {
+   "id": "bgv",
+   "t": "Vidéo d'arrière-plan",
+   "kb": 6000,
+   "v": 6
+  },
+  {
+   "id": "car",
+   "t": "Carrousel de six photos",
+   "kb": 2400,
+   "v": 4
+  },
+  {
+   "id": "fonts",
+   "t": "Trois polices de plus",
+   "kb": 300,
+   "v": 2
+  },
+  {
+   "id": "chat",
+   "t": "Fenêtre de discussion",
+   "kb": 450,
+   "v": 5
+  },
+  {
+   "id": "map",
+   "t": "Carte interactive intégrée",
+   "kb": 700,
+   "v": 6
+  },
+  {
+   "id": "pix",
+   "t": "Outils de mesure Meta et Google",
+   "kb": 140,
+   "v": 15
+  },
+  {
+   "id": "rev",
+   "t": "Avis clients vérifiables",
+   "kb": 40,
+   "v": 14
+  },
+  {
+   "id": "wa",
+   "t": "Bouton WhatsApp",
+   "kb": 6,
+   "v": 12
+  },
+  {
+   "id": "anim",
+   "t": "Animation d'ouverture",
+   "kb": 520,
+   "v": 3
+  },
+  {
+   "id": "vid",
+   "t": "Vidéo témoignage, chargée au clic",
+   "kb": 25,
+   "v": 10
+  },
+  {
+   "id": "plan",
+   "t": "Plan d'accès en image",
+   "kb": 60,
+   "v": 6
+  }
+ ],
+ "indices": {
+  "menu": "Regardez le haut de la page.",
+  "pop": "Qu'est-ce qui apparaît avant même qu'on lise ?",
+  "h1": "Le premier mot qu'on lit dit-il ce qu'on vend ?",
+  "low": "Ce paragraphe se lit-il bien ?",
+  "img": "Regardez le poids de l'image.",
+  "more": "Où mènent ces liens ?",
+  "quote": "Cet avis prouve-t-il quelque chose ?",
+  "form": "Comptez les champs.",
+  "btn": "Le bouton dit-il ce qu'on obtient ?",
+  "tel": "Peut-on appeler depuis un téléphone ?"
+ },
+ "ui": {
+  "niveaux": [
+   "Assembler",
+   "Auditer",
+   "Alléger",
+   "Bilan"
+  ],
+  "niveau": "Niveau {n}",
+  "fin": "Fin",
+  "n1_titre": "Niveau 1 : assemblez la page",
+  "n1_texte": "Une page d'atterrissage pour une campagne. Huit blocs, trois options chacun. Quatre jauges réagissent à chaque choix, et l'aperçu se construit sous vos yeux. Pour qui construisez-vous ?",
+  "note": "Les clients sont fictifs. Les trois niveaux prennent 10 à 15 minutes ; votre progression est gardée sur cet appareil.",
+  "jauges": {
+   "cl": "Clarté",
+   "cf": "Confiance",
+   "sp": "Vitesse",
+   "cv": "Conversion"
+  },
+  "affichage": "Affichage estimé sur mobile 4G : {t} s",
+  "objectif_ok": "(objectif : moins de 2 s)",
+  "objectif_ko": "(au-dessus de l'objectif de 2 s)",
+  "sur": "{n} sur {total}",
+  "assemblee": "Page assemblée. Score du niveau : {s} sur 100",
+  "refaire": "Recommencer le niveau",
+  "vers2": "Passer au niveau 2",
+  "apercu": {
+   "aria": "Aperçu de la page",
+   "titre": "Titre",
+   "sous_titre": "Sous-titre",
+   "visuel": "Visuel",
+   "preuve": "Preuve",
+   "formulaire": "Formulaire",
+   "bouton": "Bouton",
+   "visuels": [
+    "Vidéo, 8 Mo",
+    "Photo WebP, 120 Ko",
+    "Carrousel, 3,5 Mo"
+   ],
+   "avis": "Avis vérifiés",
+   "numero1": "N°1 au Maroc",
+   "champs": "+ {n} champs",
+   "appeler": "Appeler",
+   "whatsapp": "WhatsApp",
+   "chat": "Bonjour ! Puis-je vous aider ?",
+   "tel_image": "Tél. en image",
+   "sous_titre_leader": "Leader depuis 2010, nous mettons notre savoir-faire à votre service."
+  },
+  "n2_titre": "Niveau 2 : trouvez les erreurs",
+  "n2_texte": "Cette page d'un promoteur fictif contient {n} erreurs qui coûtent des clients. Touchez ce qui ne va pas. Certains éléments sont très bien : un mauvais signalement compte contre vous.",
+  "page_aria": "Page à auditer",
+  "page": {
+   "logo": "Résidence Horizon",
+   "menu": "Accueil · Projet · Plans · Quartier · Galerie · Actualités · Partenaires · Carrières · Contact",
+   "pop": "Inscrivez-vous à notre newsletter !",
+   "h1": "Bienvenue",
+   "low": "Découvrez un projet unique pensé pour votre confort, dans un cadre exceptionnel, avec des prestations haut de gamme et des finitions soignées.",
+   "img": [
+    "banniere-finale-v3.png",
+    "3,2 Mo"
+   ],
+   "more": [
+    "Le projet",
+    "Les plans",
+    "Le quartier"
+   ],
+   "more_lien": "En savoir plus",
+   "team": "Photo de l'équipe commerciale, avec les prénoms",
+   "quote": [
+    "« Super service ! »",
+    "Client satisfait"
+   ],
+   "hours": "Bureau de vente ouvert du lundi au samedi, 9 h à 18 h",
+   "form": [
+    "Demande d'information",
+    "Nom · Prénom · E-mail · Téléphone · Ville · Profession · Revenus · Apport · Budget* · Délai · Message"
+   ],
+   "btn": "Cliquez ici",
+   "tel": "05 22 •• •• ••",
+   "addr": "Bd Ghandi, Casablanca",
+   "legal": "Mentions légales"
+  },
+  "trouvees": "{n} / {total}",
+  "trouvees_l": "erreurs trouvées",
+  "tort": "{n} signalement à tort",
+  "torts": "{n} signalements à tort",
+  "indice_n": "{n} indice",
+  "indices_n": "{n} indices",
+  "bien_vu": "Bien vu.",
+  "rien": "Rien à redire ici : cet élément aide le visiteur.",
+  "indice": "Un indice",
+  "indice_pre": "Indice : {t}",
+  "fini": "J'ai fini",
+  "score": "Voir mon score",
+  "n3_titre": "Niveau 3 : allégez la page mobile",
+  "n3_texte": "Votre page de base pèse {base} Ko (texte, styles, formulaire). Ajoutez ce qui aide vraiment à vendre, sans dépasser {limite} secondes d'affichage en 4G. Chaque élément a une valeur commerciale que vous ne voyez pas : à vous de juger.",
+  "ko": "{n} Ko",
+  "affichage_court": "Affichage estimé",
+  "objectif_poids": "Objectif : {limite} s, poids : {kb} Ko",
+  "trop_lourd": "Trop lourd : la page dépasse l'objectif. Retirez ce qui pèse plus qu'il ne rapporte.",
+  "valider": "Valider ma page",
+  "bilan": "Bilan",
+  "mentions": [
+   {
+    "min": 85,
+    "texte": "Vous pourriez relire nos maquettes."
+   },
+   {
+    "min": 65,
+    "texte": "Solide. Quelques réflexes à prendre."
+   },
+   {
+    "min": 0,
+    "texte": "Des réflexes à prendre : c'est le but de l'atelier."
+   }
+  ],
+  "sur100": "sur 100",
+  "retenir": "À retenir",
+  "retenir_1": "Un titre qui dit ce que le client obtient, un bouton qui dit ce qui se passe, des preuves vérifiables, un formulaire court : c'est là que se joue la conversion.",
+  "retenir_2": "Sur mobile, chaque kilo-octet se paie en secondes, et chaque seconde en visiteurs perdus. On charge au clic ce qui n'est pas indispensable.",
+  "garde": "Vous avez gardé des éléments qui pèsent plus qu'ils ne rapportent : {liste}. ",
+  "oublie": "Vous avez laissé de côté des éléments légers et utiles : {liste}.",
+  "parfait": "Votre sélection est très proche de la meilleure possible.",
+  "cta_texte": "Votre site a peut-être quelques-unes de ces erreurs. En 45 minutes, nous le regardons avec vous et vous repartez avec les corrections prioritaires.",
+  "diagnostic": "Demander un diagnostic",
+  "sites_web": "Voir notre offre Sites web",
+  "recommencer": "Recommencer l'atelier",
+  "base_kb": 180,
+  "limite": 2.0
+ }
+}

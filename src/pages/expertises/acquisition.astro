@@ -1,0 +1,145 @@
+---
+/* Acquisition : gabarit levier, plus « Du brief au client signé », le simulateur, les chiffres et « Le plan que vous recevez ». */
+import LevierPage from '../../components/LevierPage.astro';
+import Icon from '../../components/Icon.astro';
+import { page, site, sceneLabels, type Data } from '../../lib/content';
+import '../../styles/pages/acquisition.css';
+
+const d = await page('acquisition');
+const s = await site();
+const ch = (await site('chiffres')).cabinet as Data[];
+const stats = (d.chiffres.retenus as string[]).map((v) => ch.find((x) => x.valeur === v)).filter(Boolean) as Data[];
+const pa = d.parcours, sim = d.simulateur, pl = d.plan;
+const moneyLabels = await sceneLabels('money');
+const cfg = JSON.stringify(sim.modes);
+const cells = (de: number, a: number, jaune: boolean): string[] => [1, 2, 3, 4].map((w) => (w >= de && w <= a ? (jaune ? 'y' : 'i') : 's'));
+---
+<LevierPage d={d} path="/expertises/acquisition/">
+  <Fragment slot="after-faisons">
+    <section class="wrap sec sec-top0 lv-ad-sec" aria-labelledby="lv-ad-t">
+      <div class="lv-pin" id="lv-ad">
+        <div class="lv-stick">
+          <div class="lv-ad">
+            <div>
+              <div class="lv-ad-h">
+                <h2 id="lv-ad-t">{pa.titre}</h2>
+                <p class="lead">{pa.intro}</p>
+              </div>
+              <ol class="lv-steps">
+                {(pa.etapes as Data[]).map((e, i) => <li class:list={[{ 'lv-on lv-cur': i === 0 }]}><i>{e.levier}</i><div><b>{e.titre}</b><span>{e.texte}</span></div></li>)}
+              </ol>
+            </div>
+            <div class="lv-stage" data-s="0">
+              <div class="lv-ghosts" aria-hidden="true">{Array.from({ length: 9 }).map(() => <div></div>)}</div>
+              <div class="lv-obj">
+                <div class="lv-note lv-on">
+                  <span class="lv-k">{pa.brief.etiquette}</span>
+                  <h3>{pa.brief.titre}</h3>
+                  <dl>{(pa.brief.lignes as Data[]).map((l) => <Fragment><dt>{l.k}</dt><dd>{l.v}</dd></Fragment>)}</dl>
+                </div>
+                <div class="lv-pub">
+                  <div class="vis"></div>
+                  <span class="lv-k">{pa.annonce.etiquette}</span>
+                  <h3>{pa.annonce.titre}</h3>
+                  <p>{pa.annonce.texte}</p>
+                  <span class="cta">{pa.annonce.bouton}</span>
+                </div>
+                <div class="lv-pub mini" aria-hidden="true">
+                  <div class="vis"></div>
+                  <h3>{pa.annonce.titre}</h3>
+                  <span class="cta">{pa.annonce.bouton}</span>
+                  <svg class="lv-cursor" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3l14 8-6 2-2 6z" fill="#1E0F52" stroke="#fff" stroke-width="1.5"/></svg>
+                </div>
+                <div class="lv-form">
+                  <span class="lv-k">{pa.formulaire.etiquette}</span>
+                  <h3>{pa.formulaire.titre}</h3>
+                  {(pa.formulaire.champs as Data[]).map((c) => <div class="field"><b>{c.k}</b><span>{c.v}</span></div>)}
+                  <span class="fbtn">{pa.formulaire.bouton}</span>
+                </div>
+                <div class="lv-rec">
+                  <span class="lv-k">{pa.lead.etiquette}</span>
+                  <h3>{pa.lead.titre} <span class="lv-tag">{pa.lead.statut}</span></h3>
+                  <dl>{(pa.lead.lignes as Data[]).map((l) => <Fragment><dt>{l.k}</dt><dd>{l.v}</dd></Fragment>)}</dl>
+                </div>
+                <div class="lv-done">
+                  <div class="lv-check" aria-hidden="true"><Icon name="check" size={22} /></div>
+                  <h3>{pa.fin.titre}</h3>
+                  <p>{pa.fin.texte}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap sec sec-top0" id="simulateur">
+      <h2 data-rise style="max-width:16ch">{sim.titre}</h2>
+      <p class="lead mt-s">{sim.intro}</p>
+      <div class="sim-tabs" role="tablist" aria-label={sim.onglets_aria}>
+        <button type="button" role="tab" id="t-lead" aria-selected="true" aria-controls="sim">{sim.modes.lead.onglet}</button>
+        <button type="button" role="tab" id="t-ecom" aria-selected="false" aria-controls="sim">{sim.modes.ecom.onglet}</button>
+      </div>
+      <div class="sim" id="sim" role="tabpanel" aria-labelledby="t-lead" data-config={cfg}>
+        <div class="sim-ctl" id="ctl"></div>
+        <div class="sim-vis">
+          <div class="sim-cv" data-scene="money" data-static data-loop id="simcv" data-labels={moneyLabels}><canvas aria-hidden="true"></canvas></div>
+          <div class="sim-out" id="out" aria-live="polite"></div>
+        </div>
+      </div>
+      <div class="sim-cta">
+        <p class="big-text" id="simbig"></p>
+        <div class="row-a"><a class="btn btn-main" href="/diagnostic/">{s.cta.principal}</a><span class="small">{sim.cta_aide}</span></div>
+      </div>
+      <p class="small sim-note">{sim.note}</p>
+    </section>
+
+    <section class="wrap sec sec-top0">
+      <div class="stats">
+        {stats.map((x) => <div class="stat"><b class="num" data-count={x.compteur ?? undefined} data-pre={x.compteur ? x.prefixe : undefined}>{x.valeur}</b><span>{x.texte}</span></div>)}
+      </div>
+      <p class="small stats-note">{d.chiffres.note}</p>
+    </section>
+  </Fragment>
+
+  <Fragment slot="after-comment">
+    <section class="wrap sec sec-top0 lv-plan-sec" aria-labelledby="lv-plan-t">
+      <div class="lv-pin" id="lv-plan">
+        <div class="lv-stick">
+          <div class="lv-plan-wrap">
+            <h2 id="lv-plan-t" class="lv-plan-title">{pl.titre}</h2>
+            <div class="lv-doc">
+              <div class="lv-doc-h">
+                <h3>{pl.document}</h3>
+                <p>{pl.pour}<br /><span class="hm">{pl.exemple}</span></p>
+              </div>
+              <div class="lv-blocks">
+                {(pl.blocs as Data[]).map((b) => (
+                  <div class:list={['blk', b.taille]}>
+                    <h4>{b.titre}</h4>
+                    {b.texte && <p>{b.texte}</p>}
+                    {b.liste && <ul>{(b.liste as string[]).map((li, i) => <li class:list={[{ hm: i === 2 }]}>{li}</li>)}</ul>}
+                  </div>
+                ))}
+                <div class="blk w6">
+                  <h4>{pl.calendrier.titre}</h4>
+                  <div class="gantt" role="img" aria-label={pl.calendrier.aria}>
+                    <span></span>{(pl.calendrier.semaines as string[]).map((w) => <span class="wk">{w}</span>)}
+                    {(pl.calendrier.lignes as Data[]).map((l) => (
+                      <Fragment><b>{l.nom}</b>{cells(l.de, l.a, !!l.jaune).map((c) => (c === 's' ? <span></span> : <i class={c === 'y' ? 'y' : undefined}></i>))}</Fragment>
+                    ))}
+                  </div>
+                </div>
+              </div>
+              <span class="stamp">{pl.tampon}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </Fragment>
+</LevierPage>
+<script>
+  import { initSim } from '../../scripts/fx/sim';
+  initSim();
+</script>

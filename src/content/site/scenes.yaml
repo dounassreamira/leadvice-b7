@@ -1,0 +1,37 @@
+# Textes dessinés dans les scènes animées (canvas). Les scènes sont réutilisées sur plusieurs pages.
+signal:
+  canaux: [vues, likes, impressions, abonnés]
+  fin: clients
+knot: {}
+angles:
+  offre: Abonnement salle de sport
+  offre_sous: La même offre, sans rien changer
+  bouton_pub: Essai gratuit
+  retenu: "Retenu :"
+  angle: Angle
+  parle: Parle surtout aux
+  angles:
+    - { k: Prix, hook: "299 MAD par mois. Moins qu'un café par jour.", who: Étudiants }
+    - { k: Temps, hook: "45 minutes, trois fois par semaine.", who: Cadres pressés }
+    - { k: Encadrement, hook: Un coach vous suit dès la première séance., who: Débutants }
+target:
+  filtres: [Intérêt, Zone, Comportement]
+  champs: [Projet, Délai, Rôle]
+  formulaire: Formulaire
+  liste: Leads qualifiés
+  transmis: Transmis à vos commerciaux
+  etapes: [Diffuser, Cibler, Qualifier, Transmettre]
+dial:
+  etapes: [Mesurer, Comprendre, Ajuster]
+loop:
+  leviers: [Stratégie, Création, Acquisition, Données]
+page:
+  bouton: Réserver
+  demande: Nouvelle demande
+  demande_detail: Diagnostic, mardi 10 h
+  etapes: [Assembler, Clarifier, Convertir]
+money:
+  etapes: [Budget investi, Publicité, Clients, Chiffre d'affaires]
+  devise: [MAD]
+lost:
+  code: "404"

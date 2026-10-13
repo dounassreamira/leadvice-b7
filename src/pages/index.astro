@@ -1,0 +1,152 @@
+---
+import Base from '../layouts/Base.astro';
+import Faq from '../components/Faq.astro';
+import CtaBand from '../components/CtaBand.astro';
+import Stats from '../components/Stats.astro';
+import MethodRail from '../components/MethodRail.astro';
+import Founders from '../components/Founders.astro';
+import LeverRows from '../components/LeverRows.astro';
+import AdVisual from '../components/AdVisual.astro';
+import { Image } from 'astro:assets';
+import { page, site, sceneLabels, type Data } from '../lib/content';
+import { logo } from '../lib/images';
+import { faqPage } from '../lib/schema';
+import '../styles/pages/home.css';
+
+const p = await page('accueil');
+const s = await site();
+const clients = (await site('clients')).liste as Data[];
+const signalLabels = await sceneLabels('signal');
+const moneyLabels = await sceneLabels('money');
+const o = p.ouverture, a = p.angles, d = p.dirham;
+---
+<Base title={p.seo.title} description={p.seo.description} og={p.seo.og} page="home" jsonld={[faqPage(p.faq.questions)]}>
+  <section class="scene story" id="top" data-scene="signal" data-len="340" data-mouse aria-label={o.aria} data-labels={signalLabels}>
+    <canvas aria-hidden="true"></canvas>
+    <div class="hero-layer" data-hero-out>
+      <h1 set:html={o.h1} />
+      <div class="hero-side">
+        <p class="lead">{o.texte}</p>
+        <div class="acts"><a class="btn btn-main" href="/diagnostic/">{s.cta.principal}</a></div>
+      </div>
+    </div>
+    <div class="story-head">
+      <div class="cap" aria-live="polite">
+        {(o.etapes as Data[]).map((e) => <p data-at={`${e.de}-${e.a}`}>{e.texte}</p>)}
+      </div>
+    </div>
+    <div class="story-gap" aria-hidden="true"></div>
+    <div class="scene-dots story-rail" data-hero-in aria-hidden="true" style={`--steps:${o.rail.length}`}>
+      {(o.rail as string[]).map((r) => <b><span>{r}</span></b>)}
+    </div>
+  </section>
+
+  <section class="cloud" aria-labelledby="cloud-t">
+    <canvas class="cloud-sky" aria-hidden="true"></canvas>
+    <div class="cloud-mid">
+      <h2 id="cloud-t">{p.nuage.titre}</h2>
+      <p class="cloud-n"><b class="num" data-count={p.nuage.chiffre_valeur} data-pre="+">{p.nuage.chiffre}</b></p>
+      <p class="cloud-s">{p.nuage.texte}</p>
+    </div>
+    <p class="cloud-hint" aria-hidden="true"><span class="h-fine">{p.nuage.aide_souris}</span><span class="h-touch">{p.nuage.aide_toucher}</span></p>
+    <div class="orbs" id="orbs">
+      {clients.map((c) => (
+        <div class="orb" tabindex="0" role="img" aria-label={`${c.nom}, ${c.secteur}`} style={`--xm:${c.xm};--ym:${c.ym};--x:${c.x};--y:${c.y};--s:${c.s}px;--d:${c.d}s`}>
+          <span class="orb-in"><Image src={logo(c.logo)} alt="" width={240} format="webp" loading="lazy" decoding="async" /></span>
+          <span class="orb-l"><b>{c.nom}</b>{c.secteur}</span>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="wrap sec">
+    <p class="big-text" data-light>{p.constat}</p>
+  </section>
+
+  <section class="angles-sec" data-h aria-label={a.aria} tabindex="0">
+    <div class="htrack angles">
+      <div class="apanel intro">
+        <h2 data-rise set:html={a.titre} />
+        <p class="lead">{a.intro}</p>
+      </div>
+      {(a.annonces as Data[]).map((x, i) => (
+        <div class="apanel">
+          <span class="legend">{x.etiquette}</span>
+          <div class="ad">
+            <div class="ad-top"><i></i><span>{a.annonceur}<small>{a.sponsorise}</small></span></div>
+            <div class="ad-vis" data-adwatch><AdVisual variant={i as 0 | 1 | 2} /><p>{x.accroche}</p></div>
+            <div class="ad-cta"><span>{x.cible}</span><b>{x.bouton}</b></div>
+          </div>
+        </div>
+      ))}
+      <div class="apanel outro">
+        <p class="big-text">{a.fin}</p>
+        <a class="tlink" href={a.lien.url}>{a.lien.texte}</a>
+      </div>
+    </div>
+  </section>
+  <p class="small wrap angles-note">{a.mention}</p>
+
+  <section class="wrap sec">
+    <div class="split">
+      <div class="stick">
+        <h2 data-rise set:html={p.systeme.titre} />
+        <p class="lead mt">{p.systeme.texte}</p>
+      </div>
+      <div class="sys" data-sys aria-hidden="true">
+        <svg viewBox="0 0 100 100" preserveAspectRatio="none"><circle cx="50" cy="50" r="38" fill="none" stroke-width=".25" vector-effect="non-scaling-stroke"></circle></svg>
+        {(p.systeme.mots as string[]).map((m, i) => <span data-a={i}>{m}</span>)}
+        <span class="core">{p.systeme.centre}</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap sec" style="padding-top:40px">
+    <div class="lev-head">
+      <h2 data-rise set:html={p.leviers.titre} />
+      <a class="tlink" href={p.leviers.lien.url}>{p.leviers.lien.texte}</a>
+    </div>
+    <LeverRows />
+    <p class="site-hint" set:html={p.leviers.sites} />
+  </section>
+
+  <section class="scene flow" data-scene="money" data-len="320" aria-label={d.aria} data-labels={moneyLabels}>
+    <canvas aria-hidden="true"></canvas>
+    <div class="tag"><h2>{d.titre}</h2><div class="scene-dots" aria-hidden="true">{(d.etapes as Data[]).map(() => <b></b>)}</div></div>
+    <div class="cap" aria-live="polite">
+      {(d.etapes as Data[]).map((e) => <p data-at={`${e.de}-${e.a}`}>{e.texte}{e.lien && <Fragment> <a class="tlink" href={e.lien.url}>{e.lien.texte}</a></Fragment>}</p>)}
+    </div>
+  </section>
+
+  <section class="wrap sec sec-top0">
+    <h2 data-rise>{p.resultats.titre}</h2>
+    <svg class="curve" aria-hidden="true" viewBox="0 0 1200 170">
+      <path id="curve" d="M0 130 C 240 20, 480 160, 720 70 S 1080 40, 1200 100" fill="none" stroke-width="1"></path>
+      <text><textPath id="tp" href="#curve" startOffset="0%">{p.resultats.courbe}</textPath></text>
+    </svg>
+    <p class="sr-only">{p.resultats.courbe}</p>
+    <Stats />
+    <p class="small res-note">{p.resultats.note}</p>
+    <div class="mt-m"><a class="tlink" href={p.resultats.lien.url}>{p.resultats.lien.texte}</a></div>
+  </section>
+
+  <section class="wrap sec sec-top0">
+    <h2 data-rise style="margin-bottom:56px">{p.methode.titre}</h2>
+    <MethodRail />
+  </section>
+
+  <section class="wrap sec sec-top0 human">
+    <div class="split">
+      <div>
+        <h2 data-rise>{p.humain.titre}</h2>
+        <p class="lead mt-m">{p.humain.texte}</p>
+        <div class="mt-m"><a class="tlink" href={p.humain.lien.url}>{p.humain.lien.texte}</a></div>
+      </div>
+      <Founders parallax />
+    </div>
+  </section>
+
+  <Faq titre={p.faq.titre} questions={p.faq.questions} />
+
+  <CtaBand titre={p.cloture.titre} texte={p.cloture.texte} />
+</Base>

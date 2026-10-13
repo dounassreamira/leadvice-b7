@@ -1,0 +1,62 @@
+---
+/* Pages légales : mentions légales, confidentialité, cookies. Markdown (src/content/legal/), date de mise à jour,
+   progression de lecture, identifiants à copier, choix des cookies modifiable. */
+import Base from '../layouts/Base.astro';
+import Crumb from '../components/Crumb.astro';
+import CopyButton from '../components/CopyButton.astro';
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import { site, dateFr } from '../lib/content';
+import '../styles/pages/article.css';
+
+export async function getStaticPaths() {
+  return (await getCollection('legal')).map((e) => ({ params: { legal: e.id }, props: { e } }));
+}
+interface Props { e: CollectionEntry<'legal'> }
+const { e } = Astro.props;
+const { Content } = await render(e);
+const s = await site();
+const L = s.legal_page;
+const url = `/${e.id}/`;
+const crumb = [{ name: 'Accueil', url: '/' }, { name: e.data.title, url }];
+const upd = e.data.updatedAt;
+const ld = { '@type': 'WebPage', name: e.data.title, url: `https://leadvice.org${url}`, dateModified: upd.toISOString().slice(0, 10), inLanguage: 'fr-MA', isPartOf: { '@id': 'https://leadvice.org/#website' } };
+---
+<Base title={e.data.seoTitle} description={e.data.description} og={e.id} crumb={crumb} jsonld={[ld]} progress thread={false}>
+  <section class="wrap phero a-hero">
+    <Crumb items={crumb} />
+    <h1 data-rise>{e.data.title}</h1>
+    <p class="a-dates small"><span>{L.maj} <time datetime={upd.toISOString().slice(0, 10)}>{dateFr(upd)}</time></span></p>
+  </section>
+  <section class="wrap lg-wrap">
+    <article class="a-body prose lg-body" data-legal data-aria={L.copier_aria}>
+      <Content />
+      {e.id === 'cookies' && <p><button type="button" class="btn btn-ghost" data-cookies-open>{s.pied.gerer_cookies}</button></p>}
+    </article>
+  </section>
+  <template id="copy-tpl"><CopyButton text="" label={L.copier} done={L.copie} /></template>
+</Base>
+<style>
+  .lg-wrap { padding-bottom: 120px; }
+  .lg-body > :global(p:first-child) { font-family: var(--read); font-weight: 400; font-size: 1.15rem; letter-spacing: 0; line-height: 1.7; color: var(--ink-2); }
+  .lg-body :global(ul) { list-style: disc; }
+  .lg-body :global(code) { font: 500 .95em var(--sans); background: var(--paper-2); padding: 2px 8px; border-radius: var(--r-sharp); font-variant-numeric: tabular-nums; }
+  .lg-body :global(.id) { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; }
+</style>
+<script>
+  /* identifiants à copier (Mentions légales) : un bouton après chaque valeur */
+  const art = document.querySelector<HTMLElement>('[data-legal]');
+  const tpl = document.querySelector<HTMLTemplateElement>('#copy-tpl');
+  if (art && tpl) {
+    art.querySelectorAll('code').forEach((c) => {
+      const v = c.textContent ?? '';
+      const w = document.createElement('span');
+      w.className = 'id';
+      c.replaceWith(w);
+      w.appendChild(c);
+      const b = (tpl.content.firstElementChild as HTMLButtonElement).cloneNode(true) as HTMLButtonElement;
+      b.dataset.copy = v;
+      b.setAttribute('aria-label', (art.dataset.aria ?? '').replace('{v}', v));
+      w.appendChild(b);
+    });
+  }
+</script>

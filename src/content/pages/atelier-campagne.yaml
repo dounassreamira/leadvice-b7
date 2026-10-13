@@ -1,0 +1,36 @@
+seo:
+  title: Simulateur de campagne Meta Ads et Google Ads, huit semaines à piloter | Leadvice
+  description: "Atelier gratuit : préparez puis pilotez une campagne d'acquisition pendant huit semaines simulées. Ciblage, message, formulaire, budget Meta et Google."
+  og: atelier-campagne
+fil: Piloter une campagne
+h1: Pilotez une campagne.
+reponse: "Six décisions pour la préparer, huit semaines pour la piloter. Un tableau de bord chaque semaine, des imprévus, et à la fin votre coût par client face à une campagne réglée par défaut."
+sans_js: "L'atelier a besoin de JavaScript. Le guide ci-dessous reprend ce qu'il enseigne."
+chargement: Chargement de l'atelier…
+guide:
+  titre: Ce que l'atelier vous apprend.
+  intro: "Sept mécanismes qui font le coût d'un client, du ciblage au rappel du lead."
+  points:
+    - { titre: "La cible décide de la qualité, pas seulement du volume.", texte: "Une cible large coûte peu par clic et ramène beaucoup de curieux. Une audience construite à partir de vos clients existants coûte un peu plus cher à toucher, et beaucoup moins cher à convertir." }
+    - { titre: Un bénéfice concret bat une promesse., texte: "« Un cadre de vie d'exception » ne dit pas au prospect si l'offre est pour lui. Une distance, un délai, un format le lui disent, et ce sont les bonnes personnes qui cliquent." }
+    - { titre: "Le formulaire trie, ou fait fuir.", texte: "Trois champs donnent le plus de leads. Une seule question de qualification bien choisie trie sans décourager. Neuf champs font abandonner la plupart des visiteurs sur mobile." }
+    - { titre: "Meta va chercher, Google répond.", texte: "Meta montre votre offre à des gens qui ne la cherchent pas encore. Google répond à ceux qui la cherchent déjà, mais leur nombre est limité : au-delà d'un certain budget, chaque clic coûte plus cher que le précédent." }
+    - { titre: Les annonces s'usent., texte: "Au fil des semaines, la même annonce est vue plusieurs fois par les mêmes personnes et le taux de clic baisse. Renouveler la création remet les compteurs à zéro." }
+    - { titre: Les gros changements coûtent., texte: "Déplacer brutalement le budget relance la phase d'apprentissage des campagnes Meta. Mieux vaut ajuster par petites touches." }
+    - { titre: Le rappel rapide est le levier le moins cher., texte: "Un lead rappelé dans l'heure pense encore à votre offre. Un lead rappelé le lendemain a souvent comparé ailleurs." }
+  glossaire_titre: Les mots du tableau de bord
+  glossaire:
+    - { mot: CPM, def: "Coût pour mille affichages de l'annonce." }
+    - { mot: Taux de clic, def: "Part des personnes qui cliquent après avoir vu l'annonce." }
+    - { mot: Coût par lead, def: Budget dépensé divisé par le nombre de demandes reçues. }
+    - { mot: Lead qualifié, def: Une demande qui correspond à votre cible et peut acheter. }
+    - { mot: Coût par résultat, def: "Ce que coûte une visite, une commande livrée ou une inscription : le seul chiffre qui compte vraiment." }
+    - { mot: Fatigue, def: Baisse des performances quand une annonce a été trop vue. }
+    - { mot: Phase d'apprentissage, def: "Période où l'algorithme de Meta teste qui toucher ; les coûts y sont plus instables." }
+faq:
+  titre: Vos questions.
+  questions:
+    - { q: "Les chiffres de l'atelier sont-ils réels ?", a: "Non. Les clients et les chiffres sont fictifs, et le modèle est volontairement simplifié. Les mécanismes, eux, sont ceux que nous observons sur de vraies campagnes : annonces qui s'usent, plafond des recherches Google, effet du formulaire et de la vitesse de rappel." }
+    - { q: "Combien de temps dure l'atelier ?", a: "Entre 10 et 15 minutes. Si vous fermez la page, votre partie est gardée sur cet appareil et vous pouvez la reprendre." }
+    - { q: "Puis-je rejouer avec un autre client ?", a: "Oui. Le promoteur immobilier, la marque de bijoux et l'école de formation ne réagissent pas de la même façon : ce qui marche pour l'un coûte cher pour l'autre." }
+    - { q: "Comment appliquer ça à mes propres campagnes ?", a: "Les mêmes décisions se prennent avec vos chiffres réels. Le diagnostic de 45 minutes, offert, sert à repérer celles qui comptent le plus pour vous." }

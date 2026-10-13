@@ -1,0 +1,27 @@
+---
+/* Les deux fondatrices, en arche, à la même hauteur. Amira Dounassre puis Nada Moujibi. */
+import { Picture } from 'astro:assets';
+import { site, type Data } from '../lib/content';
+import { portrait } from '../lib/images';
+interface Props { parallax?: boolean; links?: boolean }
+const { parallax = false, links = false } = Astro.props;
+const f = await site('fondatrices');
+---
+<div class="founders">
+  {(f.liste as Data[]).map((x, i) => (
+    <figure data-speed={parallax ? (i ? '-0.1' : '0.15') : undefined}>
+      <div class="arch"><Picture src={portrait(x.photo)} alt={x.alt} widths={[360, 540, 720]} sizes="(max-width: 760px) 46vw, 24vw" formats={['avif', 'webp']} fallbackFormat="webp" loading="lazy" decoding="async" /></div>
+      <figcaption>
+        <h3>{x.nom}</h3>
+        <span class="small">{x.role} {x.univers}</span>
+        {links && <a class="tlink" href={x.linkedin} rel="noopener" target="_blank">LinkedIn<span class="sr-only"> de {x.nom} (nouvel onglet)</span></a>}
+      </figcaption>
+    </figure>
+  ))}
+</div>
+<style>
+  .founders { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; align-items: start; }
+  .founders figure { margin: 0; }
+  figcaption { margin-top: 16px; display: flex; flex-direction: column; gap: 4px; align-items: flex-start; }
+  figcaption h3 { font-size: var(--fs-h3); }
+</style>

@@ -1,0 +1,38 @@
+---
+/* Gabarit d'une page d'atelier : en-tête, l'atelier interactif (chargé seulement ici), guide indexable,
+   glossaire, FAQ balisée, bande diagnostic. */
+import Base from '../layouts/Base.astro';
+import PageHero from './PageHero.astro';
+import Faq from './Faq.astro';
+import CtaBand from './CtaBand.astro';
+import { page, type Data } from '../lib/content';
+import { faqPage } from '../lib/schema';
+import '../styles/pages/ateliers.css';
+interface Props { d: Data; path: string; app: 'acq' | 'site'; data: Data }
+const { d, path, app, data } = Astro.props;
+const hub = await page('ateliers');
+const crumb = [{ name: 'Accueil', url: '/' }, { name: hub.fil, url: '/ateliers/' }, { name: d.fil, url: path }];
+const json = JSON.stringify(data).replace(/</g, '\\u003c');
+---
+<Base title={d.seo.title} description={d.seo.description} og={d.seo.og} section="ate" crumb={crumb} jsonld={[faqPage(d.faq.questions)]}>
+  <PageHero crumb={crumb} h1={d.h1} lead={d.reponse} />
+  <section class="wrap sec sec-top0" id="atelier" data-pagefind-ignore>
+    <div class="at-app" data-app={app}>
+      <div class="js-only"><slot /></div>
+      <noscript><p>{d.sans_js}</p></noscript>
+    </div>
+    <script type="application/json" data-atelier-data set:html={json} />
+  </section>
+  <section class="wrap sec sec-top0">
+    <div class="guide">
+      <div><h2 data-rise>{d.guide.titre}</h2><p class="lead mt-m">{d.guide.intro}</p></div>
+      <div>
+        {(d.guide.points as Data[]).map((p) => <Fragment><h3>{p.titre}</h3><p set:html={p.texte} /></Fragment>)}
+        <h3>{d.guide.glossaire_titre}</h3>
+        <dl class="gloss">{(d.guide.glossaire as Data[]).map((g) => <Fragment><dt>{g.mot}</dt><dd>{g.def}</dd></Fragment>)}</dl>
+      </div>
+    </div>
+  </section>
+  <Faq titre={d.faq.titre} questions={d.faq.questions} />
+  <CtaBand titre={hub.cloture.titre} texte={hub.cloture.texte} />
+</Base>

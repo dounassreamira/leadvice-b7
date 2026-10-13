@@ -1,0 +1,61 @@
+# Landing page Ads (noindex). Textes : CONTENU-SITE-LEADVICE.md, section 14.
+seo:
+  title: Conseil stratégique marketing pour dirigeants | Leadvice
+  description: Nous aidons les directions à clarifier leur positionnement, leur offre et leur stratégie d'acquisition, puis à passer à l'action. Diagnostic offert de 45 minutes.
+  og: lp-strategie
+enjeu: strat
+h1: Trop de priorités. Une seule direction.
+sous_titre: Nous aidons les directions à clarifier leur positionnement, leur offre et leur stratégie d'acquisition, puis à passer à l'action.
+scene:
+  nom: knot
+  len: 220
+  aria: Le nœud de décision
+  etapes:
+  - texte: Trop d'options. Trop d'avis. Trop de priorités.
+    de: 0.05
+    a: 0.55
+  - texte: Une direction claire.
+    de: 0.55
+    a: 1.01
+benefices:
+- titre: Un diagnostic sans complaisance.
+  texte: Ce qui coûte sans rapporter, ce qui marche sans être exploité, ce qui manque.
+- titre: Des décisions, pas un rapport.
+  texte: Un plan hiérarchisé que vos équipes peuvent exécuter dès le lendemain.
+- titre: Un regard d'auditrice et d'ingénieure.
+  texte: Une lecture business et chiffrée de vos sujets marketing.
+formulaire_titre: Parlons de votre stratégie.
+faq:
+- q: Quelle différence entre un audit et un diagnostic ?
+  a:
+  - 'Le diagnostic est un premier échange de 45 minutes, offert, pour identifier ce qui freine votre acquisition. L''audit est une mission complète : nous analysons en profondeur vos campagnes, vos contenus, vos chiffres et votre parcours client, et nous remettons un plan d''action.'
+- q: Combien de temps dure une mission de stratégie ?
+  a:
+  - Cela dépend du périmètre. Un audit avec plan d'action se mène en quelques semaines. Un accompagnement de la direction sur le positionnement ou l'offre peut s'étendre sur plusieurs mois, avec des points réguliers. Nous fixons le calendrier ensemble dès le départ.
+- q: Faut-il déjà avoir des campagnes en cours ?
+  a:
+  - Non. Si vous en avez, nous les analysons. Si vous n'en avez pas, nous partons de votre offre, de vos clients actuels et de votre marché pour construire la stratégie avant le premier lancement, ce qui évite de payer pour apprendre.
+- q: Combien coûte un accompagnement ?
+  a: 'Nos honoraires dépendent du périmètre : nombre de canaux, de campagnes et de créations. Nous vous faisons une proposition chiffrée après le diagnostic, une fois vos objectifs connus. Le budget publicitaire est payé directement aux plateformes.'
+benefices_titre: Ce que vous y gagnez.
+chiffres_titre: Des résultats qui se comptent.
+chiffres_note: 'Chiffres cumulés depuis la création du cabinet. Le coût par lead varie selon le secteur : il est plus élevé pour un bien immobilier à plusieurs millions de dirhams que pour un produit du quotidien.'
+logos_titre: Ils nous ont fait confiance.
+methode_titre: Notre méthode, en cinq temps.
+faq_titre: Vos questions.
+formulaire:
+  aide: Quatre informations suffisent. Réponse sous un jour ouvré.
+  enjeu: Votre enjeu principal
+  entreprise: Nom de l'entreprise
+  campagnes: Vos campagnes aujourd'hui
+  campagnes_choix: Choisissez une réponse
+merci:
+  titre: Merci. Votre demande est bien partie.
+  suite_titre: La suite.
+  suite:
+  - titre: Nous lisons votre demande.
+    texte: Nous regardons votre secteur, votre situation et l'enjeu que vous avez indiqué.
+  - titre: Nous vous répondons sous un jour ouvré.
+    texte: Par e-mail, pour fixer le créneau de votre diagnostic.
+  - titre: Nous faisons le point ensemble.
+    texte: 45 minutes, en visio ou par téléphone. Vous repartez avec ce qui freine votre acquisition et par quoi commencer.

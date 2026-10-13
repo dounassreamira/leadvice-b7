@@ -1,0 +1,54 @@
+---
+/* Administration du diagnostic, protégée par Cloudflare Access (Amira et Nada). Jamais indexée. */
+import Base from '../../layouts/Base.astro';
+import { page } from '../../lib/content';
+import '../../styles/pages/admin.css';
+
+const d = await page('admin');
+const R = d.regles;
+const lim: Record<string, [number, number, number]> = { duration: [10, 120, 5], buffer: [0, 120, 5], notice: [0, 336, 1], horizon: [1, 90, 1], maxPerDay: [1, 24, 1] };
+---
+<Base title={d.seo.title} description={d.seo.description} og={d.seo.og} page="admin" noindex minimal fab={false} thread={false} ctaHref="">
+  <div class="wrap adm" data-admin data-t={JSON.stringify(d)}>
+    <div class="adm-head">
+      <h1>{d.h1}</h1>
+      <p class="lead">{d.intro}</p>
+      <p class="ad-note" data-gate aria-live="polite">{d.chargement}</p>
+    </div>
+    <div class="adm-grid" data-app hidden>
+      <div class="adm-col">
+        <section class="panel" aria-labelledby="h-week"><h2 id="h-week">{d.semaine.titre}</h2><div data-week></div></section>
+        <section class="panel" aria-labelledby="h-rules"><h2 id="h-rules">{R.titre}</h2>
+          <div class="grid2">
+            {Object.entries(lim).map(([k, [a, b, st]]) => <label>{R[k]}<input type="number" id={`r-${k}`} min={a} max={b} step={st} inputmode="numeric" /></label>)}
+          </div>
+        </section>
+        <section class="panel" aria-labelledby="h-block"><h2 id="h-block">{d.bloques.titre}</h2>
+          <p class="small">{d.bloques.aide}</p>
+          <div class="ad-rg"><label for="bdate" class="small">{d.bloques.date}</label><input type="date" id="bdate" /><button class="mini" type="button" data-badd>{d.bloques.ajouter}</button></div>
+          <div class="ad-list" data-blist></div>
+        </section>
+        <section class="panel" aria-labelledby="h-extra"><h2 id="h-extra">{d.extra.titre}</h2>
+          <p class="small">{d.extra.aide}</p>
+          <div class="ad-rg"><input type="date" id="xdate" aria-label={d.extra.date} /><input type="time" id="xfrom" value="10:00" aria-label={d.extra.de} /><input type="time" id="xto" value="12:00" aria-label={d.extra.a} /><button class="mini" type="button" data-xadd>{d.extra.ajouter}</button></div>
+          <div class="ad-list" data-xlist></div>
+        </section>
+        <div class="ad-save"><button class="btn btn-main" type="button" data-save>{d.enregistrer}</button><button class="btn btn-ghost" type="button" data-reset>{d.defaut}</button><span class="ad-saved" data-saved aria-live="polite"></span></div>
+      </div>
+      <aside class="adm-col">
+        <section class="panel" aria-labelledby="h-st"><h2 id="h-st">{d.etat.titre}</h2><div class="ad-status" data-status></div><p class="small">{d.etat.aide}</p></section>
+        <section class="panel" aria-labelledby="h-bk"><h2 id="h-bk">{d.rdv.titre}</h2>
+          <label class="ad-check"><input type="checkbox" id="tous" />{d.rdv.tous}</label>
+          <a class="tlink" href="/api/admin/bookings?format=csv&tous=1" download>{d.rdv.export}</a>
+          <div data-bks></div>
+        </section>
+        <a class="tlink" href="/">{d.retour}</a>
+      </aside>
+    </div>
+  </div>
+</Base>
+<script>
+  import { initAdmin } from '../../scripts/admin';
+  const el = document.querySelector<HTMLElement>('[data-admin]');
+  if (el) initAdmin(el);
+</script>

@@ -1,0 +1,48 @@
+---
+import Base from '../../../layouts/Base.astro';
+import MiniScene from '../../../components/MiniScene.astro';
+import { sceneLabels } from '../../../lib/content';
+import '../../../styles/dev.css';
+/* Démonstration des primitives de mouvement et des scènes de levier, isolées, avec un curseur de progression.
+   Outil interne, exclu du référencement. */
+const scenes = [
+  ['signal', 'Signal', "Du bruit au signal : la ligne grise se règle, devient violette, puis courbe de croissance. Primitive SIGNAL."],
+  ['knot', 'Angle et signal', 'Le nœud de décision : les chemins s\'effacent, un seul reste, jusqu\'à la porte éclairée (Stratégie).'],
+  ['angles', 'Angle', 'Une offre, trois angles, trois publics ; l\'angle temps est retenu (Création).'],
+  ['target', 'Flux', 'Du public aux leads qualifiés : diffuser, cibler, qualifier, transmettre (Acquisition).'],
+  ['dial', 'Boucle', 'Le cadran : l\'aiguille monte, se corrige, puis se fixe dans la zone violette (Pilotage).'],
+  ['page', 'Flux', 'La page qui se construit : assembler, clarifier, convertir (Sites web).'],
+  ['loop', 'Boucle', 'Les quatre leviers reliés en boucle (Expertises).'],
+  ['money', 'Flux et boucle', 'Le chemin d\'un dirham : budget, publicité, clients, chiffre d\'affaires (Accueil).'],
+  ['lost', 'Lentille', 'La 404 : le curseur recolle les points et ressoude la ligne de signal.'],
+];
+const labels = Object.fromEntries(await Promise.all(scenes.map(async ([n]) => [n, await sceneLabels(n as string)])));
+---
+<Base title="Animations | Leadvice" description="Démonstration des primitives de mouvement et des scènes de levier du site Leadvice." noindex page="dev" thread={false} fab={false} crumb={[{ name: 'Accueil', url: '/' }, { name: 'Animations', url: '/dev/animations/' }]}>
+  <section class="wrap phero dv-hero">
+    <nav class="crumb" aria-label="Fil d'Ariane"><a href="/">Accueil</a><span aria-hidden="true">/</span><span aria-current="page">Animations</span></nav>
+    <h1>Animations.</h1>
+    <p class="lead">Chaque scène isolée, avec un curseur de progression pour la rejouer image par image. Cinq primitives seulement : netteté, angle, signal, flux, boucle.</p>
+  </section>
+  <div class="dv-anim">
+    {scenes.map(([name, prim, txt]) => (
+      <article>
+        <div class="dv-anim-h"><h2>{prim}</h2><p class="small">{txt}</p></div>
+        <div class="dv-box" data-scene={name} data-p="1" data-mouse data-labels={labels[name as string]}>
+          <canvas aria-hidden="true"></canvas>
+          <div class="dv-ctl"><label for={`p-${name}`}>Progression</label><input id={`p-${name}`} type="range" min="0" max="1" step="0.005" value="1" data-for={name} /></div>
+        </div>
+      </article>
+    ))}
+  </div>
+  <section class="dv-minis" aria-label="Vignettes des leviers">
+    {['knot', 'angles', 'target', 'dial', 'page'].map((n) => <figure><MiniScene name={n} /><figcaption class="small">{n}</figcaption></figure>)}
+  </section>
+  <script>
+    document.querySelectorAll<HTMLInputElement>('[data-for]').forEach((r) => r.addEventListener('input', () => {
+      const box = r.closest<HTMLElement>('[data-scene]');
+      if (box) box.dataset.p = r.value;
+      document.dispatchEvent(new CustomEvent('lv:redraw'));
+    }));
+  </script>
+</Base>

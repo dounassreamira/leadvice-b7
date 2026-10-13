@@ -1,0 +1,86 @@
+[
+  {
+    "page": "/mentions-legales/",
+    "w": 390,
+    "theme": "light",
+    "overflow": 0,
+    "errors": []
+  },
+  {
+    "page": "/confidentialite/",
+    "w": 390,
+    "theme": "light",
+    "overflow": 0,
+    "errors": []
+  },
+  {
+    "page": "/cookies/",
+    "w": 390,
+    "theme": "light",
+    "overflow": 0,
+    "errors": []
+  },
+  {
+    "page": "/mentions-legales/",
+    "w": 1440,
+    "theme": "light",
+    "overflow": 0,
+    "errors": []
+  },
+  {
+    "page": "/confidentialite/",
+    "w": 1440,
+    "theme": "light",
+    "overflow": 0,
+    "errors": []
+  },
+  {
+    "page": "/cookies/",
+    "w": 1440,
+    "theme": "light",
+    "overflow": 0,
+    "errors": []
+  },
+  {
+    "page": "/mentions-legales/",
+    "w": 390,
+    "theme": "dark",
+    "overflow": 0,
+    "errors": []
+  },
+  {
+    "page": "/confidentialite/",
+    "w": 390,
+    "theme": "dark",
+    "overflow": 0,
+    "errors": []
+  },
+  {
+    "page": "/cookies/",
+    "w": 390,
+    "theme": "dark",
+    "overflow": 0,
+    "errors": []
+  },
+  {
+    "page": "/mentions-legales/",
+    "w": 1440,
+    "theme": "dark",
+    "overflow": 0,
+    "errors": []
+  },
+  {
+    "page": "/confidentialite/",
+    "w": 1440,
+    "theme": "dark",
+    "overflow": 0,
+    "errors": []
+  },
+  {
+    "page": "/cookies/",
+    "w": 1440,
+    "theme": "dark",
+    "overflow": 0,
+    "errors": []
+  }
+]

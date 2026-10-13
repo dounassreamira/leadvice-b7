@@ -1,0 +1,17 @@
+---
+/* FAQ dépliable : <details>, sans JavaScript ; une seule question ouverte à la fois sur mobile. */
+interface Props { titre: string; questions: { q: string; a: string | string[] }[]; id?: string; titleClass?: string }
+const { titre, questions, id = 'faq', titleClass } = Astro.props;
+---
+<section class="wrap sec faq sec-top0" id={id} data-faq>
+  <h2 data-rise class={titleClass}>{titre}</h2>
+  {questions.map((x) => (
+    <details>
+      <summary>{x.q}<span class="pm" aria-hidden="true">+</span></summary>
+      <div class="ans">{(Array.isArray(x.a) ? x.a : [x.a]).map((p) => <p set:html={p} />)}</div>
+    </details>
+  ))}
+</section>
+<style>
+  .faq h2 { margin-bottom: 48px; max-width: 16ch; }
+</style>

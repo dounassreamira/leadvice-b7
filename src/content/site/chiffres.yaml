@@ -1,0 +1,9 @@
+# Chiffres réels du cabinet (liste fermée, prompt maître 2.4). Aucun autre chiffre n'est affiché.
+cabinet:
+  - { valeur: "+1 000", compteur: 1000, prefixe: "+", texte: leads générés chaque mois pour nos clients }
+  - { valeur: "+10 893", compteur: 10893, prefixe: "+", texte: prospects générés }
+  - { valeur: "< 1 $", texte: "coût moyen par lead sur Meta Ads, constaté sur nos clients" }
+  - { valeur: "1 à 2 $", texte: "coût moyen par lead sur Google Ads, constaté sur nos clients" }
+  - { valeur: "126", compteur: 126, prefixe: "", texte: campagnes lancées }
+  - { valeur: "+23", compteur: 23, prefixe: "+", texte: clients accompagnés }
+  - { valeur: "+300", compteur: 300, prefixe: "+", texte: posts et créatives publicitaires produits }

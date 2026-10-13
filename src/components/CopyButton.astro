@@ -1,0 +1,10 @@
+---
+/* Bouton copier : l'icône devient une coche et « Copié » est annoncé aux lecteurs d'écran (2 s). */
+import Icon from './Icon.astro';
+interface Props { text: string; label: string; done: string; aria?: string; class?: string }
+const { text, label, done, aria, class: cls } = Astro.props;
+---
+<button type="button" class:list={['copy', cls]} data-copy={text} data-done={done} aria-label={aria}>
+  <Icon name="copy" size={16} class="ic" /><Icon name="check" size={16} class="ok" />
+  <span class="copy-l">{label}</span>
+</button>

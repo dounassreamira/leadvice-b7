@@ -1,0 +1,22 @@
+/* Pages leviers, Expertises, Réalisations, Cabinet */
+@layer pages {
+  .scene-paper { background: var(--paper); }
+  .h-gap { margin-bottom: 48px; }
+  .h-gap-s { margin-bottom: 40px; }
+  .h-gap-l { margin-bottom: 56px; }
+  .faq h2 { margin-bottom: 48px; }
+  /* cartes empilées (formats de travail, méthode du cabinet) */
+  .stack { display: flex; flex-direction: column; gap: 32px; }
+  .card { position: sticky; background: var(--white); padding: clamp(28px, 4vw, 56px); border-radius: var(--r-sharp); box-shadow: 0 1px 0 var(--line), 0 30px 60px -40px rgba(48, 23, 129, .35); display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 6fr); gap: 24px 48px; transform-origin: top center; }
+  .card h3 { font-size: var(--fs-h3); }
+  .card p { color: var(--ink-2); }
+  .card.num { grid-template-columns: 60px minmax(0, 4fr) minmax(0, 6fr); gap: 16px 40px; align-items: baseline; }
+  .card .n { font-variant-numeric: tabular-nums; color: var(--brand); font-family: var(--sans); }
+  @media (max-width: 820px) { .card, .card.num { grid-template-columns: 1fr; } }
+  /* filtres : inutiles sans JavaScript, la liste complète reste affichée */
+  .no-js [data-filters] { display: none; }
+  .fil { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 40px; }
+  .fil button { font: 500 .9rem var(--sans); background: transparent; border: 1px solid var(--line); padding: 10px 16px; border-radius: var(--r-sharp); cursor: pointer; color: var(--ink); min-height: 44px; transition: border-color var(--t-fast); }
+  .fil button:hover { border-color: var(--ink); }
+  .fil button[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+}

@@ -1,0 +1,115 @@
+---
+/* Landing pages Ads (noindex, hors plan du site) : header réduit, promesse, scène, trois bénéfices, chiffres,
+   logos, méthode condensée, formulaire court (enjeu présélectionné), FAQ de quatre questions. */
+import Base from '../../layouts/Base.astro';
+import SceneSection from '../../components/SceneSection.astro';
+import Stats from '../../components/Stats.astro';
+import Faq from '../../components/Faq.astro';
+import { Image } from 'astro:assets';
+import { page, site, type Data } from '../../lib/content';
+import { logo } from '../../lib/images';
+import '../../styles/pages/diagnostic.css';
+import '../../styles/pages/lp.css';
+
+export function getStaticPaths() {
+  return ['generation-de-leads', 'conseil-strategique', 'audit-marketing'].map((slug) => ({ params: { slug } }));
+}
+const { slug } = Astro.params;
+const d = await page('lp-' + slug);
+const s = await site();
+const r = await site('reservation');
+const dg = await page('diagnostic');
+const clients = (await site('clients')).liste as Data[];
+const methode = (await site('methode')).etapes as Data[];
+const f = d.formulaire;
+const t = JSON.stringify({ etape: '', boutons: dg.boutons, erreurs: dg.erreurs });
+---
+<Base title={d.seo.title} description={d.seo.description} og={d.seo.og} page="lp" noindex minimal thread={false} ctaHref="#demande">
+  <section class="wrap phero lp-hero">
+    <h1 data-rise>{d.h1}</h1>
+    <p class="lead">{d.sous_titre}</p>
+    <div class="acts"><a class="btn btn-main" href="#demande" data-page-link>{s.cta.principal}</a><span class="small">{s.cta.sous_cta}</span></div>
+  </section>
+
+  <SceneSection nom={d.scene.nom} len={d.scene.len} aria={d.scene.aria} etapes={d.scene.etapes} />
+
+  <section class="wrap sec" aria-labelledby="lp-b">
+    <h2 id="lp-b" class="sr-only">{d.benefices_titre}</h2>
+    <ol class="lp-ben">
+      {(d.benefices as Data[]).map((b, i) => <li><span class="n" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span><h3>{b.titre}</h3><p>{b.texte}</p></li>)}
+    </ol>
+  </section>
+
+  <section class="wrap sec sec-top0">
+    <h2 data-rise class="lp-h">{d.chiffres_titre}</h2>
+    <Stats />
+    <p class="small lp-note">{d.chiffres_note}</p>
+  </section>
+
+  <section class="wrap sec sec-top0">
+    <h2 data-rise class="lp-h">{d.logos_titre}</h2>
+    <ul class="lp-logos">
+      {clients.map((c) => <li><Image src={logo(c.logo)} alt={c.nom} width={240} format="webp" class="logo-img" loading="lazy" decoding="async" /></li>)}
+    </ul>
+  </section>
+
+  <section class="wrap sec sec-top0">
+    <h2 data-rise class="lp-h">{d.methode_titre}</h2>
+    <ol class="lp-meth">{methode.map((m, i) => <li><span>{i + 1}</span>{m.nom}</li>)}</ol>
+  </section>
+
+  <section class="wrap sec sec-top0 lp-form-sec" id="demande" aria-labelledby="lp-f" data-hide-fab>
+    <div class="lp-form-in">
+      <div class="lp-form-side">
+        <h2 id="lp-f">{d.formulaire_titre}</h2>
+        <p class="lead">{f.aide}</p>
+        <p class="small">{dg.e6.donnees}</p>
+      </div>
+      <div class="lp-form-main">
+        <form action="/api/diagnostic" method="post" data-diag data-court="1" data-t={t}>
+          <div class="err-sum" data-sum role="alert" tabindex="-1" hidden></div>
+          <fieldset data-s="1">
+            <legend class="sr-only">{d.formulaire_titre}</legend>
+            <div class="fld">
+              <span class="lbl" id="lp-enjeu-l">{f.enjeu}</span>
+              <div class="chips" role="radiogroup" aria-labelledby="lp-enjeu-l">
+                {(r.enjeux as Data[]).map((x, i) => <label class="chip" for={`enjeu-${i + 1}`}><input type="radio" name="enjeu" id={`enjeu-${i + 1}`} value={x.cle} checked={x.cle === d.enjeu} required /><span>{x.nom}</span></label>)}
+              </div>
+            </div>
+            <div class="fld"><label for="entreprise">{f.entreprise}</label><input id="entreprise" name="entreprise" autocomplete="organization" required maxlength="160" /></div>
+            <div class="fld"><label for="campagnes">{f.campagnes}</label><select id="campagnes" name="campagnes" required data-choix><option value="">{f.campagnes_choix}</option>{(r.campagnes as string[]).map((c) => <option>{c}</option>)}</select></div>
+            <div class="lp-two">
+              <div class="fld"><label for="nom">{dg.e6.nom}</label><input id="nom" name="nom" autocomplete="name" required maxlength="160" /></div>
+              <div class="fld"><label for="email">{dg.e6.email}</label><input id="email" name="email" type="email" autocomplete="email" inputmode="email" required maxlength="200" /></div>
+            </div>
+            <div class="fld"><label for="tel">{dg.e6.tel}</label><input id="tel" name="tel" type="tel" autocomplete="tel" inputmode="tel" maxlength="40" aria-describedby="tel-h" /><span class="help" id="tel-h">{r.e3.tel_aide}</span></div>
+            <div class="consent-w"><label class="consent" for="consent"><input type="checkbox" id="consent" name="consent" value="1" required /><span set:html={dg.e6.accord} /></label></div>
+            <div class="ts" data-turnstile></div>
+          </fieldset>
+          <div class="hp" aria-hidden="true"><label for="site_web">{dg.piege}</label><input id="site_web" name="site_web" tabindex="-1" autocomplete="off" /></div>
+          <input type="hidden" name="court" value="1" />
+          <input type="hidden" name="source" value={`/lp/${slug}/`} />
+          <div class="err-sum dg-status" data-status role="alert" tabindex="-1" hidden></div>
+          <div class="nav-f"><button type="submit" class="btn btn-main" data-go>{dg.boutons.envoyer}</button></div>
+        </form>
+        <div class="lp-done" data-done hidden>
+          <svg class="lp-check" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="none" stroke-width="2"></circle><path data-draw d="M19 33 l9 9 l18 -20" fill="none" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          <h3>{d.merci.titre}</h3>
+          <p class="lp-done-t">{d.merci.suite_titre}</p>
+          <ol class="next">{(d.merci.suite as Data[]).map((x, i) => <li><span>{i + 1}</span><strong>{x.titre}</strong><p>{x.texte}</p></li>)}</ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Faq titre={d.faq_titre} questions={d.faq} />
+
+  <section class="wrap sec sec-top0 lp-end">
+    <a class="btn btn-main" href="#demande" data-page-link>{s.cta.principal}</a>
+  </section>
+</Base>
+<script>
+  import { initDiag } from '../../scripts/diag';
+  const f = document.querySelector<HTMLFormElement>('[data-diag]');
+  if (f) initDiag(f);
+</script>

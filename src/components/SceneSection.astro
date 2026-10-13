@@ -1,0 +1,14 @@
+---
+/* Scène épinglée d'une page levier : le dessin évolue au défilement, une phrase à la fois. */
+import { sceneLabels, type Data } from '../lib/content';
+interface Props { nom: string; len?: number; aria: string; legende?: string; etapes: Data[]; class?: string }
+const { nom, len = 250, aria, legende, etapes, class: cls } = Astro.props;
+const labels = await sceneLabels(nom);
+---
+<section class:list={['scene', 'scene-paper', cls]} data-scene={nom} data-len={len} aria-label={aria} data-labels={labels} data-mouse>
+  <canvas aria-hidden="true"></canvas>
+  {legende && <div class="tag"><span class="legend">{legende}</span><div class="scene-dots" aria-hidden="true">{etapes.map(() => <b></b>)}</div></div>}
+  <div class="cap" aria-live="polite">
+    {etapes.map((e) => <p data-at={`${e.de}-${e.a}`} set:html={e.texte} />)}
+  </div>
+</section>

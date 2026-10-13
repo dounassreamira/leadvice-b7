@@ -1,0 +1,12 @@
+# Anciennes adresses du site Wix vers les nouvelles pages
+/services            /expertises/              301
+/services/*          /expertises/              301
+/blog                /insights/                301
+/blog/*              /insights/                301
+/faq                 /cabinet/#faq             301
+/contact             /diagnostic/              301
+/a-propos            /cabinet/                 301
+/about               /cabinet/                 301
+/accueil             /                         301
+/home                /                         301
+/expertises/simulateur /expertises/acquisition/#simulateur 301

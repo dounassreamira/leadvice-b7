@@ -1,0 +1,30 @@
+seo:
+  title: Votre rendez-vous | Leadvice
+  description: "Déplacer ou annuler votre diagnostic avec Leadvice."
+  og: diagnostic
+h1: Votre rendez-vous.
+chargement: Nous retrouvons votre rendez-vous…
+introuvable: "Ce lien ne correspond à aucun rendez-vous. Il a peut-être expiré. Écrivez-nous à contact@leadvice.org, nous vous répondons sous un jour ouvré."
+statut:
+  confirmed: Confirmé
+  cancelled: Annulé
+  past: Passé
+lignes: { quand: Date et heure, format: Format, entreprise: Entreprise, fuseau: "Heure de Casablanca." }
+deplacer: Déplacer le rendez-vous
+annuler: Annuler le rendez-vous
+choisir: Choisissez un nouveau créneau.
+jour: Jour
+jour_choix: Choisissez un jour
+confirmer_deplacement: Confirmer le nouveau créneau
+retour: Retour
+aucun: "Aucun autre créneau n'est ouvert pour le moment. Écrivez-nous à contact@leadvice.org, nous vous proposerons un horaire."
+pris: "Ce créneau vient d'être pris. Choisissez-en un autre."
+ferme: "Ce rendez-vous ne peut plus être modifié en ligne. Écrivez-nous à contact@leadvice.org."
+erreur: "La demande n'a pas abouti. Réessayez, ou écrivez-nous à contact@leadvice.org."
+deplace: "C'est noté. Votre rendez-vous est déplacé au {label}. Une nouvelle invitation part par e-mail."
+annule: "Votre rendez-vous est annulé. Un e-mail de confirmation vous a été envoyé. Vous pouvez en réserver un autre quand vous le souhaitez."
+confirmation: { titre: "Annuler ce rendez-vous ?", texte: "Le créneau sera libéré pour quelqu'un d'autre.", garder: Garder mon rendez-vous, annuler: "Oui, annuler" }
+reserver: Demander un diagnostic
+copier: "Copier l'adresse"
+copie: Copié
+sans_js: "Cette page a besoin de JavaScript pour retrouver votre rendez-vous. Vous pouvez aussi répondre à l'e-mail d'invitation ou écrire à contact@leadvice.org."

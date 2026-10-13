@@ -1,0 +1,27 @@
+---
+/* Atelier « Construisez une page qui convertit ». Le script ne se charge que sur cette page. */
+import AtelierPage from '../../components/AtelierPage.astro';
+import { getEntry } from 'astro:content';
+import { page, type Data } from '../../lib/content';
+import { fill } from '../../scripts/ateliers/util';
+
+const d = await page('atelier-page');
+const data = (await getEntry('ateliers', 'page'))!.data;
+const U = data.ui as Data, clients = data.clients as Record<string, Data>;
+---
+<AtelierPage d={d} path="/ateliers/page-qui-convertit/" app="site" data={data}>
+  {/* premier écran rendu au build (affichage immédiat) ; le script reprend la main à l'identique */}
+  <ol class="st-lv">{(U.niveaux as string[]).map((l, i) => <li class={i === 0 ? 'now' : ''} aria-current={i === 0 ? 'step' : undefined}><b>{i < 3 ? fill(U.niveau, { n: i + 1 }) : U.fin}</b><span>{l}</span></li>)}</ol>
+  <div class="at-screen">
+    <h2 class="at-h">{U.n1_titre}</h2>
+    <p class="at-p">{U.n1_texte}</p>
+    <div class="at-cards">{Object.entries(clients).map(([k, c]) => <button type="button" class="at-card" data-cl={k}><b>{c.name}</b><span>{c.t[2]}</span></button>)}</div>
+    <p class="at-note">{U.note}</p>
+  </div>
+</AtelierPage>
+<script>
+  import { initPage } from '../../scripts/ateliers/page';
+  const app = document.querySelector<HTMLElement>('[data-app="site"]');
+  const raw = document.querySelector('[data-atelier-data]')?.textContent;
+  if (app && raw) initPage(app, JSON.parse(raw));
+</script>

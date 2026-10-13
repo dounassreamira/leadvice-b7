@@ -1,0 +1,77 @@
+# Fenêtre de réservation du diagnostic (ouverte par chaque bouton « Demander un diagnostic »).
+titre: Réservez votre diagnostic.
+texte: "45 minutes, offert, en visio ou par téléphone. Nous regardons vos campagnes, vos chiffres et votre offre. Vous repartez avec ce qui freine votre acquisition et par quoi commencer."
+resume: { duree: Durée, duree_v: 45 minutes, creneau: Créneau, creneau_v: à choisir, fuseau: Fuseau, fuseau_v: Heure de Casablanca }
+fermer: Fermer
+etape: "Étape {n} sur 3"
+reserve: Réservé
+enjeux:
+  - { cle: leads, nom: Générer plus de leads qualifiés }
+  - { cle: conv, nom: Améliorer la conversion }
+  - { cle: strat, nom: Clarifier la stratégie }
+  - { cle: crea, nom: Renouveler la création }
+  - { cle: pilot, nom: Mieux piloter la performance }
+  - { cle: autre, nom: Autre }
+campagnes: [Aucune pour le moment, Gérées en interne, Gérées par une agence, Un peu des deux]
+e1:
+  titre: Quel est votre enjeu principal ?
+  entreprise: Entreprise
+  campagnes: "Vos campagnes aujourd'hui"
+  campagnes_choix: Choisissez une réponse
+  suivant: Choisir un créneau
+  err_enjeu: Choisissez votre enjeu pour continuer.
+  err_entreprise: Indiquez le nom de votre entreprise.
+  err_campagnes: "Dites-nous où en sont vos campagnes, une réponse suffit."
+e2:
+  titre: Choisissez un créneau.
+  aide: "Heure de Casablanca. Les créneaux affichés tiennent compte de notre agenda."
+  local: "{h} chez vous"
+  jours: [Lun, Mar, Mer, Jeu, Ven, Sam, Dim]
+  matin: Matin
+  apres_midi: Après-midi
+  creneau: créneau
+  creneaux: créneaux
+  complet: complet
+  moments: Moment de la journée
+  calendrier: Jours disponibles
+  retour: Retour
+  suivant: Continuer
+  err: Choisissez un jour puis un horaire.
+  aucun: "Aucun créneau n'est ouvert pour le moment. Écrivez-nous à contact@leadvice.org, nous vous proposerons un horaire."
+  chargement: Recherche des créneaux libres
+  formulaire: Remplir le formulaire
+e3:
+  titre: Vos coordonnées.
+  choisi: "Créneau choisi :"
+  nom: Nom et prénom
+  email: E-mail professionnel
+  tel: Téléphone
+  tel_aide: Facultatif. Pour vous rappeler si c'est plus simple.
+  format: Format
+  formats: [Visio, Téléphone]
+  accord: "J'accepte que Leadvice utilise ces informations pour me recontacter au sujet de ma demande, conformément à la politique de confidentialité."
+  retour: Retour
+  envoyer: Confirmer le rendez-vous
+  envoi: Réservation en cours…
+  err_nom: Ce champ est nécessaire pour vous répondre.
+  err_mail: Indiquez une adresse e-mail professionnelle, par exemple nom@entreprise.ma
+  err_tel: Indiquez un numéro joignable, par exemple +212 6 00 00 00 00
+  err_accord: Nous avons besoin de votre accord pour vous recontacter.
+  err_pris: "Ce créneau vient d'être pris. Choisissez-en un autre."
+  err_envoi: "L'envoi n'a pas abouti. Vos réponses sont conservées : réessayez, ou écrivez-nous à contact@leadvice.org."
+  reessayer: Réessayer
+  copier: Copier l'adresse
+  copie: Copié
+fin:
+  titre: "C'est réservé."
+  en: en
+  enjeux:
+    leads: générer plus de leads qualifiés
+    conv: transformer plus de contacts en clients
+    strat: "savoir où aller, et par quoi commencer"
+    crea: trouver le message qui fait agir
+    pilot: transformer vos chiffres en décisions
+    autre: "noté, nous le regardons de près"
+  texte: "Votre enjeu : {enjeu}. Vous recevez une invitation par e-mail à {mail}, avec un lien pour déplacer ou annuler le rendez-vous. Un rappel part la veille."
+  lire: En attendant, à lire
+  fermer: Fermer

@@ -1,0 +1,47 @@
+---
+import CopyButton from './CopyButton.astro';
+import type { Data } from '../lib/content';
+interface Props { s: Data; minimal?: boolean; ctaHref?: string }
+const { s, minimal = false, ctaHref } = Astro.props;
+const cols = s.pied.colonnes as Data[];
+---
+<footer class="ftr" data-ftr>
+  <canvas aria-hidden="true" data-ftr-cv></canvas>
+  <div class="ftr-in">
+    <p class="print-head">{s.nom}, {s.slogan_pied}. {s.legal.adresse}, {s.legal.ville}. {s.email}</p>
+    {ctaHref !== '' && (
+      <Fragment>
+        <h2 data-hl>{s.pied.titre}</h2>
+        <div class="ftr-cta">
+          <a class="btn btn-light" href={ctaHref ?? '/diagnostic/'} data-page-link={ctaHref ? '' : undefined}>{s.cta.principal}</a>
+          <span>{s.cta.sous_cta}</span>
+        </div>
+      </Fragment>
+    )}
+    {!minimal && (
+      <div class="cols">
+        {cols.map((c) => (
+          <div>
+            <h3>{c.titre}</h3>
+            {(c.liens as Data[]).map((l) => <a href={l.url}>{l.libelle}</a>)}
+            {c.contact && (
+              <Fragment>
+                <span class="mail"><a href={`mailto:${s.email}`}>{s.email}</a><CopyButton text={s.email} label={s.pied.copier} done={s.pied.copie} aria={`${s.pied.copier} ${s.email}`} /></span>
+                <a href={s.instagram.url} rel="me noopener" target="_blank">{s.instagram.libelle}<span class="sr-only"> {s.instagram.compte} (nouvel onglet)</span></a>
+              </Fragment>
+            )}
+          </div>
+        ))}
+      </div>
+    )}
+    <div class="legal">
+      <span style="max-width:84ch">{s.legal.ligne_pied}</span>
+      <span class="legal-links">
+        {minimal && <a href="/mentions-legales/">{s.pied.mentions}</a>}
+        {minimal && <a href="/confidentialite/">{s.pied.confidentialite}</a>}
+        <a href="/#top" data-replay>{s.pied.revoir_ouverture}</a>
+        <button type="button" data-cookies-open>{s.pied.gerer_cookies}</button>
+      </span>
+    </div>
+  </div>
+</footer>

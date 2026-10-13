@@ -1,0 +1,58 @@
+[
+  {
+    "page": "/dev/design/",
+    "w": 390,
+    "theme": "light",
+    "overflow": 0,
+    "errors": []
+  },
+  {
+    "page": "/dev/animations/",
+    "w": 390,
+    "theme": "light",
+    "overflow": 0,
+    "errors": []
+  },
+  {
+    "page": "/dev/design/",
+    "w": 1440,
+    "theme": "light",
+    "overflow": 0,
+    "errors": []
+  },
+  {
+    "page": "/dev/animations/",
+    "w": 1440,
+    "theme": "light",
+    "overflow": 0,
+    "errors": []
+  },
+  {
+    "page": "/dev/design/",
+    "w": 390,
+    "theme": "dark",
+    "overflow": 0,
+    "errors": []
+  },
+  {
+    "page": "/dev/animations/",
+    "w": 390,
+    "theme": "dark",
+    "overflow": 0,
+    "errors": []
+  },
+  {
+    "page": "/dev/design/",
+    "w": 1440,
+    "theme": "dark",
+    "overflow": 0,
+    "errors": []
+  },
+  {
+    "page": "/dev/animations/",
+    "w": 1440,
+    "theme": "dark",
+    "overflow": 0,
+    "errors": []
+  }
+]

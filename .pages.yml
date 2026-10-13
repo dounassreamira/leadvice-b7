@@ -1,0 +1,207 @@
+# Pages CMS (https://pagescms.org) : édition des contenus par la connexion GitHub, sans toucher au code.
+# Chaque enregistrement crée un commit ; Cloudflare Pages republie le site en une à deux minutes.
+# Les articles et les pages légales ont des champs ; les autres fichiers s'éditent en YAML (structure à garder).
+media:
+  input: src/assets
+  output: /src/assets
+content:
+  - name: insights
+    label: Insights (articles)
+    type: collection
+    path: src/content/insights
+    filename: "{primary}.md"
+    view:
+      fields: [title, category, publishedAt]
+      primary: title
+      sort: [publishedAt]
+    fields:
+      - { name: title, label: Titre, type: string, required: true }
+      - { name: seoTitle, label: Titre pour Google, type: string }
+      - { name: description, label: Description pour Google, type: text, required: true }
+      - { name: category, label: Catégorie, type: select, options: { values: [Stratégie, Acquisition, Création, Business] }, required: true }
+      - { name: author, label: Autrice, type: string, default: Amira Dounassre }
+      - { name: excerpt, label: Résumé, type: text, required: true }
+      - { name: answer, label: Réponse courte (encadré), type: text }
+      - { name: publishedAt, label: Publié le, type: date, required: true }
+      - { name: updatedAt, label: Mis à jour le, type: date }
+      - { name: levier, label: Expertises liées, type: select, list: true, options: { values: [strategie, creation, acquisition, pilotage, sites-web] } }
+      - { name: order, label: Ordre, type: number }
+      - { name: draft, label: Brouillon, type: boolean, default: false }
+      - { name: body, label: Texte, type: rich-text }
+  - name: legal
+    label: Pages légales
+    type: collection
+    path: src/content/legal
+    view:
+      fields: [title, updatedAt]
+    fields:
+      - { name: title, label: Titre, type: string, required: true }
+      - { name: seoTitle, label: Titre pour Google, type: string, required: true }
+      - { name: description, label: Description pour Google, type: text, required: true }
+      - { name: updatedAt, label: Dernière mise à jour, type: date, required: true }
+      - { name: body, label: Texte, type: rich-text }
+  - name: page-accueil
+    label: "Page : Accueil"
+    type: file
+    path: src/content/pages/accueil.yaml
+    format: yaml
+  - name: page-acquisition
+    label: "Page : Expertise : Acquisition"
+    type: file
+    path: src/content/pages/acquisition.yaml
+    format: yaml
+  - name: page-admin
+    label: "Page : Administration (textes)"
+    type: file
+    path: src/content/pages/admin.yaml
+    format: yaml
+  - name: page-atelier-campagne
+    label: "Page : Atelier : campagne (page)"
+    type: file
+    path: src/content/pages/atelier-campagne.yaml
+    format: yaml
+  - name: page-atelier-page
+    label: "Page : Atelier : page qui convertit (page)"
+    type: file
+    path: src/content/pages/atelier-page.yaml
+    format: yaml
+  - name: page-ateliers
+    label: "Page : Ateliers"
+    type: file
+    path: src/content/pages/ateliers.yaml
+    format: yaml
+  - name: page-cabinet
+    label: "Page : Le cabinet"
+    type: file
+    path: src/content/pages/cabinet.yaml
+    format: yaml
+  - name: page-creation
+    label: "Page : Expertise : Création"
+    type: file
+    path: src/content/pages/creation.yaml
+    format: yaml
+  - name: page-diagnostic
+    label: "Page : Diagnostic"
+    type: file
+    path: src/content/pages/diagnostic.yaml
+    format: yaml
+  - name: page-expertises
+    label: "Page : Expertises"
+    type: file
+    path: src/content/pages/expertises.yaml
+    format: yaml
+  - name: page-insights
+    label: "Page : Insights (page)"
+    type: file
+    path: src/content/pages/insights.yaml
+    format: yaml
+  - name: page-introuvable
+    label: "Page : Page 404"
+    type: file
+    path: src/content/pages/introuvable.yaml
+    format: yaml
+  - name: page-kettani
+    label: "Page : Étude de cas Kettani"
+    type: file
+    path: src/content/pages/kettani.yaml
+    format: yaml
+  - name: page-lp-audit-marketing
+    label: "Page : Landing page : audit"
+    type: file
+    path: src/content/pages/lp-audit-marketing.yaml
+    format: yaml
+  - name: page-lp-conseil-strategique
+    label: "Page : Landing page : stratégie"
+    type: file
+    path: src/content/pages/lp-conseil-strategique.yaml
+    format: yaml
+  - name: page-lp-generation-de-leads
+    label: "Page : Landing page : leads"
+    type: file
+    path: src/content/pages/lp-generation-de-leads.yaml
+    format: yaml
+  - name: page-merci
+    label: "Page : Merci"
+    type: file
+    path: src/content/pages/merci.yaml
+    format: yaml
+  - name: page-pilotage
+    label: "Page : Expertise : Pilotage"
+    type: file
+    path: src/content/pages/pilotage.yaml
+    format: yaml
+  - name: page-realisations
+    label: "Page : Réalisations"
+    type: file
+    path: src/content/pages/realisations.yaml
+    format: yaml
+  - name: page-rendez-vous
+    label: "Page : Gérer un rendez-vous"
+    type: file
+    path: src/content/pages/rendez-vous.yaml
+    format: yaml
+  - name: page-sites-web
+    label: "Page : Expertise : Sites web"
+    type: file
+    path: src/content/pages/sites-web.yaml
+    format: yaml
+  - name: page-strategie
+    label: "Page : Expertise : Stratégie"
+    type: file
+    path: src/content/pages/strategie.yaml
+    format: yaml
+  - name: site-chiffres
+    label: "Commun : Chiffres du cabinet"
+    type: file
+    path: src/content/site/chiffres.yaml
+    format: yaml
+  - name: site-clients
+    label: "Commun : Clients"
+    type: file
+    path: src/content/site/clients.yaml
+    format: yaml
+  - name: site-fondatrices
+    label: "Commun : Fondatrices"
+    type: file
+    path: src/content/site/fondatrices.yaml
+    format: yaml
+  - name: site-leviers
+    label: "Commun : Leviers"
+    type: file
+    path: src/content/site/leviers.yaml
+    format: yaml
+  - name: site-llms
+    label: "Commun : llms.txt"
+    type: file
+    path: src/content/site/llms.yaml
+    format: yaml
+  - name: site-methode
+    label: "Commun : Méthode"
+    type: file
+    path: src/content/site/methode.yaml
+    format: yaml
+  - name: site-reservation
+    label: "Commun : Fenêtre de réservation"
+    type: file
+    path: src/content/site/reservation.yaml
+    format: yaml
+  - name: site-scenes
+    label: "Commun : Textes des scènes animées"
+    type: file
+    path: src/content/site/scenes.yaml
+    format: yaml
+  - name: site-site
+    label: "Commun : Textes communs (en-tête, pied de page, cookies)"
+    type: file
+    path: src/content/site/site.yaml
+    format: yaml
+  - name: atelier-campagne
+    label: "Atelier campagne (données)"
+    type: file
+    path: src/content/ateliers/campagne.json
+    format: json
+  - name: atelier-page
+    label: "Atelier page qui convertit (données)"
+    type: file
+    path: src/content/ateliers/page.json
+    format: json

@@ -1,0 +1,14 @@
+# Amira Dounassre est toujours citée avant Nada Moujibi.
+liste:
+  - nom: Amira Dounassre
+    photo: amira
+    alt: "Portrait d'Amira Dounassre, cofondatrice de Leadvice"
+    role: Cofondatrice.
+    univers: Acquisition, digital, transformation.
+    linkedin: https://www.linkedin.com/in/amiradounassre
+  - nom: Nada Moujibi
+    photo: nada
+    alt: "Portrait de Nada Moujibi, cofondatrice de Leadvice"
+    role: Cofondatrice, responsable stratégie.
+    univers: Stratégie, audit, business.
+    linkedin: https://www.linkedin.com/in/nada-moujibi

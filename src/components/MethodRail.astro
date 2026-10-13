@@ -1,0 +1,11 @@
+---
+/* La méthode en cinq temps : le rail se remplit au défilement. */
+import { site, type Data } from '../lib/content';
+const m = await site('methode');
+---
+<div class="rail">
+  <div class="rail-bar"><i></i></div>
+  <ol class="steps">
+    {(m.etapes as Data[]).map((e, i) => <li class="step"><span class="n">{i + 1}</span><h3>{e.nom}</h3><p>{e.texte}</p></li>)}
+  </ol>
+</div>

@@ -1,0 +1,521 @@
+{
+ "clients": {
+  "immo": {
+   "name": "Un promoteur immobilier",
+   "pitch": "Une résidence de 120 appartements en périphérie de Casablanca. Il faut remplir les visites du samedi.",
+   "budget": 12000,
+   "cpm": 24,
+   "ctr": 0.012,
+   "cvrM": 0.1,
+   "cvrG": 0.08,
+   "cpc": 5.5,
+   "demand": 900,
+   "qM": 0.32,
+   "qG": 0.55,
+   "close": 0.3,
+   "unit": [
+    "visite",
+    "visites"
+   ],
+   "res": "Visites confirmées",
+   "lead": "Demandes",
+   "angle": [
+    "« Un cadre de vie d'exception »",
+    "« Votre trois pièces à 25 minutes du centre »",
+    "« À partir de 690 000 DH »"
+   ],
+   "offer": [
+    "Réserver une visite samedi",
+    "Télécharger la brochure",
+    "Nous contacter"
+   ],
+   "form": [
+    "Prénom, téléphone, créneau de visite",
+    "Les mêmes, plus : « Pour habiter ou pour investir ? »",
+    "Neuf champs, dont revenus, apport et profession"
+   ]
+  },
+  "ecom": {
+   "name": "Une marque de bijoux en ligne",
+   "pitch": "Des bracelets en pierre naturelle, livrés partout au Maroc, paiement à la livraison. Il faut des commandes livrées, pas seulement passées.",
+   "budget": 5000,
+   "cpm": 14,
+   "ctr": 0.015,
+   "cvrM": 0.045,
+   "cvrG": 0.05,
+   "cpc": 2.8,
+   "demand": 900,
+   "qM": 0.7,
+   "qG": 0.8,
+   "close": 0.85,
+   "unit": [
+    "commande livrée",
+    "commandes livrées"
+   ],
+   "res": "Commandes livrées",
+   "lead": "Commandes passées",
+   "angle": [
+    "« Des bijoux qui vous ressemblent »",
+    "« Pierre naturelle, livrée en 48 h, payée à la livraison »",
+    "« -40 % sur tout le site »"
+   ],
+   "offer": [
+    "Commander, paiement à la livraison",
+    "-15 % sur la première commande",
+    "Rejoindre la liste WhatsApp"
+   ],
+   "form": [
+    "Nom, téléphone, ville",
+    "Les mêmes, plus une confirmation par WhatsApp",
+    "Création de compte obligatoire avant de commander"
+   ]
+  },
+  "form": {
+   "name": "Une école de formation",
+   "pitch": "Des formations du soir pour salariés, à Casablanca. Il faut des inscriptions à la rentrée.",
+   "budget": 7000,
+   "cpm": 18,
+   "ctr": 0.012,
+   "cvrM": 0.09,
+   "cvrG": 0.07,
+   "cpc": 4,
+   "demand": 700,
+   "qM": 0.3,
+   "qG": 0.5,
+   "close": 0.22,
+   "unit": [
+    "inscription",
+    "inscriptions"
+   ],
+   "res": "Inscriptions",
+   "lead": "Demandes",
+   "angle": [
+    "« L'excellence au service de votre avenir »",
+    "« Un diplôme reconnu, le soir, sans quitter votre poste »",
+    "« Inscription offerte ce mois-ci »"
+   ],
+   "offer": [
+    "Réserver une séance d'information",
+    "Télécharger le programme",
+    "Demander à être rappelé"
+   ],
+   "form": [
+    "Prénom, téléphone, formation visée",
+    "Les mêmes, plus : « Salarié, indépendant ou étudiant ? »",
+    "Neuf champs, dont diplôme, CV et motivation"
+   ]
+  }
+ },
+ "decisions": [
+  {
+   "id": "aud",
+   "lever": "Stratégie",
+   "q": "Qui ciblez-vous ?",
+   "help": "La cible décide de qui voit vos annonces. Elle joue sur le prix, le volume et la qualité des leads.",
+   "opts": [
+    {
+     "t": "Large",
+     "d": "Toute la ville, 25 à 55 ans. Beaucoup de monde, l'algorithme cherche seul.",
+     "rank": 2,
+     "m": {
+      "ctr": 0.9,
+      "q": 0.75,
+      "fat": 0.7
+     },
+     "l": "Une cible large coûte peu par clic mais ramène des curieux. Elle marche quand le formulaire trie derrière."
+    },
+    {
+     "t": "Précise",
+     "d": "Centres d'intérêt et comportements proches de votre offre.",
+     "rank": 2,
+     "m": {
+      "ctr": 1.1,
+      "q": 1.1,
+      "fat": 1.3
+     },
+     "l": "Une cible précise améliore la qualité, mais l'audience s'épuise plus vite : les annonces fatiguent plus tôt."
+    },
+    {
+     "t": "Similaire à vos clients",
+     "d": "Construite à partir de votre fichier de clients existants.",
+     "rank": 1,
+     "m": {
+      "ctr": 1.15,
+      "q": 1.25,
+      "fat": 1,
+      "cpm": 1.08
+     },
+     "l": "Partir de vos vrais clients donne les meilleurs leads. Le coût par mille est un peu plus haut, le coût par client plus bas."
+    }
+   ]
+  },
+  {
+   "id": "angle",
+   "lever": "Stratégie",
+   "q": "Quel message mettez-vous en avant ?",
+   "help": "L'angle décide qui s'arrête sur l'annonce, et ce qu'il attend ensuite.",
+   "opts": [
+    {
+     "k": 0,
+     "rank": 3,
+     "m": {
+      "ctr": 0.75,
+      "q": 0.9
+     },
+     "l": "Une promesse vague ne dit pas au prospect si l'offre est pour lui. Moins de clics, et des clics moins sûrs."
+    },
+    {
+     "k": 1,
+     "rank": 1,
+     "m": {
+      "ctr": 1.15,
+      "q": 1.15
+     },
+     "l": "Un bénéfice concret (une distance, un délai, un format) fait cliquer les bonnes personnes."
+    },
+    {
+     "k": 2,
+     "rank": 2,
+     "m": {
+      "ctr": 1.3,
+      "q": 0.8
+     },
+     "l": "Le prix d'appel fait cliquer beaucoup, y compris des chasseurs de bonnes affaires qui n'achèteront pas."
+    }
+   ]
+  },
+  {
+   "id": "offer",
+   "lever": "Stratégie",
+   "q": "Que demandez-vous au prospect ?",
+   "help": "L'action demandée est ce que le prospect reçoit en échange de ses coordonnées.",
+   "opts": [
+    {
+     "k": 0,
+     "rank": 1,
+     "m": {
+      "cvr": 0.85,
+      "q": 1.25
+     },
+     "l": "Une action engageante (une visite, une commande, une séance) donne moins de leads, mais des leads qui avancent."
+    },
+    {
+     "k": 1,
+     "rank": 2,
+     "m": {
+      "cvr": 1.35,
+      "q": 0.75
+     },
+     "l": "Un contenu ou une remise attire du volume. Ces leads demandent plus de relances avant d'acheter."
+    },
+    {
+     "k": 2,
+     "rank": 3,
+     "m": {
+      "cvr": 0.7,
+      "q": 0.95
+     },
+     "l": "« Nous contacter » ne dit pas ce qui se passe après le clic. Le prospect hésite, et part."
+    }
+   ]
+  },
+  {
+   "id": "crea",
+   "lever": "Création",
+   "q": "Quel visuel lancez-vous ?",
+   "help": "Le visuel arrête le pouce dans le fil. Il décide aussi combien de temps l'annonce tient avant de lasser.",
+   "opts": [
+    {
+     "t": "Photo réelle, texte court",
+     "d": "Une image du produit ou du lieu, une phrase.",
+     "rank": 2,
+     "m": {
+      "ctr": 1.05,
+      "fat": 1
+     },
+     "l": "Une photo réelle inspire confiance. Elle se lasse au rythme normal."
+    },
+    {
+     "t": "Vidéo verticale de 15 secondes",
+     "d": "Le produit en situation, le message dans les trois premières secondes.",
+     "rank": 1,
+     "m": {
+      "ctr": 1.25,
+      "cpm": 1.05,
+      "fat": 0.8
+     },
+     "l": "La vidéo courte arrête mieux le défilement et se lasse moins vite. Les trois premières secondes font tout."
+    },
+    {
+     "t": "Visuel chargé",
+     "d": "Logo, slogan, cinq arguments et le numéro de téléphone.",
+     "rank": 3,
+     "m": {
+      "ctr": 0.78,
+      "fat": 1.2
+     },
+     "l": "Trop de texte dans l'image : on ne lit rien en défilant. Une idée par annonce."
+    }
+   ]
+  },
+  {
+   "id": "frm",
+   "lever": "Sites web",
+   "q": "Quel formulaire mettez-vous derrière ?",
+   "help": "Le formulaire décide combien de prospects vont au bout, et ce que vous savez d'eux.",
+   "opts": [
+    {
+     "k": 0,
+     "rank": 2,
+     "m": {
+      "cvr": 1.2,
+      "q": 0.9
+     },
+     "l": "Trois champs : le maximum de leads. La qualification se fait au téléphone."
+    },
+    {
+     "k": 1,
+     "rank": 1,
+     "m": {
+      "cvr": 1.05,
+      "q": 1.3
+     },
+     "l": "Une seule question de qualification bien choisie trie sans faire fuir. C'est souvent le meilleur compromis."
+    },
+    {
+     "k": 2,
+     "rank": 3,
+     "m": {
+      "cvr": 0.55,
+      "q": 1.1
+     },
+     "l": "Neuf champs : la plupart abandonnent avant la fin, sur mobile surtout. On qualifie au téléphone, pas dans le formulaire."
+    }
+   ]
+  },
+  {
+   "id": "split",
+   "lever": "Acquisition",
+   "q": "Comment répartissez-vous le budget ?",
+   "help": "Meta va chercher des gens qui ne vous cherchent pas encore. Google répond à ceux qui cherchent déjà, mais leur nombre est limité.",
+   "slider": true
+  }
+ ],
+ "actions": {
+  "keep": {
+   "t": "Ne rien changer",
+   "d": "Laisser les campagnes apprendre et stabiliser les coûts.",
+   "lever": "Pilotage"
+  },
+  "refresh": {
+   "t": "Renouveler les annonces",
+   "d": "Nouveau visuel, même message. Remet les compteurs de fatigue à zéro.",
+   "lever": "Création"
+  },
+  "qualif": {
+   "t": "Ajouter une question de qualification",
+   "d": "Une question de plus dans le formulaire pour trier les leads.",
+   "lever": "Sites web",
+   "once": true
+  },
+  "speed": {
+   "t": "Rappeler chaque lead en moins d'une heure",
+   "d": "Organiser l'équipe pour rappeler vite, pendant que le prospect y pense.",
+   "lever": "Pilotage",
+   "once": true
+  },
+  "scale": {
+   "t": "Augmenter le budget de 20 %",
+   "d": "Pour toutes les semaines restantes.",
+   "lever": "Acquisition"
+  },
+  "cut": {
+   "t": "Baisser le budget de 20 %",
+   "d": "Pour toutes les semaines restantes.",
+   "lever": "Acquisition"
+  },
+  "exclude": {
+   "t": "Exclure les mauvais profils",
+   "d": "Retirer de la cible les leads non qualifiés déjà reçus et leurs profils proches.",
+   "lever": "Acquisition",
+   "once": true
+  },
+  "abtest": {
+   "t": "Tester une seconde accroche",
+   "d": "Deux versions du texte en parallèle ; on garde la meilleure.",
+   "lever": "Création",
+   "once": true
+  },
+  "landing": {
+   "t": "Accélérer la page d'atterrissage",
+   "d": "Images compressées, moins de scripts : la page s'affiche en moins de 2 secondes.",
+   "lever": "Sites web",
+   "once": true
+  },
+  "retarget": {
+   "t": "Relancer les visiteurs",
+   "d": "Une annonce pour ceux qui ont vu la page sans remplir le formulaire.",
+   "lever": "Acquisition",
+   "once": true
+  }
+ },
+ "imprevus": [
+  {
+   "t": "Un concurrent lance une grosse promotion.",
+   "d": "Votre taux de clic baisse cette semaine.",
+   "m": {
+    "ctr": 0.85
+   }
+  },
+  {
+   "t": "Le soir, votre audience est plus en ligne que d'habitude.",
+   "d": "Les annonces de fin de journée touchent plus de monde cette semaine.",
+   "m": {
+    "ctr": 1.1
+   }
+  },
+  {
+   "t": "L'équipe commerciale est réduite pendant deux jours.",
+   "d": "Les rappels prennent du retard cette semaine.",
+   "m": {
+    "close": 0.75
+   },
+   "speedSaves": true
+  },
+  {
+   "t": "Les enchères Google montent.",
+   "d": "Un concurrent enchérit sur vos mots-clés : le coût par clic grimpe cette semaine.",
+   "m": {
+    "cpc": 1.25
+   }
+  },
+  {
+   "t": "Le formulaire a été en panne quelques heures.",
+   "d": "Une partie des visiteurs n'a pas pu l'envoyer.",
+   "m": {
+    "cvr": 0.85
+   }
+  },
+  {
+   "t": "Un article de presse parle de votre secteur.",
+   "d": "Plus de recherches sur Google cette semaine.",
+   "m": {
+    "demand": 1.2
+   }
+  }
+ ],
+ "ui": {
+  "semaines": 8,
+  "reprise": "Une partie est en cours avec {client}{etat}.",
+  "reprise_semaine": ", semaine {n} sur {total}",
+  "reprise_prepa": ", en préparation",
+  "reprendre": "Reprendre la partie",
+  "choisir_titre": "Choisissez votre client",
+  "choisir_texte": "Vous préparez la campagne en six décisions, puis vous la pilotez pendant huit semaines. À chaque semaine, un tableau de bord, un imprévu parfois, et une décision. Comptez 10 à 15 minutes.",
+  "budget": "Budget : {budget} DH par semaine",
+  "note": "Simulation pédagogique : les clients et les chiffres sont fictifs. Les mécanismes sont ceux que nous voyons sur de vraies campagnes.",
+  "part_meta": "Part du budget sur Meta",
+  "meta": "Meta",
+  "google": "Google",
+  "retour": "Retour",
+  "voir_plan": "Voir le plan",
+  "changer_client": "Changer de client",
+  "suivante": "Décision suivante",
+  "prepa_barre": "Préparation, décision {n} sur {total}",
+  "levier": "Levier : {levier}",
+  "prepa_fin": "Préparation terminée",
+  "plan_titre": "Votre plan de campagne",
+  "plan_texte": "Relisez-le. Une fois lancé, vous ne pourrez plus changer la cible, le message ni l'offre : seulement piloter.",
+  "plan_lignes": {
+   "aud": "Cible",
+   "angle": "Message",
+   "offer": "Action demandée",
+   "crea": "Visuel",
+   "frm": "Formulaire"
+  },
+  "repartition": "Répartition",
+  "repartition_texte": "Meta {m} %, Google {g} %, sur {budget} DH par semaine",
+  "modifier": "Modifier",
+  "lancer": "Lancer la campagne",
+  "kpi": {
+   "depense": "Dépensé",
+   "clics": "Clics",
+   "qualifies": "Leads qualifiés",
+   "cout_par": "Coût par {unite}",
+   "stable": "stable"
+  },
+  "sous_kpi": "Coût par lead : {cpl} DH. Part de leads qualifiés : {part} %.",
+  "graphe": {
+   "legende": "{res} par semaine",
+   "semaine": "Semaine",
+   "vous": "Vous",
+   "reference": "Référence",
+   "court": "S{n}",
+   "votre": "Votre campagne",
+   "ref": "Campagne de référence, réglée par défaut"
+  },
+  "lectures": {
+   "apprentissage": "Gros changement de répartition : les campagnes Meta repartent en apprentissage, cette semaine coûte plus cher. Changez par petites touches.",
+   "fatigue": "Le taux de clic baisse : vos annonces tournent depuis {n} semaines et la cible les a vues plusieurs fois. Il est temps de les renouveler.",
+   "qualif": "Beaucoup de leads, peu de qualifiés. Le formulaire ne trie pas assez : vos commerciaux appellent des curieux.",
+   "google_plafond": "Sur Google, vous captez déjà presque toutes les recherches. Chaque dirham en plus y coûte plus cher que le précédent.",
+   "google_arret": "Google est presque à l'arrêt, alors que des gens cherchent déjà ce que vous vendez. Ce sont souvent les leads les plus chauds.",
+   "rappel": "Les leads attendent qu'on les rappelle. Plus le rappel est rapide, plus ils avancent : c'est souvent le levier le moins cher.",
+   "baisse": "Le coût par {unite} baisse de {x} % : gardez ce qui marche.",
+   "hausse": "Le coût par {unite} monte de {x} %. Regardez d'abord le taux de clic, puis la part de leads qualifiés.",
+   "stable": "Semaine stable. Une campagne qui tient demande surtout de la régularité."
+  },
+  "semaine_barre": "Semaine {n} sur {total}",
+  "bilan_semaine": "Bilan de la semaine {n}",
+  "voir_bilan": "Voir le bilan de la campagne",
+  "imprevu": "Semaine {n} : {titre}",
+  "decision": "Votre décision pour la semaine {n}",
+  "action_legende": "Une action pour la semaine suivante",
+  "repartition_label": "Répartition du budget (Meta / Google)",
+  "lancer_semaine": "Lancer la semaine {n}",
+  "notes": [
+   {
+    "min": 3,
+    "note": "A",
+    "texte": "Campagne de cabinet."
+   },
+   {
+    "min": 2,
+    "note": "B",
+    "texte": "Très bon pilotage."
+   },
+   {
+    "min": 1.15,
+    "note": "C",
+    "texte": "Correct, avec de la marge."
+   },
+   {
+    "min": 0,
+    "note": "D",
+    "texte": "La campagne a coûté plus qu'elle n'aurait dû."
+   }
+  ],
+  "rangs": {
+   "1": "Bon choix",
+   "2": "Défendable",
+   "3": "À revoir"
+  },
+  "bilan_titre": "Bilan de la campagne",
+  "reference": "Référence : {v}",
+  "budget_depense": "Budget dépensé",
+  "sur_semaines": "Sur {n} semaines",
+  "decisions_titre": "Vos décisions de départ",
+  "pilotage_titre": "Votre pilotage",
+  "pilotage": {
+   "rappel_oui": "Vous avez organisé le rappel rapide : c'est le levier qui coûte le moins et rapporte le plus en bas de l'entonnoir.",
+   "rappel_non": "Vous n'avez pas accéléré le rappel des leads. Sur une vraie campagne, c'est souvent la première chose que nous corrigeons.",
+   "renouv_oui": "Vous avez renouvelé les annonces {n} fois. La fatigue est inévitable ; la surveiller l'est aussi.",
+   "renouv_non": "Vous n'avez jamais renouvelé les annonces. Au-delà de trois ou quatre semaines, la même création s'use.",
+   "qualif": "La question de qualification a trié les leads : moins de volume, plus de résultats.",
+   "apprentissage": "Vous avez fortement changé la répartition {n} fois. Chaque gros changement relance la phase d'apprentissage de Meta."
+  },
+  "cta_texte": "Sur votre vraie campagne, les mêmes décisions se prennent avec vos chiffres. En 45 minutes, nous regardons lesquelles comptent pour vous.",
+  "diagnostic": "Demander un diagnostic",
+  "rejouer": "Rejouer avec un autre client"
+ }
+}

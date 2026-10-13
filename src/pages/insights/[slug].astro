@@ -1,0 +1,98 @@
+---
+/* Article Insights : page calme, sommaire suivi au défilement, temps de lecture, dates, copier le lien,
+   bloc diagnostic en fin d'article, expertise liée et deux articles « À lire aussi ». */
+import Base from '../../layouts/Base.astro';
+import Crumb from '../../components/Crumb.astro';
+import CopyButton from '../../components/CopyButton.astro';
+import { render } from 'astro:content';
+import { page, site, dateFr, type Data } from '../../lib/content';
+import { articles, readingTime, related, type Article } from '../../lib/insights';
+import { coverSVG } from '../../lib/cover';
+import '../../styles/pages/article.css';
+
+export async function getStaticPaths() {
+  const all = await articles();
+  return all.map((a) => ({ params: { slug: a.id }, props: { a, all } }));
+}
+interface Props { a: Article; all: Article[] }
+const { a, all } = Astro.props;
+const { Content, headings } = await render(a);
+const d = await page('insights');
+const s = await site();
+const lv = (await site('leviers')).liste as Data[];
+const t = d.article;
+const url = `/insights/${a.id}/`;
+const crumb = [{ name: 'Accueil', url: '/' }, { name: 'Insights', url: '/insights/' }, { name: a.data.title, url }];
+const toc = headings.filter((h) => h.depth === 2);
+const rel = related(a, all);
+const levier = lv.find((x) => a.data.levier.includes(x.cle));
+const pub = a.data.publishedAt, upd = a.data.updatedAt;
+const showUpd = upd && upd.toDateString() !== pub.toDateString();
+const ld = {
+  '@type': 'Article',
+  headline: a.data.title,
+  description: a.data.description,
+  datePublished: pub.toISOString().slice(0, 10),
+  dateModified: (upd ?? pub).toISOString().slice(0, 10),
+  inLanguage: 'fr-MA',
+  articleSection: a.data.category,
+  wordCount: (a.body ?? '').split(/\s+/).length,
+  author: { '@type': 'Person', name: a.data.author, url: 'https://leadvice.org/cabinet/', sameAs: [(s.fondatrices as Data[]).find((f) => f.nom === a.data.author)?.linkedin].filter(Boolean) },
+  publisher: { '@id': 'https://leadvice.org/#org' },
+  image: `https://leadvice.org/og/insight-${a.id}.png`,
+  mainEntityOfPage: `https://leadvice.org${url}`,
+};
+---
+<Base title={a.data.seoTitle ?? `${a.data.title} | Leadvice`} description={a.data.description} og={`insight-${a.id}`} section="ins" crumb={crumb} jsonld={[ld]} ogType="article" progress>
+  <section class="wrap phero a-hero">
+    <Crumb items={crumb} />
+    <h1 data-rise>{a.data.title}</h1>
+    <div class="a-meta">
+      <span>{a.data.category}</span><span>{d.par} {a.data.author}</span><span>{readingTime(a)} {d.lecture}</span>
+    </div>
+    <p class="a-dates small">
+      <span>{t.publie} <time datetime={pub.toISOString().slice(0, 10)}>{dateFr(pub)}</time></span>
+      {showUpd && upd && <span>{t.maj} <time datetime={upd.toISOString().slice(0, 10)}>{dateFr(upd)}</time></span>}
+      <CopyButton text="@url" label={t.copier} done={t.copie} class="share" />
+    </p>
+  </section>
+  <div class="wrap a-cover" set:html={coverSVG(a.id, a.data.category, t.couverture)} />
+  <section class="wrap a-grid">
+    <nav class="a-toc" aria-label={t.sommaire}>
+      <p>{t.sommaire}</p>
+      <ol>{toc.map((h) => <li><a href={`#${h.slug}`}>{h.text}</a></li>)}</ol>
+    </nav>
+    <article class="a-body prose">
+      <Content />
+      <div class="a-end" data-pagefind-ignore>
+        <h2>{t.fin_titre}</h2>
+        <p>{t.fin_texte}</p>
+        <div class="a-end-acts">
+          <a class="btn btn-main" href="/diagnostic/">{s.cta.principal}</a>
+          {levier && <a class="tlink" href={levier.url}>{t.expertise} : {levier.nom}</a>}
+        </div>
+        <CopyButton text="@url" label={t.copier} done={t.copie} class="share" />
+      </div>
+    </article>
+  </section>
+  <section class="wrap sec sec-top0" data-pagefind-ignore>
+    <h2 data-rise class="aussi-t">{t.aussi}</h2>
+    <div>
+      {rel.map((r) => <a class="aussi" href={`/insights/${r.id}/`}><h3>{r.data.title}</h3><span class="small">{r.data.category}, {readingTime(r)} min</span></a>)}
+    </div>
+  </section>
+</Base>
+<script>
+  /* sommaire : la section en cours est surlignée */
+  const links = Array.from(document.querySelectorAll<HTMLAnchorElement>('.a-toc a'));
+  const heads = links.map((l) => document.getElementById(decodeURIComponent(l.hash.slice(1))));
+  let tick = false;
+  const upd = (): void => {
+    tick = false;
+    let cur = -1;
+    heads.forEach((h, i) => { if (h && h.getBoundingClientRect().top < innerHeight * .3) cur = i; });
+    links.forEach((l, i) => { l.classList.toggle('on', i === cur); if (i === cur) l.setAttribute('aria-current', 'location'); else l.removeAttribute('aria-current'); });
+  };
+  addEventListener('scroll', () => { if (!tick) { tick = true; requestAnimationFrame(upd); } }, { passive: true });
+  upd();
+</script>

@@ -1,0 +1,8 @@
+---
+/* Vignette animée d'un levier (rangées de l'accueil et des expertises). */
+import { sceneLabels } from '../lib/content';
+interface Props { name: string }
+const { name } = Astro.props;
+const labels = await sceneLabels(name);
+---
+<canvas data-scene={name} data-mini data-auto data-labels={labels} aria-hidden="true" width="72" height="72"></canvas>

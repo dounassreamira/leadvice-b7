@@ -1,0 +1,25 @@
+seo:
+  title: "Ateliers marketing interactifs : campagne et site web | Leadvice"
+  description: "Deux ateliers gratuits pour apprendre en faisant : pilotez une campagne Meta Ads et Google Ads pendant huit semaines simulées, puis construisez une page qui convertit."
+  og: ateliers
+fil: Ateliers
+h1: Apprendre en faisant.
+reponse: "Deux ateliers gratuits, sans inscription. Vous prenez les décisions que nous prenons chaque semaine pour nos clients, et vous voyez ce qu'elles changent."
+cartes:
+  - meta: "Atelier acquisition, 10 à 15 minutes"
+    titre: Pilotez une campagne.
+    texte: "Un client fictif, un budget, huit semaines. Ciblage, message, formulaire, répartition entre Meta et Google, annonces qui s'usent, imprévus. À la fin, votre coût par client face à une campagne réglée par défaut."
+    lien: Lancer l'atelier
+    url: /ateliers/simulateur-campagne/
+  - meta: "Atelier site web, 10 à 15 minutes"
+    titre: Construisez une page qui convertit.
+    texte: "Trois niveaux : assembler une page d'atterrissage, trouver les erreurs d'une page existante, tenir un budget de poids sur mobile."
+    lien: Lancer l'atelier
+    url: /ateliers/page-qui-convertit/
+pourquoi:
+  titre: Pourquoi des ateliers ?
+  paragraphes:
+    - "On comprend mieux une campagne en la pilotant qu'en lisant un article. Dans chaque atelier, une décision a des effets visibles tout de suite, et un bilan explique ce qui a marché et pourquoi."
+    - "Les clients et les chiffres des ateliers sont fictifs, et les modèles sont volontairement simplifiés. Les mécanismes, eux, sont ceux que nous voyons sur de vraies campagnes et de vrais sites : la cible qui décide de la qualité, les annonces qui s'usent, le formulaire qui trie ou fait fuir, la page trop lourde qui perd des visiteurs."
+    - "Votre progression est gardée sur votre appareil. Rien n'est envoyé tant que vous ne demandez pas de diagnostic."
+cloture: { titre: "Et sur vos vraies campagnes ?", texte: "45 minutes, offert. Nous regardons vos campagnes, votre site et vos chiffres. Vous repartez avec ce qui freine votre acquisition et par quoi commencer." }

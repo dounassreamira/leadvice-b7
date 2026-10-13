@@ -1,0 +1,73 @@
+seo:
+  title: Création de site web et landing pages qui convertissent | Leadvice
+  description: 'Sites vitrines, pages de destination et parcours de prise de rendez-vous conçus pour l''acquisition : rapides, bien référencés, mesurés et faciles à mettre à jour.'
+  og: sites-web
+fil: Sites web
+h1: Un site qui transforme les visites en demandes.
+reponse: 'Leadvice conçoit des sites et des pages de destination pensés pour l''acquisition. Nous partons de ce que vos campagnes promettent et de ce que vos clients demandent, puis nous construisons des pages rapides, claires et mesurées, qui mènent à une seule action : vous contacter, réserver ou acheter.'
+scene:
+  nom: page
+  len: 220
+  aria: La page qui se construit
+  legende: La page qui se construit
+  etapes:
+  - texte: Des pages, des blocs, des idées en vrac.
+    de: 0.05
+    a: 0.4
+  - texte: Chaque élément trouve sa place, et son rôle.
+    de: 0.4
+    a: 0.7
+  - texte: Un seul geste demandé. Et une demande qui arrive.
+    de: 0.7
+    a: 1.0
+faisons:
+  titre: Ce que nous faisons.
+  intro: Chaque mission est menée par les fondatrices, de l'analyse aux décisions.
+  items:
+  - titre: Sites vitrines
+    texte: 'Le site de votre entreprise, construit autour de ce que vos clients cherchent à savoir avant de vous appeler : ce que vous faites, pour qui, pourquoi vous, et comment vous joindre.'
+  - titre: Pages de destination
+    texte: Une page par campagne, par offre ou par audience. Le message de la publicité se prolonge sur la page, au lieu de se perdre sur une page d'accueil générale.
+  - titre: Prise de rendez-vous et formulaires
+    texte: Formulaires courts qui qualifient, réservation de créneaux reliée à votre agenda, confirmations et rappels automatiques.
+  - titre: Mesure des conversions
+    texte: Chaque demande est remontée à Meta et à Google, avec la source qui l'a amenée. Vos campagnes apprennent à trouver plus de personnes comme celles qui vous contactent.
+  - titre: Vitesse et référencement
+    texte: Des pages légères qui s'affichent vite sur mobile, une structure que Google et les moteurs de réponse comprennent, et des contenus écrits pour vos clients.
+  - titre: Autonomie
+    texte: Vous modifiez vos textes, vos images et vos articles vous-même, sans dépendre de nous pour chaque changement.
+pour_vous:
+  titre: Est-ce pour vous ?
+  situations:
+  - « Vos publicités renvoient vers une page d'accueil générale, et les visiteurs repartent sans rien demander. »
+  - « Votre site date de plusieurs années, il est lent sur mobile et vous n'osez plus l'envoyer. »
+  - « Vous lancez une offre et vous avez besoin d'une page prête avant la campagne, pas trois mois après. »
+comment:
+  titre: Comment nous travaillons.
+  texte: 'Nous commençons par le parcours : d''où viennent vos visiteurs, ce qu''ils doivent comprendre, l''action qu''on attend d''eux. Viennent ensuite les textes, puis le design et la construction. Le site est mesuré dès sa mise en ligne, et nous l''ajustons selon ce que les chiffres montrent. Ce site, nous l''avons conçu nous-mêmes, avec les mêmes règles.'
+faq:
+  titre: Vos questions.
+  questions:
+  - q: Faites-vous des sites sans campagnes publicitaires ?
+    a:
+    - Oui. Un site bien construit sert aussi votre référencement, vos commerciaux et vos partenaires. Nous le pensons simplement pour qu'il soit prêt le jour où vous lancez vos campagnes.
+  - q: Combien de temps faut-il pour créer un site ?
+    a:
+    - Une page de destination se livre en quelques jours. Un site vitrine complet demande quelques semaines, selon le nombre de pages et la disponibilité des contenus. Nous fixons le calendrier ensemble au départ.
+  - q: Pourrons-nous modifier le site nous-mêmes ?
+    a:
+    - Oui. Vous disposez d'une interface simple pour changer vos textes, vos images et publier des articles. Le site vous appartient, ainsi que le nom de domaine.
+  - q: Le site sera-t-il en français et en arabe ?
+    a:
+    - Si votre audience le demande, oui. Nous adaptons les pages à chaque langue plutôt que de traduire mot à mot.
+  - q: Reprenez-vous un site existant ?
+    a:
+    - 'Oui. Nous commençons par l''auditer : ce qui peut rester, ce qui freine les demandes, ce qui doit être refait. Parfois, quelques pages refaites suffisent.'
+cloture:
+  titre: Parlons de votre croissance.
+  texte: 45 minutes, offert. Nous regardons vos campagnes, vos chiffres et votre offre. Vous repartez avec ce qui freine votre acquisition et par quoi commencer.
+suivante: acquisition
+service: Création de sites web et de pages de destination
+lire:
+- plus-de-leads-ne-veut-pas-dire-plus-de-clients
+- audit-marketing-sept-signes

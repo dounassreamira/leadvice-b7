@@ -1,0 +1,11 @@
+# Clients autorisés (liste fermée, prompt maître 2.5). Logos dans src/assets/logos/.
+# x, y : position de la sphère sur ordinateur (en %), xm, ym : sur mobile, s : taille, d : décalage du scintillement.
+liste:
+  - { nom: Royal Air Maroc, secteur: Transport aérien, filtre: transport, logo: royal-air-maroc, x: 12, y: 24, xm: 16, ym: 12, s: 150, d: 0 }
+  - { nom: Attijariwafa bank, secteur: Banque, filtre: banque, logo: attijariwafa-bank, x: 33, y: 12, xm: 44, ym: 8, s: 168, d: 1.37 }
+  - { nom: ITROAD Group, secteur: Services IT, filtre: it, logo: itroad, x: 71, y: 13, xm: 72, ym: 13, s: 132, d: 2.74 }
+  - { nom: Kettani Immobilier, secteur: Immobilier, filtre: immobilier, logo: kettani, x: 89, y: 30, xm: 84, ym: 26, s: 150, d: 4.11, mission: "Acquisition digitale, Meta Ads, Google Ads", cas: /realisations/kettani-immobilier/ }
+  - { nom: ZEYA, secteur: "E-commerce, bijoux", filtre: ecommerce, logo: zeya, x: 9, y: 70, xm: 16, ym: 76, s: 128, d: 0.48 }
+  - { nom: Beadsbox, secteur: E-commerce, filtre: ecommerce, logo: beadsbox, x: 30, y: 84, xm: 40, ym: 89, s: 118, d: 1.85 }
+  - { nom: Milla, secteur: Marque, filtre: marques, logo: milla, x: 70, y: 85, xm: 66, ym: 80, s: 126, d: 3.22 }
+  - { nom: "Frag'in", secteur: Aromatique, filtre: aromatique, logo: frayin, x: 91, y: 70, xm: 86, ym: 91, s: 138, d: 4.59 }

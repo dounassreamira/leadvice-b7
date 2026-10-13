@@ -1,0 +1,68 @@
+seo:
+  title: Pilotage de la performance marketing et reporting | Leadvice
+  description: 'Suivi hebdomadaire des campagnes, reporting utile, optimisation continue et co-pilotage avec vos équipes : Leadvice transforme vos chiffres en décisions.'
+  og: pilotage
+fil: Pilotage
+h1: Mesurer.<br/>Comprendre.<br/>Optimiser.
+reponse: Le pilotage, chez Leadvice, consiste à transformer les chiffres de vos campagnes en décisions. Nous suivons les indicateurs qui comptent chaque semaine, nous expliquons ce qui change et pourquoi, et nous ajustons budgets, audiences et messages avec vos équipes.
+scene:
+  nom: dial
+  len: 220
+  aria: Le cadran de pilotage
+  legende: Le cadran de pilotage
+  etapes:
+  - texte: Une campagne qui tourne seule dérive.
+    de: 0.05
+    a: 0.4
+  - texte: On lit, on comprend, on corrige.
+    de: 0.4
+    a: 0.75
+  - texte: Un système qui apprend.
+    de: 0.75
+    a: 1.0
+faisons:
+  titre: Ce que nous faisons.
+  intro: Chaque mission est menée par les fondatrices, de l'analyse aux décisions.
+  items:
+  - titre: Suivi hebdomadaire
+    texte: 'Chaque semaine, les chiffres sont relus : coût par lead, qualité des leads, taux de transformation, budget consommé. Les écarts sont repérés tôt.'
+  - titre: Reporting utile
+    texte: Des bilans qui disent ce qui s'est passé, pourquoi, et ce que nous faisons ensuite. Pas de tableau de quarante lignes que personne ne lit.
+  - titre: Optimisation continue
+    texte: 'Budgets déplacés, audiences resserrées, créations remplacées : la campagne d''aujourd''hui n''est pas celle du lancement.'
+  - titre: Audits de campagnes
+    texte: Détection des anomalies de coût, lecture par objectif et par étape de l'entonnoir, recalcul des indicateurs qui faussent la lecture.
+  - titre: Co-pilotage
+    texte: Nous travaillons avec vos équipes marketing et commerciales, pour que les chiffres des campagnes rencontrent ceux des ventes.
+pour_vous:
+  titre: Est-ce pour vous ?
+  situations:
+  - « Vous recevez des rapports, mais vous ne savez pas quelle décision en tirer. »
+  - « Le marketing et les commerciaux ne parlent pas des mêmes chiffres. »
+  - « Vos campagnes tournent seules depuis des mois sans que personne ne les remette en question. »
+comment:
+  titre: Comment nous travaillons.
+  texte: Nous définissons avec vous les indicateurs qui comptent pour votre activité, nous mettons en place le suivi, puis nous tenons un rendez-vous régulier où chaque chiffre est accompagné d'une décision.
+faq:
+  titre: Vos questions.
+  questions:
+  - q: Quels indicateurs suivez-vous ?
+    a:
+    - 'Ceux qui mènent à vos ventes : coût par lead, part de leads qualifiés, coût par opportunité, coût d''acquisition client. Les indicateurs de visibilité (impressions, clics) servent à comprendre, pas à juger.'
+  - q: À quelle fréquence recevons-nous un bilan ?
+    a:
+    - Les chiffres sont suivis chaque semaine. Le format et le rythme des bilans sont fixés avec vous au démarrage, pour qu'ils servent vraiment à décider.
+  - q: Pouvez-vous reprendre des campagnes gérées par quelqu'un d'autre ?
+    a:
+    - Oui. Nous commençons par un audit de l'existant pour comprendre ce qui fonctionne et ce qui doit changer, avant de toucher quoi que ce soit.
+  - q: Faut-il un CRM ?
+    a:
+    - C'est préférable pour suivre ce que deviennent les leads, mais ce n'est pas indispensable pour commencer. Nous nous adaptons à vos outils et nous vous conseillons si un changement s'impose.
+cloture:
+  titre: Parlons de votre croissance.
+  texte: 45 minutes, offert. Nous regardons vos campagnes, vos chiffres et votre offre. Vous repartez avec ce qui freine votre acquisition et par quoi commencer.
+suivante: strategie
+service: Pilotage de la performance marketing
+lire:
+- cpl-cpa-cout-par-opportunite
+- plus-de-leads-ne-veut-pas-dire-plus-de-clients
