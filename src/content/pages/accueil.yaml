@@ -1,0 +1,97 @@
+# Accueil. Les champs marqués (html) acceptent un lien <a> ou un retour à la ligne <br>.
+seo:
+  title: Leadvice, cabinet de conseil stratégique & marketing à Casablanca
+  description: "Leadvice aide les entreprises à transformer leur marketing en clients : stratégie, création, Meta Ads, Google Ads et pilotage de la performance. Diagnostic offert."
+  og: accueil
+
+ouverture:
+  aria: Du bruit au signal
+  h1: Moins de bruit.<br>Plus de clients.   # (html)
+  texte: Cabinet de conseil en stratégie marketing et en acquisition client, à Casablanca. Diagnostic de 45 minutes, offert.
+  etapes:
+    - { texte: Votre marketing envoie beaucoup de signaux., de: 0.12, a: 0.3 }
+    - { texte: La plupart ne sont que du bruit., de: 0.3, a: 0.5 }
+    - { texte: Nous isolons celui qui compte., de: 0.5, a: 0.7 }
+    - { texte: "Et nous l'amplifions, jusqu'à vos ventes.", de: 0.7, a: 1 }
+  rail: [Bruit, Tri, Signal, Croissance]
+
+nuage:
+  titre: Ils nous ont fait confiance.
+  chiffre: "+23"
+  chiffre_valeur: 23
+  texte: entreprises accompagnées depuis 2022, de la compagnie aérienne à la marque de parfums.
+  aide_souris: Attrapez une sphère et lancez-la
+  aide_toucher: Touchez une sphère pour la lancer
+
+constat: "La plupart des entreprises ne manquent pas de marketing. Elles en ont trop : des campagnes qui tournent, des contenus qui sortent, des tableaux de chiffres que personne ne lit. Notre travail commence là. Nous trions ce qui rapporte de ce qui fait du bruit, puis nous concentrons votre budget sur les personnes qui achèteront vraiment."
+
+angles:
+  aria: Même offre, trois histoires
+  titre: Même offre.<br>Trois histoires.   # (html)
+  intro: "Prenons une salle de sport. La même offre peut se vendre par le prix, par le temps gagné ou par l'encadrement. Chaque angle parle à une autre personne, et chacune réagit à sa propre accroche. Avant de changer d'offre ou de budget, nous changeons d'angle."
+  annonceur: Club Atlas, Casablanca
+  sponsorise: Sponsorisé
+  annonces:
+    - { etiquette: "Angle 1 sur 3, le prix", accroche: "Votre forme, pour le prix d'un café par jour.", cible: Pour les étudiants et les jeunes actifs, bouton: "Voir l'offre" }
+    - { etiquette: "Angle 2 sur 3, le temps", accroche: À deux rues de votre bureau. Une séance de 45 minutes., cible: "Pour les cadres qui n'ont jamais le temps", bouton: Réserver une séance }
+    - { etiquette: "Angle 3 sur 3, l'encadrement", accroche: Un coach vous attend à chaque séance., cible: Pour ceux qui ont déjà abandonné une salle, bouton: Essayer une semaine }
+  fin: "Le problème n'est pas toujours l'offre. C'est parfois l'angle."
+  lien: { texte: Comment nous trouvons les angles, url: /expertises/creation/ }
+  mention: "Exemple illustratif : la salle de sport et ses annonces sont fictives."
+
+systeme:
+  titre: "Le marketing n'est pas une suite d'actions.<br>C'est un système."   # (html)
+  texte: "Une campagne qui fonctionne repose sur une offre claire, un message juste, une audience bien choisie et des chiffres lus chaque semaine. Quand un seul de ces éléments manque, le budget part ailleurs. Notre travail consiste à les faire tenir ensemble."
+  mots: [Business, Data, Audience, Message, Media, Conversion]
+  centre: Stratégie
+
+leviers:
+  titre: "Quatre leviers.<br>Un seul objectif : des clients."   # (html)
+  lien: { texte: Toutes les expertises, url: /expertises/ }
+  rangees:
+    - { nom: Stratégie, scene: knot, url: /expertises/strategie/, fort: "Comprendre avant d'agir.", texte: "Audit, positionnement, plan d'action : nous clarifions où aller avant de dépenser un dirham." }
+    - { nom: Création, scene: angles, url: /expertises/creation/, fort: "Trouver le message qui mérite d'être vu.", texte: "Angles, accroches, publicités et contenus pensés pour faire agir, pas seulement pour plaire." }
+    - { nom: Acquisition, scene: target, url: /expertises/acquisition/, fort: Mettre le bon message devant les bonnes personnes., texte: "Meta Ads, Google Ads et génération de leads, avec des formulaires qui qualifient avant de compter." }
+    - { nom: Pilotage, scene: dial, url: /expertises/pilotage/, fort: Mesurer. Comprendre. Optimiser., texte: "Des chiffres suivis chaque semaine, des décisions prises avec vous, des campagnes qui progressent." }
+  sites: 'Vos publicités renvoient vers un site qui ne convertit pas ? Nous concevons aussi <a class="tlink" href="/expertises/sites-web/">des sites et des pages de destination</a> pensés pour vos campagnes.'   # (html)
+
+dirham:
+  aria: "Le chemin d'un dirham"
+  titre: "Le chemin d'un dirham."
+  etapes:
+    - { texte: Vos dirhams partent en publicité., de: 0, a: 0.3 }
+    - { texte: "Il devient des prospects. Les bons restent, les autres tombent.", de: 0.3, a: 0.55 }
+    - { texte: Les bons deviennent des clients. Et les clients paient., de: 0.55, a: 0.78 }
+    - { texte: "Et l'argent revient. Notre travail : qu'il revienne plus gros qu'il n'est parti.", de: 0.78, a: 1, lien: { texte: Simuler votre propre flux, url: "/expertises/acquisition/#simulateur" } }
+
+resultats:
+  titre: Des résultats qui se comptent.
+  courbe: "Chaque chiffre a commencé par une question simple : à qui parle-t-on vraiment ?"
+  note: "Chiffres cumulés depuis la création du cabinet. Le coût par lead varie selon le secteur : il est plus élevé pour un bien immobilier à plusieurs millions de dirhams que pour un produit du quotidien."
+  lien: { texte: Voir les réalisations, url: /realisations/ }
+
+methode:
+  titre: Notre méthode, en cinq temps.
+
+humain:
+  titre: Derrière les données, il y a toujours une décision humaine.
+  texte: "Leadvice, ce sont deux ingénieures qui ont choisi le conseil. L'une vient de la technologie et de l'acquisition, l'autre de l'audit et de la stratégie. Vous travaillez directement avec elles, du diagnostic aux décisions."
+  lien: { texte: Découvrir le cabinet, url: /cabinet/ }
+
+faq:
+  titre: "Les questions qu'on nous pose avant de commencer."
+  questions:
+    - q: Que fait exactement Leadvice ?
+      a: Nous sommes un cabinet de conseil en stratégie marketing et en acquisition client, basé à Casablanca. Nous clarifions votre stratégie, créons les messages et les publicités, lançons et pilotons vos campagnes Meta Ads et Google Ads, et lisons les chiffres avec vous jusqu'aux ventes.
+    - q: Combien coûte un lead avec Leadvice ?
+      a: "Sur l'ensemble de nos clients, le coût moyen par lead constaté est inférieur à 1 $ sur Meta Ads et se situe entre 1 et 2 $ sur Google Ads. Il varie selon le secteur et le prix de ce que vous vendez. Le chiffre qui compte vraiment est le coût par client."
+    - q: "À qui s'adresse votre accompagnement ?"
+      a: "À des entreprises qui investissent déjà dans leur marketing et veulent que cet investissement produise des clients : promoteurs immobiliers, banques et services financiers, transport, services B2B, marques. Le plus souvent, nous travaillons avec la direction générale ou la direction marketing."
+    - q: Que se passe-t-il pendant le diagnostic offert ?
+      a: Un échange de 45 minutes, en visio ou par téléphone. Nous regardons vos campagnes, vos chiffres et votre offre. Vous repartez avec ce qui freine votre acquisition et par quoi commencer, que vous travailliez avec nous ensuite ou non.
+    - q: Les comptes publicitaires nous appartiennent-ils ?
+      a: Oui. Les comptes Meta et Google sont à votre nom, et le budget publicitaire est payé directement aux plateformes, séparément de nos honoraires.
+
+cloture:
+  titre: Et si nous trouvions votre signal ?
+  texte: 45 minutes, offert. Nous regardons vos campagnes, vos chiffres et votre offre. Vous repartez avec ce qui freine votre acquisition et par quoi commencer.

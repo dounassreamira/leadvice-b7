@@ -243,10 +243,11 @@ function highlight(el: Element): void {
   after.parentNode?.insertBefore(s, after);
   s.appendChild(after);
   if (RM || !('IntersectionObserver' in window)) { s.classList.add('on'); return; }
+  /* on observe le titre lui-même : son contenu peut être redécoupé en lignes par motion.ts */
   const io = new IntersectionObserver((es) => {
-    if (es[0]?.isIntersecting) { io.disconnect(); setTimeout(() => s.classList.add('on'), 350); }
+    if (es[0]?.isIntersecting) { io.disconnect(); setTimeout(() => el.querySelector('.lv-hl')?.classList.add('on'), 350); }
   }, { threshold: .5 });
-  io.observe(s);
+  io.observe(el);
 }
 $$('.phero h1, .violet h2, [data-hl]').forEach(highlight);
 

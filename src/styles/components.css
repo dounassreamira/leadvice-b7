@@ -193,6 +193,7 @@
   .scene .cap { position: absolute; left: var(--gut); right: var(--gut); bottom: clamp(40px, 9vh, 96px); display: grid; }
   .scene .cap > * { grid-area: 1 / 1; transition: opacity .5s var(--ease), transform .6s var(--ease); }
   .js .scene .cap > *:not(.on) { opacity: 0; transform: translateY(24px); }
+  .rm .scene .cap > *:not(.on) { opacity: 1; transform: none; }
   .scene .cap p { font-family: var(--display); font-weight: 700; letter-spacing: var(--tracking-title); font-size: var(--fs-cap); line-height: 1.03; max-width: 16ch; text-wrap: balance; }
   .scene .tag { position: absolute; top: 96px; right: var(--gut); text-align: right; }
   .scene-dots { display: flex; gap: 6px; justify-content: flex-end; margin-top: 8px; }

@@ -12,8 +12,13 @@ Mis à jour à la fin de chaque phase. Reprendre d'ici si la session s'interromp
 - Pages de contrôle : `/dev/design/` (jetons, contrastes calculés, composants dans tous leurs états, clair et sombre, grille touche G) et `/dev/animations/` (chaque scène avec curseur de progression).
 - Audit : `node scripts/audit.mjs` (build, HTML, liens, textes interdits, Lighthouse mobile, axe clair/sombre, débordements, console, captures). Captures : `node scripts/shots.mjs`.
 
+## Phase 1 — Accueil : faite
+- `src/pages/index.astro`, textes dans `src/content/pages/accueil.yaml`, chiffres, clients, fondatrices et méthode dans `src/content/site/`.
+- Scènes : ouverture « du bruit au signal » (épinglée), nuage de clients (sphères à lancer), texte qui s'allume, « Même offre. Trois histoires. » (défilement horizontal, annonces dessinées en SVG), système, quatre leviers avec vignettes animées, chemin d'un dirham (épinglé), chiffres avec phrase sur la courbe, méthode en rail, fondatrices, FAQ, bande violette.
+- Mouvement réduit et sans JavaScript : chaque scène affiche son état final, sans épinglage ; défilement horizontal natif.
+- Lighthouse mobile accueil : 100 / 100 / 100 / 100, LCP 1,4 s, CLS 0, JS 71 Ko.
+
 ## Reste à faire
-- Phase 1 : accueil.
 - Phase 2 : Expertises et ses cinq pages, Réalisations, Kettani, Cabinet, Insights et six articles.
 - Phase 3 : Diagnostic, merci, landing pages, réservation, Pages Functions, e-mails, suivi.
 - Phase 4 : Ateliers (trois pages, deux ateliers).

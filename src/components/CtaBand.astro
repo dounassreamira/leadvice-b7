@@ -1,0 +1,14 @@
+---
+/* Bande violette finale : une seule action, « Demander un diagnostic ». */
+import { site } from '../lib/content';
+interface Props { titre: string; texte?: string; bouton?: string }
+const s = await site();
+const { titre, texte = s.cta.sous_cta, bouton = s.cta.principal } = Astro.props;
+---
+<section class="violet wrap sec">
+  <div class="cta-band">
+    <h2 data-rise set:html={titre} />
+    {texte && <p class="lead">{texte}</p>}
+    <a class="btn btn-light" href="/diagnostic/">{bouton}</a>
+  </div>
+</section>

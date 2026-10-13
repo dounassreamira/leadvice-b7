@@ -1,0 +1,16 @@
+---
+/* Chiffres du cabinet : uniquement ceux de la liste fermée (src/content/site/chiffres.yaml). */
+import { site, type Data } from '../lib/content';
+interface Props { set?: 'cabinet' | 'kettani' }
+const { set = 'cabinet' } = Astro.props;
+const c = await site('chiffres');
+const list = c[set] as Data[];
+---
+<div class="stats">
+  {list.map((x) => (
+    <div class="stat">
+      <b class="num" data-count={x.compteur ?? undefined} data-pre={x.compteur ? x.prefixe : undefined}>{x.valeur}</b>
+      <span>{x.texte}</span>
+    </div>
+  ))}
+</div>

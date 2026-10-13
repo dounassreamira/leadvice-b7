@@ -1,0 +1,7 @@
+# La méthode en cinq temps (vraie séquence, d'où la numérotation).
+etapes:
+  - { nom: Diagnostiquer, texte: "Nous commençons par écouter. Puis nous analysons vos publicités, vos contenus et vos performances, pour trouver ce qui freine votre acquisition." }
+  - { nom: Structurer, texte: "Un plan simple, hiérarchisé, actionnable. Publicité, contenu, stratégie, organisation : tout est aligné sur vos objectifs." }
+  - { nom: Exécuter, texte: "Nous mettons en place les actions et pilotons les campagnes, avec vos équipes ou à leur place." }
+  - { nom: Mesurer, texte: Nous suivons les chiffres chaque semaine. Vous recevez des bilans qui servent à décider. }
+  - { nom: Optimiser, texte: "Nous ajustons ce qui doit l'être. Chaque semaine, le système apprend un peu plus." }
