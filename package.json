@@ -12,7 +12,8 @@
     "build": "astro build && pagefind --site dist --output-subdir pagefind --glob \"**/*.html\" --exclude-selectors \"[data-pagefind-ignore]\"",
     "preview": "astro preview",
     "check": "astro check",
-    "audit": "node scripts/audit.mjs"
+    "audit": "node scripts/audit.mjs",
+    "test": "esbuild tests/*.test.ts --bundle --platform=node --format=esm --outdir=.tests --log-level=warning && for f in .tests/*.test.js; do node $f || exit 1; done"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.10",

@@ -1,5 +1,5 @@
 # Clients autorisés (liste fermée, prompt maître 2.5). Logos dans src/assets/logos/.
-# x, y : position de la sphère sur ordinateur (en %), xm, ym : sur mobile, s : taille, d : décalage du scintillement.
+# x, y : position de la sphère sur ordinateur (en %), xm, ym : sur mobile, s : taille, d : décalage du scintillement.
 liste:
   - { nom: Royal Air Maroc, secteur: Transport aérien, filtre: transport, logo: royal-air-maroc, x: 12, y: 24, xm: 16, ym: 12, s: 150, d: 0 }
   - { nom: Attijariwafa bank, secteur: Banque, filtre: banque, logo: attijariwafa-bank, x: 33, y: 12, xm: 44, ym: 8, s: 168, d: 1.37 }

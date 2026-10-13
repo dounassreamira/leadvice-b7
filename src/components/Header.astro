@@ -2,8 +2,8 @@
 import Logo from './Logo.astro';
 import Icon from './Icon.astro';
 import type { Data } from '../lib/content';
-interface Props { s: Data; section?: string; path: string; minimal?: boolean }
-const { s, section = '', path, minimal = false } = Astro.props;
+interface Props { s: Data; section?: string; path: string; minimal?: boolean; ctaHref?: string }
+const { s, section = '', path, minimal = false, ctaHref } = Astro.props;
 const nav = s.navigation as Data[];
 const sub = s.sous_menu_expertises.liens as Data[];
 const cur = (u: string) => (u === path ? 'page' : undefined);
@@ -13,7 +13,7 @@ const cur = (u: string) => (u === path ? 'page' : undefined);
     <Logo label={s.entete.logo_aria} current={path === '/'} />
     {minimal ? (
       <nav class="nav" aria-label={s.entete.nav_aria}>
-        <a class="btn btn-main" href="/diagnostic/" data-page-link>{s.cta.navigation}</a>
+        {ctaHref !== '' && <a class="btn btn-main" href={ctaHref ?? '/diagnostic/'} data-page-link>{s.cta.navigation}</a>}
       </nav>
     ) : (
       <nav class="nav" aria-label={s.entete.nav_aria}>

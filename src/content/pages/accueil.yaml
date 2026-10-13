@@ -1,7 +1,7 @@
 # Accueil. Les champs marqués (html) acceptent un lien <a> ou un retour à la ligne <br>.
 seo:
   title: Leadvice, cabinet de conseil stratégique & marketing à Casablanca
-  description: "Leadvice aide les entreprises à transformer leur marketing en clients : stratégie, création, Meta Ads, Google Ads et pilotage de la performance. Diagnostic offert."
+  description: "Leadvice aide les entreprises à transformer leur marketing en clients : stratégie, création, Meta Ads, Google Ads et pilotage de la performance. Diagnostic offert."
   og: accueil
 
 ouverture:
@@ -23,7 +23,7 @@ nuage:
   aide_souris: Attrapez une sphère et lancez-la
   aide_toucher: Touchez une sphère pour la lancer
 
-constat: "La plupart des entreprises ne manquent pas de marketing. Elles en ont trop : des campagnes qui tournent, des contenus qui sortent, des tableaux de chiffres que personne ne lit. Notre travail commence là. Nous trions ce qui rapporte de ce qui fait du bruit, puis nous concentrons votre budget sur les personnes qui achèteront vraiment."
+constat: "La plupart des entreprises ne manquent pas de marketing. Elles en ont trop : des campagnes qui tournent, des contenus qui sortent, des tableaux de chiffres que personne ne lit. Notre travail commence là. Nous trions ce qui rapporte de ce qui fait du bruit, puis nous concentrons votre budget sur les personnes qui achèteront vraiment."
 
 angles:
   aria: Même offre, trois histoires
@@ -37,7 +37,7 @@ angles:
     - { etiquette: "Angle 3 sur 3, l'encadrement", accroche: Un coach vous attend à chaque séance., cible: Pour ceux qui ont déjà abandonné une salle, bouton: Essayer une semaine }
   fin: "Le problème n'est pas toujours l'offre. C'est parfois l'angle."
   lien: { texte: Comment nous trouvons les angles, url: /expertises/creation/ }
-  mention: "Exemple illustratif : la salle de sport et ses annonces sont fictives."
+  mention: "Exemple illustratif : la salle de sport et ses annonces sont fictives."
 
 systeme:
   titre: "Le marketing n'est pas une suite d'actions.<br>C'est un système."   # (html)
@@ -46,9 +46,9 @@ systeme:
   centre: Stratégie
 
 leviers:
-  titre: "Quatre leviers.<br>Un seul objectif : des clients."   # (html)
+  titre: "Quatre leviers.<br>Un seul objectif : des clients."   # (html)
   lien: { texte: Toutes les expertises, url: /expertises/ }
-  sites: 'Vos publicités renvoient vers un site qui ne convertit pas ? Nous concevons aussi <a class="tlink" href="/expertises/sites-web/">des sites et des pages de destination</a> pensés pour vos campagnes.'   # (html)
+  sites: 'Vos publicités renvoient vers un site qui ne convertit pas ? Nous concevons aussi <a class="tlink" href="/expertises/sites-web/">des sites et des pages de destination</a> pensés pour vos campagnes.'   # (html)
 
 dirham:
   aria: "Le chemin d'un dirham"
@@ -57,12 +57,12 @@ dirham:
     - { texte: Vos dirhams partent en publicité., de: 0, a: 0.3 }
     - { texte: "Il devient des prospects. Les bons restent, les autres tombent.", de: 0.3, a: 0.55 }
     - { texte: Les bons deviennent des clients. Et les clients paient., de: 0.55, a: 0.78 }
-    - { texte: "Et l'argent revient. Notre travail : qu'il revienne plus gros qu'il n'est parti.", de: 0.78, a: 1, lien: { texte: Simuler votre propre flux, url: "/expertises/acquisition/#simulateur" } }
+    - { texte: "Et l'argent revient. Notre travail : qu'il revienne plus gros qu'il n'est parti.", de: 0.78, a: 1, lien: { texte: Simuler votre propre flux, url: "/expertises/acquisition/#simulateur" } }
 
 resultats:
   titre: Des résultats qui se comptent.
-  courbe: "Chaque chiffre a commencé par une question simple : à qui parle-t-on vraiment ?"
-  note: "Chiffres cumulés depuis la création du cabinet. Le coût par lead varie selon le secteur : il est plus élevé pour un bien immobilier à plusieurs millions de dirhams que pour un produit du quotidien."
+  courbe: "Chaque chiffre a commencé par une question simple : à qui parle-t-on vraiment ?"
+  note: "Chiffres cumulés depuis la création du cabinet. Le coût par lead varie selon le secteur : il est plus élevé pour un bien immobilier à plusieurs millions de dirhams que pour un produit du quotidien."
   lien: { texte: Voir les réalisations, url: /realisations/ }
 
 methode:
@@ -76,17 +76,17 @@ humain:
 faq:
   titre: "Les questions qu'on nous pose avant de commencer."
   questions:
-    - q: Que fait exactement Leadvice ?
+    - q: Que fait exactement Leadvice ?
       a: Nous sommes un cabinet de conseil en stratégie marketing et en acquisition client, basé à Casablanca. Nous clarifions votre stratégie, créons les messages et les publicités, lançons et pilotons vos campagnes Meta Ads et Google Ads, et lisons les chiffres avec vous jusqu'aux ventes.
-    - q: Combien coûte un lead avec Leadvice ?
+    - q: Combien coûte un lead avec Leadvice ?
       a: "Sur l'ensemble de nos clients, le coût moyen par lead constaté est inférieur à 1 $ sur Meta Ads et se situe entre 1 et 2 $ sur Google Ads. Il varie selon le secteur et le prix de ce que vous vendez. Le chiffre qui compte vraiment est le coût par client."
-    - q: "À qui s'adresse votre accompagnement ?"
-      a: "À des entreprises qui investissent déjà dans leur marketing et veulent que cet investissement produise des clients : promoteurs immobiliers, banques et services financiers, transport, services B2B, marques. Le plus souvent, nous travaillons avec la direction générale ou la direction marketing."
-    - q: Que se passe-t-il pendant le diagnostic offert ?
+    - q: "À qui s'adresse votre accompagnement ?"
+      a: "À des entreprises qui investissent déjà dans leur marketing et veulent que cet investissement produise des clients : promoteurs immobiliers, banques et services financiers, transport, services B2B, marques. Le plus souvent, nous travaillons avec la direction générale ou la direction marketing."
+    - q: Que se passe-t-il pendant le diagnostic offert ?
       a: Un échange de 45 minutes, en visio ou par téléphone. Nous regardons vos campagnes, vos chiffres et votre offre. Vous repartez avec ce qui freine votre acquisition et par quoi commencer, que vous travailliez avec nous ensuite ou non.
-    - q: Les comptes publicitaires nous appartiennent-ils ?
+    - q: Les comptes publicitaires nous appartiennent-ils ?
       a: Oui. Les comptes Meta et Google sont à votre nom, et le budget publicitaire est payé directement aux plateformes, séparément de nos honoraires.
 
 cloture:
-  titre: Et si nous trouvions votre signal ?
+  titre: Et si nous trouvions votre signal ?
   texte: 45 minutes, offert. Nous regardons vos campagnes, vos chiffres et votre offre. Vous repartez avec ce qui freine votre acquisition et par quoi commencer.

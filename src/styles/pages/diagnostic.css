@@ -1,0 +1,82 @@
+/* Diagnostic, merci, rendez-vous et formulaire court des landing pages. */
+@layer pages {
+  .dg { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: 48px clamp(32px, 6vw, 120px); align-items: start; padding-top: clamp(130px, 14vw, 190px); padding-bottom: 120px; }
+  .dg-side { position: sticky; top: 120px; display: flex; flex-direction: column; gap: 28px; }
+  .dg-side h1 { font-size: var(--fs-h1); line-height: 1; }
+  .dg-box { background: var(--white); padding: 28px; box-shadow: 0 1px 0 var(--line); }
+  .dg-box p { color: var(--ink-2); }
+  .dg-box strong { color: var(--ink); font-weight: 500; }
+  .dg-slot { font-family: var(--sans); font-size: var(--fs-ui); color: var(--ink-2); }
+  .dg-slot .tlink { border: 0; background-color: transparent; cursor: pointer; font-size: inherit; padding-inline: 0; }
+  .track { display: flex; gap: 6px; }
+  .track b { flex: 1; height: 3px; background: var(--line); transition: background .4s; }
+  .track b.on { background: var(--signal); box-shadow: var(--glow); }
+  .dg-stepl { margin: 14px 0 32px; }
+  [data-diag] fieldset { border: 0; margin: 0; padding: 0; min-width: 0; display: flex; flex-direction: column; gap: 14px; }
+  [data-diag] fieldset + fieldset { margin-top: 56px; }
+  [data-diag].is-js fieldset + fieldset { margin-top: 0; }
+  .js [data-diag]:not(.is-js) fieldset[data-s]:not([data-s="1"]) { display: none; }
+  [data-diag] legend { font-family: var(--serif); font-size: var(--fs-h2); line-height: 1.05; margin-bottom: 24px; padding: 0; }
+  [data-diag] legend:focus { outline: none; }
+  [data-diag] .ferr { color: var(--error); font-size: var(--fs-small); font-family: var(--sans); }
+  .consent-w { display: flex; flex-direction: column; gap: 8px; }
+  .nav-f { display: flex; gap: 16px; align-items: center; margin-top: 36px; flex-wrap: wrap; }
+  .nav-f [data-go] { margin-left: auto; }
+  .dg-restart { border: 0; background-color: transparent; cursor: pointer; font-size: var(--fs-ui); color: var(--ink-2); }
+  .dg-back { display: none; }
+  .dg-back:target { display: block; color: var(--error); font-family: var(--sans); scroll-margin-top: 140px; }
+  .dg-status { margin-top: 24px; }
+  .dg-status p { color: var(--ink); margin-bottom: 12px; }
+  .st-acts { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+  .st-acts .copy { border: 0; background-color: transparent; cursor: pointer; }
+  .ts:empty { display: none; }
+  .no-js .js-only { display: none !important; }
+
+  /* merci */
+  .mc { padding-top: clamp(140px, 15vw, 200px); padding-bottom: 96px; max-width: 980px; }
+  .mc h1 { font-size: var(--fs-h1); line-height: 1; max-width: 16ch; }
+  .mc-path { width: 100%; height: auto; margin: 36px 0 28px; overflow: visible; }
+  .mc-path path { stroke: var(--signal); filter: drop-shadow(0 0 6px var(--signal)); }
+  .mc-path circle { fill: var(--signal); }
+  .mc-enjeu { color: var(--brand); }
+  .next { list-style: none; padding: 0; margin: 24px 0 0; display: flex; flex-direction: column; }
+  .next li { display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 4px 16px; padding: 22px 0; border-top: 1px solid var(--line); }
+  .next li span { color: var(--brand); font-variant-numeric: tabular-nums; font-family: var(--sans); }
+  .next li strong { font-weight: 500; font-family: var(--sans); }
+  .next li p { grid-column: 2; color: var(--ink-2); }
+  .mc-q { margin-top: 36px; display: flex; gap: 10px 16px; flex-wrap: wrap; align-items: center; font-family: var(--sans); }
+  .mc-q .mail { color: var(--ink); user-select: all; }
+  .mc-q .copy { border: 0; background-color: transparent; cursor: pointer; }
+  .mc-read { margin-top: 72px; }
+  .mc-read h2 { font-size: var(--fs-h3); margin-bottom: 8px; }
+  .mc-read .aussi[hidden] { display: none; }
+
+  /* gérer un rendez-vous */
+  .rv { padding-top: clamp(140px, 15vw, 200px); padding-bottom: 120px; max-width: 760px; }
+  .rv h1 { font-size: var(--fs-h1); line-height: 1; margin-bottom: 32px; }
+  .rv-body { min-height: 340px; }
+  .rv-card { background: var(--white); padding: 28px; box-shadow: 0 1px 0 var(--line); display: flex; flex-direction: column; gap: 18px; }
+  .rv-card dl { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 10px 24px; margin: 0; font-family: var(--sans); }
+  .rv-card dt { color: var(--ink-2); }
+  .rv-card dd { margin: 0; font-weight: 500; }
+  .rv-tag { align-self: flex-start; font: 500 var(--fs-small) var(--sans); padding: 4px 10px; border-radius: var(--r-sharp); background: var(--paper-2); color: var(--brand); }
+  .rv-acts { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px; }
+  .rv-move { margin-top: 28px; display: flex; flex-direction: column; gap: 14px; }
+  .rv-move h2 { font-size: var(--fs-h3); }
+  .rv-msg { margin-top: 24px; font-family: var(--sans); }
+  .rv-load { display: grid; gap: 10px; }
+  .rv-load i { display: block; height: 22px; border-radius: var(--r-sharp); background: linear-gradient(90deg, var(--paper-2), var(--line), var(--paper-2)); background-size: 200% 100%; animation: sk 1.2s linear infinite; }
+
+  @media (max-width: 900px) {
+    .dg { grid-template-columns: 1fr; gap: 40px; }
+    .dg-side { position: static; }
+    .nav-f [data-go] { flex: 1 1 100%; order: -1; }
+  }
+}
+@layer pages {
+  .mc-art { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 3fr); gap: 8px 48px; padding: 24px 0; border-top: 1px solid var(--line); text-decoration: none; color: inherit; align-items: baseline; }
+  .mc-art:last-child { border-bottom: 1px solid var(--line); }
+  .mc-art h3 { font-size: clamp(1.3rem, 1.1rem + .8vw, 1.8rem); transition: color var(--t-fast); }
+  .mc-art:hover h3, .mc-art:focus-visible h3 { color: var(--signal); }
+  @media (max-width: 900px) { .mc-art { grid-template-columns: 1fr; } }
+}

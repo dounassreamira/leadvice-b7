@@ -1,189 +1,68 @@
 [
   {
-    "page": "/cabinet/",
-    "perf": 100,
-    "a11y": 100,
+    "page": "/lp/generation-de-leads/",
+    "perf": 99,
+    "a11y": 97,
     "bp": 100,
-    "seo": 100,
-    "lcp": 1509.5026,
-    "cls": 0.007314063932333181,
-    "tbt": 25,
-    "js": 58
-  },
-  {
-    "page": "/expertises/acquisition/",
-    "perf": 100,
-    "a11y": 100,
-    "bp": 100,
-    "seo": 100,
-    "lcp": 1661.9443,
+    "seo": 69,
+    "lcp": 1663.3129,
     "cls": 0,
-    "tbt": 64,
-    "js": 65
+    "tbt": 30,
+    "js": 64,
+    "a11yNotes": [
+      "color-contrast"
+    ]
   },
   {
-    "page": "/expertises/creation/",
+    "page": "/lp/audit-marketing/",
     "perf": 100,
-    "a11y": 100,
+    "a11y": 97,
     "bp": 100,
-    "seo": 100,
-    "lcp": 1508.688,
-    "cls": 0.007142433897298507,
+    "seo": 69,
+    "lcp": 1360.2245,
+    "cls": 0.014779970456341454,
+    "tbt": 41,
+    "js": 63,
+    "a11yNotes": [
+      "color-contrast"
+    ]
+  },
+  {
+    "page": "/lp/conseil-strategique/",
+    "perf": 100,
+    "a11y": 97,
+    "bp": 100,
+    "seo": 69,
+    "lcp": 1661.1414,
+    "cls": 0,
     "tbt": 48,
-    "js": 61
+    "js": 63,
+    "a11yNotes": [
+      "color-contrast"
+    ]
   },
   {
-    "page": "/expertises/",
-    "perf": 100,
-    "a11y": 98,
-    "bp": 100,
-    "seo": 100,
-    "lcp": 1661.973,
-    "cls": 0.005433215368785734,
-    "tbt": 51,
-    "js": 66
-  },
-  {
-    "page": "/expertises/pilotage/",
-    "perf": 100,
-    "a11y": 100,
-    "bp": 100,
-    "seo": 100,
-    "lcp": 1505.034,
-    "cls": 0.004221538497582602,
-    "tbt": 45,
-    "js": 59
-  },
-  {
-    "page": "/expertises/sites-web/",
-    "perf": 100,
-    "a11y": 100,
-    "bp": 100,
-    "seo": 100,
-    "lcp": 1505.8832,
-    "cls": 0.005211596003158438,
-    "tbt": 18,
-    "js": 61
-  },
-  {
-    "page": "/expertises/strategie/",
-    "perf": 100,
-    "a11y": 100,
-    "bp": 100,
-    "seo": 100,
-    "lcp": 1580.6392,
-    "cls": 0.003118769833311706,
-    "tbt": 24.5,
-    "js": 60
-  },
-  {
-    "page": "/",
+    "page": "/diagnostic/",
     "perf": 99,
     "a11y": 100,
     "bp": 100,
     "seo": 100,
-    "lcp": 1209.6937,
+    "lcp": 1807.6999999999998,
     "cls": 0,
-    "tbt": 111,
-    "js": 72
+    "tbt": 0,
+    "js": 62,
+    "a11yNotes": []
   },
   {
-    "page": "/insights/arabe-ou-francais-langue-publicites-maroc/",
+    "page": "/diagnostic/merci/",
     "perf": 99,
     "a11y": 100,
     "bp": 100,
-    "seo": 100,
-    "lcp": 1656.779,
-    "cls": 0,
+    "seo": 66,
+    "lcp": 1656.0476,
+    "cls": 0.004794306034638885,
     "tbt": 0,
-    "js": 57
-  },
-  {
-    "page": "/insights/audit-marketing-sept-signes/",
-    "perf": 100,
-    "a11y": 100,
-    "bp": 100,
-    "seo": 100,
-    "lcp": 1506.7413,
-    "cls": 0,
-    "tbt": 7,
-    "js": 57
-  },
-  {
-    "page": "/insights/cpl-cpa-cout-par-opportunite/",
-    "perf": 100,
-    "a11y": 100,
-    "bp": 100,
-    "seo": 100,
-    "lcp": 1508.4013,
-    "cls": 0,
-    "tbt": 0,
-    "js": 57
-  },
-  {
-    "page": "/insights/",
-    "perf": 98,
-    "a11y": 100,
-    "bp": 100,
-    "seo": 100,
-    "lcp": 1506.1554,
-    "cls": 0.08383149104792502,
-    "tbt": 0,
-    "js": 58
-  },
-  {
-    "page": "/insights/meta-ads-ou-google-ads/",
-    "perf": 100,
-    "a11y": 100,
-    "bp": 100,
-    "seo": 100,
-    "lcp": 1510.0654,
-    "cls": 0,
-    "tbt": 0,
-    "js": 57
-  },
-  {
-    "page": "/insights/plus-de-leads-ne-veut-pas-dire-plus-de-clients/",
-    "perf": 99,
-    "a11y": 100,
-    "bp": 100,
-    "seo": 100,
-    "lcp": 1654.438,
-    "cls": 0,
-    "tbt": 8,
-    "js": 57
-  },
-  {
-    "page": "/insights/trouver-le-bon-angle/",
-    "perf": 100,
-    "a11y": 100,
-    "bp": 100,
-    "seo": 100,
-    "lcp": 1506.4279,
-    "cls": 0,
-    "tbt": 0,
-    "js": 57
-  },
-  {
-    "page": "/realisations/",
-    "perf": 98,
-    "a11y": 100,
-    "bp": 100,
-    "seo": 100,
-    "lcp": 1583.5081,
-    "cls": 0.043968477652662145,
-    "tbt": 145,
-    "js": 58
-  },
-  {
-    "page": "/realisations/kettani-immobilier/",
-    "perf": 100,
-    "a11y": 100,
-    "bp": 100,
-    "seo": 100,
-    "lcp": 1507.3927,
-    "cls": 0.006329898986290911,
-    "tbt": 10,
-    "js": 57
+    "js": 58,
+    "a11yNotes": []
   }
 ]

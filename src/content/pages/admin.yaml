@@ -1,0 +1,62 @@
+# Administration du diagnostic (/admin/, protégée par Cloudflare Access). Jamais indexée.
+seo:
+  title: Disponibilités du diagnostic | Leadvice
+  description: "Réglages des créneaux du diagnostic et rendez-vous réservés."
+  og: accueil
+h1: Disponibilités du diagnostic.
+intro: "Ce que vous réglez ici décide des créneaux proposés dans la fenêtre « Demander un diagnostic »."
+chargement: Chargement des réglages…
+acces: "Cette page est réservée à l'équipe Leadvice. Connectez-vous avec votre adresse e-mail autorisée (Cloudflare Access)."
+acces_config: "Cloudflare Access n'est pas encore configuré pour ce site. Voir le README, section « Administration »."
+base_config: "La base de données D1 n'est pas encore reliée au site : les réglages ne peuvent pas être enregistrés. Voir le README, section « Base de données »."
+semaine: { titre: Horaires de la semaine, indisponible: Indisponible, ajouter: Ajouter une plage, retirer: Retirer, a: à, debut: début de plage, fin: fin de plage }
+jours: [[1, Lundi], [2, Mardi], [3, Mercredi], [4, Jeudi], [5, Vendredi], [6, Samedi], [0, Dimanche]]
+regles:
+  titre: Règles des créneaux
+  duration: Durée du rendez-vous (min)
+  buffer: Pause entre deux rendez-vous (min)
+  notice: Délai minimal avant réservation (h)
+  horizon: "Réservable jusqu'à (jours)"
+  maxPerDay: Rendez-vous maximum par jour
+bloques: { titre: Jours bloqués, aide: "Congés, déplacements, jours fériés : aucun créneau ne sera proposé ces jours-là.", date: Date, ajouter: Bloquer ce jour, retirer: Débloquer, vide: Aucun jour bloqué. }
+extra: { titre: Créneaux exceptionnels, aide: "Ouvrir une plage en dehors de vos horaires habituels, par exemple un samedi matin.", date: Date, de: De, a: À, ajouter: Ajouter, retirer: Retirer, vide: Aucun créneau exceptionnel. }
+enregistrer: Enregistrer les disponibilités
+defaut: Revenir aux réglages par défaut
+enregistre: Disponibilités enregistrées.
+defaut_ok: Réglages par défaut rétablis. Enregistrez pour les appliquer.
+erreur: "L'enregistrement n'a pas abouti. Réessayez dans un instant."
+etat:
+  titre: État des connexions
+  db: Base de données
+  calendar: Google Agenda
+  email: E-mails (Resend)
+  capi: API Conversions Meta
+  turnstile: Anti-robots (Turnstile)
+  valeurs: { oui: Connecté, non: Non configuré, connecte: Connecté, non-configure: Non configuré, erreur: Erreur de connexion }
+  aide: "Google Agenda connecté : vos rendez-vous existants bloquent les créneaux, et chaque réservation crée un événement avec lien de visio."
+rdv:
+  titre: Rendez-vous réservés
+  vide: "Aucun rendez-vous à venir."
+  tous: Afficher aussi les rendez-vous passés et annulés
+  export: Exporter en CSV
+  deplacer: Déplacer
+  annuler: Annuler
+  tenu: Diagnostic tenu
+  signe: Client signé
+  valeur: Valeur estimée (MAD)
+  montant: Montant signé (MAD)
+  envoyer: Envoyer
+  nouvelle_date: Nouvelle date
+  nouvelle_heure: Heure (Casablanca)
+  confirmer: Confirmer
+  fermer: Fermer
+  annule: Annulé
+  deplace: Rendez-vous déplacé. Le prospect reçoit une nouvelle invitation.
+  annulation: Rendez-vous annulé. Le prospect est prévenu par e-mail.
+  marque: "Enregistré. L'événement est envoyé à l'API Conversions si elle est configurée."
+  pris: Ce créneau est déjà pris.
+  erreur: "L'action n'a pas abouti. Réessayez."
+  confirmation: { titre: "Annuler ce rendez-vous ?", texte: Le prospect recevra un e-mail d'annulation., garder: Garder le rendez-vous, annuler: "Oui, annuler" }
+  statuts: { confirmed: Confirmé, cancelled: Annulé }
+  resultats: { tenu: Diagnostic tenu, signe: Client signé }
+retour: Retour au site

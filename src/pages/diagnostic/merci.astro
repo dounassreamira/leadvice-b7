@@ -1,0 +1,58 @@
+---
+/* Merci : la trajectoire se dessine, l'enjeu choisi est repris, la suite en trois temps,
+   deux articles recommandés selon l'enjeu (?enjeu=), l'adresse à copier. */
+import Base from '../../layouts/Base.astro';
+import CopyButton from '../../components/CopyButton.astro';
+import { page, site, type Data } from '../../lib/content';
+import { articles, readingTime } from '../../lib/insights';
+import '../../styles/pages/diagnostic.css';
+
+const d = await page('merci');
+const s = await site();
+const all = await articles();
+const reco = d.recommandations as Record<string, string[]>;
+const ids = [...new Set(Object.values(reco).flat())];
+const list = ids.map((id) => all.find((a) => a.id === id)).filter(Boolean) as typeof all;
+const forArt = (id: string): string => Object.entries(reco).filter(([, v]) => v.includes(id)).map(([k]) => k).join(' ');
+const mail = s.email as string;
+---
+<Base title={d.seo.title} description={d.seo.description} og={d.seo.og} page="merci" noindex fab={false} thread={false}>
+  <section class="wrap mc" data-merci data-enjeux={JSON.stringify(d.enjeux)}>
+    <h1 tabindex="-1">{d.h1}</h1>
+    <svg class="mc-path" viewBox="0 0 600 120" aria-hidden="true"><path data-draw d="M10 90 C 120 90, 140 30, 250 40 S 420 100, 590 30" fill="none" stroke-width="2"></path><circle cx="590" cy="30" r="7"></circle></svg>
+    <p class="big-text mc-enjeu" data-enjeu-txt>{(d.enjeux as Data).autre}</p>
+    <h2 class="mt-l" style="font-size:var(--fs-h3)">{d.suite_titre}</h2>
+    <ol class="next">
+      {(d.suite as Data[]).map((x, i) => <li><span>{i + 1}</span><strong>{x.titre}</strong><p>{x.texte}</p></li>)}
+    </ol>
+    <p class="mc-q small">{d.question} <span class="mail">{mail}</span><CopyButton text={mail} label={d.copier} done={d.copie} /></p>
+    <div class="mc-read">
+      <h2>{d.lire_titre}</h2>
+      <div>
+        {list.map((a) => (
+          <a class="mc-art" href={`/insights/${a.id}/`} data-for={forArt(a.id)} hidden={!reco.autre?.includes(a.id)}>
+            <h3>{a.data.title}</h3><span class="small">{a.data.category}, {readingTime(a)} min</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>
+<script>
+  import { RM } from '../../scripts/env';
+  const root = document.querySelector<HTMLElement>('[data-merci]');
+  if (root) {
+    const map = JSON.parse(root.dataset.enjeux ?? '{}') as Record<string, string>;
+    const e = new URLSearchParams(location.search).get('enjeu') ?? '';
+    const k = e in map ? e : 'autre';
+    const txt = root.querySelector<HTMLElement>('[data-enjeu-txt]');
+    if (txt && map[k]) txt.textContent = map[k];
+    root.querySelectorAll<HTMLElement>('[data-for]').forEach((a) => { a.hidden = !(a.dataset.for ?? '').split(' ').includes(k); });
+    const p = root.querySelector<SVGPathElement>('path[data-draw]');
+    if (p && !RM) {
+      const L = p.getTotalLength();
+      p.style.strokeDasharray = String(L); p.style.strokeDashoffset = String(L);
+      requestAnimationFrame(() => requestAnimationFrame(() => { p.style.transition = 'stroke-dashoffset 1.6s cubic-bezier(.65,0,.35,1)'; p.style.strokeDashoffset = '0'; }));
+    }
+  }
+</script>

@@ -126,7 +126,7 @@ export async function init(): Promise<void> {
   });
   /* titres révélés ligne par ligne, une fois */
   $$('[data-rise]').forEach((el) => {
-    gsap.from($$('.mask-line > span', el), { yPercent: 70, opacity: .2, duration: .9, ease: 'power3.out', stagger: .08, scrollTrigger: { trigger: el, start: 'top 88%', once: true } });
+    gsap.from($$('.mask-line > span', el), { yPercent: 70, opacity: 0, duration: .9, ease: 'power3.out', stagger: .08, scrollTrigger: { trigger: el, start: 'top 88%', once: true } });
   });
   /* parallaxe : 40 px au plus */
   $$('[data-speed]').forEach((el) => {

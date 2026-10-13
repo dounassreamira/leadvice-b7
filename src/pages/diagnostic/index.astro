@@ -1,0 +1,100 @@
+---
+/* Diagnostic : le parcours de réservation en pleine page (référencement, landing pages, sans JavaScript).
+   Six questions, une par écran avec JavaScript ; toutes visibles et envoyées d'un coup sans JavaScript. */
+import Base from '../../layouts/Base.astro';
+import Crumb from '../../components/Crumb.astro';
+import { page, site, type Data } from '../../lib/content';
+import '../../styles/pages/diagnostic.css';
+
+const d = await page('diagnostic');
+const r = await site('reservation');
+const crumb = [{ name: 'Accueil', url: '/' }, { name: d.fil, url: '/diagnostic/' }];
+const enjeux = r.enjeux as Data[];
+const campagnes = r.campagnes as string[];
+const retours = Object.entries(d.retour_page as Record<string, string>);
+const t = JSON.stringify({ etape: d.etape, boutons: d.boutons, erreurs: d.erreurs, recommencer: d.recommencer, quitter: d.quitter });
+const radios = (name: string, list: { v: string; l: string }[], pre?: string) => list.map((x, i) => ({ id: `${name}-${i + 1}`, name, ...x, checked: x.v === pre }));
+const groups = {
+  enjeu: radios('enjeu', enjeux.map((x) => ({ v: x.cle, l: x.nom }))),
+  role: radios('role', (d.roles as string[]).map((x) => ({ v: x, l: x }))),
+  quand: radios('quand', (d.quand as string[]).map((x) => ({ v: x, l: x }))),
+  campagnes: radios('campagnes', campagnes.map((x) => ({ v: x, l: x }))),
+};
+---
+<Base title={d.seo.title} description={d.seo.description} og={d.seo.og} page="diag" crumb={crumb} fab={false} thread={false}>
+  <link slot="head" rel="preload" href="/fonts/literata.woff2" as="font" type="font/woff2" crossorigin />
+  <div class="wrap dg">
+    <aside class="dg-side">
+      <Crumb items={crumb} />
+      <h1 data-rise>{d.h1}</h1>
+      <p class="lead">{d.reponse}</p>
+      <div class="dg-box"><p set:html={d.encadre} /></div>
+      <p class="dg-slot js-only">{d.creneau.texte} <button type="button" class="tlink" data-booking>{d.creneau.lien}</button></p>
+    </aside>
+
+    <div class="dg-main">
+      {retours.map(([k, v]) => <p class="err-sum dg-back" id={`erreur-${k}`}>{v}</p>)}
+      <form id="diag" action="/api/diagnostic" method="post" data-t={t} data-diag>
+        <div class="track js-only" data-track aria-hidden="true">{[1, 2, 3, 4, 5, 6].map((n) => <b class:list={[{ on: n === 1 }]}></b>)}</div>
+        <p class="legend dg-stepl js-only" data-stepl aria-live="polite">{String(d.etape).replace('{n}', '1')}</p>
+        <div class="err-sum" data-sum role="alert" hidden></div>
+
+        <fieldset data-s="1">
+          <legend>{d.e1.titre}</legend>
+          <div class="choices">
+            {groups.enjeu.map((x) => <label class="ch" for={x.id}><input type="radio" name="enjeu" id={x.id} value={x.v} required /><span>{x.l}</span></label>)}
+          </div>
+          <div class="fld" data-autre><label for="autre">{d.e1.autre}</label><input id="autre" name="autre" maxlength="300" /></div>
+        </fieldset>
+
+        <fieldset data-s="2">
+          <legend>{d.e2.titre}</legend>
+          <div class="fld"><label for="entreprise">{d.e2.entreprise}</label><input id="entreprise" name="entreprise" autocomplete="organization" required maxlength="160" /></div>
+          <div class="fld"><label for="secteur">{d.e2.secteur}</label><select id="secteur" name="secteur" required><option value="">{d.e2.secteur_choix}</option>{(d.secteurs as string[]).map((x) => <option>{x}</option>)}</select></div>
+          <div class="fld"><label for="taille">{d.e2.taille}</label><select id="taille" name="taille" required><option value="">{d.e2.taille_choix}</option>{(d.tailles as string[]).map((x) => <option>{x}</option>)}</select></div>
+        </fieldset>
+
+        <fieldset data-s="3">
+          <legend>{d.e3.titre}</legend>
+          <div class="choices">{groups.role.map((x) => <label class="ch" for={x.id}><input type="radio" name="role" id={x.id} value={x.v} required /><span>{x.l}</span></label>)}</div>
+        </fieldset>
+
+        <fieldset data-s="4">
+          <legend>{d.e4.titre}</legend>
+          <div class="choices">{groups.quand.map((x) => <label class="ch" for={x.id}><input type="radio" name="quand" id={x.id} value={x.v} required /><span>{x.l}</span></label>)}</div>
+        </fieldset>
+
+        <fieldset data-s="5">
+          <legend>{d.e5.titre}</legend>
+          <div class="choices">{groups.campagnes.map((x) => <label class="ch" for={x.id}><input type="radio" name="campagnes" id={x.id} value={x.v} required /><span>{x.l}</span></label>)}</div>
+        </fieldset>
+
+        <fieldset data-s="6">
+          <legend>{d.e6.titre}</legend>
+          <div class="fld"><label for="nom">{d.e6.nom}</label><input id="nom" name="nom" autocomplete="name" required maxlength="160" /></div>
+          <div class="fld"><label for="email">{d.e6.email}</label><input id="email" name="email" type="email" autocomplete="email" inputmode="email" required maxlength="200" /></div>
+          <div class="fld"><label for="tel">{d.e6.tel}</label><input id="tel" name="tel" type="tel" autocomplete="tel" inputmode="tel" maxlength="40" aria-describedby="tel-h" /><span class="help" id="tel-h">{d.e6.tel_aide}</span></div>
+          <div class="fld"><label for="message">{d.e6.message}</label><textarea id="message" name="message" maxlength="3000" aria-describedby="message-h"></textarea><span class="help" id="message-h">{d.e6.message_aide}</span></div>
+          <div class="consent-w"><label class="consent" for="consent"><input type="checkbox" id="consent" name="consent" value="1" required /><span set:html={d.e6.accord} /></label></div>
+          <p class="small">{d.e6.donnees}</p>
+          <div class="ts" data-turnstile></div>
+        </fieldset>
+
+        <div class="hp" aria-hidden="true"><label for="site_web">{d.piege}</label><input id="site_web" name="site_web" tabindex="-1" autocomplete="off" /></div>
+        <input type="hidden" name="court" value="0" />
+        <input type="hidden" name="source" value="/diagnostic/" />
+        <div class="err-sum dg-status" data-status role="alert" tabindex="-1" hidden></div>
+        <div class="nav-f">
+          <button type="button" class="btn btn-ghost" data-back hidden>{d.boutons.retour}</button>
+          <button type="button" class="tlink dg-restart" data-restart hidden>{d.boutons.recommencer}</button>
+          <button type="submit" class="btn btn-main" data-go>{d.boutons.envoyer}</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</Base>
+<script>
+  import { initDiag } from '../../scripts/diag';
+  const f = document.querySelector<HTMLFormElement>('[data-diag]');
+  if (f) initDiag(f);
+</script>

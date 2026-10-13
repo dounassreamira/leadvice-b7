@@ -293,7 +293,7 @@
   .ftr .cols h3 { font: 400 var(--fs-ui) var(--sans); letter-spacing: 0; color: var(--footer-muted); margin-bottom: 6px; }
   .ftr a { color: var(--footer-text); text-decoration: none; padding: 3px 0; display: inline-block; }
   .ftr a:hover { color: var(--lav); }
-  .ftr a.btn-light { color: #1E0F52; padding: 0 28px; }
+  .ftr a.btn-light { color: #1E0F52; padding: 0 28px; display: inline-flex; }
   .ftr .mail { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
   .ftr .legal { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; margin-top: 48px; font-size: var(--fs-legal); color: var(--footer-muted); line-height: 1.55; }
   .ftr .legal a, .ftr .legal button { display: inline-block; padding: 6px 0; color: var(--footer-muted); }

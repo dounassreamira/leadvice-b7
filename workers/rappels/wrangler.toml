@@ -1,0 +1,14 @@
+# Worker des rappels de diagnostic (la veille et une heure avant).
+# Déploiement : renseignez database_id (Cloudflare > D1 > leadvice), puis « npx wrangler deploy » dans ce dossier.
+# Secrets : npx wrangler secret put RESEND_API_KEY (et MAIL_FROM, MAIL_TO, SITE_URL si besoin).
+name = "leadvice-rappels"
+main = "index.ts"
+compatibility_date = "2026-10-01"
+
+[triggers]
+crons = ["*/15 * * * *"]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "leadvice"
+database_id = "À_RENSEIGNER_DEPUIS_LE_TABLEAU_DE_BORD"

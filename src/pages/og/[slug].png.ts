@@ -8,7 +8,7 @@ import { ogEntries, type OgEntry } from '../../lib/og';
 const font = (w: number): Buffer => fs.readFileSync(`node_modules/@fontsource/schibsted-grotesk/files/schibsted-grotesk-latin-${w}-normal.woff`);
 let fonts: { name: string; data: Buffer; weight: 500 | 800; style: 'normal' }[] | null = null;
 
-export const getStaticPaths = (async () => (await ogEntries()).map((e) => ({ params: { slug: e.slug }, props: e }))) satisfies GetStaticPaths;
+export const getStaticPaths = (async () => (await ogEntries()).map((e) => ({ params: { slug: e.slug }, props: { ...e } as Record<string, unknown> }))) satisfies GetStaticPaths;
 
 type Node = { type: string; props: Record<string, unknown> };
 const h = (type: string, style: Record<string, unknown>, children?: unknown): Node => ({ type, props: { style, children } });

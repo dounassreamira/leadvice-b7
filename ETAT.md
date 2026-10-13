@@ -26,7 +26,14 @@ Mis à jour à la fin de chaque phase. Reprendre d'ici si la session s'interromp
 - Recherche Pagefind : 17 pages indexées.
 - Lighthouse mobile : 98 à 100 en performance, 100 en accessibilité, bonnes pratiques et SEO sur les 17 pages.
 
+## Phase 3 — Conversion : faite
+- Fenêtre de réservation (`src/scripts/booking.ts`, textes `src/content/site/reservation.yaml`) ouverte par chaque bouton « Demander un diagnostic » : qualification, calendrier, onglets Matin / Après-midi, tous les créneaux libres, heure locale si le fuseau diffère, coordonnées, confirmation. Repli vers le formulaire si aucun créneau.
+- `/diagnostic/` : six étapes, une par écran avec JavaScript, toutes visibles et envoyées d'un coup sans JavaScript ; validation à la sortie du champ et à l'envoi, résumé des erreurs avec liens, sauvegarde dans la session, « Recommencer » et sortie de page confirmés (`<dialog>`), états d'envoi et d'erreur avec Réessayer et copier l'adresse. `/diagnostic/merci/` (enjeu repris, deux articles selon l'enjeu), `/diagnostic/rendez-vous/` (déplacer, annuler depuis le lien reçu).
+- Trois landing pages `/lp/*` (noindex, hors plan) : header réduit, scène (cible, nœud, nouvelle scène « lentille »), bénéfices, chiffres, logos, méthode, formulaire court avec enjeu présélectionné et confirmation sur place, FAQ.
+- Back-end Cloudflare : Pages Functions `functions/api/` (créneaux, réservations avec contrainte d'unicité, gestion par jeton, demande de diagnostic, administration), base D1 (`migrations/0001_init.sql`), Google Agenda (freeBusy, événement avec Meet), e-mails Resend avec `.ics`, rappels par Worker cron (`workers/rappels/`), Turnstile, champ piège, API Conversions Meta après consentement, fuseau `Africa/Casablanca` par `Intl`. Tests : `npm test` (créneaux, Ramadan, délai minimal, jour bloqué, plafond).
+- `/admin/` (Cloudflare Access) : horaires à plusieurs plages, règles, jours bloqués, créneaux exceptionnels, rendez-vous (déplacer, annuler, diagnostic tenu, client signé), export CSV, état des connexions.
+- Variables : `.env.example`. Lighthouse mobile : 99-100 / 100 / 100 / 100 sur `/diagnostic/` (les pages noindex ont un SEO plafonné par la directive noindex, voulue).
+
 ## Reste à faire
-- Phase 3 : Diagnostic, merci, landing pages, réservation, Pages Functions, e-mails, suivi.
 - Phase 4 : Ateliers (trois pages, deux ateliers).
 - Phase 5 : pages légales, 404, llms.txt, Pages CMS, README, audit complet.

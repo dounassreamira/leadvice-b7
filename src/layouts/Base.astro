@@ -25,10 +25,12 @@ interface Props {
   bodyClass?: string;
   progress?: boolean;
   search?: boolean;
+  /** Cible des boutons d'action du header et du bouton flottant (landing pages : le formulaire de la page). */
+  ctaHref?: string;
 }
 const {
   title, description, og = 'accueil', section = '', page = '', noindex = false, jsonld = [], crumb,
-  minimal = false, thread = true, fab = true, ogType = 'website', bodyClass, progress = false, search = !noindex,
+  minimal = false, thread = true, fab = true, ogType = 'website', bodyClass, progress = false, search = !noindex, ctaHref,
 } = Astro.props;
 const s = await site();
 const path = Astro.url.pathname;
@@ -73,13 +75,13 @@ const ld = JSON.stringify({ '@context': 'https://schema.org', '@graph': graph })
 </head>
 <body class={bodyClass} data-section={section || undefined} data-progress={progress ? '' : undefined}>
   <a class="skip" href="#contenu">{s.entete.evitement}</a>
-  <Header s={s} section={section} path={path} minimal={minimal} />
+  <Header s={s} section={section} path={path} minimal={minimal} ctaHref={ctaHref} />
   <main id="contenu" tabindex="-1" data-thread={thread ? '' : undefined} data-pagefind-body={search ? '' : undefined}>
     <slot />
   </main>
-  <Footer s={s} minimal={minimal} />
+  <Footer s={s} minimal={minimal} ctaHref={ctaHref} />
   {fab && (
-    <a class="fab" href="/diagnostic/" data-fab>
+    <a class="fab" href={ctaHref ?? '/diagnostic/'} data-fab>
       <span class="fab-ic" aria-hidden="true"><Icon name="cal" size={20} /></span>
       <span class="fab-tx"><b>{s.flottant.titre}</b><small><i class="fab-dot"></i>{s.flottant.sous_titre}</small></span>
     </a>

@@ -1,19 +1,23 @@
 ---
 import CopyButton from './CopyButton.astro';
 import type { Data } from '../lib/content';
-interface Props { s: Data; minimal?: boolean }
-const { s, minimal = false } = Astro.props;
+interface Props { s: Data; minimal?: boolean; ctaHref?: string }
+const { s, minimal = false, ctaHref } = Astro.props;
 const cols = s.pied.colonnes as Data[];
 ---
 <footer class="ftr" data-ftr>
   <canvas aria-hidden="true" data-ftr-cv></canvas>
   <div class="ftr-in">
     <p class="print-head">{s.nom}, {s.slogan_pied}. {s.legal.adresse}, {s.legal.ville}. {s.email}</p>
-    <h2 data-hl>{s.pied.titre}</h2>
-    <div class="ftr-cta">
-      <a class="btn btn-light" href="/diagnostic/">{s.cta.principal}</a>
-      <span>{s.cta.sous_cta}</span>
-    </div>
+    {ctaHref !== '' && (
+      <Fragment>
+        <h2 data-hl>{s.pied.titre}</h2>
+        <div class="ftr-cta">
+          <a class="btn btn-light" href={ctaHref ?? '/diagnostic/'} data-page-link={ctaHref ? '' : undefined}>{s.cta.principal}</a>
+          <span>{s.cta.sous_cta}</span>
+        </div>
+      </Fragment>
+    )}
     {!minimal && (
       <div class="cols">
         {cols.map((c) => (
@@ -33,8 +37,8 @@ const cols = s.pied.colonnes as Data[];
     <div class="legal">
       <span style="max-width:84ch">{s.legal.ligne_pied}</span>
       <span class="legal-links">
-        {minimal && <a href="/mentions-legales/">Mentions légales</a>}
-        {minimal && <a href="/confidentialite/">Confidentialité</a>}
+        {minimal && <a href="/mentions-legales/">{s.pied.mentions}</a>}
+        {minimal && <a href="/confidentialite/">{s.pied.confidentialite}</a>}
         <a href="/#top" data-replay>{s.pied.revoir_ouverture}</a>
         <button type="button" data-cookies-open>{s.pied.gerer_cookies}</button>
       </span>

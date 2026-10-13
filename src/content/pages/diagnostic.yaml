@@ -1,0 +1,49 @@
+seo:
+  title: Demander un diagnostic offert | Leadvice
+  description: "45 minutes, offert : nous regardons vos campagnes, vos chiffres et votre offre, et vous repartez avec ce qui freine votre acquisition. Réponse sous un jour ouvré."
+  og: diagnostic
+fil: Diagnostic
+h1: Parlons de votre croissance.
+reponse: Six questions rapides pour préparer un premier échange utile. Réponse sous un jour ouvré.
+encadre: "<strong>Le diagnostic, c'est quoi ?</strong> Un échange de 45 minutes, offert, en visio ou par téléphone. Nous regardons vos campagnes, vos chiffres et votre offre. Vous repartez avec ce qui freine votre acquisition et par quoi commencer. Si nous pouvons vous aider, nous vous faisons ensuite une proposition. Sinon, nous vous le disons."
+creneau: { texte: "Vous préférez choisir directement un horaire ?", lien: Réserver un créneau }
+etape: "Étape {n} sur 6"
+boutons: { continuer: Continuer, retour: Retour, envoyer: Envoyer ma demande, recommencer: Recommencer, envoi: Envoi en cours… }
+e1: { titre: "Quel est votre enjeu principal ?", autre: Précisez en quelques mots }
+e2: { titre: Votre entreprise, entreprise: "Nom de l'entreprise", secteur: Secteur, secteur_choix: Choisissez un secteur, taille: Taille, taille_choix: Choisissez une taille }
+secteurs: [Immobilier, Banque et assurance, Éducation, Santé, Distribution, E-commerce, Industrie, Services B2B, Tourisme et transport, Autre]
+tailles: [Moins de 10 salariés, 10 à 49, 50 à 249, 250 et plus]
+e3: { titre: Votre rôle }
+roles: [Dirigeant(e), Direction marketing, Direction commerciale, Autre]
+e4: { titre: "Quand aimeriez-vous démarrer ?"}
+quand: [Dès que possible, Dans les trois prochains mois, "Je me renseigne pour l'instant"]
+e5: { titre: "Vos campagnes aujourd'hui" }
+e6:
+  titre: Vos coordonnées
+  nom: Nom et prénom
+  email: E-mail professionnel
+  tel: Téléphone
+  tel_aide: "Pour vous rappeler si c'est plus simple."
+  message: Votre message (facultatif)
+  message_aide: "Ce que vous aimeriez qu'on regarde en priorité."
+  accord: "J'accepte que Leadvice utilise ces informations pour me recontacter au sujet de ma demande, conformément à la <a href=\"/confidentialite/\">politique de confidentialité</a>."
+  donnees: "Vos données ne servent qu'à répondre à votre demande. Elles ne sont jamais revendues."
+erreurs:
+  vide: Ce champ est nécessaire pour vous répondre.
+  choix: Choisissez une réponse pour continuer.
+  mail: Indiquez une adresse e-mail professionnelle, par exemple nom@entreprise.ma
+  tel: Indiquez un numéro joignable, par exemple +212 6 00 00 00 00
+  accord: Nous avons besoin de votre accord pour vous recontacter.
+  resume: "Il reste {n} points à corriger :"
+  envoi: "L'envoi n'a pas abouti. Vos réponses sont conservées : réessayez, ou écrivez-nous à contact@leadvice.org."
+  robot: "La vérification anti-robots n'a pas abouti. Réessayez dans un instant."
+  reessayer: Réessayer
+  copier: "Copier l'adresse"
+  copie: Copié
+recommencer: { titre: "Effacer toutes vos réponses ?", texte: "Les réponses déjà saisies seront perdues.", garder: Garder mes réponses, effacer: Tout effacer }
+quitter: { titre: "Vous avez commencé votre demande. Quitter quand même ?", texte: "Vos réponses restent enregistrées dans cet onglet jusqu'à sa fermeture.", continuer: Continuer ma demande, quitter: Quitter }
+retour_page:
+  erreur: "Il manque une ou plusieurs réponses. Vérifiez les champs signalés, puis renvoyez votre demande."
+  robot: "La vérification anti-robots n'a pas abouti. Réessayez dans un instant."
+  envoi: "L'envoi n'a pas abouti. Réessayez, ou écrivez-nous à contact@leadvice.org."
+piege: Ne remplissez pas ce champ

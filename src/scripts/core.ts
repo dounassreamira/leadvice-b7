@@ -138,6 +138,14 @@ if (!path.startsWith('/diagnostic/') && !path.startsWith('/admin/')) {
   }, { passive: true });
 }
 
+/* boutons explicites « Réserver un créneau » (page diagnostic, gestion d'un rendez-vous) */
+document.addEventListener('click', (e) => {
+  const b = (e.target as Element).closest?.<HTMLElement>('[data-booking]');
+  if (!b) return;
+  e.preventDefault();
+  void loadBooking().then((m) => m.openBooking(b));
+});
+
 /* ---------- recherche (Pagefind, chargée à l'ouverture) ---------- */
 let searchMod: Promise<typeof import('./search')> | null = null;
 const openSearch = (): void => { void (searchMod ??= import('./search')).then((m) => m.open()); };

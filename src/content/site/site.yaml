@@ -1,5 +1,5 @@
 # Éléments communs à toutes les pages (en-tête, menu, pied de page, bouton flottant).
-# Modifiable depuis Pages CMS : chaque enregistrement republie le site.
+# Modifiable depuis Pages CMS : chaque enregistrement republie le site.
 nom: Leadvice
 url: https://leadvice.org
 description_courte: Cabinet de conseil en stratégie marketing et acquisition client à Casablanca.
@@ -64,6 +64,8 @@ entete:
 
 pied:
   titre: Le bon client est déjà quelque part. Allons le chercher.
+  mentions: Mentions légales
+  confidentialite: Confidentialité
   colonnes:
     - titre: Le cabinet
       liens:
@@ -106,7 +108,7 @@ cookies:
   accepter: Accepter
   personnaliser: Personnaliser
   legende: Choisissez ce que vous acceptez
-  necessaires: "Nécessaires : vos choix et la protection du formulaire. Toujours actifs."
+  necessaires: "Nécessaires : vos choix et la protection du formulaire. Toujours actifs."
   mesure: Mesure d'audience (Google Analytics).
   publicite: Publicité (Meta, Google Ads, LinkedIn).
   enregistrer: Enregistrer mes choix
@@ -114,13 +116,13 @@ cookies:
 recherche:
   titre: Recherche
   fermer: Échap
-  vide: "Tapez un mot : par exemple « coût par lead », « angle » ou « site »."
+  vide: "Tapez un mot : par exemple « coût par lead », « angle » ou « site »."
   aucun: Aucun résultat. Essayez un autre mot, ou parlons-en directement.
   aucun_lien: Demander un diagnostic
   chargement: Chargement de l'index
 
 confirmation_sortie:
-  titre: Vous avez commencé votre demande. Quitter quand même ?
+  titre: Vous avez commencé votre demande. Quitter quand même ?
   texte: Vos réponses sont gardées sur cet appareil le temps de votre visite.
   rester: Continuer ma demande
   quitter: Quitter

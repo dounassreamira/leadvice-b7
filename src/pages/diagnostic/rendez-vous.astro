@@ -1,0 +1,120 @@
+---
+/* Gérer un rendez-vous depuis le lien reçu par e-mail (?t=jeton) : voir, déplacer, annuler. */
+import Base from '../../layouts/Base.astro';
+import CopyButton from '../../components/CopyButton.astro';
+import { page, site } from '../../lib/content';
+import '../../styles/pages/diagnostic.css';
+
+const d = await page('rendez-vous');
+const s = await site();
+const t = JSON.stringify(d);
+---
+<Base title={d.seo.title} description={d.seo.description} og={d.seo.og} page="rdv" noindex fab={false} thread={false}>
+  <section class="wrap rv" data-rv data-t={t}>
+    <h1>{d.h1}</h1>
+    <div class="rv-body" data-rv-body aria-live="polite">
+      <div class="rv-load js-only" aria-label={d.chargement}><i></i><i></i><i></i></div>
+      <noscript><p>{d.sans_js}</p></noscript>
+    </div>
+    <p class="mc-q small">{s.email}<CopyButton text={s.email} label={d.copier} done={d.copie} /></p>
+  </section>
+</Base>
+<script>
+  import { confirmDialog } from '../../scripts/confirm';
+  import { announce } from '../../scripts/env';
+
+  type T = Record<string, any>; // eslint-disable-line @typescript-eslint/no-explicit-any
+  interface B { status: string; start: string; label: string; format: string; entreprise: string; past: boolean }
+  interface Slot { start: string; label: string }
+  interface Day { date: string; slots: Slot[] }
+  const root = document.querySelector<HTMLElement>('[data-rv]')!;
+  const body = root.querySelector<HTMLElement>('[data-rv-body]')!;
+  const t = JSON.parse(root.dataset.t ?? '{}') as T;
+  const token = new URLSearchParams(location.search).get('t') ?? '';
+  const api = '/api/bookings/' + encodeURIComponent(token);
+  const esc = (x: string): string => x.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c] as string);
+  const MOIS = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'];
+  const JOURS = ['dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi'];
+  const dayLabel = (k: string): string => { const [y, m, dd] = k.split('-').map(Number) as [number, number, number]; const w = new Date(Date.UTC(y, m - 1, dd)).getUTCDay(); return JOURS[w] + ' ' + dd + ' ' + MOIS[m - 1]; };
+  let b: B | null = null;
+
+  const msg = (text: string, html = ''): string => '<p class="rv-msg">' + esc(text) + '</p>' + html;
+  const again = '<p class="rv-acts"><a class="btn btn-main" href="/diagnostic/" data-booking>' + esc(t.reserver) + '</a></p>';
+
+  function view(extra = ''): void {
+    if (!b) return;
+    const st = b.past ? 'past' : b.status;
+    const open = b.status === 'confirmed' && !b.past;
+    body.innerHTML = '<div class="rv-card"><span class="rv-tag">' + esc(t.statut[st] ?? st) + '</span><dl>' +
+      '<dt>' + esc(t.lignes.quand) + '</dt><dd>' + esc(b.label.charAt(0).toUpperCase() + b.label.slice(1)) + '</dd>' +
+      '<dt>' + esc(t.lignes.format) + '</dt><dd>' + esc(b.format) + '</dd>' +
+      (b.entreprise ? '<dt>' + esc(t.lignes.entreprise) + '</dt><dd>' + esc(b.entreprise) + '</dd>' : '') + '</dl>' +
+      '<p class="small">' + esc(t.lignes.fuseau) + '</p>' +
+      (open ? '<div class="rv-acts"><button type="button" class="btn btn-main" data-move>' + esc(t.deplacer) + '</button><button type="button" class="btn btn-ghost" data-cancel>' + esc(t.annuler) + '</button></div>' : '') +
+      '</div><div data-zone>' + extra + '</div>';
+    body.querySelector('[data-move]')?.addEventListener('click', () => void move());
+    body.querySelector('[data-cancel]')?.addEventListener('click', () => void cancel());
+  }
+
+  async function post(data: Record<string, unknown>): Promise<{ status: number; j: { ok?: boolean; booking?: B; error?: string } }> {
+    try {
+      const r = await fetch(api, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(data) });
+      return { status: r.status, j: await r.json().catch(() => ({})) };
+    } catch { return { status: 0, j: {} }; }
+  }
+
+  async function cancel(): Promise<void> {
+    const C = t.confirmation;
+    if (!(await confirmDialog({ titre: C.titre, texte: C.texte, ok: C.annuler, annuler: C.garder }))) return;
+    const { status, j } = await post({ action: 'cancel' });
+    if (j.ok && j.booking) { b = j.booking; view(msg(t.annule, again)); announce(t.annule); return; }
+    view(msg(status === 409 ? t.ferme : t.erreur));
+  }
+
+  async function move(note = ''): Promise<void> {
+    const zone = body.querySelector<HTMLElement>('[data-zone]')!;
+    zone.innerHTML = '<div class="rv-move"><h2>' + esc(t.choisir) + '</h2><div class="rv-load"><i></i><i></i></div></div>';
+    let days: Day[] = [];
+    try { const r = await fetch('/api/slots', { headers: { Accept: 'application/json' } }); days = ((await r.json()) as { days: Day[] }).days.filter((x) => x.slots.length); } catch { days = []; }
+    if (!days.length) { zone.innerHTML = msg(t.aucun); return; }
+    let pick: Slot | null = null;
+    zone.innerHTML = '<div class="rv-move"><h2 tabindex="-1">' + esc(t.choisir) + '</h2>' + (note ? '<p class="err" role="alert">' + esc(note) + '</p>' : '') +
+      '<div class="fld"><label for="rv-day">' + esc(t.jour) + '</label><select id="rv-day"><option value="">' + esc(t.jour_choix) + '</option>' +
+      days.map((x) => '<option value="' + x.date + '">' + esc(dayLabel(x.date)) + '</option>').join('') + '</select></div>' +
+      '<div class="slots" data-slots></div><div class="rv-acts"><button type="button" class="btn btn-ghost" data-back>' + esc(t.retour) + '</button><button type="button" class="btn btn-main" data-ok disabled>' + esc(t.confirmer_deplacement) + '</button></div></div>';
+    zone.querySelector<HTMLElement>('h2')!.focus();
+    const sel = zone.querySelector<HTMLSelectElement>('#rv-day')!, grid = zone.querySelector<HTMLElement>('[data-slots]')!, ok = zone.querySelector<HTMLButtonElement>('[data-ok]')!;
+    sel.addEventListener('change', () => {
+      pick = null; ok.disabled = true;
+      const day = days.find((x) => x.date === sel.value);
+      grid.innerHTML = day ? day.slots.map((x) => '<button type="button" aria-pressed="false" data-s="' + x.start + '">' + esc(x.label) + '</button>').join('') : '';
+    });
+    grid.addEventListener('click', (e) => {
+      const btn = (e.target as Element).closest<HTMLButtonElement>('button[data-s]');
+      if (!btn) return;
+      grid.querySelectorAll('button').forEach((x) => { x.setAttribute('aria-pressed', String(x === btn)); x.classList.toggle('sel', x === btn); });
+      pick = days.find((x) => x.date === sel.value)?.slots.find((x) => x.start === btn.dataset.s) ?? null;
+      ok.disabled = !pick;
+    });
+    zone.querySelector('[data-back]')!.addEventListener('click', () => view());
+    ok.addEventListener('click', async () => {
+      if (!pick) return;
+      ok.disabled = true;
+      const { status, j } = await post({ action: 'move', start: pick.start });
+      if (j.ok && j.booking) { b = j.booking; const m = String(t.deplace).replace('{label}', j.booking.label); view(msg(m)); announce(m); return; }
+      if (status === 409 && j.error === 'taken') return move(t.pris);
+      view(msg(status === 409 ? t.ferme : t.erreur));
+    });
+  }
+
+  (async () => {
+    if (!/^[a-f0-9]{48}$/.test(token)) { body.innerHTML = msg(t.introuvable, again); return; }
+    try {
+      const r = await fetch(api, { headers: { Accept: 'application/json' } });
+      const j = (await r.json()) as { ok?: boolean; booking?: B };
+      if (!j.ok || !j.booking) throw new Error('introuvable');
+      b = j.booking;
+      view();
+    } catch { body.innerHTML = msg(t.introuvable, again); }
+  })();
+</script>

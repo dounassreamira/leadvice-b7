@@ -1,0 +1,28 @@
+seo:
+  title: Demande reçue | Leadvice
+  description: "Votre demande de diagnostic est bien partie. Nous vous répondons sous un jour ouvré pour fixer un échange de 45 minutes."
+  og: diagnostic
+h1: Merci. Votre demande est bien partie.
+enjeux:
+  leads: "Votre enjeu : générer plus de leads qualifiés."
+  conv: "Votre enjeu : transformer plus de contacts en clients."
+  strat: "Votre enjeu : savoir où aller, et par quoi commencer."
+  crea: "Votre enjeu : trouver le message qui fait agir."
+  pilot: "Votre enjeu : transformer vos chiffres en décisions."
+  autre: Votre enjeu est noté. Nous le regardons de près.
+suite_titre: La suite.
+suite:
+  - { titre: Nous lisons votre demande., texte: "Nous regardons votre secteur, votre situation et l'enjeu que vous avez indiqué." }
+  - { titre: Nous vous répondons sous un jour ouvré., texte: "Par e-mail, pour fixer le créneau de votre diagnostic." }
+  - { titre: Nous faisons le point ensemble., texte: "45 minutes, en visio ou par téléphone. Vous repartez avec ce qui freine votre acquisition et par quoi commencer." }
+lire_titre: En attendant, à lire.
+recommandations:
+  leads: [plus-de-leads-ne-veut-pas-dire-plus-de-clients, meta-ads-ou-google-ads]
+  conv: [plus-de-leads-ne-veut-pas-dire-plus-de-clients, cpl-cpa-cout-par-opportunite]
+  strat: [audit-marketing-sept-signes, cpl-cpa-cout-par-opportunite]
+  crea: [trouver-le-bon-angle, arabe-ou-francais-langue-publicites-maroc]
+  pilot: [cpl-cpa-cout-par-opportunite, audit-marketing-sept-signes]
+  autre: [audit-marketing-sept-signes, plus-de-leads-ne-veut-pas-dire-plus-de-clients]
+question: "Une question d'ici là ?"
+copier: "Copier l'adresse"
+copie: Copié

@@ -82,6 +82,7 @@ if (ONLY.includes('html')) {
       if (h.startsWith('#')) { if (h.length > 1 && !ids.has(h.slice(1))) fail(r, `ancre introuvable ${h}`); continue; }
       const [p0, hash] = h.split('#');
       const p = p0.split('?')[0];
+      if (p.startsWith('/api/')) continue; // Pages Functions : absentes du build statique
       let target = path.join(DIST, p);
       if (fs.existsSync(target) && fs.statSync(target).isDirectory()) target = path.join(target, 'index.html');
       if (!fs.existsSync(target)) { fail(r, `lien cassé ${h}`); continue; }
@@ -125,6 +126,7 @@ if (ONLY.includes('lh')) {
     const s = { page: p, perf: Math.round(c.performance.score * 100), a11y: Math.round(c.accessibility.score * 100), bp: Math.round(c['best-practices'].score * 100), seo: Math.round(c.seo.score * 100), lcp: a['largest-contentful-paint'].numericValue, cls: a['cumulative-layout-shift'].numericValue, tbt: a['total-blocking-time'].numericValue };
     const js = r.lhr.audits['network-requests']?.details?.items?.filter((x) => x.resourceType === 'Script').reduce((t, x) => t + (x.transferSize || 0), 0) || 0;
     s.js = Math.round(js / 1024);
+    s.a11yNotes = Object.values(r.lhr.categories.accessibility.auditRefs).filter((x) => x.weight > 0 && a[x.id].score !== null && a[x.id].score < 1).map((x) => x.id);
     scores.push(s);
     // localhost sans HTTPS ni en-têtes de production : on ne retient pas ces deux contrôles ici
     const bpIgnored = ['is-on-https', 'redirects-http', 'csp-xss', 'uses-http2'];
@@ -142,7 +144,7 @@ if (ONLY.includes('lh')) {
   }
   await chrome.kill();
   console.log('\nLighthouse mobile (perf / a11y / bonnes pratiques / SEO, LCP, CLS, JS) :');
-  for (const s of scores) console.log(`  ${s.page.padEnd(52)} ${s.perf} / ${s.a11y} / ${s.bp} / ${s.seo}   LCP ${Math.round(s.lcp)} ms  CLS ${s.cls.toFixed(3)}  JS ${s.js} Ko`);
+  for (const s of scores) console.log(`  ${s.page.padEnd(52)} ${s.perf} / ${s.a11y} / ${s.bp} / ${s.seo}   LCP ${Math.round(s.lcp)} ms  CLS ${s.cls.toFixed(3)}  JS ${s.js} Ko${s.a11yNotes.length ? '  (a11y : ' + s.a11yNotes.join(', ') + ')' : ''}`);
   fs.mkdirSync('apercus', { recursive: true });
   fs.writeFileSync('apercus/lighthouse.json', JSON.stringify(scores, null, 2));
 }
