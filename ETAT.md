@@ -40,5 +40,13 @@ Mis à jour à la fin de chaque phase. Reprendre d'ici si la session s'interromp
 - Guide indexable, glossaire et FAQ (JSON-LD FAQPage) sous chaque atelier ; recherche : 21 pages indexées.
 - Lighthouse mobile : 99-100 / 100 / 100 / 100 sur les trois pages.
 
-## Reste à faire
-- Phase 5 : pages légales, 404, llms.txt, Pages CMS, README, audit complet.
+## Phase 5 — Finitions et audit : faite
+- Pages légales `/mentions-legales/`, `/confidentialite/`, `/cookies/` (Markdown dans `src/content/legal/`, date de mise à jour, progression de lecture, identifiants à copier, bouton « Gérer les cookies »).
+- Page 404 (scène « lost » : le curseur recolle les points), liens accueil, expertises, diagnostic et recherche.
+- `/llms.txt` (texte dans `src/content/site/llms.yaml`), `.pages.yml` (Pages CMS), `README.md` (mise en ligne, D1, Resend, Turnstile, Google Agenda, Cloudflare Access, Worker des rappels).
+- Impression : logo en tête, URL après chaque lien, adresse et e-mail en pied.
+- Audit complet : toutes les pages contrôlées (HTML, liens, textes, Lighthouse mobile, axe clair et sombre). Scores dans `apercus/lighthouse.json`, captures finales dans `apercus/final/`.
+
+## Reste à faire (côté Leadvice)
+- Relier la base D1 et renseigner les secrets dans Cloudflare Pages (voir README) ; tant que ce n'est pas fait, la fenêtre de réservation propose le formulaire en repli.
+- Configurer Cloudflare Access pour `/admin/`, le domaine Resend, Turnstile, le compte de service Google Agenda, les identifiants GTM, Pixel et LinkedIn.

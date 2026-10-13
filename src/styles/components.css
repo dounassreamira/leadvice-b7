@@ -103,9 +103,9 @@
   .jump a:hover, .jump a:focus-visible { border-color: var(--brand); color: var(--brand); }
 
   /* ---------- surligneur jaune derrière les derniers mots des titres ---------- */
-  .lv-hl { background: linear-gradient(var(--yellow), var(--yellow)) 0 92% / 0% .36em no-repeat; -webkit-box-decoration-break: clone; box-decoration-break: clone; padding: 0 .04em; transition: background-size .9s var(--ease); }
+  .lv-hl { background: linear-gradient(var(--yellow), var(--yellow)) 0 92% / 0% .36em no-repeat; -webkit-box-decoration-break: clone; box-decoration-break: clone; padding: 0 .04em; margin: 0 -.04em; transition: background-size .9s var(--ease); }
   .lv-hl.on { background-size: 100% .36em; }
-  .violet .lv-hl, .ftr .lv-hl, :is([data-theme="dark"], .theme-dark) .lv-hl { background-position: 0 55%; background-size: 0% 92%; padding: 0 .1em; transition: background-size .9s var(--ease), color .3s .3s; }
+  .violet .lv-hl, .ftr .lv-hl, :is([data-theme="dark"], .theme-dark) .lv-hl { background-position: 0 55%; background-size: 0% 92%; padding: 0 .1em; margin: 0 -.1em; transition: background-size .9s var(--ease), color .3s .3s; }
   .violet .lv-hl.on, .ftr .lv-hl.on, :is([data-theme="dark"], .theme-dark) .lv-hl.on { background-size: 100% 92%; color: var(--on-yellow); }
   @media (prefers-reduced-motion: reduce) { .lv-hl { background-size: 100% .36em; } .violet .lv-hl, .ftr .lv-hl, :is([data-theme="dark"], .theme-dark) .lv-hl { background-size: 100% 92%; color: var(--on-yellow); } }
 
@@ -312,10 +312,13 @@
 
 /* ---------- impression ---------- */
 @media print {
-  .hdr, .cbar, .fab, .btt, .ck, .mnav, .ftr canvas, .scene canvas, .thread, .skip, .progress, .pfield, .srch, .bk, .btn, .copy, .share, .jump, .ftr .cols, .ftr-cta, .ftr h2, .read-prog { display: none !important; }
+  .cbar, .fab, .btt, .ck, .mnav, .hdr .nav, .ftr canvas, .scene canvas, .thread, .skip, .progress, .pfield, .srch, .bk, .btn, .copy, .share, .jump, .ftr .cols, .ftr-cta, .ftr h2, .read-prog { display: none !important; }
   html, body { background: #fff !important; color: #000 !important; }
   html.grain::after { display: none; }
   .print-head { display: block !important; margin: 0 0 24px; }
+  /* le logo en tête de la page imprimée */
+  .hdr { position: static !important; transform: none !important; background: none !important; box-shadow: none !important; border: 0 !important; }
+  .hdr-in { padding: 0 0 24px !important; }
   .scene { height: auto !important; min-height: 0 !important; }
   .scene .cap > * { opacity: 1 !important; position: static !important; transform: none !important; }
   main a[href^="http"]::after, main a[href^="/"]::after { content: " (" attr(href) ")"; font-size: .8em; color: #444; }

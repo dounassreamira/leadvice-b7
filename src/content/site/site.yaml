@@ -126,3 +126,9 @@ confirmation_sortie:
   texte: Vos réponses sont gardées sur cet appareil le temps de votre visite.
   rester: Continuer ma demande
   quitter: Quitter
+# Pages légales (mentions, confidentialité, cookies).
+legal_page:
+  maj: "Dernière mise à jour :"
+  copier: Copier
+  copie: Copié
+  copier_aria: "Copier {v}"

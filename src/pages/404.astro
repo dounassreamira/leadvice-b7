@@ -1,0 +1,36 @@
+---
+/* 404 : « 404 » fait de points qui respirent ; le curseur les recolle et ressoude la ligne de signal. */
+import Base from '../layouts/Base.astro';
+import { page, site, sceneLabels } from '../lib/content';
+
+const d = await page('introuvable');
+const s = await site();
+const labels = await sceneLabels('lost');
+---
+<Base title={d.seo.title} description={d.seo.description} og={d.seo.og} page="404" noindex thread={false} fab={false}>
+  <section class="e404">
+    <div class="e404-cv" data-scene="lost" data-static data-loop data-labels={labels} aria-hidden="true"><canvas></canvas></div>
+    <div class="wrap e404-tx">
+      <p class="legend">{d.legende}</p>
+      <h1>{d.h1}</h1>
+      <p class="lead">{d.texte}</p>
+      <div class="acts">
+        <a class="btn btn-main" href="/">{d.accueil}</a>
+        <a class="btn btn-ghost" href="/expertises/">{d.expertises}</a>
+        <a class="tlink" href="/diagnostic/">{s.cta.principal}</a>
+        <button type="button" class="tlink e404-s" data-search-open>{d.recherche}</button>
+      </div>
+    </div>
+  </section>
+</Base>
+<style>
+  .e404 { position: relative; min-height: 100svh; display: flex; align-items: flex-end; padding-bottom: clamp(48px, 8vh, 96px); overflow: hidden; }
+  .e404-cv { position: absolute; inset: 0; }
+  .e404-cv canvas { width: 100%; height: 100%; display: block; }
+  .e404-tx { position: relative; max-width: 760px; margin-left: 0; }
+  .e404-tx h1 { font-size: clamp(2.6rem, 1.6rem + 3.6vw, 4.8rem); line-height: 1; margin: 10px 0 18px; }
+  .e404-tx .acts { display: flex; flex-wrap: wrap; gap: 16px 20px; align-items: center; margin-top: 28px; }
+  .e404-tx .lead { max-width: 52ch; }
+  .e404-s { border: 0; background-color: transparent; cursor: pointer; font-size: inherit; padding-inline: 0; }
+  @media (max-width: 760px) { .e404-cv { bottom: 41%; } }
+</style>

@@ -42,6 +42,7 @@ const server = http.createServer((req, res) => {
   if (p.startsWith('/api/')) { res.writeHead(503, { 'Content-Type': 'application/json' }); res.end('{"error":"local"}'); return; }
   let f = path.join(DIST, p);
   if (fs.existsSync(f) && fs.statSync(f).isDirectory()) f = path.join(f, 'index.html');
+  if (p === '/404/') f = path.join(DIST, '404.html'); // la page 404 elle-même, mesurée comme une page
   if (!fs.existsSync(f)) { res.writeHead(404, { 'Content-Type': 'text/html' }); res.end(fs.existsSync(path.join(DIST, '404.html')) ? fs.readFileSync(path.join(DIST, '404.html')) : 'Not found'); return; }
   const type = MIME[path.extname(f)] || 'application/octet-stream';
   // compression comme en production (Cloudflare), pour mesurer les poids réellement transférés
@@ -134,7 +135,8 @@ if (ONLY.includes('lh')) {
     if (s.perf < 95) fail(p, `Lighthouse performance ${s.perf} (LCP ${Math.round(s.lcp)} ms, TBT ${Math.round(s.tbt)} ms)`);
     if (s.a11y < 95) fail(p, `Lighthouse accessibilité ${s.a11y} : ${Object.values(r.lhr.categories.accessibility.auditRefs).filter((x) => x.weight > 0 && a[x.id].score === 0).map((x) => x.id).join(', ')}`);
     if (bpReal.length) fail(p, `Lighthouse bonnes pratiques : ${bpReal.join(', ')}`);
-    const noindex = fs.readFileSync(path.join(DIST, p, 'index.html'), 'utf8').includes('name="robots" content="noindex');
+    const file = fs.existsSync(path.join(DIST, p, 'index.html')) ? path.join(DIST, p, 'index.html') : path.join(DIST, p.replace(/\/$/, '') + '.html');
+    const noindex = fs.readFileSync(file, 'utf8').includes('name="robots" content="noindex');
     const seoFails = Object.values(r.lhr.categories.seo.auditRefs).filter((x) => x.weight > 0 && a[x.id].score === 0).map((x) => x.id).filter((id) => !(noindex && id === 'is-crawlable'));
     if (seoFails.length) fail(p, `Lighthouse SEO ${s.seo} : ${seoFails.join(', ')}`);
     if (s.lcp > 2000) fail(p, `LCP ${Math.round(s.lcp)} ms`);
