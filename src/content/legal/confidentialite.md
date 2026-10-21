@@ -14,25 +14,27 @@ LEADVICE SARL, Hay Laayoune, Angle Rue Ait Yaflmane, Fida N°341, 2ème étage, 
 ## Données collectées
 
 - Par le formulaire de diagnostic : nom, e-mail professionnel, téléphone, entreprise, secteur, taille, rôle, date de démarrage souhaitée, situation de vos campagnes, créneau de rendez-vous choisi, enjeu principal, message éventuel, ainsi que la source de votre visite (paramètres de campagne).
+- Par les formulaires des ressources (exemple de plan, guides, lettre mensuelle) : e-mail, prénom s'il est demandé, ressource demandée, sujets cochés, et la source de votre visite.
 - Par la navigation, uniquement avec votre accord : données de mesure d'audience et de performance publicitaire (voir la [politique cookies](/cookies/)).
 
 ## Finalités
 
 - Répondre à votre demande et organiser le diagnostic.
 - Vous adresser, le cas échéant, une proposition commerciale liée à votre demande.
+- Vous envoyer la ressource demandée et, seulement si vous l'avez choisi, notre lettre mensuelle. Chaque lettre contient un moyen de se désinscrire.
 - Mesurer l'audience du site et l'efficacité de nos campagnes, si vous l'avez accepté.
 
 ## Base du traitement
 
-Votre consentement, donné en cochant la case du formulaire et via la bannière cookies. Vous pouvez le retirer à tout moment.
+Votre consentement : la case cochée du formulaire de diagnostic, votre demande d'une ressource ou votre inscription à la lettre, et vos choix dans la bannière cookies. Vous pouvez le retirer à tout moment.
 
 ## Destinataires
 
-Les données sont destinées à Leadvice uniquement. Elles transitent par nos prestataires techniques : Cloudflare (hébergement et protection du formulaire), Resend (envoi des e-mails) et, si vous l'avez accepté, Google, Meta et LinkedIn (mesure d'audience et publicité). Elles ne sont jamais vendues ni louées.
+Les données sont destinées à Leadvice uniquement. Elles transitent par nos prestataires techniques : Cloudflare (hébergement et protection du formulaire), Resend (envoi des e-mails), Brevo si nous l'utilisons pour la lettre mensuelle, et, si vous l'avez accepté, Google, Meta et LinkedIn (mesure d'audience et publicité). Elles ne sont jamais vendues ni louées.
 
 ## Durée de conservation
 
-Les données du formulaire sont conservées 24 mois après notre dernier échange, puis supprimées. Votre choix concernant les cookies est conservé 6 mois.
+Les données des formulaires sont conservées 24 mois après notre dernier échange, puis supprimées ; pour la lettre mensuelle, jusqu'à votre désinscription. Votre choix concernant les cookies est conservé 6 mois.
 
 ## Vos droits
 

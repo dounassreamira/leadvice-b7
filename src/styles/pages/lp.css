@@ -5,7 +5,7 @@
   .lp-ben { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: var(--line); border-block: 1px solid var(--line); }
   .lp-ben li { background: var(--paper); padding: 36px 32px 40px 0; display: flex; flex-direction: column; gap: 14px; }
   .lp-ben li + li { padding-left: 32px; }
-  .lp-ben .n { font: 500 var(--fs-small) var(--sans); color: var(--brand); font-variant-numeric: tabular-nums; }
+  .lp-ben .n { display: block; width: 10px; height: 10px; border-radius: 50%; background: var(--lead); }
   .lp-ben h3 { font-size: var(--fs-h3); line-height: 1.1; }
   .lp-ben p { color: var(--ink-2); }
   .lp-note { margin-top: 32px; max-width: 70ch; }

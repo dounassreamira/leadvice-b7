@@ -15,7 +15,7 @@ maintenant: Vous êtes ici
 suite:
   - { titre: Nous lisons votre demande., texte: "Nous regardons votre secteur, votre situation et l'enjeu que vous avez indiqué." }
   - { titre: Nous vous répondons sous un jour ouvré., texte: "Par e-mail, pour fixer le créneau de votre diagnostic." }
-  - { titre: Nous faisons le point ensemble., texte: "45 minutes, en visio ou par téléphone. Vous repartez avec ce qui freine votre acquisition et par quoi commencer." }
+  - { titre: Nous faisons le point ensemble., texte: "45 minutes, en visio ou par téléphone. Sous 48 heures, vous recevez votre plan écrit, avec ce qui freine votre acquisition et par quoi commencer." }
 lire_titre: En attendant, à lire.
 atelier:
   titre: Ou à essayer.

@@ -1,6 +1,6 @@
 # Fenêtre de réservation du diagnostic (ouverte par chaque bouton « Demander un diagnostic »).
 titre: Réservez votre diagnostic.
-texte: "45 minutes, offert, en visio ou par téléphone. Nous regardons vos campagnes, vos chiffres et votre offre. Vous repartez avec ce qui freine votre acquisition et par quoi commencer."
+texte: "45 minutes, offert, en visio ou par téléphone. Nous regardons vos campagnes, vos chiffres et votre offre. Sous 48 heures, vous recevez votre plan écrit, avec ce qui freine votre acquisition et par quoi commencer."
 resume: { duree: Durée, duree_v: 45 minutes, creneau: Créneau, creneau_v: à choisir, fuseau: Fuseau, fuseau_v: Heure de Casablanca }
 fermer: Fermer
 etape: "Étape {n} sur 3"

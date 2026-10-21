@@ -11,7 +11,7 @@ angles:
   angle: Angle
   parle: Parle surtout aux
   angles:
-    - { k: Prix, hook: "299 MAD par mois. Moins qu'un café par jour.", who: Étudiants }
+    - { k: Prix, hook: "299 DH par mois. Moins qu'un café par jour.", who: Étudiants }
     - { k: Temps, hook: "45 minutes, trois fois par semaine.", who: Cadres pressés }
     - { k: Encadrement, hook: Un coach vous suit dès la première séance., who: Débutants }
 target:
@@ -32,6 +32,6 @@ page:
   etapes: [Assembler, Clarifier, Convertir]
 money:
   etapes: [Budget investi, Publicité, Clients, Chiffre d'affaires]
-  devise: [MAD]
+  devise: [DH]
 lost:
   code: "404"

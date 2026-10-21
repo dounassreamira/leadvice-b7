@@ -22,7 +22,7 @@ const t = { ...d.form, ...d.gabarit };
       <h1>{r.titre}</h1>
       <p class="lead">{r.promesse}</p>
       <ul class="rm-pts">{r.points.map((p) => <li>{p}</li>)}</ul>
-      <LeadForm id="rm" magnet={slug} t={t} bouton={r.bouton} prenom done={d.gabarit.ok} fichier={r.fichier || undefined} fichierLabel={d.gabarit.telecharger} />
+      <LeadForm id="rm" magnet={slug} t={t} bouton={r.bouton} prenom done={d.gabarit.ok} fichier={r.fichier || undefined} fichierLabel={d.gabarit.telecharger} lettre={d.gabarit.lettre} />
       <p class="small">{d.gabarit.rgpd}</p>
     </div>
     <div class="rm-cover" aria-hidden="true">

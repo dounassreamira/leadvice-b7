@@ -36,7 +36,7 @@ const t = JSON.stringify({ etape: '', boutons: dg.boutons, erreurs: dg.erreurs }
   <section class="wrap sec" aria-labelledby="lp-b">
     <h2 id="lp-b" class="sr-only">{d.benefices_titre}</h2>
     <ol class="lp-ben">
-      {(d.benefices as Data[]).map((b, i) => <li><span class="n" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span><h3>{b.titre}</h3><p>{b.texte}</p></li>)}
+      {(d.benefices as Data[]).map((b) => <li><span class="n" aria-hidden="true"></span><h3>{b.titre}</h3><p>{b.texte}</p></li>)}
     </ol>
   </section>
 

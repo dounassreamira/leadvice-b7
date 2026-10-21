@@ -3,9 +3,9 @@ seo:
   description: "45 minutes, offert : nous regardons vos campagnes, vos chiffres et votre offre, et vous repartez avec ce qui freine votre acquisition. Réponse sous un jour ouvré."
   og: diagnostic
 fil: Diagnostic
-h1: Parlons de votre croissance.
-reponse: Six questions rapides pour préparer un premier échange utile. Réponse sous un jour ouvré.
-encadre: "<strong>Le diagnostic, c'est quoi ?</strong> Un échange de 45 minutes, offert, en visio ou par téléphone. Nous regardons vos campagnes, vos chiffres et votre offre. Vous repartez avec ce qui freine votre acquisition et par quoi commencer. Si nous pouvons vous aider, nous vous faisons ensuite une proposition. Sinon, nous vous le disons."
+h1: 45 minutes pour savoir ce qui freine vos ventes.
+reponse: Six questions rapides pour préparer un échange utile, ou un créneau choisi tout de suite. Réponse sous un jour ouvré, puis votre plan écrit sous 48 heures après l'échange.
+encadre: "<strong>Le diagnostic, c'est quoi ?</strong> Un échange de 45 minutes, offert, en visio ou par téléphone. Nous regardons vos campagnes, vos chiffres et votre offre. Sous 48 heures, vous recevez votre plan écrit, avec ce qui freine votre acquisition et par quoi commencer. Si nous pouvons vous aider, nous vous faisons ensuite une proposition. Sinon, nous vous le disons."
 creneau: { texte: "Vous préférez choisir directement un horaire ?", lien: Réserver un créneau }
 etape: "Étape {n} sur 6"
 boutons: { continuer: Continuer, retour: Retour, envoyer: Envoyer ma demande, recommencer: Recommencer, envoi: Envoi en cours… }

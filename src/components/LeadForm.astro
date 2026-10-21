@@ -1,8 +1,8 @@
 ---
 /* Formulaire d'inscription à une ressource : e-mail (et prénom si demandé), champ piège, choix d'intérêts facultatifs. */
 import type { Data } from '../lib/content';
-interface Props { magnet: string; t: Data; bouton: string; prenom?: boolean; choix?: Data[]; done?: string; fichier?: string; fichierLabel?: string; id: string }
-const { magnet, t, bouton, prenom = false, choix = [], done, fichier, fichierLabel, id } = Astro.props;
+interface Props { magnet: string; t: Data; bouton: string; prenom?: boolean; choix?: Data[]; done?: string; fichier?: string; fichierLabel?: string; id: string; lettre?: string }
+const { magnet, t, bouton, prenom = false, choix = [], done, fichier, fichierLabel, id, lettre } = Astro.props;
 ---
 <div class="lf">
   <form class="lf-f" action="/api/lead" method="post" data-lead data-magnet={magnet} data-ok={t.ok} data-err={t.erreur} data-invalid={t.invalide} novalidate>
@@ -16,9 +16,11 @@ const { magnet, t, bouton, prenom = false, choix = [], done, fichier, fichierLab
       <label for={`${id}-e`} class="sr-only">{t.email}</label>
       <input id={`${id}-e`} name="email" type="email" autocomplete="email" placeholder={t.email} required maxlength="200" />
       <input type="hidden" name="magnet" value={magnet} /><input type="hidden" name="page" value={Astro.url.pathname} />
+      {fichier && <input type="hidden" name="fichier" value={fichier} />}
       <input type="text" name="site" tabindex="-1" autocomplete="off" class="sr-only" aria-hidden="true" />
       <button type="submit" class="btn btn-main">{bouton}</button>
     </div>
+    {lettre && <label class="lf-opt"><input type="checkbox" name="lettre" value="1" /> {lettre}</label>}
   </form>
   <p class="small lf-m" role="status" data-lead-msg></p>
   {done && <div class="lf-done" data-lead-done hidden tabindex="-1"><p>{done}</p>{fichier && <a class="btn btn-ghost" href={fichier} download>{fichierLabel}</a>}</div>}

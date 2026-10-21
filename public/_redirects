@@ -12,3 +12,9 @@
 /expertises/simulateur /expertises/acquisition/#simulateur 301
 /realisations/kettani-immobilier /realisations/ 301
 /realisations/kettani-immobilier/ /realisations/ 301
+
+# Dossiers sans page d'index
+/secteurs            /expertises/              301
+/secteurs/           /expertises/              301
+/r                   /ressources/              301
+/r/                  /ressources/              301

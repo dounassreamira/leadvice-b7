@@ -255,7 +255,7 @@ const XS = [0, 58, 118, 170, 222];
     <section class="wrap pc-sec" id="ressources" data-stop>
       <div class="pc-res frost">
         <div><h2>{p.ressources.titre}</h2><p class="lead">{p.ressources.texte}</p><p style="margin-top:22px"><a class="tlink" href="/ressources/">{p.ressources.lien}</a></p></div>
-        <ul>{(p.ressources.liste as Data[]).map((r) => <li><i>{r.lettre}</i><div><b>{r.titre}</b><span>{r.texte}</span></div></li>)}</ul>
+        <ul>{(p.ressources.liste as Data[]).map((r) => <li><i aria-hidden="true"></i><div><b>{r.titre}</b><span>{r.texte}</span></div></li>)}</ul>
       </div>
     </section>
 

@@ -13,6 +13,6 @@ points:
   - Un exemple tiré d'un compte publicitaire marocain
 bouton: Recevoir le guide
 couverture: Le titre du guide sur la couverture
-fichier: ""
+fichier: ""   # ex. /ressources/sept-trous.pdf (fichier placé dans public/ressources/)
 afficher_dans_ressources: true
 resume: Une phrase pour la carte de la page Ressources.

@@ -1,6 +1,6 @@
 seo:
   title: Génération de leads, Meta Ads et Google Ads au Maroc | Leadvice
-  description: 'Campagnes Meta Ads et Google Ads, génération de leads qualifiés, formulaires qui trient avant de compter : moins de 1 $ par lead en moyenne sur Meta Ads chez nos clients.'
+  description: 'Campagnes Meta Ads et Google Ads, leads qualifiés, formulaires qui trient avant de compter : moins de 10 DH par lead en moyenne sur Meta Ads.'
   og: acquisition
 fil: Acquisition
 h1: Des leads que vos commerciaux ont envie de rappeler.
@@ -66,7 +66,7 @@ faq:
     - Souvent dans les jours qui suivent le lancement. Pour juger une campagne et l'optimiser sérieusement, il faut en revanche quelques semaines de données.
 cloture:
   titre: Commençons par votre chemin.
-  texte: 45 minutes, offert. Nous regardons vos campagnes, vos chiffres et votre offre. Vous repartez avec ce qui freine votre acquisition et par quoi commencer.
+  texte: 45 minutes, offert. Nous regardons vos campagnes, vos chiffres et votre offre. Sous 48 heures, vous recevez votre plan écrit, avec ce qui freine votre acquisition et par quoi commencer.
 suivante: pilotage
 service: Génération de leads, Meta Ads et Google Ads
 lire:
@@ -123,26 +123,26 @@ simulateur:
       onglet: Vous cherchez des prospects
       etapes: [Budget investi, Publicité, Clients signés, "Chiffre d'affaires"]
       champs:
-        - { id: budget, label: Budget publicitaire mensuel, min: 2000, max: 200000, pas: 1000, defaut: 10000, unite: " MAD" }
-        - { id: cpl, label: Coût par lead, min: 3, max: 60, pas: 1, defaut: 10, unite: " MAD" }
+        - { id: budget, label: Budget publicitaire mensuel, min: 2000, max: 200000, pas: 1000, defaut: 10000, unite: " DH" }
+        - { id: cpl, label: Coût par lead, min: 3, max: 60, pas: 1, defaut: 10, unite: " DH" }
         - { id: q, label: Leads qualifiés, min: 10, max: 95, pas: 1, defaut: 70, unite: " %" }
         - { id: c, label: Leads qualifiés qui signent, min: 1, max: 50, pas: 1, defaut: 10, unite: " %" }
-        - { id: v, label: "Valeur d'un client", min: 500, max: 100000, pas: 500, defaut: 5000, unite: " MAD" }
+        - { id: v, label: "Valeur d'un client", min: 500, max: 100000, pas: 500, defaut: 5000, unite: " DH" }
       resultats: ["leads reçus par mois", "par lead, soit environ {usd} $", nouveaux clients par mois, pour gagner un client, "de chiffre d'affaires généré", chaque dirham investi rapporte]
-      phrase: "Avec ces réglages, <b>{budget} MAD</b> de publicité deviennent <b>{n} clients</b> et <b>{ca} MAD</b> de chiffre d'affaires, soit <b>× {x}</b>."
+      phrase: "Avec ces réglages, <b>{budget} DH</b> de publicité deviennent <b>{n} clients</b> et <b>{ca} DH</b> de chiffre d'affaires, soit <b>× {x}</b>."
     ecom:
       onglet: Vous vendez en ligne
       etapes: [Budget investi, Publicité, Commandes livrées, "Chiffre d'affaires livré"]
       champs:
-        - { id: budget, label: Budget publicitaire mensuel, min: 2000, max: 200000, pas: 1000, defaut: 10000, unite: " MAD" }
-        - { id: cpc, label: Coût par visite, min: 0.3, max: 5, pas: 0.1, defaut: 1.2, unite: " MAD" }
+        - { id: budget, label: Budget publicitaire mensuel, min: 2000, max: 200000, pas: 1000, defaut: 10000, unite: " DH" }
+        - { id: cpc, label: Coût par visite, min: 0.3, max: 5, pas: 0.1, defaut: 1.2, unite: " DH" }
         - { id: cr, label: Taux de conversion, min: 0.3, max: 8, pas: 0.1, defaut: 4, unite: " %" }
         - { id: dl, label: "Commandes livrées (paiement à la livraison)", min: 40, max: 100, pas: 1, defaut: 92, unite: " %" }
-        - { id: pm, label: Panier moyen, min: 100, max: 3000, pas: 10, defaut: 450, unite: " MAD" }
+        - { id: pm, label: Panier moyen, min: 100, max: 3000, pas: 10, defaut: 450, unite: " DH" }
       resultats: [visites, commandes par mois, commandes livrées, par commande livrée, "de chiffre d'affaires livré", chaque dirham investi rapporte]
-      phrase: "Avec ces réglages, <b>{budget} MAD</b> de publicité deviennent <b>{n} commandes livrées</b> et <b>{ca} MAD</b> de chiffre d'affaires, soit <b>× {x}</b>."
+      phrase: "Avec ces réglages, <b>{budget} DH</b> de publicité deviennent <b>{n} commandes livrées</b> et <b>{ca} DH</b> de chiffre d'affaires, soit <b>× {x}</b>."
   cta_aide: "Diagnostic offert : nous refaisons ce calcul avec vos données réelles."
-  note: "Simulation indicative, réglée par défaut sur notre coût moyen par lead constaté sur Meta Ads (moins de 1 $, soit environ 10 MAD). Les taux réels dépendent de votre secteur, de votre offre et de vos campagnes : nous les estimons avec vous pendant le diagnostic."
+  note: "Simulation indicative, réglée par défaut sur notre coût moyen par lead constaté sur Meta Ads (moins de 1 $, soit environ 10 DH). Les taux réels dépendent de votre secteur, de votre offre et de vos campagnes : nous les estimons avec vous pendant le diagnostic."
 
 chiffres:
   retenus: ["< 1 $", "1 à 2 $", "+1 000", "126"]

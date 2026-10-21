@@ -44,3 +44,7 @@
   .rm-next :is(h2, p) { margin: 0; }
   @media (max-width: 860px) { .rm-hero { grid-template-columns: 1fr; } .rm-cover { max-width: 280px; } }
 }
+@layer pages {
+  .lf-opt { display: inline-flex; gap: 8px; align-items: center; margin-top: 12px; font-size: .95rem; color: var(--ink-2); cursor: pointer; }
+  .lf-opt input { accent-color: var(--thread); width: 18px; height: 18px; }
+}

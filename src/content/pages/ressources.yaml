@@ -41,8 +41,9 @@ cloture: Vous préférez qu'on regarde votre cas précis ?
 gabarit:
   prenom: Prénom
   email: E-mail professionnel
-  rgpd: Vous recevez la ressource par e-mail, puis une lettre par mois. Désinscription en un clic.
-  ok: C'est envoyé. Regardez votre boîte de réception dans quelques minutes.
+  rgpd: "Vous recevez la ressource par e-mail. Vos données ne servent qu'à cela, et ne sont jamais revendues."
+  lettre: Recevoir aussi la lettre mensuelle (désinscription en un clic)
+  ok: "C'est envoyé. Regardez votre boîte de réception dans quelques minutes, et vos courriers indésirables si rien n'arrive."
   telecharger: Télécharger maintenant
   auteur: Par Amira Dounassre
   apres_titre: Et ensuite ?

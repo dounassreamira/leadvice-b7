@@ -16,7 +16,7 @@ for (const form of document.querySelectorAll<HTMLFormElement>('form[data-lead]')
     const q = new URLSearchParams(location.search), u = readUtm();
     const interets = Array.from(form.querySelectorAll<HTMLInputElement>('input[name="interets"]:checked')).map((i) => i.value).join(', ');
     const body = {
-      email: email.value, prenom: f('prenom')?.value || '', magnet: form.dataset.magnet || 'lettre', interets, site: f('site')?.value || '',
+      email: email.value, prenom: f('prenom')?.value || '', lettre: f('lettre')?.checked ? '1' : '', fichier: f('fichier')?.value || '', magnet: form.dataset.magnet || 'lettre', interets, site: f('site')?.value || '',
       source: q.get('utm_source') || u.utm_source || 'site', campagne: q.get('utm_campaign') || u.utm_campaign || '', page: location.pathname,
     };
     try {

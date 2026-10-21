@@ -8,15 +8,15 @@ seo:
 ouverture:
   aria: "Le chemin d'un prospect, de l'annonce au rendez-vous"
   passer: Passer l'histoire
-  note: 45 minutes, offertes. Votre plan écrit sous 48 heures.
+  note: 45 minutes, offert. Votre plan écrit sous 48 heures.
   scenes:
     - titre: Votre prochain client vient de voir votre annonce.
-      texte: "Il est 22 h 04, et il cherche exactement ce que vous vendez. Ce qui se passe dans les heures qui suivent décide s'il signera chez vous ou chez un concurrent. Leadvice, cabinet d'acquisition client à Casablanca, construit ce chemin : annonces Meta Ads et Google Ads, page, formulaire et suivi des demandes."
+      texte: "Il est 22 h, et il cherche exactement ce que vous vendez. Ce qui se passe dans les heures qui suivent décide s'il signera chez vous ou chez un concurrent. Leadvice, cabinet d'acquisition client à Casablanca, construit ce chemin : annonces Meta Ads et Google Ads, page, formulaire et suivi des demandes."
     - titre: Il décide en trois secondes.
       texte: "Si la page ne reprend pas mot pour mot la promesse de l'annonce, il revient en arrière. Le clic est payé, le client est perdu. Une page, une promesse, un bouton."
     - titre: Trois questions, pas douze.
       texte: "Assez pour savoir si c'est un vrai projet et quand l'appeler. Chaque question en trop fait partir quelqu'un. Chaque question qui manque fait perdre une heure à vos commerciaux."
-    - titre: 22 h 06. Il reçoit une réponse dans la minute.
+    - titre: Il reçoit une réponse dans la minute.
       texte: "Personne ne rappelle à 22 h, et ce n'est pas grave. Un message WhatsApp automatique le remercie, reprend sa demande et lui propose un créneau. Le lendemain à 9 h 30, votre commercial l'appelle en sachant déjà ce qu'il cherche."
     - titre: Ce n'est pas l'annonce qui a vendu.
       texte: "C'est le chemin entier, sans trou : l'annonce, la page, le formulaire, la réponse, l'appel, le rendez-vous. Nous le construisons avec vos équipes, puis nous le pilotons chaque semaine avec vous."
@@ -61,7 +61,7 @@ pertes:
     phrase: Mes commerciaux rappellent des numéros qui ne répondent pas.
     texte: "La demande arrive à 22 h. Personne ne la voit avant le lendemain après-midi. Quand le commercial appelle enfin, le prospect ne décroche plus, ou il a déjà parlé à un concurrent."
     solution: "Ce que nous mettons en place avec vous : une réponse WhatsApp automatique dans la minute, qui propose un créneau, et des questions qui trient. Vos équipes rappellent le matin même, avec le contexte en main."
-    dessin: { demande: Demande, heure: "22 h 06", appel: Appel, avant: "Lendemain, 16 h", apres: "Lendemain, 9 h 30", trou: 18 heures sans réponse, vite: Réponse en 40 secondes, bulle_titre: "WhatsApp automatique, 22 h 06", bulle: "Demain 9 h 30, ça vous va ?", messagerie: Messagerie, decroche: Décroché }
+    dessin: { demande: Demande, heure: "22 h", appel: Appel, avant: "Lendemain, 16 h", apres: "Lendemain, 9 h 30", trou: 18 heures sans réponse, vite: Réponse en 40 secondes, bulle_titre: "WhatsApp automatique, 22 h 06", bulle: "Demain 9 h 30, ça vous va ?", messagerie: Messagerie, decroche: Décroché }
   attribution:
     phrase: Je paie des leads sans savoir lesquels signent.
     texte: "Les plateformes comptent les clics et les formulaires. Personne ne relie une vente à l'annonce qui l'a amenée, alors le budget continue de financer des annonces qui ne vendent rien."
@@ -165,8 +165,8 @@ cabinet:
 
 ressources:
   titre: Des ressources pour faire le travail vous-même.
-  texte: "Guides, outils et lettres écrits par Amira Dounassre, à partir de ce que nous voyons chaque semaine dans les comptes publicitaires de nos clients."
-  lien: Voir les ressources
+  texte: "Guides, skills Claude et lettre mensuelle, écrits par Amira Dounassre à partir de ce que nous voyons chaque semaine dans les comptes publicitaires de nos clients. Les premiers sont en préparation : inscrivez-vous pour les recevoir dès leur sortie."
+  lien: Être prévenu de la première
   liste:
     - { lettre: G, titre: Des guides à télécharger, texte: "Un sujet, une méthode, des exemples marocains." }
     - { lettre: S, titre: Des skills Claude prêts à l'emploi, texte: "Pour auditer une annonce ou une page en quelques minutes." }
@@ -192,4 +192,4 @@ faq:
 
 fin:
   titre: Le prochain point sur ce chemin, c'est vous.
-  texte: "45 minutes, offertes. Nous regardons vos annonces, votre page et ce qui se passe après une demande. Sous 48 heures, votre plan écrit."
+  texte: "45 minutes, offert. Nous regardons vos annonces, votre page et ce qui se passe après une demande. Sous 48 heures, votre plan écrit."

@@ -230,8 +230,8 @@
   .pc-res { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center; padding: 36px; }
   .pc-res h2 { margin-bottom: 12px; }
   .pc-res ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 12px; }
-  .pc-res li { display: grid; grid-template-columns: 44px 1fr; gap: 12px; align-items: start; font-family: var(--sans); }
-  .pc-res li i { width: 44px; height: 44px; border-radius: 6px; background: rgba(123, 97, 255, .12); display: grid; place-items: center; font: 400 18px/1 var(--display); font-style: normal; color: var(--brand); }
+  .pc-res li { display: grid; grid-template-columns: 14px 1fr; gap: 14px; align-items: start; font-family: var(--sans); }
+  .pc-res li i { width: 10px; height: 10px; margin-top: 7px; border-radius: 50%; background: var(--lead); flex: none; }
   .pc-res li b { display: block; }
   .pc-res li span { color: var(--ink-2); font-size: 15px; }
   @media (max-width: 860px) { .pc-res { grid-template-columns: 1fr; padding: 26px; } }
