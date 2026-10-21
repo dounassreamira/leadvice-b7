@@ -3,6 +3,7 @@ import '../styles/tokens.css';
 import '../styles/base.css';
 import '../styles/components.css';
 import '../styles/forms.css';
+import '../styles/parcours.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Icon from '../components/Icon.astro';
@@ -51,9 +52,9 @@ const ld = JSON.stringify({ '@context': 'https://schema.org', '@graph': graph })
   <link rel="canonical" href={canonical} />
   {noindex && <meta name="robots" content="noindex, follow" />}
   <script is:inline>(function(){var d=document.documentElement;d.classList.remove('no-js');d.classList.add('js');try{if(localStorage.getItem('lv-theme')==='dark')d.setAttribute('data-theme','dark')}catch(e){}if(matchMedia('(prefers-reduced-motion: reduce)').matches)d.classList.add('rm');if('scrollRestoration' in history){var n=performance.getEntriesByType&&performance.getEntriesByType('navigation')[0];if(!n||n.type!=='back_forward')history.scrollRestoration='manual'}})();</script>
-  <link rel="preload" href="/fonts/schibsted-grotesk.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="/fonts/literata.woff2" as="font" type="font/woff2" crossorigin />
-  <meta name="theme-color" content="#FBFAFD" />
+  <link rel="preload" href="/fonts/hanken-grotesk.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/young-serif.woff2" as="font" type="font/woff2" crossorigin />
+  <meta name="theme-color" content="#F6F5FB" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="icon" href="/favicon.ico" sizes="32x32" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />

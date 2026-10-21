@@ -23,7 +23,7 @@ const cur = (u: string) => (u === path ? 'page' : undefined);
               <a class="nl" href={n.url} aria-current={section === 'exp' ? (path === n.url ? 'page' : 'true') : undefined}>{n.libelle}</a>
               <button class="dd-t" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="dd-exp" aria-label={s.sous_menu_expertises.bouton}><Icon name="chev" size={12} /></button>
               <div class="dd-m" id="dd-exp" inert>
-                {sub.map((x) => <a href={x.url} aria-current={cur(x.url)}><b>{x.libelle}</b><span>{x.aide}</span></a>)}
+                {sub.map((x) => x.sep ? <p class="dd-sep">{x.sep}</p> : <a href={x.url} aria-current={cur(x.url)}><b>{x.libelle}</b><span>{x.aide}</span></a>)}
               </div>
             </div>
           ) : (
@@ -50,7 +50,7 @@ const cur = (u: string) => (u === path ? 'page' : undefined);
         <Fragment>
           <button class="m-exp" type="button" aria-expanded={section === 'exp' ? 'true' : 'false'} aria-controls="m-sub" data-m-exp>{n.libelle}<Icon name="chev" size={18} /></button>
           <div class="m-sub" id="m-sub" hidden={section !== 'exp'}>
-            {sub.map((x) => <a href={x.url} aria-current={cur(x.url)}>{x.libelle}</a>)}
+            {sub.filter((x) => !x.sep).map((x) => <a href={x.url} aria-current={cur(x.url)}>{x.libelle}</a>)}
           </div>
         </Fragment>
       ) : (

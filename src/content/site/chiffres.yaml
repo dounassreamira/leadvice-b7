@@ -1,9 +1,7 @@
 # Chiffres réels du cabinet (liste fermée, prompt maître 2.4). Aucun autre chiffre n'est affiché.
 cabinet:
-  - { valeur: "+1 000", compteur: 1000, prefixe: "+", texte: leads générés chaque mois pour nos clients }
-  - { valeur: "+10 893", compteur: 10893, prefixe: "+", texte: prospects générés }
-  - { valeur: "< 1 $", texte: "coût moyen par lead sur Meta Ads, constaté sur nos clients" }
-  - { valeur: "1 à 2 $", texte: "coût moyen par lead sur Google Ads, constaté sur nos clients" }
-  - { valeur: "126", compteur: 126, prefixe: "", texte: campagnes lancées }
-  - { valeur: "+23", compteur: 23, prefixe: "+", texte: clients accompagnés }
-  - { valeur: "+300", compteur: 300, prefixe: "+", texte: posts et créatives publicitaires produits }
+  - { valeur: "+80 000", compteur: 80000, prefixe: "+", texte: leads générés pour nos clients depuis 2022 }
+  - { valeur: "+1 400", compteur: 1400, prefixe: "+", texte: "leads par mois, en moyenne" }
+  - { valeur: "+42", compteur: 42, prefixe: "+", texte: entreprises accompagnées }
+  - { valeur: "< 10 DH", texte: "par lead sur Meta Ads, en moyenne (moins de 1 $)" }
+note: "Chiffres au 1er octobre 2026, tous clients confondus, de janvier 2022 à octobre 2026 : 80 000 leads sur 57 mois. Sur Google Ads, le coût moyen par lead est de 10 à 20 DH (1 à 2 $). Un lead n'est compté que s'il passe le formulaire qui qualifie. Le coût par lead varie selon le secteur : il est plus élevé pour un appartement que pour un produit du quotidien."

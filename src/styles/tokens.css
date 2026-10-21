@@ -2,7 +2,7 @@
    Toutes les valeurs visuelles vivent ici : aucun composant n'invente une couleur, une taille ou une durée.
    Le violet Leadvice reste la marque ; une encre violette remplace le noir ; le violet d'action porte les liens
    et le survol ; le jaune signal ne marque qu'un résultat. */
-@layer reset, tokens, base, layout, components, scenes, pages, utilities;
+@layer reset, tokens, base, layout, components, scenes, pages, theme, utilities;
 
 @font-face {
   font-family: "Schibsted Grotesk";
@@ -18,6 +18,22 @@
   font-display: swap;
   font-weight: 200 900;
   src: url("/fonts/literata.woff2") format("woff2-variations"), url("/fonts/literata.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Hanken Grotesk";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url("/fonts/hanken-grotesk.woff2") format("woff2-variations"), url("/fonts/hanken-grotesk.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Young Serif";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url("/fonts/young-serif.woff2") format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 /* Polices de repli calées sur les métriques des polices du site : le texte ne saute pas quand elles arrivent */
@@ -41,11 +57,11 @@
 @layer tokens {
   :root, .theme-light {
     /* couleurs par rôle, mode clair */
-    --paper: #FBFAFD;        /* fond */
-    --paper-2: #F1EEFB;      /* surface douce : encadrés, zones de saisie */
+    --paper: #F6F5FB;        /* fond */
+    --paper-2: #EEEBF8;      /* surface douce : encadrés, zones de saisie */
     --white: #FFFFFF;        /* surface : fenêtres, cartes, ateliers */
-    --ink: #1E0F52;          /* texte principal (encre violette, 16,2:1) */
-    --ink-2: #5B5770;        /* texte secondaire (6,6:1) */
+    --ink: #16131F;          /* texte principal (17,4:1) */
+    --ink-2: #57526A;        /* texte secondaire (6,9:1) */
     --ink-3: #9C97B5;        /* décor uniquement, jamais du texte à lire */
     --muted-text: #857F93;   /* mots pas encore « allumés » (texte qui s'allume) */
     --line: #E2DDF2;         /* filets, contours */
@@ -55,19 +71,19 @@
     --signal: #6B4EFF;       /* action : liens, survol des boutons, focus (4,9:1) */
     --lav: #B4A6FF;
     --lav-2: #E4DEFF;
-    --yellow: #FFC93C;       /* résultat uniquement */
-    --on-yellow: #1E0F52;
+    --yellow: #FFD3C4;       /* résultat uniquement : corail clair */
+    --on-yellow: #16131F;
     --success: #1E6B4E;
     --error: #B42318;
-    --btn: #301781;          /* bouton principal */
-    --btn-hover: #6B4EFF;
-    --btn-text: #FFFFFF;
-    --header-glass: rgba(251, 250, 253, .9);
-    --footer-bg: #1E0F52;
+    --btn: #FF7A59;          /* bouton principal : corail, texte encre (7,1:1) */
+    --btn-hover: #FF8F73;
+    --btn-text: #16131F;
+    --header-glass: rgba(255, 255, 255, .42);
+    --footer-bg: #130D33;
     --footer-text: #EDEAF4;
     --footer-muted: #9B8EC4;
     --footer-line: #2F2A40;
-    --violet-bg: #301781;
+    --violet-bg: #130D33;
     --violet-text: #F6F4FB;
     --violet-muted: #CFC6F5;
     --scroll-thumb: #C9C0E8;
@@ -83,9 +99,9 @@
     --glow-rgb: 123, 97, 255;
 
     /* typographie */
-    --display: "Schibsted Grotesk", "Schibsted Fallback", ui-sans-serif, system-ui, sans-serif;
-    --sans: "Schibsted Grotesk", "Schibsted Fallback", ui-sans-serif, system-ui, sans-serif;
-    --read: "Literata", "Literata Fallback", Georgia, "Times New Roman", serif;
+    --display: "Young Serif", "Literata Fallback", Georgia, serif;
+    --sans: "Hanken Grotesk", "Schibsted Fallback", ui-sans-serif, system-ui, sans-serif;
+    --read: "Hanken Grotesk", "Schibsted Fallback", ui-sans-serif, system-ui, sans-serif;
     --fs-display: clamp(2.9rem, 1.5rem + 5.6vw, 5.8rem);
     --fs-h1: clamp(2.4rem, 1.5rem + 3.8vw, 5rem);
     --fs-h2: clamp(2rem, 1.4rem + 2.6vw, 3.9rem);
@@ -99,7 +115,7 @@
     --fs-small: .875rem;
     --fs-legend: .8125rem;
     --fs-legal: .75rem;
-    --tracking-title: -.028em;
+    --tracking-title: -.02em;
     --tracking-stat: -.04em;
     --measure: 66ch;
 
@@ -110,7 +126,8 @@
     --hdr-h: 80px;
 
     /* formes */
-    --r-sharp: 2px;
+    --r-sharp: 6px;
+    --r-obj: 14px;
     --r-arch: 999px 999px 2px 2px;
     --r-round: 999px;
 
@@ -122,6 +139,15 @@
     --ease-in-out: cubic-bezier(.65, 0, .35, 1);
     --ease-signal: cubic-bezier(.7, 0, .2, 1);
     --press: scale(.96);
+
+    /* parcours */
+    --night: #130D33;        /* ouverture et bandes de nuit */
+    --thread: #7B61FF;       /* le fil : ce que Leadvice construit (décor) */
+    --lead: #FF7A59;         /* le point : la personne qui parcourt le chemin */
+    --frost: saturate(180%) blur(28px);
+    --glass-1: rgba(255, 255, 255, .66);
+    --glass-2: rgba(255, 255, 255, .42);
+    --glass-edge: rgba(255, 255, 255, .85);
 
     color-scheme: light;
   }
@@ -143,10 +169,13 @@
     --lav-2: #2C2452;
     --success: #6FD3A6;
     --error: #FF8A7A;
-    --btn: #4A2DC9;
-    --btn-hover: #5B3FE0;
-    --btn-text: #FFFFFF;
-    --header-glass: rgba(15, 10, 36, .9);
+    --btn: #FF7A59;
+    --btn-hover: #FF8F73;
+    --btn-text: #16131F;
+    --glass-1: rgba(40, 30, 80, .55);
+    --glass-2: rgba(40, 30, 80, .3);
+    --glass-edge: rgba(255, 255, 255, .12);
+    --header-glass: rgba(20, 14, 48, .45);
     --footer-bg: #0A0618;
     --violet-bg: #4A2DC9;
     --scroll-thumb: #2C2452;

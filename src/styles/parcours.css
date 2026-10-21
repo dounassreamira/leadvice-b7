@@ -1,0 +1,81 @@
+/* Thème « Parcours » : posé par-dessus le système B7 sans le casser.
+   Titres en Young Serif, interface en Hanken Grotesk, verre givré pour l'en-tête et les surfaces,
+   fil violet (ce que Leadvice construit) et point corail (la personne qui le parcourt). */
+@layer theme {
+  /* titres : une seule graisse, la personnalité vient du dessin de la lettre */
+  h1, h2, h3, .faq summary, .big-text, .scene .cap p, .sit p, .row :is(h2, h3), .step h3, .mnav > a, .m-exp, .cta-band h2 { font-weight: 400; }
+  h1 { line-height: 1.02; }
+  h2 { line-height: 1.04; }
+  .stat b { font-family: var(--display); font-weight: 400; }
+
+  /* fond : halos très doux qui donnent du relief au verre */
+  body { background:
+    radial-gradient(42vw 34vw at 88% 6%, rgba(180, 166, 255, .26), transparent 70%),
+    radial-gradient(38vw 30vw at 4% 38%, rgba(255, 122, 89, .07), transparent 70%),
+    radial-gradient(46vw 36vw at 92% 72%, rgba(123, 97, 255, .12), transparent 70%),
+    var(--paper);
+    background-attachment: fixed; }
+
+  /* boutons : corail, texte encre ; rayon d'objet */
+  .btn { border-radius: 10px; font-weight: 600; }
+  .btn-main { box-shadow: inset 0 1px 0 rgba(255, 255, 255, .35), 0 10px 24px -8px rgba(255, 122, 89, .45); }
+  .btn-ghost { border-radius: 10px; }
+
+  /* ---------- en-tête flottant en verre givré ---------- */
+  .hdr { inset: calc(12px + env(safe-area-inset-top, 0px)) 0 auto 0; padding-top: 0; pointer-events: none; }
+  .hdr-in { pointer-events: auto; width: min(1120px, calc(100% - 24px)); margin-inline: auto; padding: 8px 8px 8px 18px; border-radius: 14px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, .55), rgba(255, 255, 255, .28));
+    -webkit-backdrop-filter: var(--frost); backdrop-filter: var(--frost);
+    border: 1px solid rgba(255, 255, 255, .7); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .9), 0 8px 30px rgba(48, 23, 129, .08); transition: background .4s, border-color .4s, color .4s; }
+  .hdr.solid { background: none; box-shadow: none; -webkit-backdrop-filter: none; backdrop-filter: none; }
+  .hdr .progress { left: 50%; transform-origin: left; width: min(1120px, calc(100% - 24px)); margin-left: calc(min(1120px, calc(100% - 24px)) / -2); bottom: -6px; border-radius: 2px; }
+  .nav { gap: 22px; }
+  .nav .btn { min-height: 42px; padding: 0 16px; border-radius: 9px; }
+  .ux-btn { border-radius: 8px; }
+  .logo { letter-spacing: .08em; }
+  /* au-dessus d'une ouverture de nuit : verre sombre, texte clair */
+  .hdr.on-dark .hdr-in { color: #fff; background: linear-gradient(180deg, rgba(255, 255, 255, .16), rgba(255, 255, 255, .04)); border-color: rgba(255, 255, 255, .18); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .3), 0 8px 30px rgba(8, 4, 26, .2); }
+  .hdr.on-dark :is(.logo, .nav a.nl, .ux-btn, .dd-t, .menu-btn) { color: #fff; }
+  .hdr.on-dark .nav a.nl::after { background: #fff; }
+  .dd-m { border-radius: 12px; top: calc(100% + 18px); background: linear-gradient(180deg, rgba(255, 255, 255, .92), rgba(255, 255, 255, .82)); -webkit-backdrop-filter: var(--frost); backdrop-filter: var(--frost); }
+  .dd-m a { border-radius: 8px; }
+  .dd-m .dd-sep { font: 600 .72rem/1 var(--sans); letter-spacing: .06em; color: var(--ink-2); padding: 12px 14px 6px; border-top: 1px solid var(--line); margin-top: 4px; }
+  :is([data-theme="dark"], .theme-dark) .hdr-in { background: linear-gradient(180deg, rgba(40, 30, 80, .6), rgba(20, 14, 48, .4)); border-color: rgba(255, 255, 255, .12); }
+  :is([data-theme="dark"], .theme-dark) .dd-m { background: rgba(26, 19, 56, .92); }
+
+  /* ---------- surfaces en verre givré ---------- */
+  .frost { background: linear-gradient(180deg, var(--glass-1), var(--glass-2)); -webkit-backdrop-filter: var(--frost); backdrop-filter: var(--frost);
+    border: 1px solid var(--glass-edge); border-radius: var(--r-sharp); box-shadow: 0 1px 2px rgba(48, 23, 129, .04), 0 16px 36px rgba(48, 23, 129, .07); }
+  .sit { border-radius: var(--r-sharp); background: linear-gradient(180deg, var(--glass-1), var(--glass-2)); -webkit-backdrop-filter: var(--frost); backdrop-filter: var(--frost); border: 1px solid var(--glass-edge); box-shadow: 0 16px 36px rgba(48, 23, 129, .07); }
+  .sit::before { background: var(--lead); box-shadow: none; }
+  .jump a { border-radius: 8px; }
+  .dd-m, .ck, .srch-in { border-radius: 12px; }
+
+  /* pas de surligneur sur un mot isolé des titres */
+  .lv-hl, .lv-hl.on { background: none !important; color: inherit !important; padding: 0; margin: 0; }
+
+  /* liens texte et surlignage de résultat */
+  .tlink { color: var(--signal); }
+  .stat b { background: none; color: var(--brand); padding: 0; }
+  :is([data-theme="dark"], .theme-dark) .stat b { background: none; color: var(--lav); }
+
+  /* bandes de nuit (ancienne bande violette) */
+  .violet { background: var(--night); position: relative; overflow: clip; }
+  .violet::before { content: ""; position: absolute; inset: -30%; background: radial-gradient(35% 40% at 78% 30%, rgba(123, 97, 255, .42), transparent 70%), radial-gradient(30% 30% at 12% 85%, rgba(255, 122, 89, .16), transparent 70%); pointer-events: none; }
+  .violet > * { position: relative; }
+
+  /* méthode : le rail devient le fil */
+  .rail-bar i { background: var(--thread); box-shadow: none; }
+  .step.on .n { color: var(--thread); }
+
+  /* FAQ en verre */
+  .faq summary .pm { color: var(--thread); }
+
+  /* bouton flottant : verre sombre et point corail */
+  .fab { border-radius: 12px; overflow: hidden; background: rgba(19, 13, 51, .86); -webkit-backdrop-filter: var(--frost); backdrop-filter: var(--frost); }
+  .fab::before { background: var(--lead); box-shadow: none; }
+  .btt { border-radius: 10px; }
+
+  /* pied de page de nuit */
+  .ftr { background: var(--night); }
+}

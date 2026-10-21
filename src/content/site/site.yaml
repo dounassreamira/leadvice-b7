@@ -28,16 +28,15 @@ fondatrices:
     linkedin: https://www.linkedin.com/in/nada-moujibi
 
 cta:
-  principal: Demander un diagnostic
-  navigation: Demander un diagnostic
-  sous_cta: 45 minutes, offert. Réponse sous un jour ouvré.
+  principal: Réserver mon diagnostic offert
+  navigation: Diagnostic offert
+  sous_cta: 45 minutes, offert. Votre plan écrit sous 48 heures.
 
 navigation:
   - { url: /expertises/, libelle: Expertises, cle: exp }
   - { url: /realisations/, libelle: Réalisations, cle: rea }
   - { url: /cabinet/, libelle: Le cabinet, cle: cab }
-  - { url: /insights/, libelle: Insights, cle: ins }
-  - { url: /ateliers/, libelle: Ateliers, cle: ate }
+  - { url: /ressources/, libelle: Ressources, cle: res }
 
 sous_menu_expertises:
   bouton: Afficher les expertises
@@ -48,6 +47,10 @@ sous_menu_expertises:
     - { url: /expertises/acquisition/, libelle: Acquisition, aide: "Meta Ads, Google Ads, leads qualifiés" }
     - { url: /expertises/pilotage/, libelle: Pilotage, aide: Des chiffres qui deviennent des décisions }
     - { url: /expertises/sites-web/, libelle: Sites web, aide: Des pages qui transforment les visites en demandes }
+    - { sep: Par secteur }
+    - { url: /secteurs/immobilier/, libelle: Immobilier, aide: Des acheteurs qui viennent en visite }
+    - { url: /secteurs/b2b/, libelle: Grands comptes et B2B, aide: Un suivi jusqu'à l'opportunité }
+    - { url: /secteurs/e-commerce/, libelle: Marques et e-commerce, aide: Des commandes livrées, pas des paniers }
 
 menu_mobile:
   ouvrir: Menu
@@ -63,7 +66,7 @@ entete:
   evitement: Aller au contenu
 
 pied:
-  titre: Le bon client est déjà quelque part. Allons le chercher.
+  titre: Parlons du chemin de vos clients.
   mentions: Mentions légales
   confidentialite: Confidentialité
   colonnes:
@@ -72,7 +75,8 @@ pied:
         - { url: /expertises/, libelle: Expertises }
         - { url: /realisations/, libelle: Réalisations }
         - { url: /cabinet/, libelle: Le cabinet }
-        - { url: /insights/, libelle: Insights }
+        - { url: /ressources/, libelle: Ressources }
+        - { url: /insights/, libelle: Articles }
         - { url: /ateliers/, libelle: Ateliers }
     - titre: Expertises
       liens:
@@ -81,10 +85,13 @@ pied:
         - { url: /expertises/acquisition/, libelle: Acquisition }
         - { url: /expertises/pilotage/, libelle: Pilotage }
         - { url: /expertises/sites-web/, libelle: Sites web }
+        - { url: /secteurs/immobilier/, libelle: Immobilier }
+        - { url: /secteurs/b2b/, libelle: Grands comptes et B2B }
+        - { url: /secteurs/e-commerce/, libelle: Marques et e-commerce }
     - titre: Parlons-en
       contact: true
       liens:
-        - { url: /diagnostic/, libelle: Demander un diagnostic }
+        - { url: /diagnostic/, libelle: Réserver mon diagnostic offert }
     - titre: Informations
       liens:
         - { url: /mentions-legales/, libelle: Mentions légales }
@@ -96,8 +103,8 @@ pied:
   copie: Copié
 
 flottant:
-  titre: Demander un diagnostic
-  sous_titre: 45 minutes, offert
+  titre: Diagnostic offert
+  sous_titre: 45 minutes, plan écrit sous 48 h
 
 retour_haut: Revenir en haut de la page
 
@@ -118,7 +125,7 @@ recherche:
   fermer: Échap
   vide: "Tapez un mot : par exemple « coût par lead », « angle » ou « site »."
   aucun: Aucun résultat. Essayez un autre mot, ou parlons-en directement.
-  aucun_lien: Demander un diagnostic
+  aucun_lien: Réserver mon diagnostic offert
   chargement: Chargement de l'index
 
 confirmation_sortie:
