@@ -1,0 +1,50 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import PageHero from '../../components/PageHero.astro';
+import LeadForm from '../../components/LeadForm.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import { page, type Data } from '../../lib/content';
+import '../../styles/pages/ressources.css';
+
+const d = await page('ressources');
+const crumb = [{ name: 'Accueil', url: '/' }, { name: d.fil, url: '/ressources/' }];
+const dispo = (await getCollection('ressources')).filter((r) => !r.data.brouillon && r.data.afficher_dans_ressources);
+const nom = (v: string) => (d.types as Data[]).find((t) => t.valeur === v)?.nom ?? '';
+const jsonld = [{ '@context': 'https://schema.org', '@type': 'CollectionPage', name: d.h1, description: d.seo.description, url: 'https://leadvice.org/ressources/' }];
+---
+<Base title={d.seo.title} description={d.seo.description} og={d.seo.og} section="res" crumb={crumb} jsonld={jsonld}>
+  <PageHero crumb={crumb} h1={d.h1} lead={d.reponse} />
+
+  <section class="wrap sec sec-top0">
+    <h2 class="sr-only">{d.types_titre}</h2>
+    <div class="rs-types">
+      {(d.types as Data[]).map((t) => <div><h3>{t.nom}</h3><p>{t.texte}</p></div>)}
+    </div>
+  </section>
+
+  {dispo.length > 0 && (
+    <section class="wrap sec sec-top0">
+      <h2 class="h-gap">{d.liste_titre}</h2>
+      <div class="rs-list">
+        {dispo.map((r) => <a class="frost" href={`/r/${r.id}/?utm_source=site&utm_campaign=ressources`}><span class="small">{nom(r.data.format)}</span><h3>{r.data.titre}</h3><p>{r.data.resume}</p><span class="tlink">{d.lire}</span></a>)}
+      </div>
+    </section>
+  )}
+
+  <section class="wrap sec sec-top0">
+    <div class="rs-wait frost">
+      <h2>{dispo.length ? d.inscription.titre : d.attente.titre}</h2>
+      <p>{dispo.length ? d.inscription.texte : d.attente.texte}</p>
+      <LeadForm id="rs" magnet="lettre" t={d.form} bouton={d.form.bouton} choix={d.types as Data[]} />
+    </div>
+  </section>
+
+  <section class="wrap sec sec-top0 rs-art">
+    <h2>{d.articles.titre}</h2>
+    <p>{d.articles.texte}</p>
+    <a class="tlink" href={d.articles.url}>{d.articles.lien}</a>
+  </section>
+
+  <CtaBand titre={d.cloture} />
+</Base>

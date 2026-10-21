@@ -1,0 +1,39 @@
+---
+/* Page d'atterrissage d'un lead magnet : non indexée, hors menu, réservée aux liens des publications. */
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import LeadForm from '../../components/LeadForm.astro';
+import { page, site } from '../../lib/content';
+import '../../styles/pages/ressources.css';
+
+export async function getStaticPaths() {
+  const all = await getCollection('ressources');
+  return all.filter((r) => import.meta.env.DEV || !r.data.brouillon).map((r) => ({ params: { slug: r.id }, props: { r: r.data, slug: r.id } }));
+}
+const { r, slug } = Astro.props;
+const d = await page('ressources');
+const s = await site();
+const t = { ...d.form, ...d.gabarit };
+---
+<Base title={`${r.titre} | Leadvice`} description={r.promesse} og="accueil" noindex fab={false} thread={false}>
+  <section class="wrap rm-hero">
+    <div class="rm-txt">
+      <p class="small rm-tag">{r.etiquette}</p>
+      <h1>{r.titre}</h1>
+      <p class="lead">{r.promesse}</p>
+      <ul class="rm-pts">{r.points.map((p) => <li>{p}</li>)}</ul>
+      <LeadForm id="rm" magnet={slug} t={t} bouton={r.bouton} prenom done={d.gabarit.ok} fichier={r.fichier || undefined} fichierLabel={d.gabarit.telecharger} />
+      <p class="small">{d.gabarit.rgpd}</p>
+    </div>
+    <div class="rm-cover" aria-hidden="true">
+      <span class="rm-k">Leadvice</span>
+      <b>{r.couverture}</b>
+      <span class="rm-a">{d.gabarit.auteur}</span>
+    </div>
+  </section>
+  <section class="wrap sec rm-next">
+    <h2>{d.gabarit.apres_titre}</h2>
+    <p>{d.gabarit.apres_texte}</p>
+    <a class="btn btn-main" href="/diagnostic/">{s.cta.principal}</a>
+  </section>
+</Base>

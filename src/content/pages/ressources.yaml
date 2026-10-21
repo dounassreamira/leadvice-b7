@@ -1,0 +1,49 @@
+seo:
+  title: Ressources acquisition client au Maroc | Leadvice
+  description: Guides, skills Claude et lettre mensuelle pour mieux recruter vos clients au Maroc. Des méthodes tirées de comptes publicitaires réels, à appliquer vous-même.
+  og: accueil
+fil: Ressources
+h1: Des méthodes pour faire le travail vous-même.
+reponse: Ce que nous voyons chaque semaine dans les comptes publicitaires de nos clients, transformé en méthodes que vous pouvez appliquer seul. Écrit par Amira Dounassre, avec des exemples marocains.
+types_titre: Trois formats
+types:
+  - nom: Guides
+    texte: Un sujet précis, une méthode pas à pas, des modèles à recopier. En PDF, à garder.
+    valeur: guides
+  - nom: Skills Claude
+    texte: Des instructions prêtes à l'emploi pour faire relire une annonce, une page ou un formulaire par Claude.
+    valeur: skills
+  - nom: Lettre mensuelle
+    texte: Une fois par mois, ce qui marche en acquisition au Maroc, avec les chiffres et sans jargon.
+    valeur: lettre
+liste_titre: Disponibles maintenant
+lire: Recevoir
+attente:
+  titre: Les premières ressources sont en préparation.
+  texte: Laissez votre e-mail et cochez ce qui vous intéresse. Vous recevrez la première dès sa sortie, puis la lettre une fois par mois. Désinscription en un clic.
+inscription:
+  titre: Recevoir les prochaines ressources
+  texte: Une lettre par mois, et chaque nouvelle ressource dès sa sortie. Désinscription en un clic.
+form:
+  email: Votre e-mail professionnel
+  bouton: Être prévenu
+  interets: Ce qui vous intéresse
+  ok: C'est noté. Vous recevrez la première ressource dès sa sortie.
+  erreur: L'inscription n'a pas abouti. Réessayez, ou écrivez-nous à contact@leadvice.org.
+  invalide: Vérifiez l'adresse e-mail.
+articles:
+  titre: En attendant, nos articles
+  texte: Des réponses courtes aux questions que nos clients posent le plus.
+  lien: Lire les articles
+  url: /insights/
+cloture: Vous préférez qu'on regarde votre cas précis ?
+# page d'atterrissage d'une ressource (gabarit /r/<nom>/, non indexé, hors menu)
+gabarit:
+  prenom: Prénom
+  email: E-mail professionnel
+  rgpd: Vous recevez la ressource par e-mail, puis une lettre par mois. Désinscription en un clic.
+  ok: C'est envoyé. Regardez votre boîte de réception dans quelques minutes.
+  telecharger: Télécharger maintenant
+  auteur: Par Amira Dounassre
+  apres_titre: Et ensuite ?
+  apres_texte: Si vous voulez qu'on applique la méthode à votre entreprise, le diagnostic dure 45 minutes et il est offert.

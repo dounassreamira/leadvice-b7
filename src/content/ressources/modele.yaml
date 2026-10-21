@@ -1,0 +1,18 @@
+# Modèle de lead magnet. Pour en créer un : copier ce fichier sous un nom court (ex. sept-trous.yaml),
+# remplir les champs, passer brouillon à false. La page est servie à /r/<nom>/, non indexée, hors menu.
+# Lien à mettre dans la publication LinkedIn : /r/<nom>/?utm_source=linkedin&utm_campaign=<nom>
+# Le fichier (PDF, .md du skill) va dans public/ressources/ ; l'e-mail d'envoi est géré par l'outil d'envoi (Brevo).
+brouillon: true
+format: guides
+etiquette: Guide gratuit, 12 pages
+titre: Le titre dit le résultat obtenu.
+promesse: Une phrase qui reprend mot pour mot la promesse de la publication qui a amené le visiteur ici.
+points:
+  - Ce que la personne saura faire après la lecture
+  - Un modèle ou une grille qu'elle pourra réutiliser
+  - Un exemple tiré d'un compte publicitaire marocain
+bouton: Recevoir le guide
+couverture: Le titre du guide sur la couverture
+fichier: ""
+afficher_dans_ressources: true
+resume: Une phrase pour la carte de la page Ressources.

@@ -1,7 +1,7 @@
 ---
 /* Chiffres du cabinet : uniquement ceux de la liste fermée (src/content/site/chiffres.yaml). */
 import { site, type Data } from '../lib/content';
-interface Props { set?: 'cabinet' | 'kettani' }
+interface Props { set?: 'cabinet' }
 const { set = 'cabinet' } = Astro.props;
 const c = await site('chiffres');
 const list = c[set] as Data[];

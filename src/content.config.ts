@@ -33,6 +33,18 @@ const insights = defineCollection({
   }),
 });
 
+/* Ressources (lead magnets) : une fiche YAML par ressource, page d'atterrissage /r/<nom>/ non indexée. */
+const ressources = defineCollection({
+  loader: glob({ pattern: '*.yaml', base: './src/content/ressources' }),
+  schema: z.object({
+    brouillon: z.boolean().default(true),
+    format: z.enum(['guides', 'skills', 'lettre']),
+    etiquette: z.string(), titre: z.string(), promesse: z.string(),
+    points: z.array(z.string()).default([]), bouton: z.string(), couverture: z.string(),
+    fichier: z.string().default(''), afficher_dans_ressources: z.boolean().default(true), resume: z.string(),
+  }),
+});
+
 /* Ateliers : données et textes des deux ateliers interactifs (clients fictifs, options, textes d'interface). */
 const ateliers = defineCollection({
   loader: glob({ pattern: '*.json', base: './src/content/ateliers' }),
@@ -50,4 +62,4 @@ const legal = defineCollection({
   }),
 });
 
-export const collections = { site, pages, insights, legal, ateliers };
+export const collections = { site, pages, insights, legal, ateliers, ressources };

@@ -1,0 +1,25 @@
+---
+/* Formulaire d'inscription à une ressource : e-mail (et prénom si demandé), champ piège, choix d'intérêts facultatifs. */
+import type { Data } from '../lib/content';
+interface Props { magnet: string; t: Data; bouton: string; prenom?: boolean; choix?: Data[]; done?: string; fichier?: string; fichierLabel?: string; id: string }
+const { magnet, t, bouton, prenom = false, choix = [], done, fichier, fichierLabel, id } = Astro.props;
+---
+<div class="lf">
+  <form class="lf-f" data-lead data-magnet={magnet} data-ok={t.ok} data-err={t.erreur} data-invalid={t.invalide} novalidate>
+    {choix.length > 0 && (
+      <fieldset class="lf-c"><legend>{t.interets}</legend>
+        {choix.map((c) => <label><input type="checkbox" name="interets" value={c.valeur} checked={c.valeur === 'lettre'} /> {c.nom}</label>)}
+      </fieldset>
+    )}
+    <div class="lf-row">
+      {prenom && <><label for={`${id}-p`} class="sr-only">{t.prenom}</label><input id={`${id}-p`} name="prenom" autocomplete="given-name" placeholder={t.prenom} maxlength="80" /></>}
+      <label for={`${id}-e`} class="sr-only">{t.email}</label>
+      <input id={`${id}-e`} name="email" type="email" autocomplete="email" placeholder={t.email} required maxlength="200" />
+      <input type="text" name="site" tabindex="-1" autocomplete="off" class="sr-only" aria-hidden="true" />
+      <button type="submit" class="btn btn-main">{bouton}</button>
+    </div>
+  </form>
+  <p class="small lf-m" role="status" data-lead-msg></p>
+  {done && <div class="lf-done" data-lead-done hidden tabindex="-1"><p>{done}</p>{fichier && <a class="btn btn-ghost" href={fichier} download>{fichierLabel}</a>}</div>}
+</div>
+<script>import '../scripts/lead-form';</script>
