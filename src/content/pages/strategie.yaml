@@ -3,8 +3,8 @@ seo:
   description: 'Audit marketing, positionnement, structuration de l''offre et plan d''action : Leadvice clarifie votre stratégie avant d''investir dans l''acquisition.'
   og: strategie
 fil: Stratégie
-h1: Comprendre<br/>avant d'agir.
-reponse: 'Le conseil en stratégie marketing de Leadvice consiste à clarifier trois choses avant de dépenser en publicité : à qui vous vendez, ce qui vous distingue et par quoi commencer. Nous auditons l''existant, nous tranchons les priorités avec la direction, et nous remettons un plan d''action que vos équipes peuvent exécuter dès le lendemain.'
+h1: Décider avant de dépenser.
+reponse: "Le conseil en stratégie marketing de Leadvice tranche trois questions avant le premier dirham de publicité : à qui vous vendez, ce qui vous rend préférable, et par quoi commencer. Nous auditons l'existant, nous décidons des priorités avec la direction, et nous remettons un plan d'action que vos équipes exécutent dès le lendemain."
 scene:
   nom: knot
   len: 220
@@ -61,7 +61,7 @@ faq:
     a:
     - Les fondatrices, directement. Amira Dounassre intervient sur tout ce qui touche à l'acquisition ; Nada Moujibi pilote les missions de stratégie et d'audit.
 cloture:
-  titre: Parlons de votre croissance.
+  titre: Commençons par votre chemin.
   texte: 45 minutes, offert. Nous regardons vos campagnes, vos chiffres et votre offre. Vous repartez avec ce qui freine votre acquisition et par quoi commencer.
 suivante: creation
 service: Conseil en stratégie marketing

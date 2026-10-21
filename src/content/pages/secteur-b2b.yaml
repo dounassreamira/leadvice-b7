@@ -1,0 +1,57 @@
+# Page secteur Grands comptes et B2B. Ton narratif : plusieurs décideurs, un cycle long.
+seo:
+  title: "Génération de leads B2B au Maroc : grands comptes et services | Leadvice"
+  description: "Banques, transport, services B2B : Leadvice construit des campagnes qui parlent à chaque décideur et un suivi jusqu'à l'opportunité signée. Diagnostic offert."
+  og: accueil
+fil: Grands comptes et B2B
+service: Génération de leads B2B et grands comptes
+h1: Convaincre chaque décideur, pas seulement le premier.
+reponse: "En B2B, une vente passe par plusieurs personnes : la direction, les achats, les équipes techniques, la finance. Leadvice construit des campagnes qui parlent à chacune, avec le bon contenu au bon moment, et un suivi qui accompagne le cycle jusqu'à l'opportunité signée."
+scene:
+  type: b2b
+  aria: "Plusieurs décideurs, chacun touché par un message, qui se retrouvent autour d'une même opportunité"
+  etapes:
+    - { de: 0, a: 0.3, texte: "Une décision B2B, ce sont plusieurs personnes." }
+    - { de: 0.3, a: 0.6, texte: "Chacune a sa question. Chacune reçoit sa réponse." }
+    - { de: 0.6, a: 0.85, texte: "Elles finissent autour de la même table." }
+    - { de: 0.85, a: 1.01, texte: "Et l'opportunité avance, parce que personne n'a été oublié." }
+  roles: [Direction, Achats, Technique, Finance, Métier]
+  centre: Opportunité
+chemin:
+  titre: Le chemin d'une décision B2B.
+  etapes:
+    - { titre: Contenu, texte: "Un guide, une étude, un cas : un contenu utile qui attire le bon profil, sur LinkedIn, Google ou Meta." }
+    - { titre: Premier échange, texte: "Une demande qualifiée : taille d'entreprise, besoin, échéance. Votre équipe sait à qui elle parle." }
+    - { titre: Comité, texte: "Les autres décideurs reçoivent les réponses à leurs propres questions, au rythme du cycle." }
+    - { titre: Opportunité, texte: "Le suivi relie chaque contrat signé aux campagnes qui l'ont initié." }
+pertes:
+  titre: Là où les opportunités se perdent.
+  situations:
+    - "« Nos campagnes touchent des étudiants et des indépendants, pas des décideurs. »"
+    - "« Le premier contact est bon, puis le dossier s'arrête au comité. »"
+    - "« Le cycle dure six mois : impossible de savoir quelle campagne a vraiment servi. »"
+faisons:
+  titre: Ce que nous mettons en place.
+  items:
+    - { titre: Ciblage des décideurs, texte: "LinkedIn, Google et Meta, avec des audiences construites par fonction, secteur et taille d'entreprise." }
+    - { titre: Contenus par rôle, texte: "Des messages différents pour la direction, les achats et les équipes techniques, parce qu'ils ne cherchent pas la même chose." }
+    - { titre: Formulaires qualifiants, texte: "Des questions qui séparent un projet d'une simple curiosité, sans faire fuir les vrais acheteurs." }
+    - { titre: Suivi sur un cycle long, texte: "Relances, contenus de maturation et attribution des opportunités aux campagnes, même quand la signature arrive des mois plus tard." }
+clients:
+  titre: Ils nous ont fait confiance.
+  logos: [royal-air-maroc, attijariwafa-bank, itroad]
+faq:
+  titre: Vos questions.
+  questions:
+    - q: LinkedIn est-il indispensable en B2B ?
+      a: "Souvent, mais pas toujours. LinkedIn cible très bien les fonctions, à un coût plus élevé. Google capte ceux qui cherchent déjà une solution. Nous choisissons selon votre cible et votre budget."
+    - q: Comment mesurer une campagne quand le cycle dure des mois ?
+      a: "En suivant chaque demande jusqu'à son issue dans votre outil commercial, puis en reliant les opportunités signées aux campagnes qui les ont initiées."
+    - q: Travaillez-vous avec de grandes entreprises ?
+      a: "Oui : une compagnie aérienne, une banque et des sociétés de services font partie de nos clients."
+lire:
+  - meta-ads-ou-google-ads
+  - cpl-cpa-cout-par-opportunite
+cloture:
+  titre: Parlons de votre cycle de vente.
+  texte: "45 minutes, offertes. Nous regardons vos campagnes, vos contenus et votre suivi commercial. Votre plan écrit sous 48 heures."

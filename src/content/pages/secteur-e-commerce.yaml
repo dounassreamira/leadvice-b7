@@ -1,0 +1,56 @@
+# Page secteur Marques et e-commerce. Ton narratif : une commande n'est gagnée qu'à la livraison.
+seo:
+  title: "Publicité e-commerce au Maroc : commandes confirmées et livrées | Leadvice"
+  description: "Marques et boutiques en ligne : Leadvice pilote vos campagnes Meta Ads et Google Ads sur les commandes confirmées et livrées, pas seulement les paniers. Diagnostic offert."
+  og: accueil
+fil: Marques et e-commerce
+service: Acquisition e-commerce et paiement à la livraison
+h1: Des commandes livrées, pas seulement des paniers.
+reponse: "Au Maroc, une grande partie des commandes se paient à la livraison. Une commande passée n'est donc pas une vente : il faut qu'elle soit confirmée, expédiée, puis acceptée à la porte. Leadvice pilote vos campagnes sur ce qui compte vraiment, les commandes livrées, et réduit les pertes à chaque étape."
+scene:
+  type: ecom
+  aria: "Des colis passent de la commande à la livraison ; certains tombent en route"
+  etapes:
+    - { de: 0, a: 0.3, texte: "Les commandes arrivent. Le tableau de bord se réjouit." }
+    - { de: 0.3, a: 0.6, texte: "Certaines ne sont jamais confirmées." }
+    - { de: 0.6, a: 0.85, texte: "D'autres sont refusées à la porte." }
+    - { de: 0.85, a: 1.01, texte: "Seules les commandes livrées paient la publicité. C'est elles que nous comptons." }
+  etapes_chemin: [Commande, Confirmation, Expédition, Livraison]
+chemin:
+  titre: Le chemin d'une commande.
+  etapes:
+    - { titre: Annonce, texte: "Un produit, un angle, une preuve. La vidéo qui montre le produit en main vend mieux que la photo parfaite." }
+    - { titre: Page produit, texte: "Prix clair, frais de livraison annoncés, avis, et un bouton qui ne laisse pas de doute." }
+    - { titre: Confirmation, texte: "Un message ou un appel rapide pour confirmer l'adresse et l'intention : c'est là que se joue le taux de livraison." }
+    - { titre: Livraison, texte: "Suivi des refus et des retours par campagne, pour couper les audiences qui commandent sans acheter." }
+pertes:
+  titre: Là où les ventes se perdent.
+  situations:
+    - "« Le gestionnaire de publicités affiche des centaines de commandes, la caisse beaucoup moins. »"
+    - "« Un tiers des colis reviennent, et on ne sait pas d'où viennent ces commandes. »"
+    - "« Nos publicités font des likes et des commentaires, mais peu d'achats. »"
+faisons:
+  titre: Ce que nous mettons en place.
+  items:
+    - { titre: Campagnes Meta Ads et Google Ads, texte: "Une structure par produit et par angle, optimisée sur les commandes confirmées dès que vos données le permettent." }
+    - { titre: Créations qui vendent, texte: "Vidéos produit, avis clients réels, démonstrations : des formats testés chaque semaine." }
+    - { titre: Pages produit, texte: "Des pages rapides, pensées pour le mobile et pour le paiement à la livraison." }
+    - { titre: Confirmation et suivi des livraisons, texte: "Avec vos équipes ou votre prestataire : confirmation rapide, suivi des refus et des retours, et retour de ces données vers les campagnes." }
+clients:
+  titre: Ils nous ont fait confiance.
+  logos: [zeya, beadsbox, milla, frayin]
+faq:
+  titre: Vos questions.
+  questions:
+    - q: Pourquoi suivre les commandes livrées plutôt que les achats ?
+      a: "Parce qu'avec le paiement à la livraison, une commande non confirmée ou refusée ne rapporte rien et coûte la livraison. Optimiser sur les achats déclarés peut faire grossir les retours."
+    - q: Faut-il une boutique Shopify ou WooCommerce ?
+      a: "Non. Nous travaillons avec la plateforme que vous avez déjà, tant qu'on peut y mesurer les commandes et leur statut."
+    - q: Gérez-vous aussi les réseaux sociaux organiques ?
+      a: "Nous nous concentrons sur l'acquisition payante et sur ce qui transforme une visite en commande livrée. Nous pouvons conseiller votre équipe sur le reste."
+lire:
+  - trouver-le-bon-angle
+  - plus-de-leads-ne-veut-pas-dire-plus-de-clients
+cloture:
+  titre: Parlons de vos commandes livrées.
+  texte: "45 minutes, offertes. Nous regardons vos campagnes, vos pages produit et votre taux de livraison. Votre plan écrit sous 48 heures."

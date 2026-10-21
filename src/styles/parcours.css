@@ -76,6 +76,17 @@
   .fab::before { background: var(--lead); box-shadow: none; }
   .btt { border-radius: 10px; }
 
+  /* cartes empilées : opaques, sans filtre (le filtre GSAP les noircit sur fond fixe) */
+  main [data-stack] .card { filter: none !important; background: #FAFAFD; border: 1px solid var(--line); }
+  :is([data-theme="dark"], .theme-dark) main [data-stack] .card { background: #1A1338; }
+
+  /* pied de page : la bande d'appel est juste au-dessus, le titre reste discret */
+  .ftr h2 { font-size: clamp(1.6rem, 1rem + 1.8vw, 2.6rem); max-width: 30ch; }
+
+  /* portraits : carrés, centrés sur le visage */
+  .arch { border-radius: var(--r-sharp); aspect-ratio: 1 / 1; }
+  .arch img, .arch svg { object-position: 50% 24%; }
+
   /* pied de page de nuit */
   .ftr { background: var(--night); }
 }

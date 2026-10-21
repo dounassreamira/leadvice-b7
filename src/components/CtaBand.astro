@@ -9,6 +9,6 @@ const { titre, texte = s.cta.sous_cta, bouton = s.cta.principal } = Astro.props;
   <div class="cta-band">
     <h2 data-rise set:html={titre} />
     {texte && <p class="lead">{texte}</p>}
-    <a class="btn btn-light" href="/diagnostic/">{bouton}</a>
+    <a class="btn btn-main" href="/diagnostic/">{bouton}</a>
   </div>
 </section>

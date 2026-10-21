@@ -91,8 +91,22 @@ const groups = {
       </form>
     </div>
   </div>
+
+  <section class="tw-intro wrap" data-pagefind-ignore>
+    <h2 data-rise>{d.rapport.titre}</h2>
+    <p class="lead">{d.rapport.texte}</p>
+    <div class="tw-who"><label for="tw-co">{d.rapport.label}</label><input id="tw-co" maxlength="32" autocomplete="organization" placeholder={d.rapport.defaut} /></div>
+    <p class="small">{d.rapport.exemple}</p>
+  </section>
+  <section class="tw-story" aria-label={d.rapport.aria} data-tw data-src={d.rapport.source} data-def={d.rapport.defaut}>
+    <div class="tw-stage">
+      <div class="tw-window"><div class="tw-paper" aria-hidden="true"></div><div class="tw-platen"></div><div class="tw-bell" aria-hidden="true">ding</div></div>
+      <div class="tw-kb" aria-hidden="true"></div>
+    </div>
+  </section>
 </Base>
 <script>
+  import '../../scripts/rapport';
   import { initDiag } from '../../scripts/diag';
   const f = document.querySelector<HTMLFormElement>('[data-diag]');
   if (f) initDiag(f);

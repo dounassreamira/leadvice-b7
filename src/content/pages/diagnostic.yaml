@@ -47,3 +47,49 @@ retour_page:
   robot: "La vérification anti-robots n'a pas abouti. Réessayez dans un instant."
   envoi: "L'envoi n'a pas abouti. Réessayez, ou écrivez-nous à contact@leadvice.org."
 piege: Ne remplissez pas ce champ
+rapport:
+  titre: Votre plan, tapé pour vous.
+  texte: "Pas de modèle, pas de rapport généré. Après les 45 minutes, nous écrivons ce qui freine vos ventes et ce qu'il faut changer, semaine par semaine. Écrivez le nom de votre entreprise, puis faites défiler : voici à quoi il ressemble."
+  label: Pour quelle entreprise ?
+  defaut: Votre entreprise
+  exemple: Exemple de plan. Les chiffres sont illustratifs.
+  aria: "Exemple de plan d'acquisition, tapé à la machine au fil du défilement"
+  # ~ : ruban rouge ; * : gras ; # : barre ; {faux|juste} : tapé, barré de x, puis corrigé ; {nom} : entreprise
+  source: |-
+    *LEADVICE*, Casablanca
+    Plan d'acquisition
+
+    Préparé pour : *{nom}*
+
+
+    *1. CE QUE NOUS AVONS REGARDÉ*
+
+    Vos annonces des 90 derniers jours, votre page d'arrivée, votre formulaire, et surtout ce qui se passe après une demande.
+
+
+    *2. OÙ PART VOTRE BUDGET*
+
+    ~38 %~  ##########  audiences trop larges
+    ~30 %~  ########    demandes rappelées trop tard
+    ~22 %~  ######      page qui charge en 6 secondes
+    ~10 %~  ###         ce qui travaille vraiment
+
+
+    *3. CE QUI FREINE*
+
+    Votre problème n'est pas {le manque de leads|ce qui se passe après le clic}.
+    Une demande sur trois attend le lendemain après-midi. À ce moment-là, elle a déjà parlé à un concurrent.
+
+    Recommandation : {augmenter le budget|mieux répartir le budget actuel}.
+
+
+    *4. LE PLAN, SEMAINE PAR SEMAINE*
+
+    S1  Couper les audiences qui ne signent pas.
+    S2  Une seule promesse, de l'annonce à la page.
+    S3  Réponse automatique, rappel le matin même.
+    S4  Mesurer le coût par client signé, pas par clic.
+
+
+    Amira Dounassre
+    Leadvice

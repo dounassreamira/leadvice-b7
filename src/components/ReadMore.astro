@@ -1,5 +1,5 @@
 ---
-/* Maillage interne d'une page levier : deux articles et l'étude de cas. */
+/* Maillage interne d'une page levier ou secteur : deux articles. */
 import { getEntry } from 'astro:content';
 import { site } from '../lib/content';
 interface Props { slugs: string[] }
@@ -11,7 +11,6 @@ const arts = (await Promise.all(slugs.map((s) => getEntry('insights', s)))).filt
   <h2 class="legend rm-t">{l.commun.lire}</h2>
   <ul>
     {arts.map((a) => <li><a href={`/insights/${a.id}/`}><span class="rm-cat">{a.data.category}</span><b>{a.data.title}</b></a></li>)}
-    <li><a href="/realisations/kettani-immobilier/"><span class="rm-cat">Réalisations</span><b>{l.commun.cas}</b></a></li>
   </ul>
 </section>
 <style>

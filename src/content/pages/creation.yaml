@@ -3,8 +3,8 @@ seo:
   description: 'Concepts créatifs, accroches, publicités statiques et vidéo, contenus pour les réseaux sociaux : des créations pensées pour l''acquisition, en français et en arabe.'
   og: creation
 fil: Création
-h1: Trouver le message qui mérite d'être vu.
-reponse: 'La création chez Leadvice sert l''acquisition : chaque publicité et chaque contenu doit arrêter la bonne personne et lui donner une raison d''agir. Nous travaillons l''angle avant le visuel, nous testons plusieurs accroches, et nous gardons ce que les chiffres valident, en français comme en arabe.'
+h1: Le message qui arrête la bonne personne.
+reponse: "Chez Leadvice, chaque publicité part d'un angle, pas d'un visuel. Nous testons plusieurs accroches pour la même offre, nous gardons celles qui produisent des demandes qualifiées, et nous coupons les autres, même quand elles récoltent des likes."
 scene:
   nom: angles
   len: 300
@@ -62,7 +62,7 @@ faq:
     a:
     - Oui, en arabe et en français, en adaptant le message à chaque audience plutôt qu'en traduisant mot à mot.
 cloture:
-  titre: Parlons de votre croissance.
+  titre: Commençons par votre chemin.
   texte: 45 minutes, offert. Nous regardons vos campagnes, vos chiffres et votre offre. Vous repartez avec ce qui freine votre acquisition et par quoi commencer.
 suivante: acquisition
 service: Création publicitaire

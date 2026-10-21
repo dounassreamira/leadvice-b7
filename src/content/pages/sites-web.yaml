@@ -3,8 +3,8 @@ seo:
   description: 'Sites vitrines, pages de destination et parcours de prise de rendez-vous conçus pour l''acquisition : rapides, bien référencés, mesurés et faciles à mettre à jour.'
   og: sites-web
 fil: Sites web
-h1: Un site qui transforme les visites en demandes.
-reponse: 'Leadvice conçoit des sites et des pages de destination pensés pour l''acquisition. Nous partons de ce que vos campagnes promettent et de ce que vos clients demandent, puis nous construisons des pages rapides, claires et mesurées, qui mènent à une seule action : vous contacter, réserver ou acheter.'
+h1: Une page, une promesse, un bouton.
+reponse: "Leadvice conçoit des sites et des pages d'atterrissage pensés pour vos campagnes. Ils reprennent mot pour mot la promesse de l'annonce, sont construits pour charger en moins de deux secondes sur mobile et mènent à une seule action. Chaque page est mesurée, pour savoir ce qu'elle rapporte."
 scene:
   nom: page
   len: 220
@@ -64,7 +64,7 @@ faq:
     a:
     - 'Oui. Nous commençons par l''auditer : ce qui peut rester, ce qui freine les demandes, ce qui doit être refait. Parfois, quelques pages refaites suffisent.'
 cloture:
-  titre: Parlons de votre croissance.
+  titre: Commençons par votre chemin.
   texte: 45 minutes, offert. Nous regardons vos campagnes, vos chiffres et votre offre. Vous repartez avec ce qui freine votre acquisition et par quoi commencer.
 suivante: acquisition
 service: Création de sites web et de pages de destination

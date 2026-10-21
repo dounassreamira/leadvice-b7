@@ -1,0 +1,11 @@
+---
+/* Pages secteurs : immobilier, B2B, e-commerce. Textes : src/content/pages/secteur-<nom>.yaml. */
+import SecteurPage from '../../components/SecteurPage.astro';
+import { page } from '../../lib/content';
+export function getStaticPaths() {
+  return ['immobilier', 'b2b', 'e-commerce'].map((secteur) => ({ params: { secteur } }));
+}
+const { secteur } = Astro.params;
+const d = await page(`secteur-${secteur}`);
+---
+<SecteurPage d={d} path={`/secteurs/${secteur}/`} />

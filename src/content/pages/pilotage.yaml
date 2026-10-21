@@ -3,8 +3,8 @@ seo:
   description: 'Suivi hebdomadaire des campagnes, reporting utile, optimisation continue et co-pilotage avec vos équipes : Leadvice transforme vos chiffres en décisions.'
   og: pilotage
 fil: Pilotage
-h1: Mesurer.<br/>Comprendre.<br/>Optimiser.
-reponse: Le pilotage, chez Leadvice, consiste à transformer les chiffres de vos campagnes en décisions. Nous suivons les indicateurs qui comptent chaque semaine, nous expliquons ce qui change et pourquoi, et nous ajustons budgets, audiences et messages avec vos équipes.
+h1: Chaque semaine, des chiffres qui décident.
+reponse: "Le pilotage transforme les chiffres de vos campagnes en décisions. Chaque semaine, nous lisons avec vous le coût par lead, la part de leads joignables, les rendez-vous et les ventes. Puis nous déplaçons le budget vers ce qui signe et nous coupons ce qui ne signe pas."
 scene:
   nom: dial
   len: 220
@@ -59,7 +59,7 @@ faq:
     a:
     - C'est préférable pour suivre ce que deviennent les leads, mais ce n'est pas indispensable pour commencer. Nous nous adaptons à vos outils et nous vous conseillons si un changement s'impose.
 cloture:
-  titre: Parlons de votre croissance.
+  titre: Commençons par votre chemin.
   texte: 45 minutes, offert. Nous regardons vos campagnes, vos chiffres et votre offre. Vous repartez avec ce qui freine votre acquisition et par quoi commencer.
 suivante: strategie
 service: Pilotage de la performance marketing

@@ -227,3 +227,4 @@ addEventListener('load', relayout);
 $$('.pc-faq details').forEach((d) => d.addEventListener('toggle', () => { railLayout(); railUpdate(); }));
 /* la scène du dirham est épinglée par motion.ts après le premier rendu : on recalcule le fil quand la page change de hauteur */
 new ResizeObserver(() => { railLayout(); railUpdate(); }).observe(flow);
+export {};

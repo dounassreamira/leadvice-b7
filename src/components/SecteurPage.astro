@@ -1,0 +1,63 @@
+---
+/* Gabarit des pages secteurs : réponse directe, scène propre au secteur, chemin du client, pertes,
+   ce que nous mettons en place, clients du secteur, articles, FAQ, diagnostic. */
+import Base from '../layouts/Base.astro';
+import PageHero from './PageHero.astro';
+import ReadMore from './ReadMore.astro';
+import Faq from './Faq.astro';
+import CtaBand from './CtaBand.astro';
+import { Image } from 'astro:assets';
+import { site, type Data } from '../lib/content';
+import { logo } from '../lib/images';
+import { faqPage, service } from '../lib/schema';
+import '../styles/pages/secteur.css';
+interface Props { d: Data; path: string }
+const { d, path } = Astro.props;
+const clients = (await site('clients')).liste as Data[];
+const mine = (d.clients.logos as string[]).map((k) => clients.find((c) => c.logo === k)).filter(Boolean) as Data[];
+const crumb = [{ name: 'Accueil', url: '/' }, { name: 'Expertises', url: '/expertises/' }, { name: d.fil, url: path }];
+const sc = d.scene;
+---
+<Base title={d.seo.title} description={d.seo.description} og={d.seo.og} section="exp" crumb={crumb} jsonld={[service(d.service, d.reponse, path), faqPage(d.faq.questions)]}>
+  <PageHero crumb={crumb} h1={d.h1} lead={d.reponse} cta />
+
+  <section class="sct-scene" aria-label={sc.aria} data-sct={sc.type} data-sct-data={JSON.stringify(sc)}>
+    <div class="sct-stage">
+      <svg class="sct-svg" viewBox="0 0 800 460" aria-hidden="true" preserveAspectRatio="xMidYMid meet"></svg>
+      <div class="sct-cap" aria-live="polite">{(sc.etapes as Data[]).map((e) => <p data-at={`${e.de}-${e.a}`}>{e.texte}</p>)}</div>
+    </div>
+  </section>
+
+  <section class="wrap sec">
+    <h2 data-rise>{d.chemin.titre}</h2>
+    <ol class="sct-path">
+      {(d.chemin.etapes as Data[]).map((e, i) => <li class="frost"><span class="n">{i + 1}</span><h3>{e.titre}</h3><p>{e.texte}</p></li>)}
+    </ol>
+  </section>
+
+  <section class="wrap sec sec-top0">
+    <h2 data-rise class="h-gap">{d.pertes.titre}</h2>
+    <div class="sits">{(d.pertes.situations as string[]).map((x) => <div class="sit"><p set:html={x} /></div>)}</div>
+  </section>
+
+  <section class="wrap sec sec-top0">
+    <div class="split">
+      <div class="stick"><h2 data-rise>{d.faisons.titre}</h2></div>
+      <div class="items">{(d.faisons.items as Data[]).map((it) => <div class="item"><h3>{it.titre}</h3><p set:html={it.texte} /></div>)}</div>
+    </div>
+  </section>
+
+  {mine.length > 0 && (
+    <section class="wrap sec sec-top0">
+      <h2 class="legend">{d.clients.titre}</h2>
+      <div class="sct-logos frost">{mine.map((c) => <div><Image src={logo(c.logo)} alt={c.nom} width={220} class="logo-img" loading="lazy" /></div>)}</div>
+    </section>
+  )}
+
+  <ReadMore slugs={d.lire} />
+  <Faq titre={d.faq.titre} questions={d.faq.questions} />
+  <CtaBand titre={d.cloture.titre} texte={d.cloture.texte} />
+  <script>
+    import '../scripts/secteur';
+  </script>
+</Base>

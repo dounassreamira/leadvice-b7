@@ -1,0 +1,57 @@
+# Page secteur Immobilier. Ton narratif : le chemin d'un acheteur, de l'annonce à la réservation.
+seo:
+  title: "Publicité immobilière au Maroc : leads acheteurs qualifiés | Leadvice"
+  description: "Promoteurs et commercialisateurs : Leadvice construit le chemin de vos acheteurs, de l'annonce Meta ou Google à la visite et à la réservation. Diagnostic offert."
+  og: accueil
+fil: Immobilier
+service: Acquisition de clients pour la promotion immobilière
+h1: Des acheteurs qui répondent, et qui viennent en visite.
+reponse: "Pour un promoteur ou un commercialisateur, un lead ne vaut rien tant qu'il n'a pas visité. Leadvice construit le chemin complet de vos acheteurs : l'annonce qui parle au bon profil, la page du programme, le formulaire qui trie, la réponse immédiate, puis le suivi jusqu'au rendez-vous sur place."
+scene:
+  type: immo
+  aria: "Une façade la nuit : chaque fenêtre qui s'allume est une demande, puis une visite"
+  etapes:
+    - { de: 0, a: 0.3, texte: "Votre annonce est vue par des centaines de personnes." }
+    - { de: 0.3, a: 0.6, texte: "Certaines laissent leur numéro. Beaucoup ne répondront jamais." }
+    - { de: 0.6, a: 0.85, texte: "Les bonnes demandes deviennent des visites." }
+    - { de: 0.85, a: 1.01, texte: "Une visite bien préparée devient une réservation." }
+  legendes: { vues: vues, demandes: demandes, visites: visites, reservation: réservation }
+chemin:
+  titre: Le chemin d'un acheteur.
+  etapes:
+    - { titre: Annonce, texte: "Un angle par profil : primo-accédant, investisseur, famille qui s'agrandit. Le même programme ne se vend pas avec la même phrase." }
+    - { titre: Page du programme, texte: "Plans, prix de départ, quartier, date de livraison. Ce que l'acheteur cherche, sans qu'il ait à demander." }
+    - { titre: Formulaire, texte: "Budget, délai, financement. Trois questions qui séparent un projet d'une curiosité." }
+    - { titre: Réponse et visite, texte: "Une réponse automatique immédiate avec un créneau, un appel de votre équipe, une visite confirmée la veille." }
+pertes:
+  titre: Là où les acheteurs se perdent.
+  situations:
+    - "« Nous recevons beaucoup de leads, mais la moitié ne décroche pas. »"
+    - "« Les visites sont réservées, puis personne ne vient. »"
+    - "« Nos commerciaux passent leurs journées sur des profils sans budget. »"
+faisons:
+  titre: Ce que nous mettons en place.
+  items:
+    - { titre: Campagnes Meta Ads et Google Ads par programme, texte: "Une structure par programme et par profil d'acheteur, avec un budget piloté sur le coût par visite, pas seulement le coût par lead." }
+    - { titre: Pages de programme, texte: "Des pages rapides, une par programme, qui reprennent la promesse de l'annonce et mènent à une seule action." }
+    - { titre: Formulaires qui qualifient, texte: "Budget, délai, mode de financement : vos commerciaux savent qui rappeler en premier." }
+    - { titre: Réponse et rappel, texte: "Avec vos équipes : message automatique dans la minute, créneau proposé, rappel le matin même, confirmation de visite. Nous ne remplaçons pas votre équipe commerciale, nous l'aidons à rappeler vite et bien." }
+    - { titre: Suivi jusqu'à la réservation, texte: "Chaque semaine : leads, visites, réservations, et ce que chaque dirham de publicité a produit." }
+clients:
+  titre: Ils nous ont fait confiance.
+  logos: [kettani]
+faq:
+  titre: Vos questions.
+  questions:
+    - q: Combien coûte un lead immobilier ?
+      a: "Plus cher qu'un lead pour un produit du quotidien, parce qu'un appartement est une décision lourde. Le chiffre qui compte est le coût par visite et par réservation : c'est celui que nous suivons avec vous."
+    - q: Travaillez-vous sur un programme en particulier ou sur toute la marque ?
+      a: "Les deux. Le plus souvent, nous commençons par un programme, avec ses propres campagnes et sa page, puis nous étendons ce qui marche aux autres."
+    - q: Qui rappelle les acheteurs ?
+      a: "Vos commerciaux. Nous mettons en place ce qui les aide : réponse automatique immédiate, créneaux proposés, fiche qui résume le projet de l'acheteur."
+lire:
+  - plus-de-leads-ne-veut-pas-dire-plus-de-clients
+  - cpl-cpa-cout-par-opportunite
+cloture:
+  titre: Parlons de votre prochain programme.
+  texte: "45 minutes, offertes. Nous regardons vos annonces, vos pages et ce qui se passe après une demande. Votre plan écrit sous 48 heures."

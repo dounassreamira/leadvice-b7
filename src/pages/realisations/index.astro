@@ -9,6 +9,7 @@ import { logo } from '../../lib/images';
 import '../../styles/pages/levier.css';
 
 const d = await page('realisations');
+const chiffresNote = (await site('chiffres')).note as string;
 const clients = (await site('clients')).liste as Data[];
 const crumb = [{ name: 'Accueil', url: '/' }, { name: d.fil, url: '/realisations/' }];
 ---
@@ -29,7 +30,7 @@ const crumb = [{ name: 'Accueil', url: '/' }, { name: d.fil, url: '/realisations
         );
         return (
           <li class="tile" data-cat={c.filtre}>
-            {c.cas ? <a href={c.cas} class="tile-a">{inner}</a> : inner}
+            {inner}
           </li>
         );
       })}
@@ -39,20 +40,24 @@ const crumb = [{ name: 'Accueil', url: '/' }, { name: d.fil, url: '/realisations
   <section class="wrap sec sec-top0">
     <h2 data-rise class="h-gap-l">{d.chiffres.titre}</h2>
     <Stats />
-    <p class="small stats-note">{d.chiffres.note}</p>
+    <p class="small stats-note">{chiffresNote}</p>
   </section>
 
   <section class="wrap sec sec-top0">
-    <span class="legend">{d.cas.etiquette}</span>
-    <div class="case">
-      <div><h2>{d.cas.titre}</h2><p class="small mt-s">{d.cas.sous}</p></div>
-      <div><p class="case-t">{d.cas.texte}</p><div class="mt-s"><a class="tlink" href="/realisations/kettani-immobilier/">{d.cas.lien}</a></div></div>
+    <h2 data-rise class="h-gap">{d.secteurs.titre}</h2>
+    <div class="rea-sect">
+      {(d.secteurs.liste as Data[]).map((x) => <a class="frost" href={x.url}><h3>{x.nom}</h3><p>{x.texte}</p><span class="tlink">{d.secteurs.lien}</span></a>)}
     </div>
   </section>
 
   <CtaBand titre={d.cloture.titre} texte={d.cloture.texte} />
 </Base>
 <style>
+  .rea-sect { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .rea-sect a { padding: 26px; display: grid; gap: 10px; align-content: start; text-decoration: none; }
+  .rea-sect p { color: var(--ink-2); }
+  .rea-sect .tlink { justify-self: start; }
+  @media (max-width: 860px) { .rea-sect { grid-template-columns: 1fr; } }
   .wall-sec { padding-bottom: 120px; }
   .wall { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); }
   .tile { background: var(--white); aspect-ratio: 1 / 1; display: flex; flex-direction: column; position: relative; overflow: hidden; }

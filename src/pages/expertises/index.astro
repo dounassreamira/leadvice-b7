@@ -25,6 +25,13 @@ const all = [...(l.liste as Data[]), ...(l.complement as Data[])];
   </section>
 
   <section class="wrap sec sec-top0">
+    <h2 data-rise class="h-gap">{d.secteurs.titre}</h2>
+    <div class="xp-sect">
+      {(d.secteurs.liste as Data[]).map((x) => <a class="frost" href={x.url}><h3>{x.nom}</h3><p>{x.texte}</p><span class="tlink">{d.secteurs.lien}</span></a>)}
+    </div>
+  </section>
+
+  <section class="wrap sec sec-top0">
     <h2 data-rise class="h-gap-l">{d.formats.titre}</h2>
     <div class="stack" data-stack>
       {(d.formats.cartes as Data[]).map((c, i) => <div class="card" style={`top:${110 + i * 22}px`}><h3>{c.titre}</h3><p>{c.texte}</p></div>)}
@@ -38,4 +45,9 @@ const all = [...(l.liste as Data[]), ...(l.complement as Data[])];
 </Base>
 <style>
   .comp { margin: 56px 0 16px; }
+  .xp-sect { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .xp-sect a { padding: 26px; display: grid; gap: 10px; align-content: start; text-decoration: none; }
+  .xp-sect p { color: var(--ink-2); }
+  .xp-sect .tlink { justify-self: start; }
+  @media (max-width: 860px) { .xp-sect { grid-template-columns: 1fr; } }
 </style>

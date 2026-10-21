@@ -3,8 +3,8 @@ seo:
   description: 'Campagnes Meta Ads et Google Ads, génération de leads qualifiés, formulaires qui trient avant de compter : moins de 1 $ par lead en moyenne sur Meta Ads chez nos clients.'
   og: acquisition
 fil: Acquisition
-h1: Le bon message devant les bonnes personnes.
-reponse: Leadvice conçoit et gère vos campagnes d'acquisition sur Meta Ads et Google Ads, de la structure des campagnes au suivi des leads. Notre objectif n'est pas le volume de contacts, c'est le nombre de prospects avec qui vos commerciaux ont envie de parler.
+h1: Des leads que vos commerciaux ont envie de rappeler.
+reponse: "Leadvice conçoit et pilote vos campagnes Meta Ads et Google Ads au Maroc, de la structure des comptes au suivi des demandes. L'objectif n'est pas le volume : c'est le nombre de prospects joignables et qualifiés qui deviennent des rendez-vous. Sur l'ensemble de nos clients, le coût moyen par lead est inférieur à 10 DH sur Meta Ads."
 scene:
   nom: target
   len: 300
@@ -65,7 +65,7 @@ faq:
     a:
     - Souvent dans les jours qui suivent le lancement. Pour juger une campagne et l'optimiser sérieusement, il faut en revanche quelques semaines de données.
 cloture:
-  titre: Parlons de votre croissance.
+  titre: Commençons par votre chemin.
   texte: 45 minutes, offert. Nous regardons vos campagnes, vos chiffres et votre offre. Vous repartez avec ce qui freine votre acquisition et par quoi commencer.
 suivante: pilotage
 service: Génération de leads, Meta Ads et Google Ads
