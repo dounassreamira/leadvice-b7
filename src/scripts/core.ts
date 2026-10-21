@@ -5,6 +5,9 @@ import { $, $$, RM, FINE, root, syncPalette, scrollToY, announce, idle } from '.
 import { initConsent, openCookies } from './consent';
 import { captureUtm } from './utm';
 
+/* Version de démonstration : les appels /api/* reçoivent des réponses simulées, rien ne part. */
+if (import.meta.env.PUBLIC_DEMO) await import('./demo');
+
 const path = location.pathname;
 
 /* ---------- toute nouvelle page s'ouvre en haut ---------- */
