@@ -29,7 +29,7 @@ const localTime = (iso: string): string => new Intl.DateTimeFormat('fr-FR', { ho
 
 async function texts(): Promise<T> {
   if (txt) return txt;
-  const r = await fetch(new URL('../reservation.json', import.meta.url).href);
+  const r = await fetch(new URL(/* @vite-ignore */ '../reservation.json', import.meta.url).href);
   txt = (await r.json()) as T;
   return txt;
 }

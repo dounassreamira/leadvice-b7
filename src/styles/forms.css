@@ -42,19 +42,19 @@
   .hp { position: absolute !important; left: -10000px !important; width: 1px; height: 1px; overflow: hidden; }
 
   /* fenêtre de réservation */
-  .bk { border: 0; padding: 0; width: min(980px, calc(100vw - 32px)); max-width: none; max-height: calc(100dvh - 32px); background: var(--paper); color: var(--ink); border-radius: var(--r-sharp); box-shadow: var(--shadow-pop); overflow: hidden; }
+  .bk { border: 0; padding: 0; width: min(740px, calc(100vw - 32px)); max-width: none; max-height: min(700px, calc(100dvh - 40px)); background: var(--paper); color: var(--ink); border-radius: var(--r-sharp); box-shadow: var(--shadow-pop); overflow: hidden; }
   .bk::backdrop { background: var(--backdrop); backdrop-filter: blur(4px); }
-  .bk-in { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); min-height: 560px; max-height: calc(100dvh - 32px); }
-  .bk-side { background: radial-gradient(80% 60% at 90% 10%, rgba(123, 97, 255, .45), transparent 70%), var(--night); color: #F6F4FB; padding: 36px; display: flex; flex-direction: column; gap: 20px; }
-  .bk-side h2 { font-size: clamp(1.9rem, 1.4rem + 1.4vw, 2.6rem); line-height: 1.04; }
+  .bk-in { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 7fr); min-height: 440px; max-height: inherit; }
+  .bk-side { background: radial-gradient(80% 60% at 90% 10%, rgba(123, 97, 255, .45), transparent 70%), var(--night); color: #F6F4FB; padding: 28px 24px; display: flex; flex-direction: column; gap: 16px; }
+  .bk-side h2 { font-size: clamp(1.5rem, 1.2rem + .8vw, 1.9rem); line-height: 1.04; }
   .bk-side p { color: #CFC6F5; font-size: var(--fs-ui); font-family: var(--read); }
   .bk-sum { margin-top: auto; display: flex; flex-direction: column; gap: 10px; font-size: .92rem; border-top: 1px solid rgba(255, 255, 255, .18); padding-top: 18px; }
   .bk-sum div { display: flex; gap: 10px; justify-content: space-between; }
   .bk-sum b { font-weight: 500; color: #fff; text-align: right; }
-  .bk-main { padding: 36px; overflow: auto; max-height: calc(100dvh - 32px); position: relative; overscroll-behavior: contain; }
+  .bk-main { padding: 28px; overflow: auto; max-height: min(700px, calc(100dvh - 40px)); position: relative; overscroll-behavior: contain; }
   .bk-x { position: absolute; top: 14px; right: 14px; width: 44px; height: 44px; border: 0; background: none; cursor: pointer; color: var(--ink); display: grid; place-items: center; border-radius: var(--r-sharp); }
   .bk-x:hover { background: var(--paper-2); }
-  .bk-steps { display: flex; gap: 6px; margin-bottom: 24px; padding-right: 48px; }
+  .bk-steps { display: flex; gap: 6px; margin-bottom: 16px; padding-right: 48px; }
   .bk-steps b { flex: 1; height: 3px; background: var(--line); transition: background .4s; }
   .bk-steps b.on { background: var(--signal); box-shadow: var(--glow); }
   .bk h3 { font-size: var(--fs-h3); margin-bottom: 18px; }
@@ -62,11 +62,11 @@
   .bk .fld input, .bk .fld select { min-height: 48px; padding: 10px 14px; }
   .cal { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 4px; text-align: center; font-size: .85rem; font-family: var(--sans); }
   .cal .h { color: var(--ink-2); padding: 6px 0; }
-  .cal button { min-height: 44px; border: 0; border-radius: var(--r-sharp); background: transparent; color: var(--ink-3); font: inherit; cursor: default; }
+  .cal button { min-height: 38px; border: 0; border-radius: var(--r-sharp); background: transparent; color: var(--ink-3); font: inherit; cursor: default; }
   .cal button.av { background: var(--white); color: var(--ink); font-weight: 500; cursor: pointer; box-shadow: inset 0 0 0 1px var(--line); }
   .cal button.av:hover { box-shadow: inset 0 0 0 1px var(--brand); }
   .cal button.sel { background: var(--btn); color: #16131F; box-shadow: none; }
-  .bk-day { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-top: 22px; }
+  .bk-day { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-top: 14px; }
   .bk-day p { font-weight: 500; font-family: var(--sans); }
   .per { display: flex; gap: 4px; padding: 4px; background: var(--paper-2); border-radius: var(--r-sharp); }
   .per button { border: 0; background: transparent; padding: 8px 14px; min-height: 40px; font: 500 .9rem var(--sans); color: var(--ink); cursor: pointer; border-radius: var(--r-sharp); }
@@ -78,7 +78,7 @@
   .slots button:hover { border-color: var(--brand); }
   .slots button.sel, .slots button[aria-pressed="true"] { background: var(--btn); color: #16131F; border-color: var(--btn); }
   .slots .local { display: block; font-size: .72rem; font-weight: 400; opacity: .8; }
-  .bk-nav { display: flex; justify-content: space-between; gap: 12px; margin-top: 28px; flex-wrap: wrap; align-items: center; }
+  .bk-nav { display: flex; justify-content: space-between; gap: 12px; margin-top: 18px; flex-wrap: wrap; align-items: center; }
   .bk-alt { margin: 14px 0 0; font-size: .95rem; }
   .bk .err { margin-top: 10px; }
   .bk-ok svg { width: 100%; height: auto; margin: 10px 0 20px; }
@@ -90,8 +90,10 @@
     .bk-side { padding: 24px; }
     .bk-side p, .bk-side .bk-sum { display: none; }
     .bk-main { padding: 24px; }
-    .bk { max-height: 100dvh; width: 100vw; height: 100dvh; margin: 0; }
-    .bk-in { max-height: 100dvh; height: 100%; grid-template-rows: auto minmax(0, 1fr); }
-    .bk-main { max-height: none; }
+    .bk { width: 100vw; max-height: 92dvh; margin: auto 0 0; border-radius: 16px 16px 0 0; }
+    .bk-in { min-height: 0; max-height: 92dvh; grid-template-rows: auto minmax(0, 1fr); }
+    .bk-side { padding: 16px 24px; }
+    .bk-side h2 { font-size: 1.25rem; }
+    .bk-main { max-height: calc(92dvh - 64px); }
   }
 }
