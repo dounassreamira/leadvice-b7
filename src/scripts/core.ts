@@ -125,16 +125,19 @@ document.addEventListener('click', (e) => {
 /* ---------- réservation du diagnostic : chaque bouton ouvre la fenêtre (chargée à la demande) ---------- */
 let bookingMod: Promise<typeof import('./booking')> | null = null;
 const loadBooking = (): Promise<typeof import('./booking')> => (bookingMod ??= import('./booking'));
-if (!path.startsWith('/diagnostic/') && !path.startsWith('/admin/')) {
+/* tout lien vers la page diagnostic (adresse absolue, ou relative dans un aperçu) */
+const isDiag = (a: HTMLAnchorElement): boolean => /\/diagnostic\/(index\.html)?$/.test(new URL(a.href, location.href).pathname);
+if (!/\/diagnostic\/(index\.html)?$/.test(path) && !path.startsWith('/admin/')) {
   document.addEventListener('click', (e) => {
-    const a = (e.target as Element).closest?.<HTMLAnchorElement>('a[href="/diagnostic/"]');
-    if (!a || a.hasAttribute('data-page-link') || e.metaKey || e.ctrlKey || e.shiftKey || e.defaultPrevented) return;
+    const a = (e.target as Element).closest?.<HTMLAnchorElement>('a[href]');
+    if (!a || !isDiag(a) || a.hasAttribute('data-page-link') || e.metaKey || e.ctrlKey || e.shiftKey || e.defaultPrevented) return;
     e.preventDefault();
     if (mnav && !mnav.hidden) menu(false);
     void loadBooking().then((m) => m.openBooking(a));
   });
   document.addEventListener('pointerover', (e) => {
-    if ((e.target as Element).closest?.('a[href="/diagnostic/"]')) void loadBooking();
+    const a = (e.target as Element).closest?.<HTMLAnchorElement>('a[href]');
+    if (a && isDiag(a)) void loadBooking();
   }, { passive: true });
 }
 

@@ -42,6 +42,7 @@ const ld = {
   image: `https://leadvice.org/og/insight-${a.id}.png`,
   mainEntityOfPage: `https://leadvice.org${url}`,
 };
+const cv = await site('couvertures');
 ---
 <Base title={a.data.seoTitle ?? `${a.data.title} | Leadvice`} description={a.data.description} og={`insight-${a.id}`} section="ins" crumb={crumb} jsonld={[ld]} ogType="article" progress>
   <section class="wrap phero a-hero">
@@ -56,7 +57,7 @@ const ld = {
       <CopyButton text="@url" label={t.copier} done={t.copie} class="share" />
     </p>
   </section>
-  <div class="wrap a-cover" set:html={coverSVG(a.id, a.data.category, t.couverture)} />
+  <div class="wrap a-cover" set:html={coverSVG(a.id, a.data.category, t.couverture, cv)} />
   <section class="wrap a-grid">
     <nav class="a-toc" aria-label={t.sommaire}>
       <p>{t.sommaire}</p>

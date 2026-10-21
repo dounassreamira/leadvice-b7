@@ -123,12 +123,26 @@ function pertes(): void {
     st.style.opacity = String(after ? cl((p - .82) / .1) : cl((p - .3) / .12)); st.style.fill = after ? '#C2410C' : '#6B4EFF';
     $('.t1-dot', el)!.setAttribute('fill', after && p > .82 ? '#FF7A59' : '#B4A6FF');
     el.classList.toggle('done', after); }
-  { const el = B.attr!, p = prog(el, .9, .3), res = p >= .8, ads = $$('.t2-ads rect', el);
-    $$('.t2-th .tie', el).forEach((s, i) => draw(s as unknown as Dashed, (p - .4 - i * .05) / .25));
-    $$('.t2-q', el).forEach((q) => { (q as unknown as SVGElement).style.opacity = String(1 - cl((p - .3) / .12)); });
-    const b1 = ads[1]!; b1.setAttribute('stroke', res ? '#7B61FF' : '#DEDAE8'); b1.setAttribute('stroke-width', res ? '2.5' : '1'); b1.setAttribute('fill', res ? '#F0ECFF' : '#fff');
-    (ads[2]! as unknown as SVGElement).style.opacity = res ? '.35' : '1';
-    ($('.t2-res', el) as unknown as SVGElement).style.opacity = String(cl((p - .8) / .1));
+  { const el = B.attr!, p = prog(el, .9, .3), res = p >= .78;
+    const svg = $('svg', el)!, W = JSON.parse((svg as unknown as HTMLElement).dataset.at || '{}') as { un?: string; plus?: string };
+    const ads = $$('.t2-ad', el), stamps = $$('.t2-st > g', el);
+    /* quatre ventes arrivent : B, A, B, B ; chaque tampon se pose sur l'annonce qui l'a amenée */
+    const hits = [1, 0, 1, 1], at = [.22, .36, .5, .62], n = [0, 0, 0];
+    stamps.forEach((g, i) => {
+      const k = ease(cl((p - at[i]!) / .1)), ad = hits[i]!, x = 12 + ad * 104 + 44 + (i === 3 ? 10 : i === 2 ? -10 : 0), y0 = -20, y1 = 54 + (i % 2) * 8;
+      g.setAttribute('opacity', String(cl((p - at[i]!) / .04)));
+      g.setAttribute('transform', `translate(${x} ${y0 + (y1 - y0) * k}) rotate(${-8 + i * 5}) scale(${1.4 - .4 * k})`);
+      if (k >= 1) n[ad]!++;
+    });
+    ads.forEach((g, i) => {
+      $('.t2-n', g)!.textContent = n[i] + ' ' + (n[i] === 1 ? W.un : W.plus);
+      const cut = i === 2 ? ease(cl((p - .78) / .1)) : 0, grow = ease(cl((p - .8) / .12));
+      ($('.t2-cut', g) as unknown as SVGElement).setAttribute('opacity', String(cut));
+      (g as unknown as SVGElement).style.opacity = String(1 - .45 * cut);
+      $('.t2-bar', g)!.setAttribute('width', String(i === 2 ? 44 * (1 - grow) : i === 1 ? 44 + 40 * grow : 44));
+      $('rect', g)!.setAttribute('stroke', i === 1 && res ? '#7B61FF' : '#DEDAE8');
+    });
+    ($('.t2-res', el) as unknown as SVGElement).style.opacity = String(cl((p - .85) / .1));
     el.classList.toggle('done', res); }
   { const el = B.lang!, p = prog(el, .9, .3), k = ease(cl((p - .4) / .3));
     draw($('.tie', el) as unknown as Dashed, (p - .4) / .25);
@@ -138,29 +152,10 @@ function pertes(): void {
     el.classList.toggle('done', p >= .75); }
 }
 
-/* ---------- expertises : mini-scènes discrètes ---------- */
-const X: Record<string, HTMLElement> = {}; $$('[data-x]').forEach((el) => { X[el.dataset.x!] = el; });
-dash($('.xs-route', X.strat!) as unknown as Dashed);
-const crowd = $('.xa-c', X.acq!)!, people: { c: SVGElement; x: number; match: boolean; hit: boolean }[] = [];
-for (let j = 0; j < 5; j++) for (let i = 0; i < 11; i++) people.push({ c: mk('circle', { cx: 14 + i * 17, cy: 14 + j * 20, r: 3, fill: '#E2DFEC' }, crowd), x: 14 + i * 17, match: ((i * 7 + j * 3) % 5) === 0, hit: false });
-const bars = $$('.xp-b rect', X.pil!), H0 = [40, 26, 56, 18, 38, 30], H1 = [44, 6, 74, 4, 58, 34];
+/* ---------- expertises : les objets du métier, animés au défilement (dessinés par motion.ts) ---------- */
+const xcv = $$<HTMLCanvasElement>('.pc-xcv');
 function expertises(): void {
-  { const el = X.strat!, p = prog(el, .9, .35);
-    draw($('.xs-route', el) as unknown as Dashed, p / .8);
-    $$('.xs-dots circle', el).forEach((c, i) => { const on = i === 2 || i === 3; (c as unknown as SVGElement).style.opacity = String(on ? 1 : 1 - .75 * cl((p - .3) / .3)); c.setAttribute('fill', on && p > .5 ? '#7B61FF' : '#D6CFFA'); });
-    ($('.xs-flag', el) as unknown as SVGElement).style.opacity = String(cl((p - .8) / .12)); }
-  { const el = X.crea!, p = prog(el, .9, .35), k = ease(cl((p - .1) / .6));
-    const from: [number, number][] = [[20, 20], [88, 70], [120, 22]], to: [number, number][] = [[18, 46], [78, 46], [152, 46]];
-    $$('.xc-w rect', el).forEach((r, i) => { const f0 = from[i]!, t0 = to[i]!; r.setAttribute('x', String(f0[0] + (t0[0] - f0[0]) * k)); r.setAttribute('y', String(f0[1] + (t0[1] - f0[1]) * k)); });
-    $('.xc-bar', el)!.setAttribute('width', String(182 * cl((p - .72) / .22))); }
-  { const el = X.acq!, p = prog(el, .9, .35), lx = 22 + p * 156;
-    $('.xa-lens', el)!.setAttribute('cx', String(lx));
-    for (const q of people) { if (q.match && q.x < lx + 4) q.hit = true; if (q.x > lx + 4) q.hit = false; q.c.setAttribute('fill', q.hit ? '#7B61FF' : '#E2DFEC'); q.c.setAttribute('r', q.hit ? '3.6' : '3'); } }
-  { const el = X.pil!, p = prog(el, .9, .35), k = ease(cl((p - .25) / .55));
-    bars.forEach((b, i) => { const h = (H0[i]! + (H1[i]! - H0[i]!) * k) * cl(p / .25 + .2); b.setAttribute('y', String(100 - h)); b.setAttribute('height', String(h)); b.setAttribute('fill', H1[i]! < 10 && k > .5 ? '#ECEAF3' : '#D6CFFA'); });
-    const n = Math.max(1, Math.round(cl(p / .9) * 6)); let d = '';
-    for (let i = 0; i < n; i++) d += (i ? ' L' : 'M') + (31 + i * 30) + ' ' + (22 + i * 8 + Math.sin(i * 1.7) * 4);
-    $('.xp-l', el)!.setAttribute('d', d); }
+  xcv.forEach((c) => { c.dataset.p = String(reduce ? 1 : prog(c.closest('.pc-xc') as HTMLElement, .95, .3).toFixed(3)); });
 }
 
 /* ---------- système : les liens se tracent un par un ---------- */

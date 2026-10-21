@@ -2,12 +2,18 @@
 signal:
   canaux: [vues, likes, impressions, abonnés]
   fin: clients
-knot: {}
+knot:
+  plan: Plan des 90 prochains jours
+  notes: [Être sur TikTok, Baisser les prix, Refaire le logo, Un salon en mai, Des influenceurs, Une newsletter, Recruter un commercial, Une promo Ramadan, Cibler les MRE]
+  retenues: [Clarifier l'offre principale, "Une campagne Meta, un seul public", Rappeler le jour même]
+  details: ["Direction, semaine 1", "Marketing, semaines 2 à 4", "Équipe commerciale, dès le lancement"]
+  debut: on commence ici
 angles:
   offre: Abonnement salle de sport
-  offre_sous: La même offre, sans rien changer
+  marque: Votre salle
+  sponsorise: Sponsorisé
   bouton_pub: Essai gratuit
-  retenu: "Retenu :"
+  retenu: Retenu
   angle: Angle
   parle: Parle surtout aux
   angles:
@@ -15,21 +21,33 @@ angles:
     - { k: Temps, hook: "45 minutes, trois fois par semaine.", who: Cadres pressés }
     - { k: Encadrement, hook: Un coach vous suit dès la première séance., who: Débutants }
 target:
-  filtres: [Intérêt, Zone, Comportement]
-  champs: [Projet, Délai, Rôle]
-  formulaire: Formulaire
-  liste: Leads qualifiés
-  transmis: Transmis à vos commerciaux
-  etapes: [Diffuser, Cibler, Qualifier, Transmettre]
+  annonce: Votre trois pièces, à 25 minutes du centre
+  bouton_annonce: En savoir plus
+  formulaire: Réservez votre visite
+  champs: [Votre projet, Votre délai, Votre financement]
+  valeurs: [Résidence principale, Dans les 3 mois, Crédit accordé]
+  envoyer: Être rappelé
+  qualifie: Qualifiés
+  transmis: Transmis à vos commerciaux le matin même
+  relance: À relancer
+  relance_sub: Une relance automatique, puis un appel
+  tag_q: Qualifié
 dial:
-  etapes: [Mesurer, Comprendre, Ajuster]
+  titre: Point du lundi
+  semaine: Semaine 12
+  colonnes: [Annonce, Leads, RDV, Ventes, Budget]
+  annonces: [Annonce A, Annonce B, Annonce C]
+  decision: "Couper A, +20 % sur B"
+  exemple: Chiffres d'exemple
 loop:
   leviers: [Stratégie, Création, Acquisition, Données]
 page:
   bouton: Réserver
+  chargement: Chargement sur mobile
+  avant: "6.4"
+  apres: "1.2"
   demande: Nouvelle demande
   demande_detail: Diagnostic, mardi 10 h
-  etapes: [Assembler, Clarifier, Convertir]
 money:
   etapes: [Budget investi, Publicité, Clients, Chiffre d'affaires]
   devise: [DH]

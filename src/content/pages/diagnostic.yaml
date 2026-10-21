@@ -49,7 +49,7 @@ retour_page:
 piege: Ne remplissez pas ce champ
 rapport:
   titre: Votre plan, tapé pour vous.
-  texte: "Pas de modèle, pas de rapport généré. Après les 45 minutes, nous écrivons ce qui freine vos ventes et ce qu'il faut changer, semaine par semaine. Écrivez le nom de votre entreprise, puis faites défiler : voici à quoi il ressemble."
+  texte: "Après les 45 minutes, nous écrivons ce qui freine vos ventes et ce qu'il faut changer, semaine par semaine. Écrivez le nom de votre entreprise, puis faites défiler : voici à quoi il ressemble."
   label: Pour quelle entreprise ?
   defaut: Votre entreprise
   exemple: Exemple de plan. Les chiffres sont illustratifs.
@@ -88,7 +88,7 @@ rapport:
     S1  Couper les audiences qui ne signent pas.
     S2  Une seule promesse, de l'annonce à la page.
     S3  Réponse automatique, rappel le matin même.
-    S4  Mesurer le coût par client signé, pas par clic.
+    S4  Mesurer le coût par client signé.
 
 
     Amira Dounassre

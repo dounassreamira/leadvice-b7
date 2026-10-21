@@ -40,9 +40,12 @@ e2:
   aucun: "Aucun créneau n'est ouvert pour le moment. Écrivez-nous à contact@leadvice.org, nous vous proposerons un horaire."
   chargement: Recherche des créneaux libres
   formulaire: Remplir le formulaire
+  rappel: Aucun horaire ne vous convient ? Être rappelé
 e3:
   titre: Vos coordonnées.
   choisi: "Créneau choisi :"
+  choisi_rappel: "Nous vous proposons un horaire par e-mail sous un jour ouvré."
+  envoyer_rappel: Envoyer ma demande
   nom: Nom et prénom
   email: E-mail professionnel
   tel: Téléphone

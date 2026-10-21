@@ -8,17 +8,20 @@ reponse: "Le pilotage transforme les chiffres de vos campagnes en décisions. Ch
 scene:
   nom: dial
   len: 220
-  aria: Le cadran de pilotage
-  legende: Le cadran de pilotage
+  aria: "Le point du lundi"
+  legende: "Le point du lundi"
   etapes:
-  - texte: Une campagne qui tourne seule dérive.
-    de: 0.05
-    a: 0.4
-  - texte: On lit, on comprend, on corrige.
-    de: 0.4
-    a: 0.75
-  - texte: Un système qui apprend.
-    de: 0.75
+  - texte: "Chaque lundi, les chiffres de la semaine, jusqu'aux ventes."
+    de: 0.03
+    a: 0.32
+  - texte: "L'annonce qui amène le plus de leads n'a rien vendu."
+    de: 0.32
+    a: 0.5
+  - texte: "La décision est prise, et écrite."
+    de: 0.5
+    a: 0.78
+  - texte: "Le budget suit ce qui signe."
+    de: 0.78
     a: 1.0
 faisons:
   titre: Ce que nous faisons.
@@ -27,7 +30,7 @@ faisons:
   - titre: Suivi hebdomadaire
     texte: 'Chaque semaine, les chiffres sont relus : coût par lead, qualité des leads, taux de transformation, budget consommé. Les écarts sont repérés tôt.'
   - titre: Reporting utile
-    texte: Des bilans qui disent ce qui s'est passé, pourquoi, et ce que nous faisons ensuite. Pas de tableau de quarante lignes que personne ne lit.
+    texte: "Un bilan d'une page : ce qui s'est passé, pourquoi, et ce que nous changeons la semaine suivante."
   - titre: Optimisation continue
     texte: 'Budgets déplacés, audiences resserrées, créations remplacées : la campagne d''aujourd''hui n''est pas celle du lancement.'
   - titre: Audits de campagnes
@@ -48,7 +51,7 @@ faq:
   questions:
   - q: Quels indicateurs suivez-vous ?
     a:
-    - 'Ceux qui mènent à vos ventes : coût par lead, part de leads qualifiés, coût par opportunité, coût d''acquisition client. Les indicateurs de visibilité (impressions, clics) servent à comprendre, pas à juger.'
+    - 'Ceux qui mènent à vos ventes : coût par lead, part de leads qualifiés, coût par opportunité, coût d''acquisition client. Les indicateurs de visibilité (impressions, clics) aident à comprendre une campagne. Les décisions se prennent sur les ventes.'
   - q: À quelle fréquence recevons-nous un bilan ?
     a:
     - Les chiffres sont suivis chaque semaine. Le format et le rythme des bilans sont fixés avec vous au démarrage, pour qu'ils servent vraiment à décider.

@@ -11,7 +11,7 @@ order: 6
 ---
 Une acquisition qui perd de l'argent ne le montre pas toujours. Les campagnes tournent, les leads arrivent, les rapports sont réguliers. La perte est silencieuse : elle se loge dans un budget mal réparti, des leads jamais rappelés, des créations usées depuis des mois. Lors de nos audits, nous retrouvons presque toujours les mêmes situations. En voici sept, et la façon de les repérer chez vous.
 
-## 1. Vous mesurez des leads, pas des ventes
+## 1. Vous mesurez des leads, et personne ne compte les ventes
 
 C'est le signe le plus fréquent, et celui dont découlent beaucoup d'autres. Le marketing est jugé sur le nombre et le coût des leads ; personne ne sait précisément combien de ces leads sont devenus des clients, ni lesquels.
 
@@ -37,13 +37,13 @@ Une partie de l'argent dépensé en publicité se perd après la campagne, entre
 
 ## 5. Une seule campagne pour plusieurs offres ou plusieurs publics
 
-Une entreprise qui vend plusieurs produits, plusieurs programmes ou s'adresse à plusieurs publics les regroupe parfois dans une même campagne, avec un même message. Le budget va alors vers ce qui est le plus facile à vendre, pas forcément vers ce qui compte le plus, et les moyennes cachent des écarts importants.
+Une entreprise qui vend plusieurs produits, plusieurs programmes ou s'adresse à plusieurs publics les regroupe parfois dans une même campagne, avec un même message. Le budget part vers ce qui se vend le plus facilement, qui n'est pas toujours ce qui compte le plus, et les moyennes cachent des écarts importants.
 
 **Comment le repérer** : vérifiez si vos résultats sont lisibles par offre et par public. Si vous ne pouvez pas dire combien coûte un lead pour chacun de vos produits, ou chacun de vos programmes, la structure des campagnes doit être revue.
 
 ## 6. Des objectifs de campagne mal choisis
 
-Les plateformes optimisent l'objectif qu'on leur donne. Une campagne réglée sur l'engagement trouvera des personnes qui aiment et commentent, pas des personnes qui achètent. Une campagne réglée sur le trafic trouvera des personnes qui cliquent, pas forcément des personnes qui remplissent un formulaire.
+Les plateformes optimisent l'objectif qu'on leur donne. Une campagne réglée sur l'engagement trouvera des personnes qui aiment et commentent. Une campagne réglée sur le trafic trouvera des personnes qui cliquent. Ni l'une ni l'autre ne cherche des acheteurs.
 
 **Comment le repérer** : pour chaque campagne, vérifiez l'objectif réglé dans la plateforme et comparez-le à ce que vous en attendez. Il arrive aussi qu'on compare entre elles des campagnes aux objectifs différents, ce qui fausse toute la lecture : une campagne de notoriété aura toujours un coût par lead élevé, et ce n'est pas un défaut.
 
@@ -57,14 +57,14 @@ Toute l'acquisition repose sur les réseaux sociaux, alors qu'une partie de vos 
 
 Ces sept signes ne se corrigent pas tous en même temps, et il ne faut pas essayer. Un bon audit les hiérarchise selon deux critères : ce qu'ils coûtent, et ce qu'il faut pour les corriger. Le suivi des ventes et la vitesse de rappel passent souvent en premier, parce qu'ils conditionnent la lecture de tout le reste et coûtent peu à mettre en place. Le renouvellement des créations et la structure des campagnes viennent ensuite.
 
-L'important est de partir des chiffres réels, pas des impressions. Une campagne que tout le monde trouve mauvaise est parfois celle qui produit les meilleurs clients ; une autre, très appréciée, peut consommer le budget sans résultat.
+L'important est de partir des chiffres réels. Une campagne que tout le monde trouve mauvaise est parfois celle qui produit les meilleurs clients ; une autre, très appréciée, peut consommer le budget sans résultat.
 
 ## Une autoévaluation en dix minutes
 
 Avant tout audit, quelques questions permettent de savoir où vous en êtes. Répondez-y avec vos équipes, chiffres à l'appui :
 
 - Savons-nous quelle campagne a produit chacun de nos clients du dernier trimestre ?
-- Connaissons-nous notre coût d'acquisition client, et pas seulement notre coût par lead ?
+- Connaissons-nous notre coût d'acquisition client, en plus de notre coût par lead ?
 - Nos principales publicités ont-elles été renouvelées au cours des deux derniers mois ?
 - Nos campagnes actives excluent-elles les audiences les unes des autres ?
 - Combien de temps s'écoule, en moyenne, entre un formulaire rempli et le premier appel ?

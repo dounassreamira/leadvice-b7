@@ -50,7 +50,7 @@ sous_menu_expertises:
     - { sep: Par secteur }
     - { url: /secteurs/immobilier/, libelle: Immobilier, aide: Des acheteurs qui viennent en visite }
     - { url: /secteurs/b2b/, libelle: Grands comptes et B2B, aide: Un suivi jusqu'à l'opportunité }
-    - { url: /secteurs/e-commerce/, libelle: Marques et e-commerce, aide: Des commandes livrées, pas des paniers }
+    - { url: /secteurs/e-commerce/, libelle: Marques et e-commerce, aide: Compter les commandes livrées }
 
 menu_mobile:
   ouvrir: Menu

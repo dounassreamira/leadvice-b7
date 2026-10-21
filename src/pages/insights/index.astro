@@ -2,7 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import PageHero from '../../components/PageHero.astro';
 import CtaBand from '../../components/CtaBand.astro';
-import { page } from '../../lib/content';
+import { page, site } from '../../lib/content';
 import { articles, readingTime } from '../../lib/insights';
 import { coverSVG } from '../../lib/cover';
 import '../../styles/pages/levier.css';
@@ -11,6 +11,7 @@ const d = await page('insights');
 const list = await articles();
 const crumb = [{ name: 'Accueil', url: '/' }, { name: d.fil, url: '/insights/' }];
 const itemList = { '@type': 'ItemList', itemListElement: list.map((a, i) => ({ '@type': 'ListItem', position: i + 1, url: `https://leadvice.org/insights/${a.id}/`, name: a.data.title })) };
+const cv = await site('couvertures');
 ---
 <Base title={d.seo.title} description={d.seo.description} og={d.seo.og} section="ins" crumb={crumb} jsonld={[itemList]}>
   <PageHero crumb={crumb} h1={d.h1} lead={d.reponse} field="lines" />
@@ -24,7 +25,7 @@ const itemList = { '@type': 'ItemList', itemListElement: list.map((a, i) => ({ '
         <a class="art" href={`/insights/${a.id}/`} data-cat={a.data.category}>
           <h2>{a.data.title}</h2>
           <div class="meta">
-            <Fragment set:html={coverSVG(a.id, a.data.category, d.article.couverture)} />
+            <Fragment set:html={coverSVG(a.id, a.data.category, d.article.couverture, cv)} />
             <span>{a.data.category}</span><span>{d.par} {a.data.author}</span><span>{readingTime(a)} {d.lecture}</span>
           </div>
           <p class="ex">{a.data.excerpt}</p>

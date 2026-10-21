@@ -9,7 +9,7 @@ publishedAt: 2026-10-13
 levier: [acquisition]
 order: 1
 ---
-Il y a une phrase que nous entendons dans presque tous les premiers rendez-vous : « Les leads arrivent, mais les commerciaux disent qu'ils ne sont pas bons. » Le tableau de bord marketing est vert, le coût par lead baisse, et pourtant les ventes ne suivent pas. Ce n'est pas un problème de commerciaux. C'est presque toujours un problème de conception de l'acquisition.
+Il y a une phrase que nous entendons dans presque tous les premiers rendez-vous : « Les leads arrivent, mais les commerciaux disent qu'ils ne sont pas bons. » Le tableau de bord marketing est vert, le coût par lead baisse, et pourtant les ventes ne suivent pas. Dans presque tous les cas, les commerciaux n'y sont pour rien : c'est un problème de conception de l'acquisition.
 
 ## Le piège du coût par lead
 
@@ -17,13 +17,13 @@ Le coût par lead est un indicateur rassurant. Il est simple, il se compare d'un
 
 Un formulaire pré-rempli en deux clics, une audience très large, une accroche du type « Gagnez » ou « Recevez gratuitement » : tout cela fait baisser le coût par lead. Tout cela fait aussi monter la proportion de personnes qui ne se souviennent même pas d'avoir laissé leur numéro quand on les rappelle.
 
-Le coût par lead n'est pas un mauvais indicateur. C'est un indicateur incomplet. Seul, il récompense le volume. Il doit être lu à côté de ce que deviennent ces leads.
+Le coût par lead est un indicateur incomplet. Seul, il récompense le volume. Il doit être lu à côté de ce que deviennent ces leads.
 
 ## Définir un bon lead, avec les commerciaux
 
 Avant de toucher aux campagnes, la première étape est une conversation entre le marketing et les ventes. Qu'est-ce qu'un bon prospect pour vous ? En général, la réponse tient en quatre critères :
 
-- **Le besoin** : la personne a un projet réel, pas une curiosité.
+- **Le besoin** : la personne a un projet réel.
 - **Le rôle** : elle décide, ou elle influence directement la décision.
 - **Les moyens** : son budget est compatible avec votre offre.
 - **Le moment** : son projet se joue dans un horizon que vous pouvez servir.

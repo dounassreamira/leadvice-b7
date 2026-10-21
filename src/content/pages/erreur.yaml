@@ -15,7 +15,7 @@ codes:
   "405":
     legende: Erreur 405
     h1: Cette adresse ne s'ouvre pas comme ça.
-    texte: "Elle sert à envoyer un formulaire, pas à être visitée. Le reste du site, lui, est bien là."
+    texte: "Elle sert à envoyer un formulaire. Le reste du site, lui, est bien là."
   "429":
     legende: Erreur 429
     h1: Trop de demandes d'un coup.

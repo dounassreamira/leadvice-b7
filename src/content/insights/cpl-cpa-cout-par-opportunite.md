@@ -19,7 +19,7 @@ Mon passé d'auditrice m'a appris une chose : un chiffre n'a de valeur que s'il
 
 **Le taux de clic** dit si une publicité attire l'attention. Un taux élevé est bon signe pour la création. Mais une publicité peut être très cliquée par des personnes qui n'achèteront jamais.
 
-**Les mentions « j'aime », les commentaires, les partages** mesurent l'intérêt pour un contenu, pas l'intention d'acheter.
+**Les mentions « j'aime », les commentaires, les partages** mesurent l'intérêt pour un contenu. Ils ne disent rien de l'intention d'acheter.
 
 Ces indicateurs ne sont pas inutiles. Ils servent à diagnostiquer : pourquoi une campagne ne produit pas de contacts, pourquoi une création s'use. Mais ils ne doivent jamais servir à juger si le marketing fonctionne.
 

@@ -1,0 +1,13 @@
+# Textes dessinés dans les couvertures d'articles (illustrations-objets, une par article).
+plus-de-leads-ne-veut-pas-dire-plus-de-clients: { gauche: 120 leads, droite: 3 clients }
+trouver-le-bon-angle: { angles: [Le prix, Le temps, La confiance], retenu: Retenu }
+meta-ads-ou-google-ads: { gauche: Il découvre, droite: Il cherche, recherche: appartement 3 pièces casablanca }
+cpl-cpa-cout-par-opportunite:
+  titre: Exemple fictif
+  lignes:
+    - [Coût par lead, 100 DH]
+    - [Par lead qualifié, 400 DH]
+    - [Par opportunité, "2 000 DH"]
+    - [Par client signé, "10 000 DH"]
+arabe-ou-francais-langue-publicites-maroc: { textes: [["تخفيض 20٪", "غير هاد السيمانة"], ["خصم 20٪", "هذا الأسبوع فقط"], ["20 % de remise", "cette semaine"]], langues: [Darija, Arabe, Français] }
+audit-marketing-sept-signes: { titre: Audit d'acquisition, marques: 7 }

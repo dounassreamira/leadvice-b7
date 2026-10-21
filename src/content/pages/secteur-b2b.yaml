@@ -5,18 +5,21 @@ seo:
   og: accueil
 fil: Grands comptes et B2B
 service: Génération de leads B2B et grands comptes
-h1: Convaincre chaque décideur, pas seulement le premier.
+h1: "En B2B, chaque personne qui signe a sa propre question."
 reponse: "En B2B, une vente passe par plusieurs personnes : la direction, les achats, les équipes techniques, la finance. Leadvice construit des campagnes qui parlent à chacune, avec le bon contenu au bon moment, et un suivi qui accompagne le cycle jusqu'à l'opportunité signée."
 scene:
   type: b2b
-  aria: "Plusieurs décideurs, chacun touché par un message, qui se retrouvent autour d'une même opportunité"
+  aria: "Un dossier passe de bureau en bureau ; chaque décideur reçoit le contenu qui répond à sa question et y pose son tampon"
   etapes:
-    - { de: 0, a: 0.3, texte: "Une décision B2B, ce sont plusieurs personnes." }
-    - { de: 0.3, a: 0.6, texte: "Chacune a sa question. Chacune reçoit sa réponse." }
-    - { de: 0.6, a: 0.85, texte: "Elles finissent autour de la même table." }
-    - { de: 0.85, a: 1.01, texte: "Et l'opportunité avance, parce que personne n'a été oublié." }
-  roles: [Direction, Achats, Technique, Finance, Métier]
-  centre: Opportunité
+    - { de: 0, a: 0.25, texte: "En B2B, une décision passe par plusieurs bureaux." }
+    - { de: 0.25, a: 0.6, texte: "À chaque bureau, la question change : le besoin, la technique, le prix, le budget." }
+    - { de: 0.6, a: 0.86, texte: "Nous préparons la réponse de chacun avant qu'il la pose." }
+    - { de: 0.86, a: 1.01, texte: "Le dossier arrive complet sur le bureau de la direction." }
+  roles: [Métier, Technique, Achats, Finance, Direction]
+  contenus: [Étude de cas, Fiche technique, Comparatif, Calcul du retour, Synthèse d'une page]
+  tampons: [Besoin confirmé, Conforme, Offre retenue, Budget validé, Signé]
+  dossier: Proposition
+  centre: Opportunité signée
 chemin:
   titre: Le chemin d'une décision B2B.
   etapes:
@@ -27,7 +30,7 @@ chemin:
 pertes:
   titre: Là où les opportunités se perdent.
   situations:
-    - "« Nos campagnes touchent des étudiants et des indépendants, pas des décideurs. »"
+    - "« Nos campagnes touchent surtout des étudiants et des indépendants. Les décideurs, on ne les voit jamais. »"
     - "« Le premier contact est bon, puis le dossier s'arrête au comité. »"
     - "« Le cycle dure six mois : impossible de savoir quelle campagne a vraiment servi. »"
 faisons:

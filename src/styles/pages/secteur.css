@@ -36,3 +36,8 @@
     .sct-k { font-size: 32px; }
   }
 }
+@layer pages {
+  .sct-sv { font: 700 13px var(--sans); fill: #301781; }
+  .sct-st { font: 700 13px var(--sans); fill: #C2410C; }
+  @media (max-width: 700px) { .sct-sv, .sct-st { font-size: 19px; } }
+}

@@ -15,7 +15,7 @@ Un angle, c'est la raison principale que vous donnez à quelqu'un d'agir. Le mê
 
 ## Pourquoi l'angle compte plus que le visuel
 
-Sur un fil d'actualité, une publicité a une fraction de seconde pour arrêter quelqu'un. Ce qui l'arrête, ce n'est pas la qualité du visuel en soi. C'est le sentiment immédiat que « ça me concerne ». L'angle est ce qui crée ce sentiment.
+Sur un fil d'actualité, une publicité a une fraction de seconde pour arrêter quelqu'un. Ce qui l'arrête, c'est le sentiment immédiat que « ça me concerne », bien plus que la qualité du visuel. L'angle est ce qui crée ce sentiment.
 
 Deux publicités peuvent avoir la même photo, la même mise en page et la même offre, et donner des résultats très différents parce que la première ligne dit autre chose. À l'inverse, une très belle création portée par un angle flou ne fera jamais agir personne.
 
@@ -50,7 +50,7 @@ Une fois les angles identifiés, chacun doit tenir en une promesse claire, formu
 
 Une bonne promesse d'angle se reconnaît à trois choses : elle se comprend en une lecture, elle parle à une personne précise, et elle donne envie d'en savoir plus. Si l'on peut la coller sur n'importe quel concurrent, elle n'est pas assez précise.
 
-## Tester des angles, pas des variantes
+## Tester des angles vraiment différents
 
 L'erreur la plus fréquente en test publicitaire est de comparer des choses trop proches : deux couleurs de bouton, deux photos du même salon, deux formulations de la même idée. Ces tests coûtent du budget et n'apprennent presque rien.
 
@@ -66,7 +66,7 @@ C'est pourquoi nous lisons toujours les résultats par audience, par tranche d'�
 
 Sur une vidéo, l'angle doit apparaître dans les premières secondes, à l'image ou à l'écrit. Sur une publicité statique, dans la première ligne. Si la personne doit attendre la fin pour comprendre ce qu'on lui propose, elle sera partie avant.
 
-Une bonne accroche n'est pas forcément une phrase choc. C'est la formulation la plus directe de l'angle : la situation que vit la personne, ou le résultat qu'elle cherche.
+Une bonne accroche est souvent la formulation la plus directe de l'angle : la situation que vit la personne, ou le résultat qu'elle cherche.
 
 ## Un exemple : un même programme, trois angles
 
@@ -78,10 +78,10 @@ Prenons un programme immobilier fictif, en périphérie d'une grande ville, avec
 
 **L'angle investissement.** Accroche : « Un bien qui travaille pour vous. » Visuel : le plan du quartier et ses projets à venir. Audience : investisseurs, cadres supérieurs, Marocains résidant à l'étranger. Ce que la publicité promet, c'est un patrimoine qui prend de la valeur.
 
-Ces trois publicités ne s'adressent pas aux mêmes personnes, n'attirent pas les mêmes objections et n'appellent pas le même discours commercial au rappel. C'est pour cela que l'angle se choisit avec les ventes, et pas seulement avec le studio de création.
+Ces trois publicités ne s'adressent pas aux mêmes personnes, n'attirent pas les mêmes objections et n'appellent pas le même discours commercial au rappel. C'est pour cela que l'angle se choisit aussi avec l'équipe commerciale.
 
 ## Ce qu'il faut retenir
 
 Avant de baisser un prix ou d'augmenter un budget, vérifiez l'angle. Cherchez-le dans ce que disent vos clients et vos commerciaux, formulez une promesse claire par angle, testez des angles vraiment différents et lisez les résultats par audience.
 
-Le problème n'est pas toujours l'offre. C'est parfois l'angle.
+Souvent, l'offre est bonne et c'est l'angle qu'il faut changer.

@@ -1,25 +1,32 @@
 # Page secteur Marques et e-commerce. Ton narratif : une commande n'est gagnée qu'à la livraison.
 seo:
   title: "Publicité e-commerce au Maroc : commandes confirmées et livrées | Leadvice"
-  description: "E-commerce au Maroc : Leadvice pilote vos campagnes Meta Ads et Google Ads sur les commandes confirmées et livrées, pas sur les paniers. Diagnostic offert."
+  description: "E-commerce au Maroc : Leadvice pilote vos campagnes Meta Ads et Google Ads sur les commandes confirmées, livrées et payées. Diagnostic offert."
   og: accueil
 fil: Marques et e-commerce
 service: Acquisition e-commerce et paiement à la livraison
-h1: Des commandes livrées, pas seulement des paniers.
+h1: Une commande compte quand elle est livrée et payée.
 reponse: "Au Maroc, une grande partie des commandes se paient à la livraison. Une commande passée n'est donc pas une vente : il faut qu'elle soit confirmée, expédiée, puis acceptée à la porte. Leadvice pilote vos campagnes sur ce qui compte vraiment, les commandes livrées, et réduit les pertes à chaque étape."
 scene:
   type: ecom
-  aria: "Des colis passent de la commande à la livraison ; certains tombent en route"
+  aria: "Des colis passent de la commande à la livraison ; certains clients ne confirment pas, d'autres refusent le colis"
   etapes:
-    - { de: 0, a: 0.3, texte: "Les commandes arrivent. Le tableau de bord se réjouit." }
-    - { de: 0.3, a: 0.6, texte: "Certaines ne sont jamais confirmées." }
-    - { de: 0.6, a: 0.85, texte: "D'autres sont refusées à la porte." }
-    - { de: 0.85, a: 1.01, texte: "Seules les commandes livrées paient la publicité. C'est elles que nous comptons." }
+    - { de: 0, a: 0.3, texte: "Les commandes arrivent, et le tableau de bord se réjouit." }
+    - { de: 0.3, a: 0.6, texte: "Certains clients ne répondent pas à la confirmation." }
+    - { de: 0.6, a: 0.85, texte: "D'autres refusent le colis à la porte." }
+    - { de: 0.85, a: 1.01, texte: "Seules les commandes livrées et payées financent la publicité. Ce sont elles que nous comptons." }
   etapes_chemin: [Commande, Confirmation, Expédition, Livraison]
+  question: Je confirme votre commande ?
+  reponse: Oui, merci !
+  sans_reponse: Sans réponse
+  refuse: Refusé à la porte
+  paye: Payé
+  livrees: livrées sur
+  commandees: commandes
 chemin:
   titre: Le chemin d'une commande.
   etapes:
-    - { titre: Annonce, texte: "Un produit, un angle, une preuve. La vidéo qui montre le produit en main vend mieux que la photo parfaite." }
+    - { titre: Annonce, texte: "La vidéo qui montre le produit en main vend mieux que la photo parfaite, surtout avec un avis client réel." }
     - { titre: Page produit, texte: "Prix clair, frais de livraison annoncés, avis, et un bouton qui ne laisse pas de doute." }
     - { titre: Confirmation, texte: "Un message ou un appel rapide pour confirmer l'adresse et l'intention : c'est là que se joue le taux de livraison." }
     - { titre: Livraison, texte: "Suivi des refus et des retours par campagne, pour couper les audiences qui commandent sans acheter." }

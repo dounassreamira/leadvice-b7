@@ -8,20 +8,17 @@ reponse: "Leadvice conçoit et pilote vos campagnes Meta Ads et Google Ads au Ma
 scene:
   nom: target
   len: 300
-  aria: Du public aux leads qualifiés
-  legende: Du public aux leads qualifiés
+  aria: "De l'annonce à la fiche du lead"
+  legende: "De l'annonce à la fiche du lead"
   etapes:
-  - texte: Parler à tout le monde coûte cher.
+  - texte: "Votre annonce, devant la personne qui a un projet."
     de: 0.03
-    a: 0.3
-  - texte: Le ciblage garde ceux qui ont un projet.
-    de: 0.3
-    a: 0.58
-  - texte: Le formulaire trie avant de compter.
-    de: 0.58
-    a: 0.86
-  - texte: Moins de contacts. De meilleurs contacts.
-    de: 0.86
+    a: 0.24
+  - texte: "Trois questions, et vos commerciaux savent qui rappeler."
+    de: 0.24
+    a: 0.56
+  - texte: "Chaque demande arrive triée : à rappeler ce matin, ou à relancer."
+    de: 0.56
     a: 1.0
 faisons:
   titre: Ce que nous faisons.
@@ -36,7 +33,7 @@ faisons:
   - titre: Ciblage et segmentation
     texte: Nous construisons des audiences précises, par intérêt, par comportement et à partir de vos propres données, et nous excluons celles qui coûtent sans convertir.
   - titre: Media buying
-    texte: Répartition du budget entre canaux, campagnes et audiences, ajustée chaque semaine selon ce qui produit des clients, pas des clics.
+    texte: Répartition du budget entre canaux, campagnes et audiences, ajustée chaque semaine vers ce qui produit des clients.
 pour_vous:
   titre: Est-ce pour vous ?
   situations:
@@ -51,10 +48,10 @@ faq:
   questions:
   - q: Quel budget publicitaire faut-il prévoir ?
     a:
-    - Il dépend de votre marché, de votre panier moyen et du nombre de clients que vous visez. Nous le calculons avec vous à partir de vos objectifs, pas l'inverse. Le budget publicitaire est payé directement aux plateformes, séparément de nos honoraires.
+    - Il dépend de votre marché, de votre panier moyen et du nombre de clients que vous visez. Nous le calculons avec vous en partant du nombre de clients que vous voulez. Le budget publicitaire est payé directement aux plateformes, séparément de nos honoraires.
   - q: Comment faites-vous pour obtenir des leads de qualité ?
     a:
-    - 'En triant avant de compter : des audiences précises, des messages qui attirent les bonnes personnes et repoussent les autres, et des formulaires qui posent les questions utiles. Nous suivons ensuite ce que deviennent les leads, pas seulement leur nombre.'
+    - 'En triant avant de compter : des audiences précises, des messages qui attirent les bonnes personnes et repoussent les autres, et des formulaires qui posent les questions utiles. Nous suivons ensuite ce que deviennent les leads, jusqu''au rendez-vous.'
   - q: Les comptes publicitaires nous appartiennent-ils ?
     a:
     - Oui. Les campagnes sont gérées dans vos comptes Meta et Google, ou dans des comptes créés à votre nom. Les données et l'historique restent chez vous.
@@ -79,7 +76,7 @@ parcours:
     - { levier: Stratégie, titre: Le brief, texte: Un objectif, une cible, un message. }
     - { levier: Création, titre: "L'annonce", texte: Un visuel et une phrase qui parlent à la cible. }
     - { levier: Acquisition, titre: La diffusion, texte: Sortir du fil, devant les bonnes personnes. }
-    - { levier: Sites web, titre: Le formulaire, texte: Trois champs, pas neuf. }
+    - { levier: Sites web, titre: Le formulaire, texte: "Trois champs, le reste attendra l'appel." }
     - { levier: Pilotage, titre: Le lead, texte: Qualifié, transmis, suivi. }
     - { levier: Résultat, titre: Le client, texte: Ce que vous vouliez au départ. }
   brief:
@@ -88,7 +85,7 @@ parcours:
     lignes:
       - { k: Cible, v: Primo-accédants, 28 à 40 ans, Casablanca et alentours }
       - { k: Message, v: Un trois pièces accessible, à visiter ce week-end }
-      - { k: Indicateur, v: Visites confirmées, pas seulement des clics }
+      - { k: Indicateur, v: Visites confirmées }
   annonce:
     etiquette: Sponsorisé
     titre: Votre trois pièces, à 25 minutes du centre
@@ -112,7 +109,7 @@ parcours:
       - { k: Suite, v: "Rappel par l'équipe commerciale" }
   fin:
     titre: Visite confirmée.
-    texte: "Samedi, 11 h. Le brief disait : des visites, pas des clics."
+    texte: "Samedi, 11 h. C'est exactement ce que demandait le brief."
 
 simulateur:
   titre: Simulez le chemin de votre budget.
@@ -145,7 +142,7 @@ simulateur:
   note: "Simulation indicative, réglée par défaut sur notre coût moyen par lead constaté sur Meta Ads (moins de 1 $, soit environ 10 DH). Les taux réels dépendent de votre secteur, de votre offre et de vos campagnes : nous les estimons avec vous pendant le diagnostic."
 
 chiffres:
-  retenus: ["< 1 $", "1 à 2 $", "+1 000", "126"]
+  retenus: ["< 10 DH", "+1 400", "+80 000"]
   note: Le coût par lead varie selon le secteur et le prix de ce que vous vendez. Le chiffre qui compte vraiment est le coût par client.
 
 plan:

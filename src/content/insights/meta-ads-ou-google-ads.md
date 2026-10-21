@@ -1,5 +1,5 @@
 ---
-title: "Meta Ads ou Google Ads : choisir selon l'intention, pas selon la mode"
+title: "Meta Ads ou Google Ads : choisir selon l'intention de vos clients"
 seoTitle: "Meta Ads ou Google Ads : lequel choisir ? | Leadvice"
 description: "Meta Ads et Google Ads ne répondent pas au même moment de la décision d'achat. Comment choisir, et comment répartir votre budget entre les deux."
 category: Acquisition
@@ -51,11 +51,11 @@ Il n'existe pas de bonne répartition universelle, et les règles du type « 70
 
 **La durée du cycle de vente.** Plus la décision est longue, comme dans l'immobilier, l'éducation ou les services B2B, plus le rappel et l'entretien de l'intérêt comptent, et plus Meta a un rôle à jouer sur la durée.
 
-**Le coût par client, pas par lead.** Les deux plateformes doivent être jugées sur le même indicateur final. Si les leads Google coûtent plus cher mais signent beaucoup plus souvent, ils peuvent être les moins chers au bout du compte.
+**Le coût par client.** Les deux plateformes doivent être jugées sur le même indicateur final. Si les leads Google coûtent plus cher mais signent beaucoup plus souvent, ils peuvent être les moins chers au bout du compte.
 
 ## Et LinkedIn ?
 
-Pour certaines offres B2B à forte valeur, LinkedIn Ads permet de cibler par fonction, par secteur et par taille d'entreprise. Le coût par contact y est nettement plus élevé, mais la précision peut le justifier quand chaque client représente un montant important. C'est un canal à envisager après avoir posé les bases sur Meta et Google, pas avant.
+Pour certaines offres B2B à forte valeur, LinkedIn Ads permet de cibler par fonction, par secteur et par taille d'entreprise. Le coût par contact y est nettement plus élevé, mais la précision peut le justifier quand chaque client représente un montant important. C'est un canal à envisager une fois les bases posées sur Meta et Google.
 
 ## Les erreurs les plus fréquentes
 

@@ -18,6 +18,8 @@ const moneyLabels = await sceneLabels('money');
 const o = p.ouverture, e = o.ecrans, pe = p.pertes, x = p.expertises;
 const sc = o.scenes as [Data, Data, Data, Data, Data];
 const XS = [0, 58, 118, 170, 222];
+const XSC: Record<string, string> = { strat: 'knot', crea: 'angles', acq: 'target', pil: 'dial' };
+const XLAB: Record<string, string> = Object.fromEntries(await Promise.all(Object.entries(XSC).map(async ([k, v]) => [k, await sceneLabels(v)] as const)));
 ---
 <Base title={p.seo.title} description={p.seo.description} og={p.seo.og} page="home" thread={false} jsonld={[faqPage(p.faq.questions)]} bodyClass="pc-home">
 
@@ -109,16 +111,21 @@ const XS = [0, 58, 118, 170, 222];
         </div>
 
         <div class="pc-brk frost" data-brk="attr">
-          <svg viewBox="0 0 320 170" aria-hidden="true">
-            <g class="t2-ads">
-              {(pe.attribution.dessin.annonces as string[]).map((a, i) => <Fragment><rect x="14" y={22 + i * 46} width="70" height="34" rx="5" fill="#fff" stroke="#DEDAE8" /><text class="sv-b" x="49" y={44 + i * 46} text-anchor="middle">{a}</text></Fragment>)}
-            </g>
-            <text class="sv-t" x="276" y="16" text-anchor="middle">{pe.attribution.dessin.ventes}</text>
-            <g fill="#E2C066" stroke="#8F6A22" stroke-width="1"><circle cx="276" cy="40" r="10" /><circle cx="276" cy="72" r="10" /><circle cx="276" cy="104" r="10" /><circle cx="276" cy="136" r="10" /></g>
-            <g class="t2-q" fill="none" stroke="#B4A6FF" stroke-width="1.5" stroke-dasharray="3 6"><path d="M90 85 L150 85" /><path d="M200 85 L262 85" /></g>
-            <text class="t2-q sv-k" x="175" y="91" text-anchor="middle" style="font-size:22px">?</text>
-            <g class="t2-th"><path class="tie" d="M266 40 C 200 40, 150 85, 84 85" /><path class="tie" d="M266 72 C 200 72, 150 85, 84 85" /><path class="tie" d="M266 104 C 200 104, 150 85, 84 85" /><path class="tie" d="M266 136 C 190 136, 150 39, 84 39" /></g>
-            <text class="sv-k t2-res" x="100" y="166" style="font-size:13px">{pe.attribution.dessin.resultat}</text>
+          <svg viewBox="0 0 320 178" aria-hidden="true" data-at={JSON.stringify({ un: pe.attribution.dessin.vente, plus: pe.attribution.dessin.ventes })}>
+            {(pe.attribution.dessin.annonces as string[]).map((a, i) => (
+              <g class="t2-ad" transform={`translate(${12 + i * 104} 10)`}>
+                <rect width="88" height="96" rx="7" fill="#fff" stroke="#DEDAE8" />
+                <circle cx="12" cy="12" r="5" fill="#B4A6FF" /><rect x="22" y="9" width="40" height="6" rx="3" fill="#E6E1EE" />
+                <rect class="t2-img" x="8" y="24" width="72" height="40" rx="4" fill="#EFEBF8" />
+                <text class="sv-b" x="8" y="80">{a}</text>
+                <text class="sv-t t2-n" x="8" y="91">0 {pe.attribution.dessin.ventes}</text>
+                <g class="t2-cut" opacity="0"><rect x="14" y="36" width="60" height="18" rx="3" fill="#fff" stroke="#8A8499" /><text class="sv-t" x="44" y="49" text-anchor="middle">{pe.attribution.dessin.coupee}</text></g>
+                <rect x="0" y="104" width="88" height="6" rx="3" fill="#EFEBF8" /><rect class="t2-bar" x="0" y="104" width="44" height="6" rx="3" fill="#7B61FF" />
+              </g>
+            ))}
+            <text class="sv-t" x="12" y="134">{pe.attribution.dessin.budget}</text>
+            <g class="t2-st">{[0, 1, 2, 3].map(() => <g opacity="0"><rect x="-26" y="-10" width="52" height="20" rx="3" fill="#FFF4EF" stroke="#C2410C" stroke-width="1.4" /><text x="0" y="4" text-anchor="middle" class="sv-st">{pe.attribution.dessin.signe}</text></g>)}</g>
+            <text class="sv-k t2-res" x="12" y="160" style="font-size:14px">{pe.attribution.dessin.resultat}</text>
           </svg>
           <div><q>{pe.attribution.phrase}</q><p>{pe.attribution.texte}</p><span class="fix">{pe.attribution.solution}</span></div>
         </div>
@@ -146,10 +153,7 @@ const XS = [0, 58, 118, 170, 222];
       <div class="pc-exp4">
         {(x.liste as Data[]).map((it) => (
           <a class="pc-xc frost" href={it.url} data-x={it.cle}>
-            {it.cle === 'strat' && <svg viewBox="0 0 200 110" aria-hidden="true"><g class="xs-dots" fill="#D6CFFA"><circle cx="30" cy="80" r="3" /><circle cx="60" cy="30" r="3" /><circle cx="85" cy="70" r="3" /><circle cx="110" cy="40" r="3" /><circle cx="130" cy="88" r="3" /><circle cx="150" cy="25" r="3" /><circle cx="45" cy="50" r="3" /><circle cx="168" cy="62" r="3" /></g><path class="xs-route" d="M20 92 C 50 92, 70 72, 85 70 S 105 42, 110 40 S 150 62, 172 52" fill="none" stroke="#7B61FF" stroke-width="1.6" stroke-linecap="round" /><g class="xs-flag"><path d="M172 52 L172 30" stroke="#7B61FF" stroke-width="1.4" /><path d="M172 30 L184 35 L172 40 z" fill="#7B61FF" /></g></svg>}
-            {it.cle === 'crea' && <svg viewBox="0 0 200 110" aria-hidden="true"><g class="xc-w"><rect x="20" y="20" width="56" height="14" rx="3" fill="#D6CFFA" /><rect x="88" y="70" width="70" height="14" rx="3" fill="#B4A6FF" /><rect x="120" y="22" width="48" height="14" rx="3" fill="#D6CFFA" /></g><rect class="xc-bar" x="20" y="96" width="0" height="2" rx="1" fill="#7B61FF" /></svg>}
-            {it.cle === 'acq' && <svg viewBox="0 0 200 110" aria-hidden="true"><g class="xa-c"></g><circle class="xa-lens" cx="40" cy="55" r="20" fill="none" stroke="#B4A6FF" stroke-width="1.2" /></svg>}
-            {it.cle === 'pil' && <svg viewBox="0 0 200 110" aria-hidden="true"><g class="xp-b">{[22, 52, 82, 112, 142, 172].map((xx) => <rect x={xx} width="18" fill="#D6CFFA" />)}</g><path class="xp-l" fill="none" stroke="#7B61FF" stroke-width="1.6" stroke-linecap="round" /></svg>}
+            <canvas class="pc-xcv" data-scene={XSC[it.cle]} data-mini data-p="0" data-labels={XLAB[it.cle]} aria-hidden="true"></canvas>
             <span class="when">{it.moment}</span><h3>{it.titre}</h3><p>{it.texte}</p><span class="tlink">{it.lien}</span>
           </a>
         ))}
@@ -172,10 +176,10 @@ const XS = [0, 58, 118, 170, 222];
     <section class="wrap pc-sec" id="pour-qui" data-stop>
       <h2>{p.pour_qui.titre}</h2>
       <p class="lead">{p.pour_qui.texte}</p>
-      <div class="pc-fit">
-        <div class="frost"><h3>{p.pour_qui.oui_titre}</h3><ul class="ok">{(p.pour_qui.oui as string[]).map((t) => <li>{t}</li>)}</ul></div>
-        <div class="frost"><h3>{p.pour_qui.non_titre}</h3><ul class="no">{(p.pour_qui.non as string[]).map((t) => <li>{t}</li>)}</ul></div>
-      </div>
+      <ul class="pc-dep">
+        {(p.pour_qui.departs as Data[]).map((x) => <li><h3>{x.situation}</h3><div><p>{x.reponse}</p><a class="tlink" href={x.url}>{x.lien}</a></div></li>)}
+      </ul>
+      <p class="pc-conseil frost">{p.pour_qui.conseil}</p>
       <p class="pc-secteurs">{p.pour_qui.secteurs_intro} {(p.pour_qui.secteurs as Data[]).map((l, i) => <Fragment>{i > 0 && ', '}<a class="tlink" href={l.url}>{l.libelle}</a></Fragment>)}.</p>
     </section>
 

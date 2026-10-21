@@ -4,12 +4,12 @@ seoTitle: "Arabe ou français : quelle langue pour vos publicités au Maroc ? 
 description: "Darija, arabe ou français : la langue d'une publicité au Maroc est un choix de cible, de ton et de confiance. Comment décider et tester."
 category: Création
 author: Amira Dounassre
-excerpt: "La langue n'est pas un détail de traduction. C'est un choix de cible, de ton et de confiance."
+excerpt: "Choisir la langue d'une publicité, c'est choisir à qui l'on parle, sur quel ton, et avec quel degré de confiance."
 publishedAt: 2026-10-13
 levier: [creation]
 order: 5
 ---
-Au Maroc, la question de la langue d'une publicité se pose à chaque campagne, et elle est souvent tranchée par habitude. On écrit en français parce que l'entreprise travaille en français, ou on traduit en arabe « pour toucher plus de monde ». Dans les deux cas, on passe à côté de ce qui compte : la langue d'une publicité ne sert pas seulement à être compris. Elle dit à qui l'on parle.
+Au Maroc, la question de la langue d'une publicité se pose à chaque campagne, et elle est souvent tranchée par habitude. On écrit en français parce que l'entreprise travaille en français, ou on traduit en arabe « pour toucher plus de monde ». Dans les deux cas, on passe à côté de ce qui compte : une langue sert à être compris, et elle dit aussi à qui l'on parle.
 
 ## La langue est un choix de cible
 
@@ -17,7 +17,7 @@ Une même personne peut lire indifféremment l'arabe et le français, et pourtan
 
 Choisir une langue, c'est donc choisir une audience et un ton. Une offre immobilière haut de gamme, un service financier, une formation, un produit de grande consommation ne se racontent pas de la même manière, et pas forcément dans la même langue.
 
-## Trois registres, pas deux
+## Trois registres au Maroc
 
 On parle souvent d'« arabe ou français », alors qu'il y a au moins trois registres :
 
@@ -62,14 +62,14 @@ Cela vaut jusqu'au rappel commercial : si le premier contact s'est fait en arab
 Un test de langue utile se prépare en quelques étapes :
 
 1. **Choisir un angle** déjà validé, pour que la langue soit la seule différence entre les publicités.
-2. **Écrire chaque version directement dans sa langue**, si possible par une personne dont c'est la langue de travail, plutôt que de traduire.
+2. **Écrire chaque version directement dans sa langue**, si possible par une personne dont c'est la langue de travail, sans passer par une traduction.
 3. **Garder le même visuel, la même audience et le même budget** pour chaque version, afin que la comparaison soit juste.
 4. **Aligner le parcours** : formulaire, page d'arrivée et message de confirmation dans la même langue que la publicité.
-5. **Laisser tourner assez longtemps** pour obtenir des volumes comparables, puis lire les résultats jusqu'aux rendez-vous et aux ventes, pas seulement jusqu'aux leads.
+5. **Laisser tourner assez longtemps** pour obtenir des volumes comparables, puis lire les résultats jusqu'aux rendez-vous et aux ventes.
 6. **Recommencer par audience** : la langue qui gagne auprès d'un public peut perdre auprès d'un autre.
 
 Ce test coûte peu, et il évite des mois de campagnes dans une langue choisie par habitude.
 
 ## Ce qu'il faut retenir
 
-La langue d'une publicité au Maroc n'est pas un détail de traduction. C'est un choix de cible, de ton et de confiance. Distinguez les trois registres, adaptez au lieu de traduire, testez les langues auprès du même public, lisez les résultats jusqu'à la vente, et gardez la même langue tout au long du parcours.
+Au Maroc, choisir la langue d'une publicité revient à choisir sa cible, son ton et le degré de confiance qu'on inspire. Distinguez les trois registres, adaptez au lieu de traduire, testez les langues auprès du même public, lisez les résultats jusqu'à la vente, et gardez la même langue tout au long du parcours.

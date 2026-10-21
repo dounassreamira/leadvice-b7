@@ -3,22 +3,22 @@ seo:
   description: 'Sites vitrines, pages de destination et parcours de prise de rendez-vous conçus pour l''acquisition : rapides, bien référencés, mesurés et faciles à mettre à jour.'
   og: sites-web
 fil: Sites web
-h1: Une page, une promesse, un bouton.
+h1: Une page qui reprend la promesse de l'annonce.
 reponse: "Leadvice conçoit des sites et des pages d'atterrissage pensés pour vos campagnes. Ils reprennent mot pour mot la promesse de l'annonce, sont construits pour charger en moins de deux secondes sur mobile et mènent à une seule action. Chaque page est mesurée, pour savoir ce qu'elle rapporte."
 scene:
   nom: page
   len: 220
-  aria: La page qui se construit
-  legende: La page qui se construit
+  aria: "La page qui se construit"
+  legende: "La page qui se construit"
   etapes:
-  - texte: Des pages, des blocs, des idées en vrac.
-    de: 0.05
-    a: 0.4
-  - texte: Chaque élément trouve sa place, et son rôle.
-    de: 0.4
-    a: 0.7
-  - texte: Un seul geste demandé. Et une demande qui arrive.
-    de: 0.7
+  - texte: "Une page construite pour une seule action."
+    de: 0.03
+    a: 0.42
+  - texte: "Allégée, elle s'affiche en un peu plus d'une seconde sur mobile."
+    de: 0.42
+    a: 0.78
+  - texte: "Et la demande arrive."
+    de: 0.78
     a: 1.0
 faisons:
   titre: Ce que nous faisons.
@@ -41,7 +41,7 @@ pour_vous:
   situations:
   - « Vos publicités renvoient vers une page d'accueil générale, et les visiteurs repartent sans rien demander. »
   - « Votre site date de plusieurs années, il est lent sur mobile et vous n'osez plus l'envoyer. »
-  - « Vous lancez une offre et vous avez besoin d'une page prête avant la campagne, pas trois mois après. »
+  - « Vous lancez une offre et vous avez besoin d'une page prête avant le lancement de la campagne. »
 comment:
   titre: Comment nous travaillons.
   texte: 'Nous commençons par le parcours : d''où viennent vos visiteurs, ce qu''ils doivent comprendre, l''action qu''on attend d''eux. Viennent ensuite les textes, puis le design et la construction. Le site est mesuré dès sa mise en ligne, et nous l''ajustons selon ce que les chiffres montrent. Ce site, nous l''avons conçu nous-mêmes, avec les mêmes règles.'
@@ -59,7 +59,7 @@ faq:
     - Oui. Vous disposez d'une interface simple pour changer vos textes, vos images et publier des articles. Le site vous appartient, ainsi que le nom de domaine.
   - q: Le site sera-t-il en français et en arabe ?
     a:
-    - Si votre audience le demande, oui. Nous adaptons les pages à chaque langue plutôt que de traduire mot à mot.
+    - Si votre audience le demande, oui. Chaque version est réécrite pour sa langue.
   - q: Reprenez-vous un site existant ?
     a:
     - 'Oui. Nous commençons par l''auditer : ce qui peut rester, ce qui freine les demandes, ce qui doit être refait. Parfois, quelques pages refaites suffisent.'

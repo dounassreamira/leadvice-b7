@@ -45,7 +45,7 @@
   .bk { border: 0; padding: 0; width: min(980px, calc(100vw - 32px)); max-width: none; max-height: calc(100dvh - 32px); background: var(--paper); color: var(--ink); border-radius: var(--r-sharp); box-shadow: var(--shadow-pop); overflow: hidden; }
   .bk::backdrop { background: var(--backdrop); backdrop-filter: blur(4px); }
   .bk-in { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); min-height: 560px; max-height: calc(100dvh - 32px); }
-  .bk-side { background: var(--btn); color: #F6F4FB; padding: 36px; display: flex; flex-direction: column; gap: 20px; }
+  .bk-side { background: radial-gradient(80% 60% at 90% 10%, rgba(123, 97, 255, .45), transparent 70%), var(--night); color: #F6F4FB; padding: 36px; display: flex; flex-direction: column; gap: 20px; }
   .bk-side h2 { font-size: clamp(1.9rem, 1.4rem + 1.4vw, 2.6rem); line-height: 1.04; }
   .bk-side p { color: #CFC6F5; font-size: var(--fs-ui); font-family: var(--read); }
   .bk-sum { margin-top: auto; display: flex; flex-direction: column; gap: 10px; font-size: .92rem; border-top: 1px solid rgba(255, 255, 255, .18); padding-top: 18px; }
@@ -79,6 +79,7 @@
   .slots button.sel, .slots button[aria-pressed="true"] { background: var(--btn); color: #16131F; border-color: var(--btn); }
   .slots .local { display: block; font-size: .72rem; font-weight: 400; opacity: .8; }
   .bk-nav { display: flex; justify-content: space-between; gap: 12px; margin-top: 28px; flex-wrap: wrap; align-items: center; }
+  .bk-alt { margin: 14px 0 0; font-size: .95rem; }
   .bk .err { margin-top: 10px; }
   .bk-ok svg { width: 100%; height: auto; margin: 10px 0 20px; }
   .bk-load { display: grid; gap: 8px; margin-top: 16px; }

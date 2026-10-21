@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import SecteurRows from '../../components/SecteurRows.astro';
 import PageHero from '../../components/PageHero.astro';
 import LeverRows from '../../components/LeverRows.astro';
 import SceneSection from '../../components/SceneSection.astro';
@@ -26,9 +27,7 @@ const all = [...(l.liste as Data[]), ...(l.complement as Data[])];
 
   <section class="wrap sec sec-top0">
     <h2 data-rise class="h-gap">{d.secteurs.titre}</h2>
-    <div class="xp-sect">
-      {(d.secteurs.liste as Data[]).map((x) => <a class="frost" href={x.url}><h3>{x.nom}</h3><p>{x.texte}</p><span class="tlink">{d.secteurs.lien}</span></a>)}
-    </div>
+    <SecteurRows liste={d.secteurs.liste as Data[]} lien={d.secteurs.lien} />
   </section>
 
   <section class="wrap sec sec-top0">

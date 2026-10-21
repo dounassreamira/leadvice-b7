@@ -1,9 +1,9 @@
 # Les quatre leviers, et le service complémentaire Sites web (rangées de l'accueil, des Expertises, « Expertise suivante »).
 liste:
   - { cle: strategie, nom: Stratégie, scene: knot, url: /expertises/strategie/, fort: "Comprendre avant d'agir.", texte: "Audit, positionnement, plan d'action : nous clarifions où aller avant de dépenser un dirham." }
-  - { cle: creation, nom: Création, scene: angles, url: /expertises/creation/, fort: "Trouver le message qui mérite d'être vu.", texte: "Angles, accroches, publicités et contenus pensés pour faire agir, pas seulement pour plaire." }
+  - { cle: creation, nom: Création, scene: angles, url: /expertises/creation/, fort: "Trouver le message qui mérite d'être vu.", texte: "Angles, accroches, publicités et contenus pensés pour faire agir la bonne personne." }
   - { cle: acquisition, nom: Acquisition, scene: target, url: /expertises/acquisition/, fort: Mettre le bon message devant les bonnes personnes., texte: "Meta Ads, Google Ads et génération de leads, avec des formulaires qui qualifient avant de compter." }
-  - { cle: pilotage, nom: Pilotage, scene: dial, url: /expertises/pilotage/, fort: Mesurer. Comprendre. Optimiser., texte: "Des chiffres suivis chaque semaine, des décisions prises avec vous, des campagnes qui progressent." }
+  - { cle: pilotage, nom: Pilotage, scene: dial, url: /expertises/pilotage/, fort: "Chaque lundi, une décision.", texte: "Les chiffres suivis jusqu'aux ventes, et le budget déplacé vers ce qui signe." }
 complement:
   - { cle: sites-web, nom: Sites web, scene: page, url: /expertises/sites-web/, fort: Un site qui transforme les visites en demandes., texte: "Sites vitrines, pages de destination et parcours de réservation, pensés pour vos campagnes et faciles à mettre à jour." }
 commun:

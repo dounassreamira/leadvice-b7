@@ -13,13 +13,13 @@ ouverture:
     - titre: Votre prochain client vient de voir votre annonce.
       texte: "Il est 22 h, et il cherche exactement ce que vous vendez. Ce qui se passe dans les heures qui suivent décide s'il signera chez vous ou chez un concurrent. Leadvice, cabinet d'acquisition client à Casablanca, construit ce chemin : annonces Meta Ads et Google Ads, page, formulaire et suivi des demandes."
     - titre: Il décide en trois secondes.
-      texte: "Si la page ne reprend pas mot pour mot la promesse de l'annonce, il revient en arrière. Le clic est payé, le client est perdu. Une page, une promesse, un bouton."
-    - titre: Trois questions, pas douze.
+      texte: "Si la page ne reprend pas mot pour mot la promesse de l'annonce, il revient en arrière. Le clic est payé et le client repart. La page doit répéter la promesse et ne proposer qu'une chose à faire."
+    - titre: Trois questions suffisent.
       texte: "Assez pour savoir si c'est un vrai projet et quand l'appeler. Chaque question en trop fait partir quelqu'un. Chaque question qui manque fait perdre une heure à vos commerciaux."
     - titre: Il reçoit une réponse dans la minute.
       texte: "Personne ne rappelle à 22 h, et ce n'est pas grave. Un message WhatsApp automatique le remercie, reprend sa demande et lui propose un créneau. Le lendemain à 9 h 30, votre commercial l'appelle en sachant déjà ce qu'il cherche."
-    - titre: Ce n'est pas l'annonce qui a vendu.
-      texte: "C'est le chemin entier, sans trou : l'annonce, la page, le formulaire, la réponse, l'appel, le rendez-vous. Nous le construisons avec vos équipes, puis nous le pilotons chaque semaine avec vous."
+    - titre: Ce qui a vendu, c'est le chemin entier.
+      texte: "L'annonce, la page, le formulaire, la réponse, l'appel et le rendez-vous, sans trou entre deux. Nous construisons ce chemin avec vos équipes, puis nous le pilotons avec vous chaque semaine."
   ecrans:
     marque: Votre marque
     sponsorise: Sponsorisé
@@ -66,50 +66,53 @@ pertes:
     phrase: Je paie des leads sans savoir lesquels signent.
     texte: "Les plateformes comptent les clics et les formulaires. Personne ne relie une vente à l'annonce qui l'a amenée, alors le budget continue de financer des annonces qui ne vendent rien."
     solution: "Ce que nous mettons en place : le suivi de chaque vente jusqu'à l'annonce qui l'a amenée. On coupe ce qui ne signe pas, on renforce ce qui signe."
-    dessin: { annonces: [Annonce A, Annonce B, Annonce C], ventes: Ventes, resultat: "B : 3 ventes. C : aucune, on la coupe." }
+    dessin: { annonces: [Annonce A, Annonce B, Annonce C], budget: Budget, signe: Signé, vente: vente, ventes: ventes, coupee: Coupée, resultat: "C ne signe rien : son budget passe sur B." }
   langage:
     phrase: Mon agence parle de clics, ma direction parle de chiffre d'affaires.
-    texte: "Deux langages, deux tableaux, aucun pont. Les réunions tournent en rond et les décisions se prennent à l'instinct."
+    texte: "Chacun a son tableau et personne ne fait le lien. Les réunions tournent en rond, et le budget se décide à l'instinct."
     solution: "Ce que nous mettons en place : un seul tableau, lu chaque semaine, qui va du clic jusqu'au dirham encaissé."
     dessin: { agence: L'agence, clics: 12 400 clics, direction: La direction, question: Et les ventes ?, colonnes: [Clics, Leads, RDV, Ventes, DH], valeurs: ["12 400", "310", "42", "9", "1,2 M"], exemple: Chiffres d'exemple }
 
 expertises:
-  titre: "Quatre métiers, un seul résultat : des clients signés."
+  titre: Quatre métiers sur le même chemin.
   texte: "Stratégie marketing, création publicitaire, campagnes Meta Ads et Google Ads, pilotage des résultats. Chaque expertise répare une étape précise du chemin. Vous pouvez nous en confier une, ou le chemin entier."
   liste:
     - { cle: strat, moment: Avant l'annonce, titre: Stratégie, texte: "Audit, offre, positionnement, budget de départ. Décider avant de dépenser.", url: /expertises/strategie/, lien: Voir la stratégie }
     - { cle: crea, moment: L'annonce, titre: Création, texte: "Angles, accroches, visuels et vidéos. Le message qui arrête la bonne personne.", url: /expertises/creation/, lien: Voir la création }
     - { cle: acq, moment: Jusqu'au formulaire, titre: Acquisition, texte: "Meta Ads, Google Ads, pages et formulaires qui trient avant de compter.", url: /expertises/acquisition/, lien: Voir l'acquisition }
-    - { cle: pil, moment: Après la demande, titre: Pilotage, texte: "Chaque semaine, les chiffres jusqu'aux ventes. On garde ce qui signe, on coupe le reste.", url: /expertises/pilotage/, lien: Voir le pilotage }
-  sites: "Votre page fait fuir vos visiteurs ? Nous concevons aussi des sites et des pages d'atterrissage pensés pour vos campagnes : rapides, clairs, écrits pour faire agir."
+    - { cle: pil, moment: Après la demande, titre: Pilotage, texte: "Chaque lundi, les chiffres jusqu'aux ventes, et les décisions de la semaine.", url: /expertises/pilotage/, lien: Voir le pilotage }
+  sites: "Votre page fait fuir vos visiteurs ? Nous concevons aussi des sites et des pages d'atterrissage pensés pour vos campagnes, rapides et écrits pour faire agir."
   sites_lien: Voir les sites web
 
 systeme:
-  titre: "Le marketing n'est pas une suite d'actions. C'est un système."
-  texte: "Une campagne qui vend tient sur six pièces : une offre claire, la bonne audience, un message juste, les bons canaux, une page qui convertit et des chiffres lus chaque semaine. Quand une seule manque, le budget part ailleurs. Notre travail consiste à les faire tenir ensemble."
+  titre: Une campagne qui vend tient sur six pièces.
+  texte: "Une offre claire, la bonne audience, un message juste, les bons canaux, une page qui convertit et des chiffres lus chaque semaine. Quand une seule manque, le budget part ailleurs. Notre travail consiste à les faire tenir ensemble."
   pieces: [Offre, Audience, Message, Canaux, Conversion, Données]
   centre: [Des, clients]
   aria: "Les six pièces du système, reliées autour des clients : offre, audience, message, canaux, conversion, données"
 
 pour_qui:
-  titre: Est-ce pour vous ?
-  texte: "Nous travaillons avec des promoteurs et commercialisateurs immobiliers, des entreprises B2B, des banques et services, et des marques e-commerce au Maroc. Le secteur compte moins que ces quelques conditions."
-  oui_titre: Nous pouvons vous aider si
-  oui:
-    - Vous investissez déjà en publicité Meta ou Google, ou vous êtes prêt à le faire.
-    - Vous voulez des rendez-vous et des ventes, pas seulement des clics ou des abonnés.
-    - Quelqu'un chez vous peut traiter les demandes, même le lendemain matin.
-    - Vous acceptez de partager vos chiffres de vente, pour qu'on décide sur du concret.
-  non_titre: Ce n'est pas encore le moment si
-  non:
-    - Vous cherchez de la visibilité sans objectif de vente.
-    - Votre offre ou vos prix ne sont pas encore fixés.
-    - Personne ne peut rappeler les demandes reçues.
+  titre: Où que vous en soyez, il y a un point de départ.
+  texte: "Promoteurs et commercialisateurs immobiliers, entreprises B2B, banques et services, marques en ligne : nos clients nous appellent à des moments très différents. Voici les trois que nous voyons le plus souvent."
+  departs:
+    - situation: Vous lancez une offre, un programme ou un nouveau marché.
+      reponse: "On commence par la stratégie : à qui vous parlez, avec quelle promesse, sur quels canaux et avec quel budget de départ. La première annonce part quand ces réponses sont écrites."
+      lien: Voir la stratégie
+      url: /expertises/strategie/
+    - situation: Vos campagnes tournent, mais elles rapportent moins qu'elles ne coûtent.
+      reponse: "On reprend le chemin entier, de l'annonce jusqu'au rappel du prospect. On répare l'étape qui casse, puis on lit les chiffres avec vous chaque semaine."
+      lien: Voir l'acquisition
+      url: /expertises/acquisition/
+    - situation: Vous voulez d'abord vous faire connaître.
+      reponse: "Une campagne de notoriété se mesure aussi : portée sur la bonne cible, souvenir de la marque, recherches de votre nom sur Google. Nous fixons ces objectifs avec vous avant le lancement, pour que les ventes suivent."
+      lien: Voir la création
+      url: /expertises/creation/
+  conseil: "Vous préférez garder l'exécution en interne ? Nous intervenons aussi en conseil seul : audit, plan d'action, accompagnement de vos équipes."
   secteurs:
     - { url: /secteurs/immobilier/, libelle: L'immobilier }
     - { url: /secteurs/b2b/, libelle: Les grands comptes et le B2B }
     - { url: /secteurs/e-commerce/, libelle: Les marques et l'e-commerce }
-  secteurs_intro: "Voir notre approche pour :"
+  secteurs_intro: "Notre approche secteur par secteur :"
 
 dirham:
   titre: Le chemin d'un dirham.
@@ -165,7 +168,7 @@ cabinet:
 
 ressources:
   titre: Des ressources pour faire le travail vous-même.
-  texte: "Guides, skills Claude et lettre mensuelle, écrits par Amira Dounassre à partir de ce que nous voyons chaque semaine dans les comptes publicitaires de nos clients. Les premiers sont en préparation : inscrivez-vous pour les recevoir dès leur sortie."
+  texte: "Guides, skills Claude et lettre mensuelle, écrits par Leadvice à partir de ce que nous voyons chaque semaine dans les comptes publicitaires de nos clients. Les premiers sont en préparation : inscrivez-vous pour les recevoir dès leur sortie."
   lien: Être prévenu de la première
   liste:
     - { lettre: G, titre: Des guides à télécharger, texte: "Un sujet, une méthode, des exemples marocains." }
@@ -180,7 +183,7 @@ faq:
     - q: Combien coûte un lead avec Leadvice ?
       a: "Sur l'ensemble de nos clients, le coût moyen par lead est inférieur à 10 DH sur Meta Ads et se situe entre 10 et 20 DH sur Google Ads. Il varie selon le secteur et le prix de ce que vous vendez. Le chiffre qui compte vraiment, c'est le coût par client."
     - q: Des leads à moins de 10 DH, ce sont de bons leads ?
-      a: "Un lead bon marché qui ne répond pas coûte cher. Nos formulaires posent les questions qui trient (projet, délai, besoin), et nous suivons avec vous le taux de leads joignables et de rendez-vous, pas seulement le coût par lead."
+      a: "Un lead bon marché qui ne répond pas coûte cher. Nos formulaires posent les questions qui trient (projet, délai, besoin), et nous suivons avec vous le taux de leads joignables et de rendez-vous en plus du coût par lead."
     - q: Qui rappelle les demandes ?
       a: "Vos équipes. Nous mettons en place ce qui les aide à rappeler vite et bien : une réponse automatique immédiate, souvent sur WhatsApp, un créneau proposé au prospect, et une fiche qui résume sa demande. Nous n'avons pas de centre d'appels et ne le remplaçons pas."
     - q: Que se passe-t-il pendant le diagnostic offert ?

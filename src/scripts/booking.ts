@@ -10,7 +10,7 @@ import { mountTurnstile } from './turnstile';
 type T = Record<string, any>; // eslint-disable-line @typescript-eslint/no-explicit-any
 interface Slot { start: string; min: number; label: string }
 interface Day { date: string; slots: Slot[] }
-interface State { enjeu?: string; ent?: string; camp?: string; day?: string; slot?: Slot; label?: string; nom?: string; mail?: string; tel?: string; mode?: string }
+interface State { enjeu?: string; ent?: string; camp?: string; day?: string; slot?: Slot; label?: string; nom?: string; mail?: string; tel?: string; mode?: string; rappel?: boolean }
 
 let txt: T | null = null;
 let dlg: HTMLDialogElement | null = null;
@@ -29,7 +29,7 @@ const localTime = (iso: string): string => new Intl.DateTimeFormat('fr-FR', { ho
 
 async function texts(): Promise<T> {
   if (txt) return txt;
-  const r = await fetch('/reservation.json');
+  const r = await fetch(new URL('../reservation.json', import.meta.url).href);
   txt = (await r.json()) as T;
   return txt;
 }
@@ -96,8 +96,9 @@ async function s2(force = false, msg = ''): Promise<void> {
   focusFirst();
   const list = await loadSlots(force);
   if (!list || !list.some((d) => d.slots.length)) {
-    body.innerHTML = '<h3>' + esc(e.titre) + '</h3><p class="bk-help">' + esc(e.aucun) + '</p><div class="bk-nav"><button class="btn btn-ghost" type="button" id="bk-b">' + esc(e.retour) + '</button><a class="btn btn-main" href="/diagnostic/" data-page-link>' + esc(e.formulaire) + '</a></div>';
+    body.innerHTML = '<h3>' + esc(e.titre) + '</h3><p class="bk-help">' + esc(e.aucun) + '</p><div class="bk-nav"><button class="btn btn-ghost" type="button" id="bk-b">' + esc(e.retour) + '</button><button class="btn btn-main" type="button" id="bk-r">' + esc(e.rappel) + '</button></div>';
     body.querySelector('#bk-b')!.addEventListener('click', s1);
+    body.querySelector('#bk-r')!.addEventListener('click', () => { st.rappel = true; st.slot = undefined; s3(); });
     return;
   }
   const first = dayParts(list[0]!.date), pad = (first.dow + 6) % 7;
@@ -107,7 +108,7 @@ async function s2(force = false, msg = ''): Promise<void> {
     const n = d.slots.length, p = dayParts(d.date);
     html += '<button type="button" data-k="' + d.date + '" class="' + (n ? 'av' : '') + (st.day === d.date ? ' sel' : '') + '"' + (n ? '' : ' disabled') + ' aria-pressed="' + (st.day === d.date) + '" aria-label="' + esc(dayLabel(d.date)) + ', ' + (n ? n + ' ' + (n > 1 ? e.creneaux : e.creneau) : e.complet) + '">' + p.d + '</button>';
   });
-  html += '</div><div id="bk-sl"></div><div class="bk-nav"><button class="btn btn-ghost" type="button" id="bk-b">' + esc(e.retour) + '</button><button class="btn btn-main" type="button" id="bk-n">' + esc(e.suivant) + '</button></div>';
+  html += '</div><div id="bk-sl"></div><p class="bk-alt"><button type="button" class="tlink" id="bk-r">' + esc(e.rappel) + '</button></p><div class="bk-nav"><button class="btn btn-ghost" type="button" id="bk-b">' + esc(e.retour) + '</button><button class="btn btn-main" type="button" id="bk-n">' + esc(e.suivant) + '</button></div>';
   body.innerHTML = html;
   if (msg) err(msg);
   const showSlots = (k: string, per?: 'am' | 'pm'): void => {
@@ -137,13 +138,14 @@ async function s2(force = false, msg = ''): Promise<void> {
   }));
   if (st.day && list.some((x) => x.date === st.day && x.slots.length)) showSlots(st.day);
   body.querySelector('#bk-b')!.addEventListener('click', s1);
-  body.querySelector('#bk-n')!.addEventListener('click', () => { if (!st.slot || !st.day) return err(e.err); s3(); });
+  body.querySelector('#bk-r')!.addEventListener('click', () => { st.rappel = true; st.slot = undefined; s3(); });
+  body.querySelector('#bk-n')!.addEventListener('click', () => { if (!st.slot || !st.day) return err(e.err); st.rappel = false; s3(); });
 }
 
 function s3(): void {
   const t = txt!, e = t.e3;
   steps(3);
-  body.innerHTML = '<h3>' + esc(e.titre) + '</h3><p class="small bk-help">' + esc(e.choisi) + ' <b>' + esc(st.label ?? '') + '</b></p>' +
+  body.innerHTML = '<h3>' + esc(e.titre) + '</h3><p class="small bk-help">' + (st.rappel ? esc(e.choisi_rappel) : esc(e.choisi) + ' <b>' + esc(st.label ?? '') + '</b>') + '</p>' +
     '<div class="fld"><label for="bk-nom">' + esc(e.nom) + '</label><input id="bk-nom" autocomplete="name" value="' + esc(st.nom ?? '') + '"></div>' +
     '<div class="fld"><label for="bk-mail">' + esc(e.email) + '</label><input id="bk-mail" type="email" autocomplete="email" value="' + esc(st.mail ?? '') + '"></div>' +
     '<div class="fld"><label for="bk-tel">' + esc(e.tel) + ' <span class="opt">(facultatif)</span></label><input id="bk-tel" type="tel" autocomplete="tel" value="' + esc(st.tel ?? '') + '" aria-describedby="bk-tel-h"><span class="help" id="bk-tel-h">' + esc(e.tel_aide) + '</span></div>' +
@@ -151,7 +153,7 @@ function s3(): void {
     '<label class="consent bk-ok"><input type="checkbox" id="bk-ok"><span>' + esc(e.accord) + '</span></label>' +
     '<input class="hp" type="text" id="bk-hp" tabindex="-1" autocomplete="off" aria-hidden="true">' +
     '<div id="bk-ts"></div>' +
-    '<div class="bk-nav"><button class="btn btn-ghost" type="button" id="bk-b">' + esc(e.retour) + '</button><button class="btn btn-main" type="button" id="bk-n">' + esc(e.envoyer) + '</button></div>';
+    '<div class="bk-nav"><button class="btn btn-ghost" type="button" id="bk-b">' + esc(e.retour) + '</button><button class="btn btn-main" type="button" id="bk-n">' + esc(st.rappel ? e.envoyer_rappel : e.envoyer) + '</button></div>';
   let getToken: () => string = () => '';
   void mountTurnstile(body.querySelector<HTMLElement>('#bk-ts')!).then((f) => { getToken = f; });
   body.querySelector('#bk-b')!.addEventListener('click', () => void s2());
@@ -166,6 +168,19 @@ function s3(): void {
     st.nom = nom.value.trim(); st.mail = mail.value.trim(); st.tel = tel.value.trim(); st.mode = body.querySelector<HTMLSelectElement>('#bk-mode')!.value;
     go.disabled = true; go.classList.add('is-loading'); go.innerHTML = '<span class="spin" aria-hidden="true"></span>' + esc(e.envoi);
     const evLead = eventId('generate_lead'), evSched = eventId('schedule');
+    if (st.rappel) {
+      /* sans créneau : la demande part comme le formulaire court, l'équipe propose un horaire */
+      let r: Response | null = null;
+      try {
+        r = await fetch('/api/diagnostic', { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify({ court: '1', enjeu: st.enjeu, entreprise: st.ent, campagnes: st.camp, nom: st.nom, email: st.mail, tel: st.tel, consent: true, message: 'Format souhaité : ' + st.mode, utm: readUtm(), site_web: body.querySelector<HTMLInputElement>('#bk-hp')!.value, 'cf-turnstile-response': getToken(), event_id: evLead, consent_pub: hasAdConsent() }) });
+      } catch { r = null; }
+      go.disabled = false; go.classList.remove('is-loading'); go.textContent = e.envoyer_rappel;
+      if (!r || !r.ok) { err(e.err_envoi); return; }
+      const j = (await r.json().catch(() => ({}))) as { redirect?: string };
+      track('generate_lead', { enjeu: st.enjeu, campagnes: st.camp }, evLead);
+      location.href = j.redirect ?? '/diagnostic/merci/?enjeu=' + encodeURIComponent(st.enjeu ?? '');
+      return;
+    }
     let res: Response | null = null;
     try {
       res = await fetch('/api/bookings', { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify({ enjeu: st.enjeu, entreprise: st.ent, campagnes: st.camp, nom: st.nom, email: st.mail, tel: st.tel, format: st.mode, consent: true, start: st.slot!.start, utm: readUtm(), site_web: body.querySelector<HTMLInputElement>('#bk-hp')!.value, turnstile: getToken(), event_lead: evLead, event_schedule: evSched, consent_pub: hasAdConsent(), fbp: fbp() }) });

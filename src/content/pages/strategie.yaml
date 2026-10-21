@@ -8,17 +8,17 @@ reponse: "Le conseil en stratégie marketing de Leadvice tranche trois questions
 scene:
   nom: knot
   len: 220
-  aria: Le nœud de décision
-  legende: Le nœud de décision
+  aria: "Du tableau d'idées au plan"
+  legende: "Du tableau d'idées au plan"
   etapes:
-  - texte: Trop d'options. Trop d'avis. Trop de priorités.
-    de: 0.05
-    a: 0.45
-  - texte: Une piste reste. Les autres s'effacent.
-    de: 0.45
-    a: 0.8
-  - texte: Une direction claire.
-    de: 0.8
+  - texte: "Au départ, il y a beaucoup d'idées, et toutes semblent urgentes."
+    de: 0.03
+    a: 0.32
+  - texte: "La plupart peuvent attendre."
+    de: 0.32
+    a: 0.6
+  - texte: "Trois décisions restent, dans l'ordre, chacune avec un responsable et une date."
+    de: 0.6
     a: 1.0
 faisons:
   titre: Ce que nous faisons.
@@ -33,7 +33,7 @@ faisons:
   - titre: Stratégie d'acquisition
     texte: Quels canaux, pour quelles audiences, avec quels messages et quel budget. Nous construisons l'entonnoir complet, de la première exposition à la signature.
   - titre: Plan d'action
-    texte: 'Un plan simple, hiérarchisé, actionnable. Pas un document qui finit dans un dossier : une liste de décisions et de chantiers, avec un ordre et des responsables.'
+    texte: 'Une liste de décisions et de chantiers, dans l''ordre, chacun avec un responsable et une date.'
   - titre: Accompagnement de la direction
     texte: Nous structurons votre vision, vos offres et votre organisation marketing, et nous restons présents pour les arbitrages.
 pour_vous:

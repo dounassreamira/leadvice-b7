@@ -39,5 +39,5 @@ secteurs:
   lien: Voir l'approche
   liste:
     - { url: /secteurs/immobilier/, nom: Immobilier, texte: "Promoteurs et commercialisateurs : des acheteurs qui répondent et qui viennent en visite." }
-    - { url: /secteurs/b2b/, nom: Grands comptes et B2B, texte: "Banque, transport, services : convaincre chaque décideur, jusqu'à l'opportunité signée." }
-    - { url: /secteurs/e-commerce/, nom: Marques et e-commerce, texte: "Des commandes confirmées et livrées, pas seulement des paniers." }
+    - { url: /secteurs/b2b/, nom: Grands comptes et B2B, texte: "Banque, transport, services : une réponse prête pour chaque personne qui décide, jusqu'à la signature." }
+    - { url: /secteurs/e-commerce/, nom: Marques et e-commerce, texte: "Des campagnes jugées sur les commandes livrées et payées." }
