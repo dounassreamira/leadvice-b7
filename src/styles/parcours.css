@@ -58,6 +58,7 @@
   .tlink { color: var(--signal); }
   .stat b { background: none; color: var(--brand); padding: 0; }
   :is([data-theme="dark"], .theme-dark) .stat b { background: none; color: var(--lav); }
+  .theme-light .stat b { color: var(--brand); }
 
   /* bandes de nuit (ancienne bande violette) */
   .violet { background: var(--night); position: relative; overflow: clip; }

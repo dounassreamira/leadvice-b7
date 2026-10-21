@@ -95,7 +95,7 @@ if (ONLY.includes('html')) {
 
 /* ---------- 2. Textes : placeholders, mots bannis, tirets cadratins ---------- */
 if (ONLY.includes('text')) {
-  const PH = /lorem|\bTODO\b|FIXME|placeholder|À COMPLÉTER|\bXXX\b/i;
+  const PH = /lorem|\bTODO\b|FIXME|(?<!::)placeholder(?!=)|À COMPLÉTER|\bXXX\b/i;
   for (const f of walk('src').concat(htmlFiles)) {
     if (!/\.(astro|ts|md|mdx|yaml|css|html)$/.test(f)) continue;
     const s = fs.readFileSync(f, 'utf8');

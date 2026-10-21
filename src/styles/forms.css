@@ -65,7 +65,7 @@
   .cal button { min-height: 44px; border: 0; border-radius: var(--r-sharp); background: transparent; color: var(--ink-3); font: inherit; cursor: default; }
   .cal button.av { background: var(--white); color: var(--ink); font-weight: 500; cursor: pointer; box-shadow: inset 0 0 0 1px var(--line); }
   .cal button.av:hover { box-shadow: inset 0 0 0 1px var(--brand); }
-  .cal button.sel { background: var(--btn); color: #fff; box-shadow: none; }
+  .cal button.sel { background: var(--btn); color: #16131F; box-shadow: none; }
   .bk-day { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-top: 22px; }
   .bk-day p { font-weight: 500; font-family: var(--sans); }
   .per { display: flex; gap: 4px; padding: 4px; background: var(--paper-2); border-radius: var(--r-sharp); }
@@ -76,7 +76,7 @@
   .slots { display: grid; grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); gap: 8px; margin-top: 14px; }
   .slots button { min-height: 46px; border: 1px solid var(--line); background: var(--white); border-radius: var(--r-sharp); font: 500 .95rem var(--sans); cursor: pointer; color: var(--ink); font-variant-numeric: tabular-nums; }
   .slots button:hover { border-color: var(--brand); }
-  .slots button.sel, .slots button[aria-pressed="true"] { background: var(--btn); color: #fff; border-color: var(--btn); }
+  .slots button.sel, .slots button[aria-pressed="true"] { background: var(--btn); color: #16131F; border-color: var(--btn); }
   .slots .local { display: block; font-size: .72rem; font-weight: 400; opacity: .8; }
   .bk-nav { display: flex; justify-content: space-between; gap: 12px; margin-top: 28px; flex-wrap: wrap; align-items: center; }
   .bk .err { margin-top: 10px; }

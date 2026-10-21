@@ -22,8 +22,8 @@ const mail = s.email as string;
     <svg class="mc-path" viewBox="0 0 600 120" aria-hidden="true"><path data-draw d="M10 90 C 120 90, 140 30, 250 40 S 420 100, 590 30" fill="none" stroke-width="2"></path><circle cx="590" cy="30" r="7"></circle></svg>
     <p class="big-text mc-enjeu" data-enjeu-txt>{(d.enjeux as Data).autre}</p>
     <h2 class="mt-l" style="font-size:var(--fs-h3)">{d.suite_titre}</h2>
-    <ol class="next">
-      {(d.suite as Data[]).map((x, i) => <li><span>{i + 1}</span><strong>{x.titre}</strong><p>{x.texte}</p></li>)}
+    <ol class="next mc-fil">
+      {(d.suite as Data[]).map((x, i) => <li class:list={[{ now: i === 0 }]}><span class="mc-dot" aria-hidden="true"></span><strong>{x.titre}{i === 0 && <em class="mc-now">{d.maintenant}</em>}</strong><p>{x.texte}</p></li>)}
     </ol>
     <p class="mc-q small">{d.question} <span class="mail">{mail}</span><CopyButton text={mail} label={d.copier} done={d.copie} /></p>
     <div class="mc-read">
@@ -35,6 +35,11 @@ const mail = s.email as string;
           </a>
         ))}
       </div>
+    </div>
+    <div class="mc-at frost">
+      <h2>{d.atelier.titre}</h2>
+      <p>{d.atelier.texte}</p>
+      <a class="btn btn-ghost" href={d.atelier.url}>{d.atelier.lien}</a>
     </div>
   </section>
 </Base>

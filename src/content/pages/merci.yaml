@@ -11,11 +11,17 @@ enjeux:
   pilot: "Votre enjeu : transformer vos chiffres en décisions."
   autre: Votre enjeu est noté. Nous le regardons de près.
 suite_titre: La suite.
+maintenant: Vous êtes ici
 suite:
   - { titre: Nous lisons votre demande., texte: "Nous regardons votre secteur, votre situation et l'enjeu que vous avez indiqué." }
   - { titre: Nous vous répondons sous un jour ouvré., texte: "Par e-mail, pour fixer le créneau de votre diagnostic." }
   - { titre: Nous faisons le point ensemble., texte: "45 minutes, en visio ou par téléphone. Vous repartez avec ce qui freine votre acquisition et par quoi commencer." }
 lire_titre: En attendant, à lire.
+atelier:
+  titre: Ou à essayer.
+  texte: "Deux ateliers de 10 à 15 minutes, sans inscription : pilotez une campagne avec un budget fictif, ou trouvez les erreurs d'une page d'arrivée. Vous arriverez au diagnostic avec vos questions déjà prêtes."
+  lien: Ouvrir les ateliers
+  url: /ateliers/
 recommandations:
   leads: [plus-de-leads-ne-veut-pas-dire-plus-de-clients, meta-ads-ou-google-ads]
   conv: [plus-de-leads-ne-veut-pas-dire-plus-de-clients, cpl-cpa-cout-par-opportunite]

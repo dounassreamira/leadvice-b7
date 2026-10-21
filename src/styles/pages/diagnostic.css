@@ -114,3 +114,21 @@
   :is(.rm, .no-js) .tw-paper span { visibility: visible; }
   :is(.rm, .no-js) :is(.tw-kb, .tw-platen) { display: none; }
 }
+
+/* Merci : la suite posée sur le fil, la personne (point corail) à la première étape */
+@layer pages {
+  .mc-fil { position: relative; }
+  .mc-fil li { grid-template-columns: 40px minmax(0, 1fr); border-top: 0; position: relative; }
+  .mc-fil li:not(:last-child)::after { content: ""; position: absolute; left: 11px; top: 44px; bottom: -20px; width: 2px; background: color-mix(in srgb, var(--thread) 25%, transparent); }
+  .mc-fil li.now::after { background: linear-gradient(var(--thread) 60%, color-mix(in srgb, var(--thread) 25%, transparent)); }
+  .mc-dot { grid-row: 1 / span 2; width: 24px; height: 24px; border-radius: 50%; background: var(--paper); border: 2px solid var(--lav); position: relative; z-index: 1; margin-top: -2px; }
+  .mc-fil li.now .mc-dot { border-color: var(--lead); background: var(--lead); box-shadow: 0 0 0 6px color-mix(in srgb, var(--lead) 20%, transparent); }
+  html:not(.rm) .mc-fil li.now .mc-dot { animation: mc-pulse 2.4s ease-in-out infinite; }
+  @keyframes mc-pulse { 50% { box-shadow: 0 0 0 11px color-mix(in srgb, var(--lead) 6%, transparent); } }
+  .mc-now { font-style: normal; font: 600 .78rem/1 var(--sans); color: #C2410C; margin-left: 12px; padding: 5px 8px; border-radius: 6px; background: color-mix(in srgb, var(--lead) 14%, transparent); white-space: nowrap; vertical-align: 2px; }
+  .mc-at { margin-top: var(--sec); padding: clamp(24px, 4vw, 40px); max-width: 780px; display: grid; gap: 14px; justify-items: start; }
+  .mc-at :is(h2, p) { margin: 0; }
+  .mc-at h2 { font-size: var(--fs-h3); }
+  .mc-at p { color: var(--ink-2); max-width: 60ch; }
+  :is([data-theme="dark"], .theme-dark) .mc-now { color: #FFB59E; }
+}

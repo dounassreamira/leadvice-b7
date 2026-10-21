@@ -48,7 +48,7 @@
   .lv-form .field { border: 1px solid var(--line); border-radius: var(--r-sharp); padding: 9px 12px; margin-bottom: 10px; }
   .lv-form .field b { display: block; font: 500 .75rem var(--sans); color: var(--ink-2); }
   .lv-form .field span { font: 500 .93rem var(--sans); }
-  .lv-form .fbtn { margin-top: auto; background: var(--btn); color: #fff; text-align: center; font: 600 .95rem var(--sans); padding: 13px; border-radius: var(--r-sharp); }
+  .lv-form .fbtn { margin-top: auto; background: var(--btn); color: #16131F; text-align: center; font: 600 .95rem var(--sans); padding: 13px; border-radius: var(--r-sharp); }
   .lv-rec h3 { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
   .lv-rec dl { display: grid; grid-template-columns: auto 1fr; gap: 4px 16px; margin: 0; }
   .lv-rec dt { margin: 0; }

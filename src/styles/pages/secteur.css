@@ -26,3 +26,13 @@
   .sct-k { font: 400 22px var(--display); fill: var(--brand); }
   .sct-o { font: 400 20px var(--display); fill: var(--ink); }
 }
+@layer pages {
+  /* sur mobile, la scène est réduite de moitié : les textes du dessin grossissent d'autant */
+  @media (max-width: 700px) {
+    .sct-stage { grid-template-rows: auto auto; align-content: center; gap: 28px; padding-bottom: 110px; }
+    .sct-svg { width: 100vw; max-width: none; height: auto; max-height: 52vh; }
+    .sct-t { font-size: 21px; }
+    .sct-o { font-size: 28px; }
+    .sct-k { font-size: 32px; }
+  }
+}
