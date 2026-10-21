@@ -1,0 +1,33 @@
+seo:
+  title: Une erreur est survenue | Leadvice
+  description: "La demande n'a pas pu aboutir. Revenez à l'accueil ou réessayez dans un instant."
+  og: accueil
+# le code est lu dans l'adresse (?code=400) ; sans code, ou sans JavaScript, c'est le texte « 500 » qui s'affiche
+codes:
+  "400":
+    legende: Erreur 400
+    h1: La demande est incomplète.
+    texte: "Un champ manque ou n'a pas le bon format, souvent l'adresse e-mail. Revenez en arrière, vérifiez, et renvoyez. Vos réponses sont peut-être encore dans le formulaire."
+  "403":
+    legende: Erreur 403
+    h1: Cette page est réservée.
+    texte: "Elle demande une connexion que vous n'avez pas, ou la vérification anti-robots n'a pas abouti. Si vous êtes une personne et que vous voulez nous joindre, le diagnostic reste ouvert."
+  "405":
+    legende: Erreur 405
+    h1: Cette adresse ne s'ouvre pas comme ça.
+    texte: "Elle sert à envoyer un formulaire, pas à être visitée. Le reste du site, lui, est bien là."
+  "429":
+    legende: Erreur 429
+    h1: Trop de demandes d'un coup.
+    texte: "Par sécurité, nous limitons les envois rapprochés. Attendez une minute, puis réessayez."
+  "500":
+    legende: Erreur 500
+    h1: Quelque chose a lâché de notre côté.
+    texte: "Ce n'est pas vous. La demande n'a pas pu aboutir, et nous sommes prévenus. Réessayez dans un instant, ou écrivez-nous à contact@leadvice.org : nous répondons dans la journée."
+  "503":
+    legende: Erreur 503
+    h1: Le service fait une courte pause.
+    texte: "Une mise à jour est en cours. Réessayez dans quelques minutes, ou écrivez-nous à contact@leadvice.org."
+retour: Revenir en arrière
+accueil: "Retour à l'accueil"
+contact: Écrire à contact@leadvice.org

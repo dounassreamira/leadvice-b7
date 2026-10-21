@@ -4,6 +4,8 @@ import { readUtm } from './utm';
 for (const form of document.querySelectorAll<HTMLFormElement>('form[data-lead]')) {
   const msg = form.parentElement?.querySelector<HTMLElement>('[data-lead-msg]');
   const done = form.parentElement?.querySelector<HTMLElement>('[data-lead-done]');
+  /* retour d'un envoi sans JavaScript */
+  if (new URLSearchParams(location.search).has('inscrit')) { form.hidden = true; if (done) done.hidden = false; else if (msg) msg.textContent = form.dataset.ok || ''; }
   form.addEventListener('submit', async (ev) => {
     ev.preventDefault();
     const f = (n: string) => form.elements.namedItem(n) as HTMLInputElement | null;

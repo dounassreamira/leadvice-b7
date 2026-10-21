@@ -5,7 +5,7 @@ interface Props { magnet: string; t: Data; bouton: string; prenom?: boolean; cho
 const { magnet, t, bouton, prenom = false, choix = [], done, fichier, fichierLabel, id } = Astro.props;
 ---
 <div class="lf">
-  <form class="lf-f" data-lead data-magnet={magnet} data-ok={t.ok} data-err={t.erreur} data-invalid={t.invalide} novalidate>
+  <form class="lf-f" action="/api/lead" method="post" data-lead data-magnet={magnet} data-ok={t.ok} data-err={t.erreur} data-invalid={t.invalide} novalidate>
     {choix.length > 0 && (
       <fieldset class="lf-c"><legend>{t.interets}</legend>
         {choix.map((c) => <label><input type="checkbox" name="interets" value={c.valeur} checked={c.valeur === 'lettre'} /> {c.nom}</label>)}
@@ -15,6 +15,7 @@ const { magnet, t, bouton, prenom = false, choix = [], done, fichier, fichierLab
       {prenom && <><label for={`${id}-p`} class="sr-only">{t.prenom}</label><input id={`${id}-p`} name="prenom" autocomplete="given-name" placeholder={t.prenom} maxlength="80" /></>}
       <label for={`${id}-e`} class="sr-only">{t.email}</label>
       <input id={`${id}-e`} name="email" type="email" autocomplete="email" placeholder={t.email} required maxlength="200" />
+      <input type="hidden" name="magnet" value={magnet} /><input type="hidden" name="page" value={Astro.url.pathname} />
       <input type="text" name="site" tabindex="-1" autocomplete="off" class="sr-only" aria-hidden="true" />
       <button type="submit" class="btn btn-main">{bouton}</button>
     </div>

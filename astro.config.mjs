@@ -4,7 +4,7 @@ import sitemap from '@astrojs/sitemap';
 import mdx from '@astrojs/mdx';
 
 // Pages exclues du plan du site : outils internes, landing pages publicitaires, merci, admin.
-const HORS_PLAN = ['/dev/', '/lp/', '/diagnostic/merci/', '/diagnostic/rendez-vous/', '/admin/', '/404'];
+const HORS_PLAN = ['/dev/', '/lp/', '/diagnostic/merci/', '/diagnostic/rendez-vous/', '/admin/', '/404', '/erreur/', '/r/'];
 
 export default defineConfig({
   site: 'https://leadvice.org',
